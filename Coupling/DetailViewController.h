@@ -7,10 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FacebookSDK/FacebookSDK.h>
+
+extern NSString *const FBSessionStateChangedNotification;
 
 @interface DetailViewController : UIViewController <UISplitViewControllerDelegate>
 
 @property (strong, nonatomic) id detailItem;
-
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+
+
+- (IBAction)login:(id)sender;
+- (IBAction)push:(id)sender;
+
 @end

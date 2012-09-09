@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @class DetailViewController;
+@class SearchResultViewController;
 
 @interface MasterViewController : UITableViewController
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
+@property (strong, nonatomic) SearchResultViewController *searchResultViewController;
 
 @end

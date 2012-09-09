@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "AppDelegate.h"
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -14,6 +15,10 @@
 @end
 
 @implementation DetailViewController
+
+@synthesize detailDescriptionLabel;
+
+NSString *const FBSessionStateChangedNotification = @"com.example.Login:FBSessionStateChangedNotification";
 
 #pragma mark - Managing the detail item
 
@@ -43,14 +48,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(sessionStateChanged:)
+                                                 name:FBSessionStateChangedNotification
+                                               object:nil];
     [self configureView];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:FBSessionStateChangedNotification object:nil];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -85,6 +93,35 @@
     // Called when the view is shown again in the split view, invalidating the button and popover controller.
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
     self.masterPopoverController = nil;
+}
+
+#pragma -
+
+- (IBAction)login:(id)sender {
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    [appDelegate openSessionWithAllowLoginUI:YES];
+}
+
+- (IBAction)push:(id)sender {
+    NSLog(@"push");
+    
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSData *deviceToken = appDelegate.deviceToken;
+    
+    NSMutableData *data = [NSMutableData data];
+    [data appendData:[@"device=" dataUsingEncoding:NSUTF8StringEncoding]];
+    [data appendData:deviceToken];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"ホスト名"]];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPBody:data];
+    [NSURLConnection connectionWithRequest:request delegate:self];
+}
+
+- (void)sessionStateChanged:(NSNotification *)notification
+{
+    FBSession *session = (FBSession *)notification.object;
+    NSLog(@"@@@@@ state: %d / accessToken: %@", session.state, session.accessToken);
 }
 
 @end

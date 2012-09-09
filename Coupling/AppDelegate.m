@@ -16,6 +16,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert)];
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
@@ -66,6 +68,89 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [self closeSession];
 }
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    NSLog(@"@@@@@ 2");
+    return [FBSession.activeSession handleOpenURL:url];
+}
+
+#pragma -
+
+/*
+ * Callback for session changes.
+ */
+- (void)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error
+{
+    self.session = session;
+    switch (state) {
+        case FBSessionStateOpen:
+            if (!error) {
+                // We have a valid session
+                NSLog(@"@@@@@ 3: %d", session.state);
+            }
+            break;
+        case FBSessionStateClosed:
+            NSLog(@"FBSessionStateClosed");
+            break;
+        case FBSessionStateCreatedTokenLoaded:
+            NSLog(@"FBSessionStateCreatedTokenLoaded");
+            break;
+        case FBSessionStateClosedLoginFailed:
+            NSLog(@"FBSessionStateClosedLoginFailed");
+            [FBSession.activeSession closeAndClearTokenInformation];
+            break;
+        default:
+            break;
+    }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:FBSessionStateChangedNotification object:session];
+    
+    if (error) {
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:@"Error"
+                                  message:error.localizedDescription
+                                  delegate:nil
+                                  cancelButtonTitle:@"OK"
+                                  otherButtonTitles:nil];
+        [alertView show];
+    }
+}
+
+/*
+ * Opens a Facebook session and optionally shows the login UX.
+ */
+- (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI {
+    
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSLog(@"@@@@@ 1: %d", appDelegate.session.state);
+    
+    
+    return [FBSession openActiveSessionWithPermissions:nil allowLoginUI:allowLoginUI completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
+        NSLog(@"@@@@@ 2: %d", session.state);
+        [self sessionStateChanged:session state:state error:error];
+    }];
+}
+
+- (void)closeSession {
+    [FBSession.activeSession closeAndClearTokenInformation];
+}
+
+#pragma mark -
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    NSLog(@"deviceToken: %@", deviceToken);
+    self.deviceToken = deviceToken;
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    NSLog(@"Errorinregistration.Error:%@", error);
+}
+
+
 
 @end

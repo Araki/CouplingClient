@@ -7,8 +7,8 @@
 //
 
 #import "MasterViewController.h"
-
 #import "DetailViewController.h"
+#import "SearchResultViewController.h"
 
 @interface MasterViewController () {
     NSMutableArray *_objects;
@@ -36,8 +36,8 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+//    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+//    self.navigationItem.rightBarButtonItem = addButton;
 }
 
 - (void)viewDidUnload
@@ -55,15 +55,15 @@
     }
 }
 
-- (void)insertNewObject:(id)sender
-{
-    if (!_objects) {
-        _objects = [[NSMutableArray alloc] init];
-    }
-    [_objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-}
+//- (void)insertNewObject:(id)sender
+//{
+//    if (!_objects) {
+//        _objects = [[NSMutableArray alloc] init];
+//    }
+//    [_objects insertObject:[NSDate date] atIndex:0];
+//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+//    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+//}
 
 #pragma mark - Table View
 
@@ -74,7 +74,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+//    return _objects.count;
+    return 2;
 }
 
 // Customize the appearance of table view cells.
@@ -88,11 +89,22 @@
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
+        
+        switch (indexPath.row) {
+            case 0:
+                cell.textLabel.text = @"ログイン";
+                break;
+            case 1:
+                cell.textLabel.text = @"検索";
+                break;
+            default:
+                break;
+        }
     }
 
 
-    NSDate *object = [_objects objectAtIndex:indexPath.row];
-    cell.textLabel.text = [object description];
+//    NSDate *object = [_objects objectAtIndex:indexPath.row];
+//    cell.textLabel.text = [object description];
     return cell;
 }
 
@@ -130,15 +142,40 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDate *object = [_objects objectAtIndex:indexPath.row];
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-	    if (!self.detailViewController) {
-	        self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController_iPhone" bundle:nil];
-	    }
-	    self.detailViewController.detailItem = object;
-        [self.navigationController pushViewController:self.detailViewController animated:YES];
+        [self pushViewControllerAtIndex:indexPath.row];
+        
+        
     } else {
-        self.detailViewController.detailItem = object;
+//        self.detailViewController.detailItem = object;
+    }
+}
+
+#pragma mark -
+
+
+- (void)pushViewControllerAtIndex:(NSInteger)index
+{
+    switch (index) {
+        case 0: {
+            NSDate *object = [_objects objectAtIndex:index];
+            if (!self.detailViewController) {
+                self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController_iPhone" bundle:nil];
+            }
+            self.detailViewController.detailItem = object;
+            [self.navigationController pushViewController:self.detailViewController animated:YES];
+            break;
+        }
+        case 1: {
+            if (!self.searchDisplayController) {
+                self.searchResultViewController = [[SearchResultViewController alloc] initWithNibName:@"SearchResultViewController_iPhone" bundle:nil];
+            }
+            [self.navigationController pushViewController:self.searchResultViewController animated:YES];
+            break;
+            
+        }
+        default:
+            break;
     }
 }
 
