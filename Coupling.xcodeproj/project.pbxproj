@@ -142,6 +142,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C10A32791632A8C80083F51B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C163A20715E0BABB00F3F25D /* MasterViewController.h */,
+				C163A20815E0BABB00F3F25D /* MasterViewController.m */,
+				C163A20D15E0BABB00F3F25D /* MasterViewController_iPhone.xib */,
+				C163A21015E0BABB00F3F25D /* MasterViewController_iPad.xib */,
+				C163A20A15E0BABB00F3F25D /* DetailViewController.h */,
+				C163A20B15E0BABB00F3F25D /* DetailViewController.m */,
+				C163A21315E0BABB00F3F25D /* DetailViewController_iPhone.xib */,
+				C163A21615E0BABB00F3F25D /* DetailViewController_iPad.xib */,
+				C1CFC0A015F1D09E000EB27D /* SearchResultViewController.h */,
+				C1CFC0A115F1D09E000EB27D /* SearchResultViewController.m */,
+				C1CFC0A215F1D09E000EB27D /* SearchResultViewController_iPhone.xib */,
+				C1CFC0A515F1D39A000EB27D /* SearchResultView.h */,
+				C1CFC0A615F1D39A000EB27D /* SearchResultView.m */,
+				C1CFC0A815F1DEE8000EB27D /* SearchResultView.xib */,
+				C16218531606FB2000F27E37 /* PurchaseViewController.h */,
+				C16218541606FB2000F27E37 /* PurchaseViewController.m */,
+				C16218551606FB2000F27E37 /* PurchaseViewController_iPhone.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		C163A1E615E0BABA00F3F25D = {
 			isa = PBXGroup;
 			children = (
@@ -181,30 +205,14 @@
 		C163A1FB15E0BABB00F3F25D /* Coupling */ = {
 			isa = PBXGroup;
 			children = (
-				C1789BC4162041BB00EA631B /* Json */,
+				C10A32791632A8C80083F51B /* View */,
 				C163A20415E0BABB00F3F25D /* AppDelegate.h */,
 				C163A20515E0BABB00F3F25D /* AppDelegate.m */,
-				C163A20715E0BABB00F3F25D /* MasterViewController.h */,
-				C163A20815E0BABB00F3F25D /* MasterViewController.m */,
-				C163A20D15E0BABB00F3F25D /* MasterViewController_iPhone.xib */,
-				C163A21015E0BABB00F3F25D /* MasterViewController_iPad.xib */,
-				C163A20A15E0BABB00F3F25D /* DetailViewController.h */,
-				C163A20B15E0BABB00F3F25D /* DetailViewController.m */,
-				C163A21315E0BABB00F3F25D /* DetailViewController_iPhone.xib */,
-				C163A21615E0BABB00F3F25D /* DetailViewController_iPad.xib */,
-				C1CFC0A015F1D09E000EB27D /* SearchResultViewController.h */,
-				C1CFC0A115F1D09E000EB27D /* SearchResultViewController.m */,
-				C1CFC0A215F1D09E000EB27D /* SearchResultViewController_iPhone.xib */,
-				C1CFC0A515F1D39A000EB27D /* SearchResultView.h */,
-				C1CFC0A615F1D39A000EB27D /* SearchResultView.m */,
-				C1CFC0A815F1DEE8000EB27D /* SearchResultView.xib */,
-				C1CFC0AB15F1E02D000EB27D /* Resources */,
-				C163A1FC15E0BABB00F3F25D /* Supporting Files */,
-				C16218531606FB2000F27E37 /* PurchaseViewController.h */,
-				C16218541606FB2000F27E37 /* PurchaseViewController.m */,
-				C16218551606FB2000F27E37 /* PurchaseViewController_iPhone.xib */,
 				C162185B1607196E00F27E37 /* MyStoreObserver.h */,
 				C162185C1607196E00F27E37 /* MyStoreObserver.m */,
+				C1789BC4162041BB00EA631B /* Json */,
+				C1CFC0AB15F1E02D000EB27D /* Resources */,
+				C163A1FC15E0BABB00F3F25D /* Supporting Files */,
 			);
 			path = Coupling;
 			sourceTree = "<group>";
@@ -471,7 +479,7 @@
 		C163A21C15E0BABB00F3F25D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kosuke Araki (9879JF8BN3)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Documents/FacebookSDK\"",
@@ -486,7 +494,7 @@
 				);
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D959FD28-77A6-46E8-AB05-24E0821D23A0";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
@@ -496,7 +504,7 @@
 		C163A21D15E0BABB00F3F25D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kosuke Araki (9879JF8BN3)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Documents/FacebookSDK\"",
@@ -511,7 +519,7 @@
 				);
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D959FD28-77A6-46E8-AB05-24E0821D23A0";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
