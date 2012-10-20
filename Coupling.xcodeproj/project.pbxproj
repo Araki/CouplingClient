@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C16218561606FB2000F27E37 /* PurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C16218541606FB2000F27E37 /* PurchaseViewController.m */; };
+		C16218571606FB2000F27E37 /* PurchaseViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C16218551606FB2000F27E37 /* PurchaseViewController_iPhone.xib */; };
+		C162185A1606FE2600F27E37 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C16218591606FE2600F27E37 /* StoreKit.framework */; };
+		C162185D1607196E00F27E37 /* MyStoreObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = C162185C1607196E00F27E37 /* MyStoreObserver.m */; };
 		C163A1F615E0BABB00F3F25D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C163A1F515E0BABB00F3F25D /* UIKit.framework */; };
 		C163A1F815E0BABB00F3F25D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C163A1F715E0BABB00F3F25D /* Foundation.framework */; };
 		C163A1FA15E0BABB00F3F25D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C163A1F915E0BABB00F3F25D /* CoreGraphics.framework */; };
@@ -19,16 +23,42 @@
 		C163A21215E0BABB00F3F25D /* MasterViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C163A21015E0BABB00F3F25D /* MasterViewController_iPad.xib */; };
 		C163A21515E0BABB00F3F25D /* DetailViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C163A21315E0BABB00F3F25D /* DetailViewController_iPhone.xib */; };
 		C163A21815E0BABB00F3F25D /* DetailViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C163A21615E0BABB00F3F25D /* DetailViewController_iPad.xib */; };
-		C1C8454415E0BC9D006511CA /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1C8454315E0BC9D006511CA /* FacebookSDK.framework */; };
-		C1C8454615E0BCE2006511CA /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C1C8454515E0BCE2006511CA /* FBUserSettingsViewResources.bundle */; };
+		C1789BDE162041BC00EA631B /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = C1789BC6162041BB00EA631B /* NSObject+SBJson.m */; };
+		C1789BDF162041BC00EA631B /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C1789BC9162041BB00EA631B /* SBJsonParser.m */; };
+		C1789BE0162041BC00EA631B /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C1789BCB162041BC00EA631B /* SBJsonStreamParser.m */; };
+		C1789BE1162041BC00EA631B /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = C1789BCD162041BC00EA631B /* SBJsonStreamParserAccumulator.m */; };
+		C1789BE2162041BC00EA631B /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = C1789BCF162041BC00EA631B /* SBJsonStreamParserAdapter.m */; };
+		C1789BE3162041BC00EA631B /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = C1789BD1162041BC00EA631B /* SBJsonStreamParserState.m */; };
+		C1789BE4162041BC00EA631B /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = C1789BD3162041BC00EA631B /* SBJsonStreamWriter.m */; };
+		C1789BE5162041BC00EA631B /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = C1789BD5162041BC00EA631B /* SBJsonStreamWriterAccumulator.m */; };
+		C1789BE6162041BC00EA631B /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = C1789BD7162041BC00EA631B /* SBJsonStreamWriterState.m */; };
+		C1789BE7162041BC00EA631B /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = C1789BD9162041BC00EA631B /* SBJsonTokeniser.m */; };
+		C1789BE8162041BC00EA631B /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = C1789BDB162041BC00EA631B /* SBJsonUTF8Stream.m */; };
+		C1789BE9162041BC00EA631B /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = C1789BDD162041BC00EA631B /* SBJsonWriter.m */; };
+		C1789BF41622B47300EA631B /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1789BF01622B47300EA631B /* libTestFlight.a */; };
+		C1789BF51622B47300EA631B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C1789BF11622B47300EA631B /* README.md */; };
+		C1789BF61622B47300EA631B /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = C1789BF21622B47300EA631B /* release_notes.md */; };
+		C1789BF81622B50D00EA631B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C1789BF71622B50D00EA631B /* libz.dylib */; };
+		C1A1CB2B162AA024002CB9DD /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A1CB2A162AA024002CB9DD /* FacebookSDK.framework */; };
+		C1A1CB2D162AA1C5002CB9DD /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C1A1CB2C162AA1C5002CB9DD /* FacebookSDKResources.bundle */; };
+		C1A1CB2F162AA1CB002CB9DD /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C1A1CB2E162AA1CB002CB9DD /* FBUserSettingsViewResources.bundle */; };
+		C1A1CB31162AA573002CB9DD /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A1CB30162AA573002CB9DD /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C1A1CB33162AA5B0002CB9DD /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A1CB32162AA5B0002CB9DD /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C1CFC0A315F1D09E000EB27D /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CFC0A115F1D09E000EB27D /* SearchResultViewController.m */; };
 		C1CFC0A415F1D09E000EB27D /* SearchResultViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1CFC0A215F1D09E000EB27D /* SearchResultViewController_iPhone.xib */; };
 		C1CFC0A715F1D39A000EB27D /* SearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CFC0A615F1D39A000EB27D /* SearchResultView.m */; };
 		C1CFC0A915F1DEE8000EB27D /* SearchResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1CFC0A815F1DEE8000EB27D /* SearchResultView.xib */; };
 		C1CFC0AD15F20203000EB27D /* photo (1).JPG in Resources */ = {isa = PBXBuildFile; fileRef = C1CFC0AC15F20203000EB27D /* photo (1).JPG */; };
+		C1EE480E160735B400CDC173 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1EE480D160735B400CDC173 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C16218531606FB2000F27E37 /* PurchaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseViewController.h; sourceTree = "<group>"; };
+		C16218541606FB2000F27E37 /* PurchaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseViewController.m; sourceTree = "<group>"; };
+		C16218551606FB2000F27E37 /* PurchaseViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurchaseViewController_iPhone.xib; sourceTree = "<group>"; };
+		C16218591606FE2600F27E37 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		C162185B1607196E00F27E37 /* MyStoreObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyStoreObserver.h; sourceTree = "<group>"; };
+		C162185C1607196E00F27E37 /* MyStoreObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyStoreObserver.m; sourceTree = "<group>"; };
 		C163A1F115E0BABB00F3F25D /* Coupling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coupling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C163A1F515E0BABB00F3F25D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C163A1F715E0BABB00F3F25D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -47,8 +77,41 @@
 		C163A21115E0BABB00F3F25D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController_iPad.xib; sourceTree = "<group>"; };
 		C163A21415E0BABB00F3F25D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController_iPhone.xib; sourceTree = "<group>"; };
 		C163A21715E0BABB00F3F25D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController_iPad.xib; sourceTree = "<group>"; };
-		C1C8454315E0BC9D006511CA /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
-		C1C8454515E0BCE2006511CA /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FBUserSettingsViewResources.bundle; path = ../../Documents/FacebookSDK/FacebookSDK.framework/Versions/A/Resources/FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
+		C1789BC5162041BB00EA631B /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
+		C1789BC6162041BB00EA631B /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
+		C1789BC7162041BB00EA631B /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
+		C1789BC8162041BB00EA631B /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		C1789BC9162041BB00EA631B /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		C1789BCA162041BB00EA631B /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParser.h; sourceTree = "<group>"; };
+		C1789BCB162041BC00EA631B /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParser.m; sourceTree = "<group>"; };
+		C1789BCC162041BC00EA631B /* SBJsonStreamParserAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAccumulator.h; sourceTree = "<group>"; };
+		C1789BCD162041BC00EA631B /* SBJsonStreamParserAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAccumulator.m; sourceTree = "<group>"; };
+		C1789BCE162041BC00EA631B /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAdapter.h; sourceTree = "<group>"; };
+		C1789BCF162041BC00EA631B /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAdapter.m; sourceTree = "<group>"; };
+		C1789BD0162041BC00EA631B /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserState.h; sourceTree = "<group>"; };
+		C1789BD1162041BC00EA631B /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserState.m; sourceTree = "<group>"; };
+		C1789BD2162041BC00EA631B /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriter.h; sourceTree = "<group>"; };
+		C1789BD3162041BC00EA631B /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriter.m; sourceTree = "<group>"; };
+		C1789BD4162041BC00EA631B /* SBJsonStreamWriterAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterAccumulator.h; sourceTree = "<group>"; };
+		C1789BD5162041BC00EA631B /* SBJsonStreamWriterAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterAccumulator.m; sourceTree = "<group>"; };
+		C1789BD6162041BC00EA631B /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterState.h; sourceTree = "<group>"; };
+		C1789BD7162041BC00EA631B /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterState.m; sourceTree = "<group>"; };
+		C1789BD8162041BC00EA631B /* SBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonTokeniser.h; sourceTree = "<group>"; };
+		C1789BD9162041BC00EA631B /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonTokeniser.m; sourceTree = "<group>"; };
+		C1789BDA162041BC00EA631B /* SBJsonUTF8Stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonUTF8Stream.h; sourceTree = "<group>"; };
+		C1789BDB162041BC00EA631B /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
+		C1789BDC162041BC00EA631B /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		C1789BDD162041BC00EA631B /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		C1789BF01622B47300EA631B /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		C1789BF11622B47300EA631B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		C1789BF21622B47300EA631B /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
+		C1789BF31622B47300EA631B /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		C1789BF71622B50D00EA631B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		C1A1CB2A162AA024002CB9DD /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		C1A1CB2C162AA1C5002CB9DD /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKResources.bundle; path = ../../Documents/FacebookSDK/FacebookSDK.framework/Versions/A/Resources/FacebookSDKResources.bundle; sourceTree = "<group>"; };
+		C1A1CB2E162AA1CB002CB9DD /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FBUserSettingsViewResources.bundle; path = ../../Documents/FacebookSDK/FacebookSDK.framework/Versions/A/Resources/FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
+		C1A1CB30162AA573002CB9DD /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		C1A1CB32162AA5B0002CB9DD /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		C1CFC0A015F1D09E000EB27D /* SearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultViewController.h; sourceTree = "<group>"; };
 		C1CFC0A115F1D09E000EB27D /* SearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultViewController.m; sourceTree = "<group>"; };
 		C1CFC0A215F1D09E000EB27D /* SearchResultViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultViewController_iPhone.xib; sourceTree = "<group>"; };
@@ -56,6 +119,7 @@
 		C1CFC0A615F1D39A000EB27D /* SearchResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultView.m; sourceTree = "<group>"; };
 		C1CFC0A815F1DEE8000EB27D /* SearchResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultView.xib; sourceTree = "<group>"; };
 		C1CFC0AC15F20203000EB27D /* photo (1).JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "photo (1).JPG"; sourceTree = "<group>"; };
+		C1EE480D160735B400CDC173 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,10 +127,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1A1CB33162AA5B0002CB9DD /* AdSupport.framework in Frameworks */,
+				C1A1CB31162AA573002CB9DD /* Accounts.framework in Frameworks */,
+				C1A1CB2B162AA024002CB9DD /* FacebookSDK.framework in Frameworks */,
+				C1789BF81622B50D00EA631B /* libz.dylib in Frameworks */,
+				C162185A1606FE2600F27E37 /* StoreKit.framework in Frameworks */,
 				C163A1F615E0BABB00F3F25D /* UIKit.framework in Frameworks */,
 				C163A1F815E0BABB00F3F25D /* Foundation.framework in Frameworks */,
 				C163A1FA15E0BABB00F3F25D /* CoreGraphics.framework in Frameworks */,
-				C1C8454415E0BC9D006511CA /* FacebookSDK.framework in Frameworks */,
+				C1789BF41622B47300EA631B /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +145,8 @@
 		C163A1E615E0BABA00F3F25D = {
 			isa = PBXGroup;
 			children = (
+				C1EE480D160735B400CDC173 /* Default-568h@2x.png */,
+				C1789BEF1622B47300EA631B /* TestFlightSDK1.1 */,
 				C163A1FB15E0BABB00F3F25D /* Coupling */,
 				C163A1F415E0BABB00F3F25D /* Frameworks */,
 				C163A1F215E0BABB00F3F25D /* Products */,
@@ -93,8 +164,13 @@
 		C163A1F415E0BABB00F3F25D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C1C8454515E0BCE2006511CA /* FBUserSettingsViewResources.bundle */,
-				C1C8454315E0BC9D006511CA /* FacebookSDK.framework */,
+				C1789BF71622B50D00EA631B /* libz.dylib */,
+				C1A1CB2C162AA1C5002CB9DD /* FacebookSDKResources.bundle */,
+				C1A1CB2E162AA1CB002CB9DD /* FBUserSettingsViewResources.bundle */,
+				C1A1CB30162AA573002CB9DD /* Accounts.framework */,
+				C1A1CB32162AA5B0002CB9DD /* AdSupport.framework */,
+				C1A1CB2A162AA024002CB9DD /* FacebookSDK.framework */,
+				C16218591606FE2600F27E37 /* StoreKit.framework */,
 				C163A1F515E0BABB00F3F25D /* UIKit.framework */,
 				C163A1F715E0BABB00F3F25D /* Foundation.framework */,
 				C163A1F915E0BABB00F3F25D /* CoreGraphics.framework */,
@@ -105,6 +181,7 @@
 		C163A1FB15E0BABB00F3F25D /* Coupling */ = {
 			isa = PBXGroup;
 			children = (
+				C1789BC4162041BB00EA631B /* Json */,
 				C163A20415E0BABB00F3F25D /* AppDelegate.h */,
 				C163A20515E0BABB00F3F25D /* AppDelegate.m */,
 				C163A20715E0BABB00F3F25D /* MasterViewController.h */,
@@ -123,6 +200,11 @@
 				C1CFC0A815F1DEE8000EB27D /* SearchResultView.xib */,
 				C1CFC0AB15F1E02D000EB27D /* Resources */,
 				C163A1FC15E0BABB00F3F25D /* Supporting Files */,
+				C16218531606FB2000F27E37 /* PurchaseViewController.h */,
+				C16218541606FB2000F27E37 /* PurchaseViewController.m */,
+				C16218551606FB2000F27E37 /* PurchaseViewController_iPhone.xib */,
+				C162185B1607196E00F27E37 /* MyStoreObserver.h */,
+				C162185C1607196E00F27E37 /* MyStoreObserver.m */,
 			);
 			path = Coupling;
 			sourceTree = "<group>";
@@ -136,6 +218,50 @@
 				C163A20315E0BABB00F3F25D /* Coupling-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C1789BC4162041BB00EA631B /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				C1789BC5162041BB00EA631B /* NSObject+SBJson.h */,
+				C1789BC6162041BB00EA631B /* NSObject+SBJson.m */,
+				C1789BC7162041BB00EA631B /* SBJson.h */,
+				C1789BC8162041BB00EA631B /* SBJsonParser.h */,
+				C1789BC9162041BB00EA631B /* SBJsonParser.m */,
+				C1789BCA162041BB00EA631B /* SBJsonStreamParser.h */,
+				C1789BCB162041BC00EA631B /* SBJsonStreamParser.m */,
+				C1789BCC162041BC00EA631B /* SBJsonStreamParserAccumulator.h */,
+				C1789BCD162041BC00EA631B /* SBJsonStreamParserAccumulator.m */,
+				C1789BCE162041BC00EA631B /* SBJsonStreamParserAdapter.h */,
+				C1789BCF162041BC00EA631B /* SBJsonStreamParserAdapter.m */,
+				C1789BD0162041BC00EA631B /* SBJsonStreamParserState.h */,
+				C1789BD1162041BC00EA631B /* SBJsonStreamParserState.m */,
+				C1789BD2162041BC00EA631B /* SBJsonStreamWriter.h */,
+				C1789BD3162041BC00EA631B /* SBJsonStreamWriter.m */,
+				C1789BD4162041BC00EA631B /* SBJsonStreamWriterAccumulator.h */,
+				C1789BD5162041BC00EA631B /* SBJsonStreamWriterAccumulator.m */,
+				C1789BD6162041BC00EA631B /* SBJsonStreamWriterState.h */,
+				C1789BD7162041BC00EA631B /* SBJsonStreamWriterState.m */,
+				C1789BD8162041BC00EA631B /* SBJsonTokeniser.h */,
+				C1789BD9162041BC00EA631B /* SBJsonTokeniser.m */,
+				C1789BDA162041BC00EA631B /* SBJsonUTF8Stream.h */,
+				C1789BDB162041BC00EA631B /* SBJsonUTF8Stream.m */,
+				C1789BDC162041BC00EA631B /* SBJsonWriter.h */,
+				C1789BDD162041BC00EA631B /* SBJsonWriter.m */,
+			);
+			name = Json;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		C1789BEF1622B47300EA631B /* TestFlightSDK1.1 */ = {
+			isa = PBXGroup;
+			children = (
+				C1789BF01622B47300EA631B /* libTestFlight.a */,
+				C1789BF11622B47300EA631B /* README.md */,
+				C1789BF21622B47300EA631B /* release_notes.md */,
+				C1789BF31622B47300EA631B /* TestFlight.h */,
+			);
+			path = TestFlightSDK1.1;
 			sourceTree = "<group>";
 		};
 		C1CFC0AB15F1E02D000EB27D /* Resources */ = {
@@ -181,6 +307,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				he,
 			);
 			mainGroup = C163A1E615E0BABA00F3F25D;
 			productRefGroup = C163A1F215E0BABB00F3F25D /* Products */;
@@ -202,10 +329,15 @@
 				C163A21215E0BABB00F3F25D /* MasterViewController_iPad.xib in Resources */,
 				C163A21515E0BABB00F3F25D /* DetailViewController_iPhone.xib in Resources */,
 				C163A21815E0BABB00F3F25D /* DetailViewController_iPad.xib in Resources */,
-				C1C8454615E0BCE2006511CA /* FBUserSettingsViewResources.bundle in Resources */,
 				C1CFC0A415F1D09E000EB27D /* SearchResultViewController_iPhone.xib in Resources */,
 				C1CFC0A915F1DEE8000EB27D /* SearchResultView.xib in Resources */,
 				C1CFC0AD15F20203000EB27D /* photo (1).JPG in Resources */,
+				C16218571606FB2000F27E37 /* PurchaseViewController_iPhone.xib in Resources */,
+				C1EE480E160735B400CDC173 /* Default-568h@2x.png in Resources */,
+				C1789BF51622B47300EA631B /* README.md in Resources */,
+				C1789BF61622B47300EA631B /* release_notes.md in Resources */,
+				C1A1CB2D162AA1C5002CB9DD /* FacebookSDKResources.bundle in Resources */,
+				C1A1CB2F162AA1CB002CB9DD /* FBUserSettingsViewResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +354,20 @@
 				C163A20C15E0BABB00F3F25D /* DetailViewController.m in Sources */,
 				C1CFC0A315F1D09E000EB27D /* SearchResultViewController.m in Sources */,
 				C1CFC0A715F1D39A000EB27D /* SearchResultView.m in Sources */,
+				C16218561606FB2000F27E37 /* PurchaseViewController.m in Sources */,
+				C162185D1607196E00F27E37 /* MyStoreObserver.m in Sources */,
+				C1789BDE162041BC00EA631B /* NSObject+SBJson.m in Sources */,
+				C1789BDF162041BC00EA631B /* SBJsonParser.m in Sources */,
+				C1789BE0162041BC00EA631B /* SBJsonStreamParser.m in Sources */,
+				C1789BE1162041BC00EA631B /* SBJsonStreamParserAccumulator.m in Sources */,
+				C1789BE2162041BC00EA631B /* SBJsonStreamParserAdapter.m in Sources */,
+				C1789BE3162041BC00EA631B /* SBJsonStreamParserState.m in Sources */,
+				C1789BE4162041BC00EA631B /* SBJsonStreamWriter.m in Sources */,
+				C1789BE5162041BC00EA631B /* SBJsonStreamWriterAccumulator.m in Sources */,
+				C1789BE6162041BC00EA631B /* SBJsonStreamWriterState.m in Sources */,
+				C1789BE7162041BC00EA631B /* SBJsonTokeniser.m in Sources */,
+				C1789BE8162041BC00EA631B /* SBJsonUTF8Stream.m in Sources */,
+				C1789BE9162041BC00EA631B /* SBJsonWriter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +471,7 @@
 		C163A21C15E0BABB00F3F25D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kosuke Araki (9879JF8BN3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Documents/FacebookSDK\"",
@@ -334,10 +480,15 @@
 				GCC_PREFIX_HEADER = "Coupling/Coupling-Prefix.pch";
 				INFOPLIST_FILE = "Coupling/Coupling-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/TestFlightSDK1.1\"",
+				);
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "12EC9322-075A-454C-A16B-F129001B2750";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -345,7 +496,7 @@
 		C163A21D15E0BABB00F3F25D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kosuke Araki (9879JF8BN3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Documents/FacebookSDK\"",
@@ -354,10 +505,15 @@
 				GCC_PREFIX_HEADER = "Coupling/Coupling-Prefix.pch";
 				INFOPLIST_FILE = "Coupling/Coupling-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/TestFlightSDK1.1\"",
+				);
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "12EC9322-075A-454C-A16B-F129001B2750";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

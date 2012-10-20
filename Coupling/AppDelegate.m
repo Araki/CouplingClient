@@ -6,17 +6,26 @@
 //  Copyright (c) 2012年 tsuchimoto. All rights reserved.
 //
 
+#import <StoreKit/StoreKit.h>
 #import "AppDelegate.h"
-
 #import "MasterViewController.h"
-
 #import "DetailViewController.h"
+#import "MyStoreObserver.h"
+
+#import "TestFlight.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [TestFlight takeOff:@"Pairful development"];
+    
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert)];
+    
+    
+    // add payment transaction observer
+    [[SKPaymentQueue defaultQueue] addTransactionObserver:[[MyStoreObserver alloc] init]];
+    
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
@@ -73,11 +82,20 @@
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    NSLog(@"@@@@@ 2");
     return [FBSession.activeSession handleOpenURL:url];
 }
 
 #pragma -
+
+/*
+ * Opens a Facebook session and optionally shows the login UX.
+ */
+- (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI {
+    
+    return [FBSession openActiveSessionWithPermissions:nil allowLoginUI:allowLoginUI completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
+        [self sessionStateChanged:session state:state error:error];
+    }];
+}
 
 /*
  * Callback for session changes.
@@ -85,12 +103,9 @@
 - (void)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error
 {
     self.session = session;
+    NSLog(@"@@@@@ sessionStateChanged: %d", session.state);
     switch (state) {
         case FBSessionStateOpen:
-            if (!error) {
-                // We have a valid session
-                NSLog(@"@@@@@ 3: %d", session.state);
-            }
             break;
         case FBSessionStateClosed:
             NSLog(@"FBSessionStateClosed");
@@ -117,21 +132,6 @@
                                   otherButtonTitles:nil];
         [alertView show];
     }
-}
-
-/*
- * Opens a Facebook session and optionally shows the login UX.
- */
-- (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI {
-    
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    NSLog(@"@@@@@ 1: %d", appDelegate.session.state);
-    
-    
-    return [FBSession openActiveSessionWithPermissions:nil allowLoginUI:allowLoginUI completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
-        NSLog(@"@@@@@ 2: %d", session.state);
-        [self sessionStateChanged:session state:state error:error];
-    }];
 }
 
 - (void)closeSession {

@@ -14,10 +14,10 @@ extern NSString *const FBSessionStateChangedNotification;
 @interface DetailViewController : UIViewController <UISplitViewControllerDelegate>
 
 @property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) NSMutableData *responseData;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
-
-- (IBAction)login:(id)sender;
+- (IBAction)signup:(id)sender;
 - (IBAction)push:(id)sender;
 
 @end

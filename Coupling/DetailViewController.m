@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "AppDelegate.h"
+#import "SBJson.h"
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -19,6 +20,8 @@
 @synthesize detailDescriptionLabel;
 
 NSString *const FBSessionStateChangedNotification = @"com.example.Login:FBSessionStateChangedNotification";
+NSString *const APIRegister = @"http://coupling.herokuapp.com/api/v1/session/register/%@/";
+
 
 #pragma mark - Managing the detail item
 
@@ -48,6 +51,7 @@ NSString *const FBSessionStateChangedNotification = @"com.example.Login:FBSessio
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.responseData = [NSMutableData dataWithCapacity:0];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(sessionStateChanged:)
                                                  name:FBSessionStateChangedNotification
@@ -95,9 +99,11 @@ NSString *const FBSessionStateChangedNotification = @"com.example.Login:FBSessio
     self.masterPopoverController = nil;
 }
 
-#pragma -
+#pragma mark - IBAction
 
-- (IBAction)login:(id)sender {
+- (IBAction)signup:(id)sender {
+    NSLog(@"signup");
+    
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     [appDelegate openSessionWithAllowLoginUI:YES];
 }
@@ -118,10 +124,49 @@ NSString *const FBSessionStateChangedNotification = @"com.example.Login:FBSessio
     [NSURLConnection connectionWithRequest:request delegate:self];
 }
 
+#pragma mark -
+
 - (void)sessionStateChanged:(NSNotification *)notification
 {
     FBSession *session = (FBSession *)notification.object;
     NSLog(@"@@@@@ state: %d / accessToken: %@", session.state, session.accessToken);
+    
+    if (session.state == 513) {
+        NSString *urlString = [NSString stringWithFormat:APIRegister, session.accessToken];
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
+        NSURLConnection *connection = [NSURLConnection connectionWithRequest:request delegate:self];
+        if (connection) {
+            NSLog(@"connection Success");
+        } else {
+            NSLog(@"connection Error");
+        }
+    }
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    NSLog(@"didReceiveData");
+    [self.responseData appendData:data];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    NSLog(@"didReceiveResponse");
+    [self.responseData setLength:0];
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSLog(@"connectionDidFinishLoading");
+    NSString *responseString = [[NSString alloc] initWithData:self.responseData encoding:NSUTF8StringEncoding];
+    
+    NSLog(@"%@", responseString);
+    
+    NSDictionary *jsonObject = [responseString JSONValue];
+    
+    NSLog(@"%@", jsonObject);
+    
+    
 }
 
 @end
