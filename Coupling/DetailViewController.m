@@ -127,21 +127,21 @@ NSString *const APIRegister = @"https://api.pairful.net/api/v1/session/register?
     FBSession *session = (FBSession *)notification.object;
     NSLog(@"@@@@@ state: %d / accessToken: %@", session.state, session.accessToken);
     
-    if (session.state == 513) {
+    if (session.state == FBSessionStateOpen) {
         NSString *urlString = [NSString stringWithFormat:APIRegister, session.accessToken];
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
         NSURLConnection *connection = [NSURLConnection connectionWithRequest:request delegate:self];
         if (connection) {
-            NSLog(@"connection Success");
+            NSLog(@"@@@@ connection Success");
         } else {
-            NSLog(@"connection Error");
+            NSLog(@"@@@@ connection Error");
         }
     }
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
-    NSLog(@"didReceiveData");
+    NSLog(@"@@@@ didReceiveData");
     [self.responseData appendData:data];
 }
 
