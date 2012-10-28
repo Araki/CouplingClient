@@ -11,6 +11,7 @@
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 #import "MyStoreObserver.h"
+#import "FBManager.h"
 
 #import "TestFlight.h"
 
@@ -77,7 +78,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    [self closeSession];
+    [[FBManager sharedObject] closeSession];
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
@@ -87,63 +88,10 @@
 
 #pragma -
 
-/*
- * Opens a Facebook session and optionally shows the login UX.
- */
-- (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI {
-    
-    return [FBSession openActiveSessionWithPermissions:nil allowLoginUI:allowLoginUI completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
-        [self sessionStateChanged:session state:state error:error];
-    }];
-}
-
-/*
- * Callback for session changes.
- */
-- (void)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error
-{
-    self.session = session;
-    NSLog(@"@@@@@ sessionStateChanged: %d", session.state);
-    switch (state) {
-        case FBSessionStateOpen:
-            break;
-        case FBSessionStateClosed:
-            NSLog(@"FBSessionStateClosed");
-            break;
-        case FBSessionStateCreatedTokenLoaded:
-            NSLog(@"FBSessionStateCreatedTokenLoaded");
-            break;
-        case FBSessionStateClosedLoginFailed:
-            NSLog(@"FBSessionStateClosedLoginFailed");
-            [FBSession.activeSession closeAndClearTokenInformation];
-            break;
-        default:
-            break;
-    }
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:FBSessionStateChangedNotification object:session];
-    
-    if (error) {
-        UIAlertView *alertView = [[UIAlertView alloc]
-                                  initWithTitle:@"Error"
-                                  message:error.localizedDescription
-                                  delegate:nil
-                                  cancelButtonTitle:@"OK"
-                                  otherButtonTitles:nil];
-        [alertView show];
-    }
-}
-
-- (void)closeSession {
-    [FBSession.activeSession closeAndClearTokenInformation];
-}
-
-#pragma mark -
-
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
     NSLog(@"deviceToken: %@", deviceToken);
-    self.deviceToken = deviceToken;
+    [[FBManager sharedObject] setDeviceToken:deviceToken];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error

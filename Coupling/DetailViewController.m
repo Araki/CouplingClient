@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 #import "AppDelegate.h"
 #import "SBJson.h"
+#import "FBManager.h"
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -103,20 +104,15 @@ NSString *const APIRegister = @"https://api.pairful.net/api/v1/session/register?
 
 - (IBAction)signup:(id)sender {
     NSLog(@"signup");
-    
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    [appDelegate openSessionWithAllowLoginUI:YES];
+    [[FBManager sharedObject] openSessionWithAllowLoginUI:YES];
 }
 
 - (IBAction)push:(id)sender {
     NSLog(@"push");
     
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    NSData *deviceToken = appDelegate.deviceToken;
-    
     NSMutableData *data = [NSMutableData data];
     [data appendData:[@"device=" dataUsingEncoding:NSUTF8StringEncoding]];
-    [data appendData:deviceToken];
+    [data appendData:[[FBManager sharedObject] deviceToken]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"ホスト名"]];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPMethod:@"POST"];

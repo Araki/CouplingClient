@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C10A327D1632AA3D0083F51B /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C10A327C1632AA3D0083F51B /* APIClient.m */; };
+		C10A328C1632AB6C0083F51B /* SingletonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C10A328B1632AB6C0083F51B /* SingletonObject.m */; };
 		C16218561606FB2000F27E37 /* PurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C16218541606FB2000F27E37 /* PurchaseViewController.m */; };
 		C16218571606FB2000F27E37 /* PurchaseViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C16218551606FB2000F27E37 /* PurchaseViewController_iPhone.xib */; };
 		C162185A1606FE2600F27E37 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C16218591606FE2600F27E37 /* StoreKit.framework */; };
@@ -44,6 +46,7 @@
 		C1A1CB2F162AA1CB002CB9DD /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C1A1CB2E162AA1CB002CB9DD /* FBUserSettingsViewResources.bundle */; };
 		C1A1CB31162AA573002CB9DD /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A1CB30162AA573002CB9DD /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C1A1CB33162AA5B0002CB9DD /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A1CB32162AA5B0002CB9DD /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C1C1E35B163D06AC002A9E38 /* FBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C1E35A163D06AC002A9E38 /* FBManager.m */; };
 		C1CFC0A315F1D09E000EB27D /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CFC0A115F1D09E000EB27D /* SearchResultViewController.m */; };
 		C1CFC0A415F1D09E000EB27D /* SearchResultViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1CFC0A215F1D09E000EB27D /* SearchResultViewController_iPhone.xib */; };
 		C1CFC0A715F1D39A000EB27D /* SearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CFC0A615F1D39A000EB27D /* SearchResultView.m */; };
@@ -53,6 +56,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C10A327B1632AA3D0083F51B /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
+		C10A327C1632AA3D0083F51B /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
+		C10A328A1632AB6C0083F51B /* SingletonObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonObject.h; sourceTree = "<group>"; };
+		C10A328B1632AB6C0083F51B /* SingletonObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonObject.m; sourceTree = "<group>"; };
 		C16218531606FB2000F27E37 /* PurchaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseViewController.h; sourceTree = "<group>"; };
 		C16218541606FB2000F27E37 /* PurchaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseViewController.m; sourceTree = "<group>"; };
 		C16218551606FB2000F27E37 /* PurchaseViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurchaseViewController_iPhone.xib; sourceTree = "<group>"; };
@@ -112,6 +119,8 @@
 		C1A1CB2E162AA1CB002CB9DD /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FBUserSettingsViewResources.bundle; path = ../../Documents/FacebookSDK/FacebookSDK.framework/Versions/A/Resources/FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
 		C1A1CB30162AA573002CB9DD /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		C1A1CB32162AA5B0002CB9DD /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		C1C1E359163D06AC002A9E38 /* FBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBManager.h; sourceTree = "<group>"; };
+		C1C1E35A163D06AC002A9E38 /* FBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBManager.m; sourceTree = "<group>"; };
 		C1CFC0A015F1D09E000EB27D /* SearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultViewController.h; sourceTree = "<group>"; };
 		C1CFC0A115F1D09E000EB27D /* SearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultViewController.m; sourceTree = "<group>"; };
 		C1CFC0A215F1D09E000EB27D /* SearchResultViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultViewController_iPhone.xib; sourceTree = "<group>"; };
@@ -166,6 +175,19 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		C10A327A1632A9A90083F51B /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				C10A327B1632AA3D0083F51B /* APIClient.h */,
+				C10A327C1632AA3D0083F51B /* APIClient.m */,
+				C10A328A1632AB6C0083F51B /* SingletonObject.h */,
+				C10A328B1632AB6C0083F51B /* SingletonObject.m */,
+				C1C1E359163D06AC002A9E38 /* FBManager.h */,
+				C1C1E35A163D06AC002A9E38 /* FBManager.m */,
+			);
+			name = Lib;
+			sourceTree = "<group>";
+		};
 		C163A1E615E0BABA00F3F25D = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +227,7 @@
 		C163A1FB15E0BABB00F3F25D /* Coupling */ = {
 			isa = PBXGroup;
 			children = (
+				C10A327A1632A9A90083F51B /* Lib */,
 				C10A32791632A8C80083F51B /* View */,
 				C163A20415E0BABB00F3F25D /* AppDelegate.h */,
 				C163A20515E0BABB00F3F25D /* AppDelegate.m */,
@@ -376,6 +399,9 @@
 				C1789BE7162041BC00EA631B /* SBJsonTokeniser.m in Sources */,
 				C1789BE8162041BC00EA631B /* SBJsonUTF8Stream.m in Sources */,
 				C1789BE9162041BC00EA631B /* SBJsonWriter.m in Sources */,
+				C10A327D1632AA3D0083F51B /* APIClient.m in Sources */,
+				C10A328C1632AB6C0083F51B /* SingletonObject.m in Sources */,
+				C1C1E35B163D06AC002A9E38 /* FBManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
