@@ -37,7 +37,7 @@ NSString *const APIRegister = @"https://api.pairful.net/api/v1/session/register?
 
     if (self.masterPopoverController != nil) {
         [self.masterPopoverController dismissPopoverAnimated:YES];
-    }        
+    }
 }
 
 - (void)configureView
@@ -120,7 +120,7 @@ NSString *const APIRegister = @"https://api.pairful.net/api/v1/session/register?
     [NSURLConnection connectionWithRequest:request delegate:self];
 }
 
-#pragma mark -
+#pragma mark - received notification
 
 - (void)sessionStateChanged:(NSNotification *)notification
 {
@@ -128,6 +128,10 @@ NSString *const APIRegister = @"https://api.pairful.net/api/v1/session/register?
     NSLog(@"@@@@@ state: %d / accessToken: %@", session.state, session.accessToken);
     
     if (session.state == FBSessionStateOpen) {
+        
+        
+        
+        
         NSString *urlString = [NSString stringWithFormat:APIRegister, session.accessToken];
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
         NSURLConnection *connection = [NSURLConnection connectionWithRequest:request delegate:self];

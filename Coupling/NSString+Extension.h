@@ -10,15 +10,13 @@
 
 @interface NSString (Extension)
 
-- (NSString *)serializeIntoHexidecimal:(NSData *)data;
 - (NSData *)decodeFromHexidecimal;
-- (NSString *)encrypt:(NSString *)key;
-- (NSString *)decrypt:(NSString *)key;
+- (NSString *)serializeIntoHexidecimal:(NSData *)data;
 - (NSString *)substringBetweenPrefix:(NSString *)prefix andSuffix:(NSString *)suffix;
 - (BOOL)containsString:(NSString *)stringToFind;
-- (NSString *)encodeEscape;
+//- (NSString *)encodeEscape;
 - (int)versionIntValue;
-- (NSString *)firstCharacterCapitalizedString;
+//- (NSString *)firstCharacterCapitalizedString;
 - (NSString *)stringByReplacingInvalidJSONString;
 
 @end

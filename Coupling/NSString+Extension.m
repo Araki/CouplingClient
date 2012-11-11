@@ -49,18 +49,6 @@
 	return str;
 }
 
-//- (NSString *)encrypt:(NSString *)key
-//{
-//	NSString *paddedKey = [NSString stringWithFormat:@"%@%c", key, '\0'];
-//	return [self serializeIntoHexidecimal:[[self dataUsingEncoding:NSUTF8StringEncoding] AES256EncryptWithKey:paddedKey]];
-//}
-
-//- (NSString *)decrypt:(NSString *)key
-//{
-//	return [[[NSString alloc] initWithData:[[self decodeFromHexidecimal] AES256DecryptWithKey:key]
-//								  encoding:NSUTF8StringEncoding] autorelease];
-//}
-
 - (NSString *)substringBetweenPrefix:(NSString *)prefix andSuffix:(NSString *)suffix
 {
 	NSRange rangeOfPrefix = [self rangeOfString:prefix];
@@ -79,7 +67,7 @@
 
 //- (NSString *)encodeEscape
 //{
-//	return [(NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)self, NULL, CFSTR (";,/?:@&=+$ #"), kCFStringEncodingUTF8) autorelease];
+//	return (NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)self, NULL, CFSTR (";,/?:@&=+$ #"), kCFStringEncodingUTF8);
 //}
 
 - (int)versionIntValue

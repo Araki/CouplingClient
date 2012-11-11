@@ -6,7 +6,12 @@
 //  Copyright (c) 2012年 tsuchimoto. All rights reserved.
 //
 
-#define PNLOG_CAT_RESPONSE			true
+#define PFLOG_CAT_RESPONSE			true
+#define PFLOG_CAT_MODEL_PARSER      true
+#define PFLOG_CAT_HTTP_REQUEST      true
+
+
+
 
 #ifdef DEBUG
 
