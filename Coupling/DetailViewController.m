@@ -22,7 +22,6 @@
 @synthesize detailDescriptionLabel;
 
 NSString *const FBSessionStateChangedNotification = @"com.example.Login:FBSessionStateChangedNotification";
-NSString *const APIRegister = @"https://api.pairful.net/api/v1/session/register?access_token=%@";
 
 
 #pragma mark - Managing the detail item
