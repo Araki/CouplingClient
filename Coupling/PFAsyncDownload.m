@@ -11,7 +11,7 @@
 //#import "NSDictionary+MultiPartFormData.h"
 //#import "PNArchiveManager.h"
 //#import "PNMiscUtil.h"
-//#import "PNNotificationNames.h"
+#import "PFNotificationsName.h"
 
 #define kPNCallbackBlockOnSuccess @"onSuccess"
 #define kPNCallbackBlockOnFailure @"onFailure"
@@ -116,12 +116,12 @@
 
 - (void)downloadInBackgroundWithParameter:(NSDictionary *)optionalInfo
 {
-	NSDictionary *params = [optionalInfo objectForKey:@"params"];
-	useHTTPCache = [[optionalInfo objectForKey:@"useCache"] boolValue];
+//	NSDictionary *params = [optionalInfo objectForKey:@"params"];
+//	useHTTPCache = [[optionalInfo objectForKey:@"useCache"] boolValue];
 	
 	NSMutableURLRequest* urlRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:self.url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15.0f];
 	
-	[urlRequest setValue:@"gzip" forHTTPHeaderField:@"Accept-Encoding"];
+//	[urlRequest setValue:@"gzip" forHTTPHeaderField:@"Accept-Encoding"];
 //	[urlRequest setValue:[PNMiscUtil userAgent] forHTTPHeaderField:@"User-Agent"];
 	
 //	if (useHTTPCache) {
@@ -132,19 +132,19 @@
 //		}
 //	}
 	
-	if (params) {
-		static NSString *boundary = @"UNIQUEBOUNDARYSTRING";
-		[urlRequest setHTTPMethod:@"POST"];
-		NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
-		[urlRequest addValue:contentType forHTTPHeaderField:@"Content-Type"];
+//	if (params) {
+//		static NSString *boundary = @"UNIQUEBOUNDARYSTRING";
+//		[urlRequest setHTTPMethod:@"POST"];
+//		NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
+//		[urlRequest addValue:contentType forHTTPHeaderField:@"Content-Type"];
 		
 //		if ([[params objectForKey:@"is_amazon_record?"] isEqualToString:@"yes"])
 //			[urlRequest setHTTPBody:[params multiPartFormDataRepresentationForAmazonWithBoundary:boundary]];
 //		else
 //			[urlRequest setHTTPBody:[params multiPartFormDataRepresentationWithBoundary:boundary]];
-	}
+//	}
 	
-	self.connection = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
+	self.connection = [NSURLConnection connectionWithRequest:urlRequest delegate:self];
 	self.currentThread = [NSThread currentThread];
 	
 	shouldKeepRunning = YES;
@@ -190,17 +190,21 @@
 {
 	downloadedContentLength += (long long)[data length];
 	[downloadedData appendData:data];
-	if (self.updateBlock)
-		self.updateBlock(downloadedContentLength, expectedContentLength);
+	if (self.updateBlock) {
+        self.updateBlock(downloadedContentLength, expectedContentLength);
+    }
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-	if (useHTTPCache && !hasCache)
+	if (useHTTPCache && !hasCache) {
 //		[self cacheHTTPContents:downloadedData];
+    }
 	
-	if (self.successBlock)
+	if (self.successBlock) {
 //		self.successBlock(hasCache ? [PFAsyncDownload readHTTPContentsFromCacheForURL:self.url] : downloadedData);
+        self.successBlock(downloadedData);
+    }
 	
 	self.shouldKeepRunning = NO;
 	[self clear];
@@ -209,12 +213,14 @@
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
 	if (error.code == NSURLErrorNotConnectedToInternet) {
-//		[[NSNotificationCenter defaultCenter] postNotificationName:kPNNotificationFailedToConnectToInternet object:nil];
-		if (self.failureBlock)
+		[[NSNotificationCenter defaultCenter] postNotificationName:kPFNotificationFailedToConnectToInternet object:nil];
+		if (self.failureBlock) {
 			self.failureBlock([NSError errorWithCode:@"offline" message:@"Failed to connect internet."]);
+        }
 	} else {
-		if (self.failureBlock)
+		if (self.failureBlock) {
 			self.failureBlock(error);
+        }
 	}
 	
 	self.shouldKeepRunning = NO;

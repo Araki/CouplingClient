@@ -115,9 +115,11 @@
 	__block dispatch_semaphore_t download_semaphore = dispatch_semaphore_create(0);
 	
     [downloader downloadFromURL:self.url onSuccess:^(NSData *downloadedData) {
+        PFCLog(PFLOG_CAT_HTTP_REQUEST, @"[HTTP] onSuccess");
         [self performBlockOnCallbackThread:[NSDictionary dictionaryWithObject:downloadedData forKey:@"resultData"]];
 		dispatch_semaphore_signal(download_semaphore);
     } onFailure:^(NSError *error) {
+        PFCLog(PFLOG_CAT_HTTP_REQUEST, @"[HTTP] onFailure");
         [self performBlockOnCallbackThread:[NSDictionary dictionaryWithObject:error forKey:@"error"]];
 		dispatch_semaphore_signal(download_semaphore);
     } onUpdate:nil];

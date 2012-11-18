@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "SBJson.h"
 #import "FBManager.h"
+#import "PFHTTPRequestHelper.h"
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -128,45 +129,15 @@ NSString *const APIRegister = @"https://api.pairful.net/api/v1/session/register?
     NSLog(@"@@@@@ state: %d / accessToken: %@", session.state, session.accessToken);
     
     if (session.state == FBSessionStateOpen) {
-        
-        
-        
-        
-        NSString *urlString = [NSString stringWithFormat:APIRegister, session.accessToken];
-        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
-        NSURLConnection *connection = [NSURLConnection connectionWithRequest:request delegate:self];
-        if (connection) {
-            NSLog(@"@@@@ connection Success");
-        } else {
-            NSLog(@"@@@@ connection Error");
-        }
+        NSDictionary *params = [NSDictionary dictionaryWithObject:session.accessToken forKey:@"access_token"];
+        [PFHTTPRequestHelper requestWithCommand:@"/session/register" params:params onSuccess:^(PFHTTPResponse *response) {
+            NSLog(@"@@@@@ connection complete: %@", [response jsonDictionary]);
+            
+        } onFailure:^(NSError *error) {
+            NSLog(@"@@@@@ connection Error");
+        }];
     }
 }
 
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
-    NSLog(@"@@@@ didReceiveData");
-    [self.responseData appendData:data];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
-{
-    NSLog(@"didReceiveResponse");
-    [self.responseData setLength:0];
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection
-{
-    NSLog(@"connectionDidFinishLoading");
-    NSString *responseString = [[NSString alloc] initWithData:self.responseData encoding:NSUTF8StringEncoding];
-    
-    NSLog(@"%@", responseString);
-    
-    NSDictionary *jsonObject = [responseString JSONValue];
-    
-    NSLog(@"%@", jsonObject);
-    
-    
-}
 
 @end
