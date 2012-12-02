@@ -17,7 +17,6 @@
 		C1571E1C164FAF5700AFB49D /* PFHTTPDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = C1571E1B164FAF5500AFB49D /* PFHTTPDownload.m */; };
 		C1571E1F164FB14F00AFB49D /* PFAsyncDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = C1571E1E164FB14E00AFB49D /* PFAsyncDownload.m */; };
 		C16218561606FB2000F27E37 /* PurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C16218541606FB2000F27E37 /* PurchaseViewController.m */; };
-		C16218571606FB2000F27E37 /* PurchaseViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C16218551606FB2000F27E37 /* PurchaseViewController_iPhone.xib */; };
 		C162185A1606FE2600F27E37 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C16218591606FE2600F27E37 /* StoreKit.framework */; };
 		C162185D1607196E00F27E37 /* MyStoreObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = C162185C1607196E00F27E37 /* MyStoreObserver.m */; };
 		C163A1F615E0BABB00F3F25D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C163A1F515E0BABB00F3F25D /* UIKit.framework */; };
@@ -28,10 +27,6 @@
 		C163A20615E0BABB00F3F25D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C163A20515E0BABB00F3F25D /* AppDelegate.m */; };
 		C163A20915E0BABB00F3F25D /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C163A20815E0BABB00F3F25D /* MasterViewController.m */; };
 		C163A20C15E0BABB00F3F25D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C163A20B15E0BABB00F3F25D /* DetailViewController.m */; };
-		C163A20F15E0BABB00F3F25D /* MasterViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C163A20D15E0BABB00F3F25D /* MasterViewController_iPhone.xib */; };
-		C163A21215E0BABB00F3F25D /* MasterViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C163A21015E0BABB00F3F25D /* MasterViewController_iPad.xib */; };
-		C163A21515E0BABB00F3F25D /* DetailViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C163A21315E0BABB00F3F25D /* DetailViewController_iPhone.xib */; };
-		C163A21815E0BABB00F3F25D /* DetailViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C163A21615E0BABB00F3F25D /* DetailViewController_iPad.xib */; };
 		C1789BDE162041BC00EA631B /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = C1789BC6162041BB00EA631B /* NSObject+SBJson.m */; };
 		C1789BDF162041BC00EA631B /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C1789BC9162041BB00EA631B /* SBJsonParser.m */; };
 		C1789BE0162041BC00EA631B /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C1789BCB162041BC00EA631B /* SBJsonStreamParser.m */; };
@@ -59,10 +54,10 @@
 		C1C1E366163D2660002A9E38 /* NSError+Pairful.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C1E365163D2660002A9E38 /* NSError+Pairful.m */; };
 		C1C1E369163D2C57002A9E38 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C1E368163D2C57002A9E38 /* NSString+Extension.m */; };
 		C1CFC0A315F1D09E000EB27D /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CFC0A115F1D09E000EB27D /* SearchResultViewController.m */; };
-		C1CFC0A415F1D09E000EB27D /* SearchResultViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1CFC0A215F1D09E000EB27D /* SearchResultViewController_iPhone.xib */; };
 		C1CFC0A715F1D39A000EB27D /* SearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CFC0A615F1D39A000EB27D /* SearchResultView.m */; };
 		C1CFC0A915F1DEE8000EB27D /* SearchResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1CFC0A815F1DEE8000EB27D /* SearchResultView.xib */; };
 		C1CFC0AD15F20203000EB27D /* photo (1).JPG in Resources */ = {isa = PBXBuildFile; fileRef = C1CFC0AC15F20203000EB27D /* photo (1).JPG */; };
+		C1E2E612166B300B0099B20F /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1E2E611166B300B0099B20F /* Storyboard.storyboard */; };
 		C1EE480E160735B400CDC173 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C1EE480D160735B400CDC173 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
@@ -90,7 +85,6 @@
 		C1571E23164FB39900AFB49D /* PFBlocks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFBlocks.h; sourceTree = "<group>"; };
 		C16218531606FB2000F27E37 /* PurchaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseViewController.h; sourceTree = "<group>"; };
 		C16218541606FB2000F27E37 /* PurchaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseViewController.m; sourceTree = "<group>"; };
-		C16218551606FB2000F27E37 /* PurchaseViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurchaseViewController_iPhone.xib; sourceTree = "<group>"; };
 		C16218591606FE2600F27E37 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		C162185B1607196E00F27E37 /* MyStoreObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyStoreObserver.h; sourceTree = "<group>"; };
 		C162185C1607196E00F27E37 /* MyStoreObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyStoreObserver.m; sourceTree = "<group>"; };
@@ -108,10 +102,6 @@
 		C163A20815E0BABB00F3F25D /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		C163A20A15E0BABB00F3F25D /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		C163A20B15E0BABB00F3F25D /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		C163A20E15E0BABB00F3F25D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController_iPhone.xib; sourceTree = "<group>"; };
-		C163A21115E0BABB00F3F25D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController_iPad.xib; sourceTree = "<group>"; };
-		C163A21415E0BABB00F3F25D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController_iPhone.xib; sourceTree = "<group>"; };
-		C163A21715E0BABB00F3F25D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController_iPad.xib; sourceTree = "<group>"; };
 		C1789BC5162041BB00EA631B /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
 		C1789BC6162041BB00EA631B /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
 		C1789BC7162041BB00EA631B /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
@@ -160,11 +150,11 @@
 		C1C1E368163D2C57002A9E38 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
 		C1CFC0A015F1D09E000EB27D /* SearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultViewController.h; sourceTree = "<group>"; };
 		C1CFC0A115F1D09E000EB27D /* SearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultViewController.m; sourceTree = "<group>"; };
-		C1CFC0A215F1D09E000EB27D /* SearchResultViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultViewController_iPhone.xib; sourceTree = "<group>"; };
 		C1CFC0A515F1D39A000EB27D /* SearchResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultView.h; sourceTree = "<group>"; };
 		C1CFC0A615F1D39A000EB27D /* SearchResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultView.m; sourceTree = "<group>"; };
 		C1CFC0A815F1DEE8000EB27D /* SearchResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultView.xib; sourceTree = "<group>"; };
 		C1CFC0AC15F20203000EB27D /* photo (1).JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "photo (1).JPG"; sourceTree = "<group>"; };
+		C1E2E611166B300B0099B20F /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		C1EE480D160735B400CDC173 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -193,21 +183,16 @@
 			children = (
 				C163A20715E0BABB00F3F25D /* MasterViewController.h */,
 				C163A20815E0BABB00F3F25D /* MasterViewController.m */,
-				C163A20D15E0BABB00F3F25D /* MasterViewController_iPhone.xib */,
-				C163A21015E0BABB00F3F25D /* MasterViewController_iPad.xib */,
 				C163A20A15E0BABB00F3F25D /* DetailViewController.h */,
 				C163A20B15E0BABB00F3F25D /* DetailViewController.m */,
-				C163A21315E0BABB00F3F25D /* DetailViewController_iPhone.xib */,
-				C163A21615E0BABB00F3F25D /* DetailViewController_iPad.xib */,
 				C1CFC0A015F1D09E000EB27D /* SearchResultViewController.h */,
 				C1CFC0A115F1D09E000EB27D /* SearchResultViewController.m */,
-				C1CFC0A215F1D09E000EB27D /* SearchResultViewController_iPhone.xib */,
 				C1CFC0A515F1D39A000EB27D /* SearchResultView.h */,
 				C1CFC0A615F1D39A000EB27D /* SearchResultView.m */,
 				C1CFC0A815F1DEE8000EB27D /* SearchResultView.xib */,
 				C16218531606FB2000F27E37 /* PurchaseViewController.h */,
 				C16218541606FB2000F27E37 /* PurchaseViewController.m */,
-				C16218551606FB2000F27E37 /* PurchaseViewController_iPhone.xib */,
+				C1E2E611166B300B0099B20F /* Storyboard.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -419,19 +404,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C163A20015E0BABB00F3F25D /* InfoPlist.strings in Resources */,
-				C163A20F15E0BABB00F3F25D /* MasterViewController_iPhone.xib in Resources */,
-				C163A21215E0BABB00F3F25D /* MasterViewController_iPad.xib in Resources */,
-				C163A21515E0BABB00F3F25D /* DetailViewController_iPhone.xib in Resources */,
-				C163A21815E0BABB00F3F25D /* DetailViewController_iPad.xib in Resources */,
-				C1CFC0A415F1D09E000EB27D /* SearchResultViewController_iPhone.xib in Resources */,
 				C1CFC0A915F1DEE8000EB27D /* SearchResultView.xib in Resources */,
 				C1CFC0AD15F20203000EB27D /* photo (1).JPG in Resources */,
-				C16218571606FB2000F27E37 /* PurchaseViewController_iPhone.xib in Resources */,
 				C1EE480E160735B400CDC173 /* Default-568h@2x.png in Resources */,
 				C1789BF51622B47300EA631B /* README.md in Resources */,
 				C1789BF61622B47300EA631B /* release_notes.md in Resources */,
 				C1A1CB2D162AA1C5002CB9DD /* FacebookSDKResources.bundle in Resources */,
 				C1A1CB2F162AA1CB002CB9DD /* FBUserSettingsViewResources.bundle in Resources */,
+				C1E2E612166B300B0099B20F /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,38 +468,6 @@
 				C163A1FF15E0BABB00F3F25D /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		C163A20D15E0BABB00F3F25D /* MasterViewController_iPhone.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C163A20E15E0BABB00F3F25D /* en */,
-			);
-			name = MasterViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		C163A21015E0BABB00F3F25D /* MasterViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C163A21115E0BABB00F3F25D /* en */,
-			);
-			name = MasterViewController_iPad.xib;
-			sourceTree = "<group>";
-		};
-		C163A21315E0BABB00F3F25D /* DetailViewController_iPhone.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C163A21415E0BABB00F3F25D /* en */,
-			);
-			name = DetailViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		C163A21615E0BABB00F3F25D /* DetailViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C163A21715E0BABB00F3F25D /* en */,
-			);
-			name = DetailViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

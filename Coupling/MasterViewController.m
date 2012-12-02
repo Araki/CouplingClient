@@ -162,7 +162,7 @@
         case 0: {
             NSDate *object = [_objects objectAtIndex:index];
             if (!self.detailViewController) {
-                self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController_iPhone" bundle:nil];
+                self.detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
             }
             self.detailViewController.detailItem = object;
             [self.navigationController pushViewController:self.detailViewController animated:YES];
@@ -170,7 +170,7 @@
         }
         case 1: {
             if (!self.searchDisplayController) {
-                self.searchResultViewController = [[SearchResultViewController alloc] initWithNibName:@"SearchResultViewController_iPhone" bundle:nil];
+                self.searchResultViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchResultViewController"];
             }
             [self.navigationController pushViewController:self.searchResultViewController animated:YES];
             break;
@@ -178,7 +178,7 @@
         }
         case 2: {
             if (!self.purchaseViewController) {
-                self.purchaseViewController = [[PurchaseViewController alloc] initWithNibName:@"PurchaseViewController_iPhone" bundle:nil];
+                self.purchaseViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PurchaseViewController"];
             }
             [self.navigationController pushViewController:self.purchaseViewController animated:YES];
             break;
