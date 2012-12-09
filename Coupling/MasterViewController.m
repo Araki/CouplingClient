@@ -169,7 +169,7 @@
             break;
         }
         case 1: {
-            if (!self.searchDisplayController) {
+            if (!self.searchResultViewController) {
                 self.searchResultViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchResultViewController"];
             }
             [self.navigationController pushViewController:self.searchResultViewController animated:YES];
