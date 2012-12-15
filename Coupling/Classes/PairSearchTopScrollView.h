@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PairSearchTopScrollView : UIScrollView
+@interface PairSearchTopScrollView : UIScrollView 
 
 @end

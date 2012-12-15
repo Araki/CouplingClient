@@ -23,10 +23,22 @@
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    CGRect scrollRect = CGRectMake(0, 80, 320, 400);
+    self.scrollView = [[PairSearchTopScrollView alloc] initWithFrame:scrollRect];
+    [self.view addSubview:self.scrollView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,5 +49,8 @@
 
 - (IBAction)actionShowMenuButton:(UIButton *)sender {
     [self.viewDeckController toggleLeftViewAnimated:YES];
+}
+- (void)viewDidUnload {
+    [super viewDidUnload];
 }
 @end

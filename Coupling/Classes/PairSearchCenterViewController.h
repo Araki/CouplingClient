@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PairSearchTopScrollView.h"
 
 @interface PairSearchCenterViewController : UIViewController
+
+@property (nonatomic, retain) PairSearchTopScrollView *scrollView;
+
+
+//---action---
 - (IBAction)actionShowMenuButton:(UIButton *)sender;
 
 @end

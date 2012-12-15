@@ -15,9 +15,17 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        
+        NSString *imageName = @"test_pairSearchTop.png";
+        UIImage *image = [UIImage imageNamed:imageName];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+        self.contentSize = CGSizeMake(imageView.frame.size.width, imageView.frame.size.height);
+        [self addSubview:imageView];
+        
     }
     return self;
 }
+
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -27,5 +35,6 @@
     // Drawing code
 }
 */
+
 
 @end
