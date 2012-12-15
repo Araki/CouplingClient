@@ -12,6 +12,13 @@
 		2A4D3610167476AF0065BD22 /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2A4D360F167476AF0065BD22 /* FBUserSettingsViewResources.bundle */; };
 		2A4D36141674795A0065BD22 /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2A4D36131674795A0065BD22 /* FBUserSettingsViewResources.bundle */; };
 		2A4D3616167479690065BD22 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2A4D3615167479690065BD22 /* FacebookSDKResources.bundle */; };
+		2A77227E167758780059AD46 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A77227B167758640059AD46 /* QuartzCore.framework */; };
+		2A7722841677589D0059AD46 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7722811677589D0059AD46 /* IIViewDeckController.m */; };
+		2A7722851677589D0059AD46 /* WrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7722831677589D0059AD46 /* WrapController.m */; };
+		2A772288167759130059AD46 /* PairSearchTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A772287167759130059AD46 /* PairSearchTopViewController.m */; };
+		2A7722911677626D0059AD46 /* PairSearchTopScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7722901677626D0059AD46 /* PairSearchTopScrollView.m */; };
+		2A772293167764C90059AD46 /* test_pairSearchTop.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A772292167764C90059AD46 /* test_pairSearchTop.png */; };
+		2A79C590167C50620088F7F0 /* PairSearchCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A79C58F167C50620088F7F0 /* PairSearchCenterViewController.m */; };
 		C10A328C1632AB6C0083F51B /* SingletonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C10A328B1632AB6C0083F51B /* SingletonObject.m */; };
 		C1571E07164F8A7100AFB49D /* PFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1571E06164F8A7100AFB49D /* PFModel.m */; };
 		C1571E0A164F8C0900AFB49D /* PFDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1571E09164F8C0900AFB49D /* PFDataModel.m */; };
@@ -69,6 +76,18 @@
 		2A4D360F167476AF0065BD22 /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
 		2A4D36131674795A0065BD22 /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
 		2A4D3615167479690065BD22 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKResources.bundle; sourceTree = "<group>"; };
+		2A77227B167758640059AD46 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2A7722801677589D0059AD46 /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIViewDeckController.h; sourceTree = "<group>"; };
+		2A7722811677589D0059AD46 /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIViewDeckController.m; sourceTree = "<group>"; };
+		2A7722821677589D0059AD46 /* WrapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WrapController.h; sourceTree = "<group>"; };
+		2A7722831677589D0059AD46 /* WrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WrapController.m; sourceTree = "<group>"; };
+		2A772286167759130059AD46 /* PairSearchTopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PairSearchTopViewController.h; path = Classes/PairSearchTopViewController.h; sourceTree = "<group>"; };
+		2A772287167759130059AD46 /* PairSearchTopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PairSearchTopViewController.m; path = Classes/PairSearchTopViewController.m; sourceTree = "<group>"; };
+		2A77228F1677626D0059AD46 /* PairSearchTopScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PairSearchTopScrollView.h; path = Classes/PairSearchTopScrollView.h; sourceTree = "<group>"; };
+		2A7722901677626D0059AD46 /* PairSearchTopScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PairSearchTopScrollView.m; path = Classes/PairSearchTopScrollView.m; sourceTree = "<group>"; };
+		2A772292167764C90059AD46 /* test_pairSearchTop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_pairSearchTop.png; sourceTree = "<group>"; };
+		2A79C58E167C50610088F7F0 /* PairSearchCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PairSearchCenterViewController.h; path = Classes/PairSearchCenterViewController.h; sourceTree = "<group>"; };
+		2A79C58F167C50620088F7F0 /* PairSearchCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PairSearchCenterViewController.m; path = Classes/PairSearchCenterViewController.m; sourceTree = "<group>"; };
 		C10A328A1632AB6C0083F51B /* SingletonObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonObject.h; sourceTree = "<group>"; };
 		C10A328B1632AB6C0083F51B /* SingletonObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonObject.m; sourceTree = "<group>"; };
 		C1571DF7164F82C600AFB49D /* PFGlobal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFGlobal.h; sourceTree = "<group>"; };
@@ -167,6 +186,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A77227E167758780059AD46 /* QuartzCore.framework in Frameworks */,
 				C1A1CB33162AA5B0002CB9DD /* AdSupport.framework in Frameworks */,
 				C1A1CB31162AA573002CB9DD /* Accounts.framework in Frameworks */,
 				C1789BF81622B50D00EA631B /* libz.dylib in Frameworks */,
@@ -182,9 +202,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A77227F1677589D0059AD46 /* ViewDeck */ = {
+			isa = PBXGroup;
+			children = (
+				2A7722801677589D0059AD46 /* IIViewDeckController.h */,
+				2A7722811677589D0059AD46 /* IIViewDeckController.m */,
+				2A7722821677589D0059AD46 /* WrapController.h */,
+				2A7722831677589D0059AD46 /* WrapController.m */,
+			);
+			path = ViewDeck;
+			sourceTree = "<group>";
+		};
+		2A772289167759CC0059AD46 /* PairSearchTop */ = {
+			isa = PBXGroup;
+			children = (
+				2A772286167759130059AD46 /* PairSearchTopViewController.h */,
+				2A772287167759130059AD46 /* PairSearchTopViewController.m */,
+				2A77228F1677626D0059AD46 /* PairSearchTopScrollView.h */,
+				2A7722901677626D0059AD46 /* PairSearchTopScrollView.m */,
+				2A79C58E167C50610088F7F0 /* PairSearchCenterViewController.h */,
+				2A79C58F167C50620088F7F0 /* PairSearchCenterViewController.m */,
+			);
+			name = PairSearchTop;
+			sourceTree = "<group>";
+		};
 		C10A32791632A8C80083F51B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2A772289167759CC0059AD46 /* PairSearchTop */,
 				C163A20715E0BABB00F3F25D /* MasterViewController.h */,
 				C163A20815E0BABB00F3F25D /* MasterViewController.m */,
 				C163A20A15E0BABB00F3F25D /* DetailViewController.h */,
@@ -264,6 +309,7 @@
 		C163A1F415E0BABB00F3F25D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2A77227B167758640059AD46 /* QuartzCore.framework */,
 				2A46AA06167496AE00B459A3 /* FacebookSDK.framework */,
 				C1789BF71622B50D00EA631B /* libz.dylib */,
 				2A4D36131674795A0065BD22 /* FBUserSettingsViewResources.bundle */,
@@ -281,6 +327,7 @@
 		C163A1FB15E0BABB00F3F25D /* Coupling */ = {
 			isa = PBXGroup;
 			children = (
+				2A77227F1677589D0059AD46 /* ViewDeck */,
 				C10A327A1632A9A90083F51B /* Lib */,
 				C10A32791632A8C80083F51B /* View */,
 				C163A20415E0BABB00F3F25D /* AppDelegate.h */,
@@ -352,6 +399,7 @@
 		C1CFC0AB15F1E02D000EB27D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2A772292167764C90059AD46 /* test_pairSearchTop.png */,
 				C1CFC0AC15F20203000EB27D /* photo (1).JPG */,
 			);
 			name = Resources;
@@ -420,6 +468,7 @@
 				C1E2E612166B300B0099B20F /* Storyboard.storyboard in Resources */,
 				2A4D36141674795A0065BD22 /* FBUserSettingsViewResources.bundle in Resources */,
 				2A4D3616167479690065BD22 /* FacebookSDKResources.bundle in Resources */,
+				2A772293167764C90059AD46 /* test_pairSearchTop.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +513,11 @@
 				C1571E19164FACF100AFB49D /* PFHTTPDownloadManager.m in Sources */,
 				C1571E1C164FAF5700AFB49D /* PFHTTPDownload.m in Sources */,
 				C1571E1F164FB14F00AFB49D /* PFAsyncDownload.m in Sources */,
+				2A7722841677589D0059AD46 /* IIViewDeckController.m in Sources */,
+				2A7722851677589D0059AD46 /* WrapController.m in Sources */,
+				2A772288167759130059AD46 /* PairSearchTopViewController.m in Sources */,
+				2A7722911677626D0059AD46 /* PairSearchTopScrollView.m in Sources */,
+				2A79C590167C50620088F7F0 /* PairSearchCenterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

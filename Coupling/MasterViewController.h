@@ -11,11 +11,13 @@
 @class DetailViewController;
 @class SearchResultViewController;
 @class PurchaseViewController;
+@class PairSearchTopViewController;
 
 @interface MasterViewController : UITableViewController
 
-@property (strong, nonatomic) DetailViewController *detailViewController;
-@property (strong, nonatomic) SearchResultViewController *searchResultViewController;
-@property (strong, nonatomic) PurchaseViewController *purchaseViewController;
+@property (strong, nonatomic) DetailViewController *        detailViewController;
+@property (strong, nonatomic) SearchResultViewController *  searchResultViewController;
+@property (strong, nonatomic) PurchaseViewController *      purchaseViewController;
+@property (strong, nonatomic) PairSearchTopViewController * pairSearchTopViewController;
 
 @end

@@ -10,6 +10,7 @@
 #import "DetailViewController.h"
 #import "SearchResultViewController.h"
 #import "PurchaseViewController.h"
+#import "PairSearchTopViewController.h"
 
 @interface MasterViewController () {
     NSMutableArray *_objects;
@@ -76,7 +77,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 //    return _objects.count;
-    return 3;
+    return 4;
 }
 
 // Customize the appearance of table view cells.
@@ -100,6 +101,9 @@
                 break;
             case 2:
                 cell.textLabel.text = @"会員登録";
+                break;
+            case 3:
+                cell.textLabel.text = @"相手検索";
                 break;
             default:
                 break;
@@ -181,6 +185,14 @@
                 self.purchaseViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PurchaseViewController"];
             }
             [self.navigationController pushViewController:self.purchaseViewController animated:YES];
+            break;
+        }
+        case 3: {
+            if (!self.pairSearchTopViewController) {
+                self.pairSearchTopViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PairSearchTopViewController"];
+            }
+            [self presentModalViewController:self.pairSearchTopViewController animated:YES];
+//            [self.navigationController pushViewController:self.pairSearchTopViewController animated:YES];
             break;
         }
         default:
