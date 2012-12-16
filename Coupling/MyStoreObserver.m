@@ -111,7 +111,7 @@
 
 - (void)recordTransaction:(SKPaymentTransaction *)transaction
 {
-    NSData *receipt = transaction.transactionReceipt;
+//    NSData *receipt = transaction.transactionReceipt;
     
 }
 

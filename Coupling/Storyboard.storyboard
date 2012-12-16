@@ -167,18 +167,33 @@
             <point key="canvasLocation" x="1012" y="794"/>
         </scene>
         <!--PairSearchLeftViewController-->
-        <scene sceneID="qij-g5-z1B">
+        <scene sceneID="7rV-5m-hr5">
             <objects>
-                <viewController storyboardIdentifier="PairSearchLeftViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="q4r-KO-XVQ" userLabel="PairSearchLeftViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7Lz-jM-A4o">
+                <tableViewController storyboardIdentifier="PairSearchLeftViewController" id="ofJ-Xp-yGz" userLabel="PairSearchLeftViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="suq-df-0h5">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YFh-nN-5C2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="a3n-bE-Vo3">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ofJ-Xp-yGz" id="KaZ-ac-7wO"/>
+                            <outlet property="delegate" destination="ofJ-Xp-yGz" id="qzW-Rw-Pnc"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="giN-kY-fDA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="90" y="787"/>
+            <point key="canvasLocation" x="56" y="793"/>
         </scene>
         <!--Pair Search Center View Controller-->
         <scene sceneID="vHv-4m-CK9">
@@ -188,7 +203,7 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="test_imgres.png" id="yR6-Xz-C3y" userLabel="Image View - profile picture ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="test_imgres.jpeg" id="yR6-Xz-C3y" userLabel="Image View - profile picture ">
                                 <rect key="frame" x="0.0" y="44" width="320" height="337"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -197,7 +212,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Title" id="zvA-Oa-KOX">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="JQZ-i8-lYB">
+                                        <barButtonItem key="leftBarButtonItem" id="JQZ-i8-lYB">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oG5-54-Pci">
                                                 <rect key="frame" x="5" y="2" width="50" height="40"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -227,7 +242,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="test_imgres.png" width="206" height="244"/>
+        <image name="test_imgres.jpeg" width="206" height="244"/>
     </resources>
     <classes>
         <class className="DetailViewController" superclassName="UIViewController">
@@ -248,7 +263,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PairSearchCenterViewController.h"/>
             <relationships>
                 <relationship kind="action" name="actionShowMenuButton:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="outletProfileListScrollView" candidateClass="PairSearchCenterViewController"/>
             </relationships>
         </class>
         <class className="PairSearchTopViewController" superclassName="IIViewDeckController">
