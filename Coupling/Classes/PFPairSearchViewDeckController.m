@@ -7,6 +7,8 @@
 //
 
 #import "PFPairSearchViewDeckController.h"
+#import "PairSearchLeftViewController.h"
+#import "PairSearchCenterViewController.h"
 
 @interface PFPairSearchViewDeckController ()
 
@@ -27,8 +29,8 @@
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
-    UIViewController *leftController = [storyboard instantiateViewControllerWithIdentifier:@"PairSearchLeftViewController"];
-    UIViewController *centerController = [storyboard instantiateViewControllerWithIdentifier:@"PairSearchCenterViewController"];
+    PairSearchLeftViewController *leftController = [storyboard instantiateViewControllerWithIdentifier:@"PairSearchLeftViewController"];
+    PairSearchCenterViewController *centerController = [storyboard instantiateViewControllerWithIdentifier:@"PairSearchCenterViewController"];
     
     self = [super initWithCenterViewController:centerController
                             leftViewController:leftController];

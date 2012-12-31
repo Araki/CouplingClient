@@ -189,7 +189,7 @@
         }
         case 3: {
             if (!self.pairSearchTopViewController) {
-                self.pairSearchTopViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PairSearchTopViewController"];
+                self.pairSearchTopViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PFPairSearchViewDeckController"];
             }
             [self presentModalViewController:self.pairSearchTopViewController animated:YES];
 //            [self.navigationController pushViewController:self.pairSearchTopViewController animated:YES];

@@ -18,6 +18,7 @@
 		2A79C594167C5DBF0088F7F0 /* PairSearchLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A79C593167C5DBE0088F7F0 /* PairSearchLeftViewController.m */; };
 		2A79C596167C72C80088F7F0 /* test_imgres.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2A79C595167C72C80088F7F0 /* test_imgres.jpeg */; };
 		2A79C59A167C76090088F7F0 /* PFPairSearchProfileScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A79C599167C76090088F7F0 /* PFPairSearchProfileScrollView.xib */; };
+		2A7C33641691CB8E007431A4 /* PFPairSearchTopPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7C33631691CB8D007431A4 /* PFPairSearchTopPageViewController.m */; };
 		C10A328C1632AB6C0083F51B /* SingletonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C10A328B1632AB6C0083F51B /* SingletonObject.m */; };
 		C1571E07164F8A7100AFB49D /* PFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1571E06164F8A7100AFB49D /* PFModel.m */; };
 		C1571E0A164F8C0900AFB49D /* PFDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1571E09164F8C0900AFB49D /* PFDataModel.m */; };
@@ -89,6 +90,8 @@
 		2A79C593167C5DBE0088F7F0 /* PairSearchLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PairSearchLeftViewController.m; path = Classes/PairSearchLeftViewController.m; sourceTree = "<group>"; };
 		2A79C595167C72C80088F7F0 /* test_imgres.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_imgres.jpeg; sourceTree = "<group>"; };
 		2A79C599167C76090088F7F0 /* PFPairSearchProfileScrollView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFPairSearchProfileScrollView.xib; path = Classes/PFPairSearchProfileScrollView.xib; sourceTree = "<group>"; };
+		2A7C33621691CB8D007431A4 /* PFPairSearchTopPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFPairSearchTopPageViewController.h; path = Classes/PFPairSearchTopPageViewController.h; sourceTree = "<group>"; };
+		2A7C33631691CB8D007431A4 /* PFPairSearchTopPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFPairSearchTopPageViewController.m; path = Classes/PFPairSearchTopPageViewController.m; sourceTree = "<group>"; };
 		C10A328A1632AB6C0083F51B /* SingletonObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonObject.h; sourceTree = "<group>"; };
 		C10A328B1632AB6C0083F51B /* SingletonObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonObject.m; sourceTree = "<group>"; };
 		C1571DF7164F82C600AFB49D /* PFGlobal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFGlobal.h; sourceTree = "<group>"; };
@@ -217,6 +220,8 @@
 		2A772289167759CC0059AD46 /* PairSearchTop */ = {
 			isa = PBXGroup;
 			children = (
+				2A7C33621691CB8D007431A4 /* PFPairSearchTopPageViewController.h */,
+				2A7C33631691CB8D007431A4 /* PFPairSearchTopPageViewController.m */,
 				2A772286167759130059AD46 /* PFPairSearchViewDeckController.h */,
 				2A772287167759130059AD46 /* PFPairSearchViewDeckController.m */,
 				2A77228F1677626D0059AD46 /* PFPairSearchProfileScrollView.h */,
@@ -520,6 +525,7 @@
 				2A7722911677626D0059AD46 /* PFPairSearchProfileScrollView.m in Sources */,
 				2A79C590167C50620088F7F0 /* PairSearchCenterViewController.m in Sources */,
 				2A79C594167C5DBF0088F7F0 /* PairSearchLeftViewController.m in Sources */,
+				2A7C33641691CB8E007431A4 /* PFPairSearchTopPageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
