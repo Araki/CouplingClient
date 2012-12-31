@@ -10,7 +10,7 @@
 #import "DetailViewController.h"
 #import "SearchResultViewController.h"
 #import "PurchaseViewController.h"
-#import "PairSearchTopViewController.h"
+#import "PFPairSearchViewDeckController.h"
 
 @interface MasterViewController () {
     NSMutableArray *_objects;

@@ -11,13 +11,13 @@
 		2A77227E167758780059AD46 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A77227B167758640059AD46 /* QuartzCore.framework */; };
 		2A7722841677589D0059AD46 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7722811677589D0059AD46 /* IIViewDeckController.m */; };
 		2A7722851677589D0059AD46 /* WrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7722831677589D0059AD46 /* WrapController.m */; };
-		2A772288167759130059AD46 /* PairSearchTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A772287167759130059AD46 /* PairSearchTopViewController.m */; };
-		2A7722911677626D0059AD46 /* PairSearchTopScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7722901677626D0059AD46 /* PairSearchTopScrollView.m */; };
+		2A772288167759130059AD46 /* PFPairSearchViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A772287167759130059AD46 /* PFPairSearchViewDeckController.m */; };
+		2A7722911677626D0059AD46 /* PFPairSearchProfileScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7722901677626D0059AD46 /* PFPairSearchProfileScrollView.m */; };
 		2A772293167764C90059AD46 /* test_pairSearchTop.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A772292167764C90059AD46 /* test_pairSearchTop.png */; };
 		2A79C590167C50620088F7F0 /* PairSearchCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A79C58F167C50620088F7F0 /* PairSearchCenterViewController.m */; };
 		2A79C594167C5DBF0088F7F0 /* PairSearchLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A79C593167C5DBE0088F7F0 /* PairSearchLeftViewController.m */; };
 		2A79C596167C72C80088F7F0 /* test_imgres.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2A79C595167C72C80088F7F0 /* test_imgres.jpeg */; };
-		2A79C59A167C76090088F7F0 /* PairSearchTopScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A79C599167C76090088F7F0 /* PairSearchTopScrollView.xib */; };
+		2A79C59A167C76090088F7F0 /* PFPairSearchProfileScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A79C599167C76090088F7F0 /* PFPairSearchProfileScrollView.xib */; };
 		C10A328C1632AB6C0083F51B /* SingletonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C10A328B1632AB6C0083F51B /* SingletonObject.m */; };
 		C1571E07164F8A7100AFB49D /* PFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1571E06164F8A7100AFB49D /* PFModel.m */; };
 		C1571E0A164F8C0900AFB49D /* PFDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1571E09164F8C0900AFB49D /* PFDataModel.m */; };
@@ -78,17 +78,17 @@
 		2A7722811677589D0059AD46 /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIViewDeckController.m; sourceTree = "<group>"; };
 		2A7722821677589D0059AD46 /* WrapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WrapController.h; sourceTree = "<group>"; };
 		2A7722831677589D0059AD46 /* WrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WrapController.m; sourceTree = "<group>"; };
-		2A772286167759130059AD46 /* PairSearchTopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PairSearchTopViewController.h; path = Classes/PairSearchTopViewController.h; sourceTree = "<group>"; };
-		2A772287167759130059AD46 /* PairSearchTopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PairSearchTopViewController.m; path = Classes/PairSearchTopViewController.m; sourceTree = "<group>"; };
-		2A77228F1677626D0059AD46 /* PairSearchTopScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PairSearchTopScrollView.h; path = Classes/PairSearchTopScrollView.h; sourceTree = "<group>"; };
-		2A7722901677626D0059AD46 /* PairSearchTopScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PairSearchTopScrollView.m; path = Classes/PairSearchTopScrollView.m; sourceTree = "<group>"; };
+		2A772286167759130059AD46 /* PFPairSearchViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFPairSearchViewDeckController.h; path = Classes/PFPairSearchViewDeckController.h; sourceTree = "<group>"; };
+		2A772287167759130059AD46 /* PFPairSearchViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFPairSearchViewDeckController.m; path = Classes/PFPairSearchViewDeckController.m; sourceTree = "<group>"; };
+		2A77228F1677626D0059AD46 /* PFPairSearchProfileScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFPairSearchProfileScrollView.h; path = Classes/PFPairSearchProfileScrollView.h; sourceTree = "<group>"; };
+		2A7722901677626D0059AD46 /* PFPairSearchProfileScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFPairSearchProfileScrollView.m; path = Classes/PFPairSearchProfileScrollView.m; sourceTree = "<group>"; };
 		2A772292167764C90059AD46 /* test_pairSearchTop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_pairSearchTop.png; sourceTree = "<group>"; };
 		2A79C58E167C50610088F7F0 /* PairSearchCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PairSearchCenterViewController.h; path = Classes/PairSearchCenterViewController.h; sourceTree = "<group>"; };
 		2A79C58F167C50620088F7F0 /* PairSearchCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PairSearchCenterViewController.m; path = Classes/PairSearchCenterViewController.m; sourceTree = "<group>"; };
 		2A79C592167C5DBE0088F7F0 /* PairSearchLeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PairSearchLeftViewController.h; path = Classes/PairSearchLeftViewController.h; sourceTree = "<group>"; };
 		2A79C593167C5DBE0088F7F0 /* PairSearchLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PairSearchLeftViewController.m; path = Classes/PairSearchLeftViewController.m; sourceTree = "<group>"; };
 		2A79C595167C72C80088F7F0 /* test_imgres.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_imgres.jpeg; sourceTree = "<group>"; };
-		2A79C599167C76090088F7F0 /* PairSearchTopScrollView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PairSearchTopScrollView.xib; path = Classes/PairSearchTopScrollView.xib; sourceTree = "<group>"; };
+		2A79C599167C76090088F7F0 /* PFPairSearchProfileScrollView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFPairSearchProfileScrollView.xib; path = Classes/PFPairSearchProfileScrollView.xib; sourceTree = "<group>"; };
 		C10A328A1632AB6C0083F51B /* SingletonObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonObject.h; sourceTree = "<group>"; };
 		C10A328B1632AB6C0083F51B /* SingletonObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonObject.m; sourceTree = "<group>"; };
 		C1571DF7164F82C600AFB49D /* PFGlobal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFGlobal.h; sourceTree = "<group>"; };
@@ -217,11 +217,11 @@
 		2A772289167759CC0059AD46 /* PairSearchTop */ = {
 			isa = PBXGroup;
 			children = (
-				2A772286167759130059AD46 /* PairSearchTopViewController.h */,
-				2A772287167759130059AD46 /* PairSearchTopViewController.m */,
-				2A77228F1677626D0059AD46 /* PairSearchTopScrollView.h */,
-				2A7722901677626D0059AD46 /* PairSearchTopScrollView.m */,
-				2A79C599167C76090088F7F0 /* PairSearchTopScrollView.xib */,
+				2A772286167759130059AD46 /* PFPairSearchViewDeckController.h */,
+				2A772287167759130059AD46 /* PFPairSearchViewDeckController.m */,
+				2A77228F1677626D0059AD46 /* PFPairSearchProfileScrollView.h */,
+				2A7722901677626D0059AD46 /* PFPairSearchProfileScrollView.m */,
+				2A79C599167C76090088F7F0 /* PFPairSearchProfileScrollView.xib */,
 				2A79C58E167C50610088F7F0 /* PairSearchCenterViewController.h */,
 				2A79C58F167C50620088F7F0 /* PairSearchCenterViewController.m */,
 				2A79C592167C5DBE0088F7F0 /* PairSearchLeftViewController.h */,
@@ -469,7 +469,7 @@
 				C1E2E612166B300B0099B20F /* Storyboard.storyboard in Resources */,
 				2A772293167764C90059AD46 /* test_pairSearchTop.png in Resources */,
 				2A79C596167C72C80088F7F0 /* test_imgres.jpeg in Resources */,
-				2A79C59A167C76090088F7F0 /* PairSearchTopScrollView.xib in Resources */,
+				2A79C59A167C76090088F7F0 /* PFPairSearchProfileScrollView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,8 +516,8 @@
 				C1571E1F164FB14F00AFB49D /* PFAsyncDownload.m in Sources */,
 				2A7722841677589D0059AD46 /* IIViewDeckController.m in Sources */,
 				2A7722851677589D0059AD46 /* WrapController.m in Sources */,
-				2A772288167759130059AD46 /* PairSearchTopViewController.m in Sources */,
-				2A7722911677626D0059AD46 /* PairSearchTopScrollView.m in Sources */,
+				2A772288167759130059AD46 /* PFPairSearchViewDeckController.m in Sources */,
+				2A7722911677626D0059AD46 /* PFPairSearchProfileScrollView.m in Sources */,
 				2A79C590167C50620088F7F0 /* PairSearchCenterViewController.m in Sources */,
 				2A79C594167C5DBF0088F7F0 /* PairSearchLeftViewController.m in Sources */,
 			);

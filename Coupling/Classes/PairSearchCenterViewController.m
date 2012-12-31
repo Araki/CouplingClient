@@ -37,7 +37,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     CGRect scrollRect = CGRectMake(0, 80, 320, 400);
-    self.scrollView = [[PairSearchTopScrollView alloc] initWithFrame:scrollRect];
+    self.scrollView = [[PFPairSearchProfileScrollView alloc] initWithFrame:scrollRect];
     [self.view addSubview:self.scrollView];
 }
 

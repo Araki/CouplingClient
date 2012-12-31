@@ -1,18 +1,18 @@
 //
-//  PairSearchTopViewController.m
+//  PFPairSearchViewDeckController.m
 //  Coupling
 //
 //  Created by Ryo Kamei on 12/12/11.
 //  Copyright (c) 2012年 tsuchimoto. All rights reserved.
 //
 
-#import "PairSearchTopViewController.h"
+#import "PFPairSearchViewDeckController.h"
 
-@interface PairSearchTopViewController ()
+@interface PFPairSearchViewDeckController ()
 
 @end
 
-@implementation PairSearchTopViewController
+@implementation PFPairSearchViewDeckController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

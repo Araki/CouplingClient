@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PairSearchLeftViewController : UIViewController
+@interface PairSearchLeftViewController : UITableViewController
 
 @end

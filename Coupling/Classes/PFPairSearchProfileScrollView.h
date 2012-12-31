@@ -1,5 +1,5 @@
 //
-//  PairSearchTopViewController.h
+//  PFPairSearchProfileScrollView.h
 //  Coupling
 //
 //  Created by Ryo Kamei on 12/12/11.
@@ -7,9 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "IIViewDeckController.h"
 
-@interface PairSearchTopViewController : IIViewDeckController
-
+@interface PFPairSearchProfileScrollView : UIScrollView 
 
 @end

@@ -1,14 +1,14 @@
 //
-//  PairSearchTopScrollView.m
+//  PFPairSearchProfileScrollView.m
 //  Coupling
 //
 //  Created by Ryo Kamei on 12/12/11.
 //  Copyright (c) 2012年 tsuchimoto. All rights reserved.
 //
 
-#import "PairSearchTopScrollView.h"
+#import "PFPairSearchProfileScrollView.h"
 
-@implementation PairSearchTopScrollView
+@implementation PFPairSearchProfileScrollView
 
 - (id)initWithFrame:(CGRect)frame
 {

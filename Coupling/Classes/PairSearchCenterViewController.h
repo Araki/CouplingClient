@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PairSearchTopScrollView.h"
+#import "PFPairSearchProfileScrollView.h"
 
 @interface PairSearchCenterViewController : UIViewController
 
-@property (nonatomic, retain) PairSearchTopScrollView *scrollView;
+@property (nonatomic, retain) PFPairSearchProfileScrollView *scrollView;
 
 
 //---action---
