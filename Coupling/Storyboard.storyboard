@@ -260,11 +260,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" id="fP6-cV-cJe">
+                                <rect key="frame" x="0.0" y="245" width="320" height="303"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="outletProfileImageView" destination="szD-b1-Zva" id="35i-Ph-UxK"/>
+                        <outlet property="outletProfileScrollView" destination="fP6-cV-cJe" id="nUK-Ey-zV5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="shc-9d-bpf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -291,6 +296,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PFPairSearchProfileViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="outletProfileImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="outletProfileScrollView" candidateClass="UIScrollView"/>
             </relationships>
         </class>
         <class className="PFPairSearchViewDeckController" superclassName="IIViewDeckController">

@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PFPairSearchProfileScrollView.h"
 
 @interface PFPairSearchProfileViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView *outletProfileImageView;
-@property (nonatomic, retain) PFPairSearchProfileScrollView *profilwScrollView;
+@property (weak, nonatomic) IBOutlet UIScrollView *outletProfileScrollView;
 
 
 @end

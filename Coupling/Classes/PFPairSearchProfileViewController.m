@@ -7,6 +7,7 @@
 //
 
 #import "PFPairSearchProfileViewController.h"
+#import "PFPairSearchProfileScrollViewController.h"
 
 @interface PFPairSearchProfileViewController ()
 
@@ -31,10 +32,13 @@
 #warning test
     UIImage *image = [UIImage imageNamed:@"test_imgres.jpeg"];
     [self.outletProfileImageView setImage:image];
+      
+    PFPairSearchProfileScrollViewController *view1 = [[PFPairSearchProfileScrollViewController alloc] initWithNibName:@"PFPairSearchProfileScrollViewController" bundle:nil];
     
-    CGRect scrollRect = CGRectMake(0, 80, 320, 400);
-    self.profilwScrollView = [[PFPairSearchProfileScrollView alloc] initWithFrame:scrollRect];
-    [self.view addSubview:self.profilwScrollView];
+    float width = view1.view.frame.size.width;
+    float height = view1.view.frame.size.height;
+    [self.outletProfileScrollView setContentSize:CGSizeMake(width, height)];
+    [self.outletProfileScrollView addSubview:view1.view];
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,6 +49,7 @@
 
 - (void)viewDidUnload {
     [self setOutletProfileImageView:nil];
+    [self setOutletProfileScrollView:nil];
     [super viewDidUnload];
 }
 @end
