@@ -18,6 +18,6 @@
 @property (strong, nonatomic) DetailViewController *        detailViewController;
 @property (strong, nonatomic) SearchResultViewController *  searchResultViewController;
 @property (strong, nonatomic) PurchaseViewController *      purchaseViewController;
-@property (strong, nonatomic) PFPairSearchViewDeckController * pairSearchTopViewController;
+@property (strong, nonatomic) PFPairSearchViewDeckController * pairSearchViewDeckController;
 
 @end

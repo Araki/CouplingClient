@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PFPairSearchProfileScrollView.h"
 
-@interface PairSearchCenterViewController : UIViewController
+@interface PairSearchCenterViewController : UIViewController<UIScrollViewDelegate>
 
-@property (nonatomic, retain) PFPairSearchProfileScrollView *scrollView;
 
+@property (weak, nonatomic) IBOutlet UIScrollView *outletScrollView;
+@property (weak, nonatomic) IBOutlet UIPageControl *outletPageControl;
 
 //---action---
 - (IBAction)actionShowMenuButton:(UIButton *)sender;

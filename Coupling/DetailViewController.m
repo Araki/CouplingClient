@@ -113,6 +113,7 @@ NSString *const FBSessionStateChangedNotification = @"com.example.Login:FBSessio
     NSMutableData *data = [NSMutableData data];
     [data appendData:[@"device=" dataUsingEncoding:NSUTF8StringEncoding]];
     [data appendData:[[FBManager sharedObject] deviceToken]];
+    
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"ホスト名"]];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPMethod:@"POST"];
@@ -129,7 +130,7 @@ NSString *const FBSessionStateChangedNotification = @"com.example.Login:FBSessio
     
     if (session.state == FBSessionStateOpen) {
         NSDictionary *params = [NSDictionary dictionaryWithObject:session.accessToken forKey:@"access_token"];
-        [PFHTTPRequestHelper requestWithCommand:@"/session/register" params:params onSuccess:^(PFHTTPResponse *response) {
+        [PFHTTPRequestHelper requestWithCommand:@"/session/create" params:params onSuccess:^(PFHTTPResponse *response) {
             NSLog(@"@@@@@ connection complete: %@", [response jsonDictionary]);
             
         } onFailure:^(NSError *error) {
