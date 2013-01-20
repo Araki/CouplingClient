@@ -40,6 +40,11 @@
     return self;
 }
 
+- (void)panned:(UIPanGestureRecognizer *)panner
+{
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

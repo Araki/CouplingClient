@@ -36,9 +36,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-//    CGRect scrollRect = CGRectMake(0, 80, 320, 400);
-//    self.scrollView = [[PFPairSearchProfileScrollView alloc] initWithFrame:scrollRect];
-//    [self.view addSubview:self.scrollView];
+    CGRect scrollRect = CGRectMake(0, 80, 320, 400);
+    self.scrollView = [[PFPairSearchProfileScrollView alloc] initWithFrame:scrollRect];
+    [self.view addSubview:self.scrollView];
 }
 
 - (void)didReceiveMemoryWarning

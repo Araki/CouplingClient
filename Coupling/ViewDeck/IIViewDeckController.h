@@ -146,6 +146,8 @@ typedef void (^IIViewDeckControllerBlock) (IIViewDeckController *controller);
 
 - (CGFloat)statusBarHeight;
 
+- (void)panned:(UIPanGestureRecognizer*)panner;
+
 @end
 
 

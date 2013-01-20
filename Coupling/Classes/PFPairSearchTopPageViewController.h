@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PFPairSearchTopPageViewController : UIViewController
+@interface PFPairSearchTopPageViewController : UIViewController<UIScrollViewDelegate>
+
+@property (strong, nonatomic) IBOutlet UIScrollView *outletScrollView;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
 @end
