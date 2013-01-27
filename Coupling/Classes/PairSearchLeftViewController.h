@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#define PFD_HEIGHT_SLIDEMENU 36
+#define PFD_TAG_SLIDEMENU_BUTTON 1000
+
 @interface PairSearchLeftViewController : UITableViewController
 
 @end

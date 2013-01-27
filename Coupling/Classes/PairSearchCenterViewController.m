@@ -71,6 +71,10 @@
     self.controllers = [[NSMutableArray alloc] initWithObjects:view1,
                                                                view2,
                                                                view3,nil];
+    
+    // navigationBarの背景
+    UIImage *image = [UIImage imageNamed:@"bg_header.png"];
+    [self.outletNavigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -194,6 +198,7 @@
 - (void)viewDidUnload {
     [self setOutletScrollView:nil];
     [self setOutletPageControl:nil];
+    [self setOutletNavigationBar:nil];
     [super viewDidUnload];
 }
 @end

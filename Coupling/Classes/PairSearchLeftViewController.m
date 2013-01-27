@@ -11,6 +11,8 @@
 
 @interface PairSearchLeftViewController ()
 
+@property (nonatomic, retain) UIImage *headerImage;
+
 @end
 
 @implementation PairSearchLeftViewController
@@ -33,9 +35,25 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    
-    
+    // tableViewのヘッダー画像
+    self.headerImage = [UIImage imageNamed:@"bg_header.png"];
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return self.headerImage.size.height;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    //tableViewのヘッダーを設定
+    UIImageView * headerImageView = [[UIImageView alloc] initWithImage:self.headerImage];
+    [headerImageView setFrame:CGRectMake(0, 0, self.headerImage.size.width, self.headerImage.size.height)];
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, headerImageView.frame.size.width, headerImageView.frame.size.height)];
+    [headerView addSubview:headerImageView];
+    return headerView;
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -61,7 +79,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 36;
+    return PFD_HEIGHT_SLIDEMENU;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -73,16 +91,16 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                        reuseIdentifier:CellIdentifier];
         
-        PFSlideMenuButton *aButton = [[PFSlideMenuButton alloc] initWithFrame:CGRectMake(0, 0, 320, 36)];
+        PFSlideMenuButton *aButton = [[PFSlideMenuButton alloc] initWithFrame:CGRectMake(0, 0, 320, PFD_HEIGHT_SLIDEMENU)];
         [aButton setImage:[self slideMenuImageWithRow:indexPath.row] forState:UIControlStateNormal];
-        aButton.tag = 10000;
+        aButton.tag = PFD_TAG_SLIDEMENU_BUTTON;
         [aButton addTarget:aButton
                     action:@selector(buttonDidTouchDown:)
           forControlEvents:UIControlEventTouchDown];
         [cell addSubview:aButton];
     }
     
-    PFSlideMenuButton *theButton = (PFSlideMenuButton *)[cell viewWithTag:10000];
+    PFSlideMenuButton *theButton = (PFSlideMenuButton *)[cell viewWithTag:PFD_TAG_SLIDEMENU_BUTTON];
     if (theButton) {
         theButton.section = [indexPath section];
         theButton.row = [indexPath row];

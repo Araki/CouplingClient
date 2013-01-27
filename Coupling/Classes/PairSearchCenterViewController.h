@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *outletScrollView;
 @property (weak, nonatomic) IBOutlet UIPageControl *outletPageControl;
+@property (weak, nonatomic) IBOutlet UINavigationBar *outletNavigationBar;
 
 //---action---
 - (IBAction)actionShowMenuButton:(UIButton *)sender;
