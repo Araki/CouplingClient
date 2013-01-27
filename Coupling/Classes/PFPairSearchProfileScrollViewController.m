@@ -35,4 +35,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)actionOpenFacebook:(id)sender {
+    NSLog(@"openfacebook");
+}
+
+- (IBAction)actionViewingFacebookPage:(id)sender {
+    NSLog(@"viewingFacebook");
+}
+
+- (IBAction)actionFavorite:(id)sender {
+    NSLog(@"favorite");
+}
+
+- (IBAction)actionLikeOrTalk:(UIButton *)sender {
+    NSLog(@"likeOrTalk");
+}
+
 @end

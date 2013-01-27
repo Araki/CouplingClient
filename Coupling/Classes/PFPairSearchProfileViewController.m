@@ -37,6 +37,7 @@
     
     float width = view1.view.frame.size.width;
     float height = view1.view.frame.size.height;
+    [self addChildViewController:view1];
     [self.outletProfileScrollView setContentSize:CGSizeMake(width, height)];
     [self.outletProfileScrollView addSubview:view1.view];
 }

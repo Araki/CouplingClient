@@ -10,4 +10,11 @@
 
 @interface PFPairSearchProfileScrollViewController : UIViewController
 
+- (IBAction)actionOpenFacebook:(id)sender;
+- (IBAction)actionViewingFacebookPage:(id)sender;
+- (IBAction)actionFavorite:(id)sender;
+- (IBAction)actionLikeOrTalk:(UIButton *)sender;
+
+
+
 @end
