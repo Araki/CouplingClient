@@ -40,6 +40,7 @@
     return self;
 }
 
+// フリックでスライドメニューがでないようにする。スクロールビューのため
 - (void)panned:(UIPanGestureRecognizer *)panner
 {
     
