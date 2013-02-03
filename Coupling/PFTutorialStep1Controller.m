@@ -26,13 +26,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    [self setNavigationBarImage];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#define mark -
+
+- (void)setNavigationBarImage
+{
+    UIImage *image = [UIImage imageNamed:@"bg_header.png"];
+    [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
 }
 
 @end
