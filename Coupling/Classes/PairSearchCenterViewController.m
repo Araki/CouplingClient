@@ -204,9 +204,7 @@
 
 - (IBAction)actionSetConditionsButton:(UIButton *)sender {
     NSLog(@"setConditions");
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
-    PFSetConditionViewController *view = [storyboard instantiateViewControllerWithIdentifier:@"PFSetConditionViewController"];
-    [self presentViewController:view animated:YES completion:^{}];
+    
 }
 
 - (void)viewDidUnload {

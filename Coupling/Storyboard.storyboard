@@ -343,6 +343,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="actionSetConditionsButton:" destination="0EK-Zi-7jR" eventType="touchUpInside" id="rVk-VE-5gL"/>
+                                                    <segue destination="540-S6-5Sb" kind="push" id="210-Ea-qVc"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
@@ -466,8 +467,6 @@
         <class className="PairSearchCenterViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PairSearchCenterViewController.h"/>
             <relationships>
-                <relationship kind="action" name="actionNotificationButton:" candidateClass="UIButton"/>
-                <relationship kind="action" name="actionSetConditionsButton:" candidateClass="UIButton"/>
                 <relationship kind="action" name="actionShowMenuButton:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="outletNavigationBar" candidateClass="UINavigationBar"/>
                 <relationship kind="outlet" name="outletPageControl" candidateClass="UIPageControl"/>

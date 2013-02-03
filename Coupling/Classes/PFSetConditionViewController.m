@@ -24,19 +24,22 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [super viewWillAppear:animated];
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.navigationController setNavigationBarHidden:NO];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
-    UIImage *image = [UIImage imageNamed:@"bg_header.png"];
-    [self.navigationController.navigationBar setBackgroundImage:image
-                                                  forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)didReceiveMemoryWarning
