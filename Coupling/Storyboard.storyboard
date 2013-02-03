@@ -1,15 +1,94 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="PxU-id-qzZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="PxU-id-qzZ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
     <scenes>
+        <!--Tutorial Step1 Controller-->
+        <scene sceneID="3om-Bm-biP">
+            <objects>
+                <viewController id="7UR-lF-8wp" customClass="PFTutorialStep1Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ef6-Ca-5DZ">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="操作説明" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YHb-x4-Br9">
+                                <rect key="frame" x="120" y="204" width="68" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uew-bL-Y6v">
+                                <rect key="frame" x="104" y="353" width="113" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="次へ">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="WXQ-Sn-X9H" kind="push" id="Ul3-bW-QCQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="A5Q-ZC-vdf"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G3h-Lg-y3Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-473" y="35"/>
+        </scene>
+        <!--Tutorial Step2 Controller-->
+        <scene sceneID="WcR-tA-5gW">
+            <objects>
+                <viewController id="WXQ-Sn-X9H" customClass="PFTutorialStep2Controller" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eIX-sX-Mf5">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MNr-tN-7c9">
+                                <rect key="frame" x="95" y="431" width="130" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="早速やってみる">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="lA3-kp-HEa" kind="push" id="cOT-to-9ra"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="最終説明" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ezi-e8-mil">
+                                <rect key="frame" x="126" y="207" width="68" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ube-m6-iTJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VpH-hU-796" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="73" y="35"/>
+        </scene>
         <!--Master View Controller - menu-->
         <scene sceneID="uMf-ot-Kmz">
             <objects>
                 <tableViewController id="lA3-kp-HEa" customClass="MasterViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3qD-Gt-7Xa">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -159,12 +238,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="lA3-kp-HEa" kind="relationship" relationship="rootViewController" id="SAJ-5m-YQX"/>
+                        <segue destination="7UR-lF-8wp" kind="relationship" relationship="rootViewController" id="qSi-4s-8a3"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NCF-tS-UAd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="95" y="26"/>
+            <point key="canvasLocation" x="-986" y="35"/>
         </scene>
         <!--PairSearchLeftViewController-->
         <scene sceneID="7rV-5m-hr5">
@@ -285,6 +364,66 @@
     <resources>
         <image name="button_slide_menu.png" width="57" height="57"/>
     </resources>
+    <classes>
+        <class className="DetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="push:"/>
+                <relationship kind="action" name="signup:"/>
+                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="IIViewDeckController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/IIViewDeckController.h"/>
+        </class>
+        <class className="MasterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MasterViewController.h"/>
+        </class>
+        <class className="PFPairSearchProfileViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFPairSearchProfileViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="outletProfileImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="outletProfileScrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="PFPairSearchViewDeckController" superclassName="IIViewDeckController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFPairSearchViewDeckController.h"/>
+        </class>
+        <class className="PFTutorialStep1Controller" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFTutorialStep1Controller.h"/>
+        </class>
+        <class className="PFTutorialStep2Controller" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFTutorialStep2Controller.h"/>
+        </class>
+        <class className="PairSearchCenterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PairSearchCenterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="actionShowMenuButton:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="outletNavigationBar" candidateClass="UINavigationBar"/>
+                <relationship kind="outlet" name="outletPageControl" candidateClass="UIPageControl"/>
+                <relationship kind="outlet" name="outletScrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="PairSearchLeftViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PairSearchLeftViewController.h"/>
+        </class>
+        <class className="PurchaseViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PurchaseViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="buy:"/>
+                <relationship kind="outlet" name="button" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="SearchResultView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchResultView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="SearchResultViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchResultViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
