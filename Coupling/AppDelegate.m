@@ -8,6 +8,7 @@
 
 #import <StoreKit/StoreKit.h>
 #import "AppDelegate.h"
+#import "PFGlobal.h"
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 #import "MyStoreObserver.h"
@@ -19,13 +20,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [TestFlight takeOff:@"Pairful development"];
-    
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert)];
     
     
     // add payment transaction observer
-    [[SKPaymentQueue defaultQueue] addTransactionObserver:[[MyStoreObserver alloc] init]];
+    if (IsDevice) {
+        [TestFlight takeOff:@"Pairful development"];
+        [[SKPaymentQueue defaultQueue] addTransactionObserver:[[MyStoreObserver alloc] init]];
+    }
     
     return YES;
 }

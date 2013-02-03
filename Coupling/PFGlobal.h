@@ -13,3 +13,10 @@
 
 
 #endif
+
+
+#if TARGET_IPHONE_SIMULATOR
+static BOOL IsDevice = NO;
+#else
+static BOOL IsDevice = YES;
+#endif

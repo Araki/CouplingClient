@@ -60,6 +60,8 @@
 		C163A20615E0BABB00F3F25D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C163A20515E0BABB00F3F25D /* AppDelegate.m */; };
 		C163A20915E0BABB00F3F25D /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C163A20815E0BABB00F3F25D /* MasterViewController.m */; };
 		C163A20C15E0BABB00F3F25D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C163A20B15E0BABB00F3F25D /* DetailViewController.m */; };
+		C16FF3B416BE60D30075B721 /* PFTutorialStep1Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = C1138EA816BE5F8C001E30B6 /* PFTutorialStep1Controller.m */; };
+		C16FF3B516BE60D80075B721 /* PFTutorialStep2Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = C1138EAA16BE5F8C001E30B6 /* PFTutorialStep2Controller.m */; };
 		C1789BDE162041BC00EA631B /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = C1789BC6162041BB00EA631B /* NSObject+SBJson.m */; };
 		C1789BDF162041BC00EA631B /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C1789BC9162041BB00EA631B /* SBJsonParser.m */; };
 		C1789BE0162041BC00EA631B /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C1789BCB162041BC00EA631B /* SBJsonStreamParser.m */; };
@@ -137,6 +139,10 @@
 		2AEF05DE16B5507E009F5FD7 /* button_slide_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_slide_menu.png; path = Resouces/button/button_slide_menu.png; sourceTree = "<group>"; };
 		C10A328A1632AB6C0083F51B /* SingletonObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonObject.h; sourceTree = "<group>"; };
 		C10A328B1632AB6C0083F51B /* SingletonObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonObject.m; sourceTree = "<group>"; };
+		C1138EA716BE5F8C001E30B6 /* PFTutorialStep1Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFTutorialStep1Controller.h; sourceTree = "<group>"; };
+		C1138EA816BE5F8C001E30B6 /* PFTutorialStep1Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFTutorialStep1Controller.m; sourceTree = "<group>"; };
+		C1138EA916BE5F8C001E30B6 /* PFTutorialStep2Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFTutorialStep2Controller.h; sourceTree = "<group>"; };
+		C1138EAA16BE5F8C001E30B6 /* PFTutorialStep2Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFTutorialStep2Controller.m; sourceTree = "<group>"; };
 		C1571DF7164F82C600AFB49D /* PFGlobal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFGlobal.h; sourceTree = "<group>"; };
 		C1571DF9164F85C700AFB49D /* PFNotificationsName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFNotificationsName.h; sourceTree = "<group>"; };
 		C1571E05164F8A7000AFB49D /* PFModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFModel.h; sourceTree = "<group>"; };
@@ -322,6 +328,7 @@
 		C10A32791632A8C80083F51B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C1138EA516BE5F6E001E30B6 /* Tutorial */,
 				2A772289167759CC0059AD46 /* PairSearchTop */,
 				C163A20715E0BABB00F3F25D /* MasterViewController.h */,
 				C163A20815E0BABB00F3F25D /* MasterViewController.m */,
@@ -376,6 +383,17 @@
 				C1571E23164FB39900AFB49D /* PFBlocks.h */,
 			);
 			name = Lib;
+			sourceTree = "<group>";
+		};
+		C1138EA516BE5F6E001E30B6 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				C1138EA716BE5F8C001E30B6 /* PFTutorialStep1Controller.h */,
+				C1138EA816BE5F8C001E30B6 /* PFTutorialStep1Controller.m */,
+				C1138EA916BE5F8C001E30B6 /* PFTutorialStep2Controller.h */,
+				C1138EAA16BE5F8C001E30B6 /* PFTutorialStep2Controller.m */,
+			);
+			name = Tutorial;
 			sourceTree = "<group>";
 		};
 		C163A1E615E0BABA00F3F25D = {
@@ -636,6 +654,8 @@
 				2AE6A65216AC0CF500CE2D90 /* PFPairSearchProfileViewController.m in Sources */,
 				2AD7FB6116AC5E5C00BC6535 /* PFPairSearchProfileScrollViewController.m in Sources */,
 				2A7B30E816B5298200C17930 /* PFSlideMenuButton.m in Sources */,
+				C16FF3B416BE60D30075B721 /* PFTutorialStep1Controller.m in Sources */,
+				C16FF3B516BE60D80075B721 /* PFTutorialStep2Controller.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
