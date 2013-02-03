@@ -33,6 +33,7 @@
 		2A7B30FA16B52D9800C17930 /* button_shop.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7B30F016B52D9700C17930 /* button_shop.png */; };
 		2A7B30FB16B52D9800C17930 /* button_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7B30F116B52D9700C17930 /* button_profile.png */; };
 		2A7B30FC16B52D9800C17930 /* button_partner_search.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7B30F216B52D9700C17930 /* button_partner_search.png */; };
+		2A7D920A16BE514C00220708 /* PFSetConditionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7D920916BE514C00220708 /* PFSetConditionViewController.m */; };
 		2AD7FB6116AC5E5C00BC6535 /* PFPairSearchProfileScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD7FB5F16AC5E5C00BC6535 /* PFPairSearchProfileScrollViewController.m */; };
 		2AD7FB6216AC5E5C00BC6535 /* PFPairSearchProfileScrollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AD7FB6016AC5E5C00BC6535 /* PFPairSearchProfileScrollViewController.xib */; };
 		2AE6A65216AC0CF500CE2D90 /* PFPairSearchProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE6A65116AC0CF500CE2D90 /* PFPairSearchProfileViewController.m */; };
@@ -128,6 +129,8 @@
 		2A7B30F016B52D9700C17930 /* button_shop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_shop.png; path = Resouces/button/button_shop.png; sourceTree = "<group>"; };
 		2A7B30F116B52D9700C17930 /* button_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_profile.png; path = Resouces/button/button_profile.png; sourceTree = "<group>"; };
 		2A7B30F216B52D9700C17930 /* button_partner_search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_partner_search.png; path = Resouces/button/button_partner_search.png; sourceTree = "<group>"; };
+		2A7D920816BE514B00220708 /* PFSetConditionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFSetConditionViewController.h; path = Classes/PFSetConditionViewController.h; sourceTree = "<group>"; };
+		2A7D920916BE514C00220708 /* PFSetConditionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSetConditionViewController.m; path = Classes/PFSetConditionViewController.m; sourceTree = "<group>"; };
 		2AD7FB5E16AC5E5B00BC6535 /* PFPairSearchProfileScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFPairSearchProfileScrollViewController.h; path = Classes/PFPairSearchProfileScrollViewController.h; sourceTree = "<group>"; };
 		2AD7FB5F16AC5E5C00BC6535 /* PFPairSearchProfileScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFPairSearchProfileScrollViewController.m; path = Classes/PFPairSearchProfileScrollViewController.m; sourceTree = "<group>"; };
 		2AD7FB6016AC5E5C00BC6535 /* PFPairSearchProfileScrollViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFPairSearchProfileScrollViewController.xib; path = Classes/PFPairSearchProfileScrollViewController.xib; sourceTree = "<group>"; };
@@ -282,6 +285,8 @@
 				2AD7FB6016AC5E5C00BC6535 /* PFPairSearchProfileScrollViewController.xib */,
 				2A7B30E616B5298100C17930 /* PFSlideMenuButton.h */,
 				2A7B30E716B5298200C17930 /* PFSlideMenuButton.m */,
+				2A7D920816BE514B00220708 /* PFSetConditionViewController.h */,
+				2A7D920916BE514C00220708 /* PFSetConditionViewController.m */,
 			);
 			name = PairSearchTop;
 			sourceTree = "<group>";
@@ -546,7 +551,7 @@
 		C163A1E815E0BABA00F3F25D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = tsuchimoto;
 			};
 			buildConfigurationList = C163A1EB15E0BABA00F3F25D /* Build configuration list for PBXProject "Coupling" */;
@@ -656,6 +661,7 @@
 				2A7B30E816B5298200C17930 /* PFSlideMenuButton.m in Sources */,
 				C16FF3B416BE60D30075B721 /* PFTutorialStep1Controller.m in Sources */,
 				C16FF3B516BE60D80075B721 /* PFTutorialStep2Controller.m in Sources */,
+				2A7D920A16BE514C00220708 /* PFSetConditionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,6 +686,9 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Kosuke Araki (9879JF8BN3)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kosuke Araki (9879JF8BN3)";
@@ -711,6 +720,9 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Kosuke Araki (9879JF8BN3)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kosuke Araki (9879JF8BN3)";

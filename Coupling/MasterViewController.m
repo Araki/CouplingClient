@@ -191,7 +191,7 @@
             if (!self.pairSearchViewDeckController) {
                 self.pairSearchViewDeckController = [self.storyboard instantiateViewControllerWithIdentifier:@"PFPairSearchViewDeckController"];
             }
-            [self presentModalViewController:self.pairSearchViewDeckController animated:YES];
+            [self.navigationController pushViewController:self.pairSearchViewDeckController animated:YES];
             break;
         }
         default:

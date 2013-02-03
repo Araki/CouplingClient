@@ -9,6 +9,7 @@
 #import "PairSearchCenterViewController.h"
 #import "IIViewDeckController.h"
 #import "PFPairSearchProfileViewController.h"
+#import "PFSetConditionViewController.h"
 
 @interface PairSearchCenterViewController ()
 
@@ -48,7 +49,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	// Do any additional setup after loading the view.    
     // UIScrollViewSettings
 	[self.outletScrollView setPagingEnabled:YES];
 	[self.outletScrollView setScrollEnabled:YES];
@@ -195,6 +196,19 @@
 - (IBAction)actionShowMenuButton:(UIButton *)sender {
     [self.viewDeckController toggleLeftViewAnimated:YES];
 }
+
+- (IBAction)actionNotificationButton:(UIButton *)sender {
+    NSLog(@"Notifivation");
+    
+}
+
+- (IBAction)actionSetConditionsButton:(UIButton *)sender {
+    NSLog(@"setConditions");
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+    PFSetConditionViewController *view = [storyboard instantiateViewControllerWithIdentifier:@"PFSetConditionViewController"];
+    [self presentViewController:view animated:YES completion:^{}];
+}
+
 - (void)viewDidUnload {
     [self setOutletScrollView:nil];
     [self setOutletPageControl:nil];
