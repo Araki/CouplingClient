@@ -11,6 +11,7 @@
 #import "SBJson.h"
 #import "FBManager.h"
 #import "PFHTTPRequestHelper.h"
+#import "SignupStep2ViewController.h"
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -103,8 +104,10 @@ NSString *const FBSessionStateChangedNotification = @"com.example.Login:FBSessio
 #pragma mark - IBAction
 
 - (IBAction)signup:(id)sender {
-    NSLog(@"signup");
-    [[FBManager sharedObject] openSessionWithAllowLoginUI:YES];
+    //[[FBManager sharedObject] openSessionWithAllowLoginUI:YES];
+    
+    SignupStep2ViewController *signupViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SignupStep2ViewController"];
+    [self.navigationController pushViewController:signupViewController animated:YES];
 }
 
 - (IBAction)push:(id)sender {

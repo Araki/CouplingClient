@@ -65,6 +65,7 @@
 		C16FF3B516BE60D80075B721 /* PFTutorialStep2Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = C1138EAA16BE5F8C001E30B6 /* PFTutorialStep2Controller.m */; };
 		C16FF3B816BE80EB0075B721 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C16FF3B616BE80EB0075B721 /* Default-568h@2x.png */; };
 		C16FF3B916BE80EB0075B721 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C16FF3B716BE80EB0075B721 /* Default@2x.png */; };
+		C16FF3CA16BE9A7F0075B721 /* SignupStep2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C16FF3C916BE9A7F0075B721 /* SignupStep2ViewController.m */; };
 		C1789BDE162041BC00EA631B /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = C1789BC6162041BB00EA631B /* NSObject+SBJson.m */; };
 		C1789BDF162041BC00EA631B /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C1789BC9162041BB00EA631B /* SBJsonParser.m */; };
 		C1789BE0162041BC00EA631B /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C1789BCB162041BC00EA631B /* SBJsonStreamParser.m */; };
@@ -187,6 +188,8 @@
 		C163A20B15E0BABB00F3F25D /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		C16FF3B616BE80EB0075B721 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C16FF3B716BE80EB0075B721 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		C16FF3C816BE9A7F0075B721 /* SignupStep2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupStep2ViewController.h; sourceTree = "<group>"; };
+		C16FF3C916BE9A7F0075B721 /* SignupStep2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupStep2ViewController.m; sourceTree = "<group>"; };
 		C1789BC5162041BB00EA631B /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
 		C1789BC6162041BB00EA631B /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
 		C1789BC7162041BB00EA631B /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
@@ -335,12 +338,11 @@
 		C10A32791632A8C80083F51B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C16FF3C616BE9A130075B721 /* Signup */,
 				C1138EA516BE5F6E001E30B6 /* Tutorial */,
 				2A772289167759CC0059AD46 /* PairSearchTop */,
 				C163A20715E0BABB00F3F25D /* MasterViewController.h */,
 				C163A20815E0BABB00F3F25D /* MasterViewController.m */,
-				C163A20A15E0BABB00F3F25D /* DetailViewController.h */,
-				C163A20B15E0BABB00F3F25D /* DetailViewController.m */,
 				C1CFC0A015F1D09E000EB27D /* SearchResultViewController.h */,
 				C1CFC0A115F1D09E000EB27D /* SearchResultViewController.m */,
 				C1CFC0A515F1D39A000EB27D /* SearchResultView.h */,
@@ -465,6 +467,17 @@
 				C163A20315E0BABB00F3F25D /* Coupling-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C16FF3C616BE9A130075B721 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				C163A20A15E0BABB00F3F25D /* DetailViewController.h */,
+				C163A20B15E0BABB00F3F25D /* DetailViewController.m */,
+				C16FF3C816BE9A7F0075B721 /* SignupStep2ViewController.h */,
+				C16FF3C916BE9A7F0075B721 /* SignupStep2ViewController.m */,
+			);
+			name = Signup;
 			sourceTree = "<group>";
 		};
 		C1789BC4162041BB00EA631B /* Json */ = {
@@ -666,6 +679,7 @@
 				C16FF3B416BE60D30075B721 /* PFTutorialStep1Controller.m in Sources */,
 				C16FF3B516BE60D80075B721 /* PFTutorialStep2Controller.m in Sources */,
 				2A7D920A16BE514C00220708 /* PFSetConditionViewController.m in Sources */,
+				C16FF3CA16BE9A7F0075B721 /* SignupStep2ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
