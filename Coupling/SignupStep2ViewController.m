@@ -28,8 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"@@@@@@@@@@@@@@@: 2: %@", self.tableView);
-	// Do any additional setup after loading the view.
+    self.tableView.backgroundView = nil;
+    self.tableView.backgroundColor = [UIColor colorWithRed:247.0/255.0 green:245.0/250.0 blue:230.0/250.0 alpha:1.0];
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,14 +49,58 @@
 {
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ %i", @"row", indexPath.row];
+    NSInteger row = indexPath.row;
+    cell.textLabel.text = [self profileItemString:row];
+    if (row == 0) {
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
     return cell;
 }
 
+- (NSString *)profileItemString:(NSInteger)row
+{
+    switch (row) {
+        case 0:
+            return @"ニックネーム";
+        case 1:
+            return @"お住まいがある都道府県";
+        case 2:
+            return @"出身地の都道府県";
+        case 3:
+            return @"血液型";
+        case 4:
+            return @"身長";
+        case 5:
+            return @"体型";
+        case 6:
+            return @"学歴";
+        case 7:
+            return @"職業";
+        case 8:
+            return @"年収";
+        case 9:
+            return @"休日";
+        case 10:
+            return @"趣味・活動";
+        case 11:
+            return @"性格";
+        case 12:
+            return @"同居人";
+        case 13:
+            return @"タバコ";
+        case 14:
+            return @"お酒";
+            
+        default:
+            return nil;
+            break;
+    }
+}
 
 #pragma mark UITableViewDataSource
 
@@ -67,7 +111,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return 7;
 }
 
 @end
