@@ -1,14 +1,14 @@
 //
-//  SignupStep2ViewController.h
+//  SignupStep3ViewController.h
 //  Coupling
 //
-//  Created by tsuchimoto on 13/02/03.
+//  Created by tsuchimoto on 13/02/10.
 //  Copyright (c) 2013年 tsuchimoto. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface SignupStep2ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface SignupStep3ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

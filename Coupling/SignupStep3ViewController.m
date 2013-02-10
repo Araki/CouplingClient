@@ -1,21 +1,18 @@
 //
-//  SignupStep2ViewController.m
+//  SignupStep3ViewController.m
 //  Coupling
 //
-//  Created by tsuchimoto on 13/02/03.
+//  Created by tsuchimoto on 13/02/10.
 //  Copyright (c) 2013年 tsuchimoto. All rights reserved.
 //
 
-#import "SignupStep2ViewController.h"
 #import "SignupStep3ViewController.h"
 
-@interface SignupStep2ViewController ()
+@interface SignupStep3ViewController ()
 
 @end
 
-@implementation SignupStep2ViewController
-
-@synthesize tableView;
+@implementation SignupStep3ViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,10 +36,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewDidUnload {
-    [super viewDidUnload];
-}
-
 #pragma mark UITableViewDelegate
 
 //行に表示するデータの生成
@@ -56,10 +49,7 @@
     }
     NSInteger row = indexPath.row;
     cell.textLabel.text = [self profileItemString:row];
-    if (row == 0) {
-    } else {
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
 
@@ -67,36 +57,21 @@
 {
     switch (row) {
         case 0:
-            return @"ニックネーム";
-        case 1:
-            return @"お住まいがある都道府県";
-        case 2:
-            return @"出身地の都道府県";
-        case 3:
-            return @"血液型";
-        case 4:
-            return @"身長";
-        case 5:
-            return @"体型";
-        case 6:
-            return @"学歴";
-        case 7:
             return @"職業";
-        case 8:
+        case 1:
             return @"年収";
-        case 9:
+        case 2:
             return @"休日";
-        case 10:
+        case 3:
             return @"趣味・活動";
-        case 11:
+        case 4:
             return @"性格";
-        case 12:
+        case 5:
             return @"同居人";
-        case 13:
+        case 6:
             return @"タバコ";
-        case 14:
+        case 7:
             return @"お酒";
-            
         default:
             return nil;
             break;
@@ -112,7 +87,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 7;
+    return 8;
 }
 
 #pragma mark -
@@ -121,6 +96,8 @@
 {
     SignupStep3ViewController *signupViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SignupStep3ViewController"];
     [self.navigationController pushViewController:signupViewController animated:YES];
+    
 }
+
 
 @end

@@ -89,6 +89,7 @@
 		C1C1E362163D1BB2002A9E38 /* PFHTTPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C1E361163D1BB2002A9E38 /* PFHTTPResponse.m */; };
 		C1C1E366163D2660002A9E38 /* NSError+Pairful.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C1E365163D2660002A9E38 /* NSError+Pairful.m */; };
 		C1C1E369163D2C57002A9E38 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C1E368163D2C57002A9E38 /* NSString+Extension.m */; };
+		C1C5CAD116C7BB0700FA3188 /* SignupStep3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C5CAD016C7BB0700FA3188 /* SignupStep3ViewController.m */; };
 		C1CFC0A315F1D09E000EB27D /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CFC0A115F1D09E000EB27D /* SearchResultViewController.m */; };
 		C1CFC0A715F1D39A000EB27D /* SearchResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CFC0A615F1D39A000EB27D /* SearchResultView.m */; };
 		C1CFC0A915F1DEE8000EB27D /* SearchResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1CFC0A815F1DEE8000EB27D /* SearchResultView.xib */; };
@@ -233,6 +234,8 @@
 		C1C1E365163D2660002A9E38 /* NSError+Pairful.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+Pairful.m"; sourceTree = "<group>"; };
 		C1C1E367163D2C56002A9E38 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
 		C1C1E368163D2C57002A9E38 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
+		C1C5CACF16C7BB0700FA3188 /* SignupStep3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupStep3ViewController.h; sourceTree = "<group>"; };
+		C1C5CAD016C7BB0700FA3188 /* SignupStep3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupStep3ViewController.m; sourceTree = "<group>"; };
 		C1CFC0A015F1D09E000EB27D /* SearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultViewController.h; sourceTree = "<group>"; };
 		C1CFC0A115F1D09E000EB27D /* SearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultViewController.m; sourceTree = "<group>"; };
 		C1CFC0A515F1D39A000EB27D /* SearchResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultView.h; sourceTree = "<group>"; };
@@ -476,6 +479,8 @@
 				C163A20B15E0BABB00F3F25D /* DetailViewController.m */,
 				C16FF3C816BE9A7F0075B721 /* SignupStep2ViewController.h */,
 				C16FF3C916BE9A7F0075B721 /* SignupStep2ViewController.m */,
+				C1C5CACF16C7BB0700FA3188 /* SignupStep3ViewController.h */,
+				C1C5CAD016C7BB0700FA3188 /* SignupStep3ViewController.m */,
 			);
 			name = Signup;
 			sourceTree = "<group>";
@@ -680,6 +685,7 @@
 				C16FF3B516BE60D80075B721 /* PFTutorialStep2Controller.m in Sources */,
 				2A7D920A16BE514C00220708 /* PFSetConditionViewController.m in Sources */,
 				C16FF3CA16BE9A7F0075B721 /* SignupStep2ViewController.m in Sources */,
+				C1C5CAD116C7BB0700FA3188 /* SignupStep3ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
