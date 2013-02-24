@@ -342,9 +342,17 @@
 			name = Tag;
 			sourceTree = "<group>";
 		};
+		2A7F085116DA012000FFC881 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = MyPage;
+			sourceTree = "<group>";
+		};
 		C10A32791632A8C80083F51B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2A7F085116DA012000FFC881 /* MyPage */,
 				C16FF3C616BE9A130075B721 /* Signup */,
 				C1138EA516BE5F6E001E30B6 /* Tutorial */,
 				2A772289167759CC0059AD46 /* PairSearchTop */,
