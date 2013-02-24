@@ -10,6 +10,8 @@
 
 @interface PFSetConditionViewController ()
 
+@property (strong) NSArray *conditionListArray;
+
 @end
 
 @implementation PFSetConditionViewController
@@ -34,12 +36,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-
+    self.navigationController.title = @"お相手検索";
+//    self.agePickerView = [[PFSetAgePickerViewController alloc] initWithNibName:@"PFSetAgePickerViewController"
+//                                                                        bundle:nil];
+    
+    self.conditionListArray = @[@"年齢",
+                                @"住所",
+                                @"自己紹介文",
+                                @"出身地",
+                                @"血液型",
+                                @"身長",
+                                @"体型",
+                                @"学歴",
+                                @"職業",
+                                @"年収",
+                                @"休日",
+                                @"趣味・活動",
+                                @"性格",
+                                @"同居人",
+                                @"タバコ",
+                                @"お酒",
+                                @"最終ログイン日"];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,80 +68,59 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return kPFSearchConditionNum;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
+    static NSString *CellIdentifier = @"ConditionCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+        
+    }
+    [self updateCell:cell atIndexPath:indexPath];
     
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)updateCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    UILabel *conditionTitleLabel = cell.textLabel;
+    UILabel *conditionDetailLabel = cell.detailTextLabel;
+    NSString *conditionTitle = [self.conditionListArray objectAtIndex:indexPath.row];
+    [conditionTitleLabel setText:conditionTitle];
+    [conditionTitleLabel setFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]];
+    [conditionTitleLabel setFrame:CGRectMake(0, 0, 200, 30)];
+    [conditionTitleLabel setTextAlignment:NSTextAlignmentCenter];
+    [conditionTitleLabel setBackgroundColor:kPFBackGroundColor];
+    [conditionDetailLabel setText:@"aaa"];
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    [cell setBackgroundColor:kPFBackGroundColor];
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+   switch (indexPath.row) {
+        case Age:
+           
+            break;
+        case Height:
+            
+            break;
+            
+        default:
+            break;
+    }
 }
 
 @end

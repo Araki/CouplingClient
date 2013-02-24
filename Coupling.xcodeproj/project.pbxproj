@@ -98,6 +98,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A1757CC16C783FA009352EC /* PFUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFUtil.h; path = Classes/PFUtil.h; sourceTree = "<group>"; };
 		2A46AA06167496AE00B459A3 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		2A4D36131674795A0065BD22 /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
 		2A4D3615167479690065BD22 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKResources.bundle; sourceTree = "<group>"; };
@@ -393,6 +394,7 @@
 				C1571E1D164FB14C00AFB49D /* PFAsyncDownload.h */,
 				C1571E1E164FB14E00AFB49D /* PFAsyncDownload.m */,
 				C1571E23164FB39900AFB49D /* PFBlocks.h */,
+				2A1757CC16C783FA009352EC /* PFUtil.h */,
 			);
 			name = Lib;
 			sourceTree = "<group>";
