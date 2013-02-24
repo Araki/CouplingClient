@@ -42,6 +42,7 @@
 		2AEF05E016B5507E009F5FD7 /* button_notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AEF05DD16B5507E009F5FD7 /* button_notification.png */; };
 		2AEF05E116B5507E009F5FD7 /* button_slide_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AEF05DE16B5507E009F5FD7 /* button_slide_menu.png */; };
 		C10A328C1632AB6C0083F51B /* SingletonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C10A328B1632AB6C0083F51B /* SingletonObject.m */; };
+		C133F5C616DA2A82001003A6 /* PFUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C133F5C516DA2A80001003A6 /* PFUtil.m */; };
 		C1571E07164F8A7100AFB49D /* PFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1571E06164F8A7100AFB49D /* PFModel.m */; };
 		C1571E0A164F8C0900AFB49D /* PFDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1571E09164F8C0900AFB49D /* PFDataModel.m */; };
 		C1571E0D164F915E00AFB49D /* PFUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C1571E0C164F915D00AFB49D /* PFUser.m */; };
@@ -150,6 +151,8 @@
 		C1138EA816BE5F8C001E30B6 /* PFTutorialStep1Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFTutorialStep1Controller.m; sourceTree = "<group>"; };
 		C1138EA916BE5F8C001E30B6 /* PFTutorialStep2Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFTutorialStep2Controller.h; sourceTree = "<group>"; };
 		C1138EAA16BE5F8C001E30B6 /* PFTutorialStep2Controller.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFTutorialStep2Controller.m; sourceTree = "<group>"; };
+		C133F5C416DA2A80001003A6 /* PFUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFUtil.h; sourceTree = "<group>"; };
+		C133F5C516DA2A80001003A6 /* PFUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFUtil.m; sourceTree = "<group>"; };
 		C1571DF7164F82C600AFB49D /* PFGlobal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFGlobal.h; sourceTree = "<group>"; };
 		C1571DF9164F85C700AFB49D /* PFNotificationsName.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFNotificationsName.h; sourceTree = "<group>"; };
 		C1571E05164F8A7000AFB49D /* PFModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFModel.h; sourceTree = "<group>"; };
@@ -394,7 +397,8 @@
 				C1571E1D164FB14C00AFB49D /* PFAsyncDownload.h */,
 				C1571E1E164FB14E00AFB49D /* PFAsyncDownload.m */,
 				C1571E23164FB39900AFB49D /* PFBlocks.h */,
-				2A1757CC16C783FA009352EC /* PFUtil.h */,
+				C133F5C416DA2A80001003A6 /* PFUtil.h */,
+				C133F5C516DA2A80001003A6 /* PFUtil.m */,
 			);
 			name = Lib;
 			sourceTree = "<group>";
@@ -688,6 +692,7 @@
 				2A7D920A16BE514C00220708 /* PFSetConditionViewController.m in Sources */,
 				C16FF3CA16BE9A7F0075B721 /* SignupStep2ViewController.m in Sources */,
 				C1C5CAD116C7BB0700FA3188 /* SignupStep3ViewController.m in Sources */,
+				C133F5C616DA2A82001003A6 /* PFUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

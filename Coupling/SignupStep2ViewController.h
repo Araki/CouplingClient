@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) UIActionSheet *actionSheet;
+@property (assign, nonatomic) NSInteger selectedRow;
 
 - (IBAction)goNextView:(id)sender;
 
