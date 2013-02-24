@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SignupStep2ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface SignupStep2ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) UIActionSheet *actionSheet;
 
 - (IBAction)goNextView:(id)sender;
 

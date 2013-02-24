@@ -11,11 +11,14 @@
 
 @interface SignupStep2ViewController ()
 
+- (void)dismissActionSheet:(id)sender;
+
 @end
 
 @implementation SignupStep2ViewController
 
 @synthesize tableView;
+@synthesize actionSheet;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -40,6 +43,7 @@
 }
 
 - (void)viewDidUnload {
+    self.actionSheet = nil;
     [super viewDidUnload];
 }
 
@@ -135,6 +139,67 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+    self.actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+    
+    UISegmentedControl *closeButton = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObject:@"完了"]];
+    closeButton.momentary = YES;
+    closeButton.frame = CGRectMake(260, 7.0, 50.0, 30.0);
+    closeButton.segmentedControlStyle = UISegmentedControlStyleBar;
+    closeButton.tintColor = [UIColor blueColor];
+    [closeButton addTarget:self action:@selector(dismissActionSheet:) forControlEvents:UIControlEventValueChanged];
+    [self.actionSheet addSubview:closeButton];
+    
+    UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 40.0, 0, 0)];
+    pickerView.dataSource = self;
+	pickerView.delegate = self;
+	pickerView.showsSelectionIndicator = YES;
+    [self.actionSheet addSubview:pickerView];
+    [self.actionSheet showInView:self.view];
+	[self.actionSheet setFrame:CGRectMake(0, 150, 320, 485)];
+    
+    
+    switch (indexPath.row) {
+        case 0:
+            //return @"ニックネーム";
+        case 1:
+            //return @"お住まいがある都道府県";
+            
+        case 2:
+            //return @"出身地の都道府県";
+        case 3:
+            //return @"血液型";
+        case 4:
+            //return @"身長";
+        case 5:
+            //return @"体型";
+        case 6:
+            //return @"学歴";
+        case 7:
+            //return @"職業";
+        case 8:
+            //return @"年収";
+        case 9:
+            //return @"休日";
+        case 10:
+            //return @"趣味・活動";
+        case 11:
+            //return @"性格";
+        case 12:
+            //return @"同居人";
+        case 13:
+            //return @"タバコ";
+        case 14:
+            //return @"お酒";
+            
+        default:
+            break;
+    }
+    
+}
+
 #pragma mark UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -147,7 +212,27 @@
     return 7;
 }
 
+#pragma mark UIPickerViewDataSource
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)picker {
+	return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)picker numberOfRowsInComponent:(NSInteger)component {
+	return 5;
+}
+
+- (NSString *)pickerView:(UIPickerView *)picker titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    NSString *album[] = {@"row1", @"row2", @"row3", @"row4", @"row5"};
+    return album[row];
+}
+
 #pragma mark -
+
+- (void)dismissActionSheet:(id)sender
+{
+    [self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+}
 
 - (IBAction)goNextView:(id)sender
 {
