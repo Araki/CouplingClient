@@ -45,25 +45,57 @@
 
 #pragma mark UITableViewDelegate
 
-//行に表示するデータの生成
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    
+    NSInteger row = indexPath.row;
+    if (row == 0) {
+        return [self dequeueTexeCell:row];
+    } else {
+        return [self dequeueNormalCell:row];
+    }
+}
+
+- (UITableViewCell *)dequeueTexeCell:(NSInteger)row
+{
+    static NSString *CellIdentifier = @"TextCell";
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    NSInteger row = indexPath.row;
-    cell.textLabel.text = [self profileItemString:row];
-    if (row == 0) {
-    } else {
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 10.0, 100.0, 20.0)];
+        label.backgroundColor = [UIColor clearColor];
+        label.font = [UIFont systemFontOfSize:14.0];
+        label.text = @"ニックネーム";
+        [cell.contentView addSubview:label];
+        
+        UITextField *field = [[UITextField alloc] initWithFrame:CGRectMake(120.0, 10.0, 170.0, 20.0)];
+        field.borderStyle = UITextBorderStyleRoundedRect;
+        field.font = [UIFont boldSystemFontOfSize:[UIFont labelFontSize]];
+        field.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+        field.textAlignment = UITextAlignmentCenter;
+        field.returnKeyType = UIReturnKeyDone;
+        field.clearButtonMode = UITextFieldViewModeNever;
+        field.adjustsFontSizeToFitWidth = YES;
+        
+        //[textField addTarget:self action:@selector(done:) forControlEvents:UIControlEventEditingDidEndOnExit];
+        
+        [cell.contentView addSubview:field];
     }
     return cell;
 }
 
-- (NSString *)profileItemString:(NSInteger)row
+- (UITableViewCell *)dequeueNormalCell:(NSInteger)row
+{
+    static NSString *CellIdentifier = @"NormalCell";
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.textLabel.text = [self profileItemText:row];
+    }
+    return cell;
+}
+
+- (NSString *)profileItemText:(NSInteger)row
 {
     switch (row) {
         case 0:
