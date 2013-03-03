@@ -27,9 +27,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
     
-#warning test
+	// テスト用
     UIImage *image = [UIImage imageNamed:@"test_imgres.jpeg"];
     [self.outletProfileImageView setImage:image];
       

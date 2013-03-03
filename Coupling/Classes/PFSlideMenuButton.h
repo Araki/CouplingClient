@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PairSearchLeftViewController.h"
 
 @interface PFSlideMenuButton : UIButton
 

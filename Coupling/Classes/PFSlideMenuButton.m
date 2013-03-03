@@ -7,6 +7,7 @@
 //
 
 #import "PFSlideMenuButton.h"
+#import "PFMyPageTopTableViewController.h"
 
 @implementation PFSlideMenuButton
 
@@ -23,6 +24,41 @@
     
     PFSlideMenuButton *theButton = (PFSlideMenuButton *)sender;
     NSLog(@"Button[%d,%d] was pressed.", theButton.section, theButton.row);
+    switch (theButton.row) {
+        case PairSearch:
+            
+            break;
+        case MyPage:
+            
+            break;
+        case Profile:
+            
+            break;
+        case Shop:
+            
+            break;
+        case Setting:
+            
+            break;
+        case Notification:
+            
+            break;
+        case Invite:
+            
+            break;
+        case Help:
+            
+            break;
+        case TermsOfUse:
+            
+            break;
+        case ContactUs:
+            
+            break;
+        default:
+            
+            break;
+    }
     
 }
 

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A055F4316E32EF10008297B /* PFMyPageTopTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A055F4216E32EF10008297B /* PFMyPageTopTableViewController.m */; };
+		2A055F4716E334BD0008297B /* PFMyPageTopTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A055F4616E334BD0008297B /* PFMyPageTopTableCell.xib */; };
+		2A055F4A16E337450008297B /* PFMyPageTopTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A055F4916E337450008297B /* PFMyPageTopTableCell.m */; };
 		2A46AA07167496AE00B459A3 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A46AA06167496AE00B459A3 /* FacebookSDK.framework */; };
 		2A77227E167758780059AD46 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A77227B167758640059AD46 /* QuartzCore.framework */; };
 		2A7722841677589D0059AD46 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7722811677589D0059AD46 /* IIViewDeckController.m */; };
@@ -99,7 +102,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2A1757CC16C783FA009352EC /* PFUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFUtil.h; path = Classes/PFUtil.h; sourceTree = "<group>"; };
+		2A055F4116E32EF10008297B /* PFMyPageTopTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFMyPageTopTableViewController.h; path = Classes/PFMyPageTopTableViewController.h; sourceTree = "<group>"; };
+		2A055F4216E32EF10008297B /* PFMyPageTopTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFMyPageTopTableViewController.m; path = Classes/PFMyPageTopTableViewController.m; sourceTree = "<group>"; };
+		2A055F4616E334BD0008297B /* PFMyPageTopTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFMyPageTopTableCell.xib; path = Classes/PFMyPageTopTableCell.xib; sourceTree = "<group>"; };
+		2A055F4816E337440008297B /* PFMyPageTopTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFMyPageTopTableCell.h; path = Classes/PFMyPageTopTableCell.h; sourceTree = "<group>"; };
+		2A055F4916E337450008297B /* PFMyPageTopTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFMyPageTopTableCell.m; path = Classes/PFMyPageTopTableCell.m; sourceTree = "<group>"; };
 		2A46AA06167496AE00B459A3 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		2A4D36131674795A0065BD22 /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
 		2A4D3615167479690065BD22 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKResources.bundle; sourceTree = "<group>"; };
@@ -345,6 +352,11 @@
 		2A7F085116DA012000FFC881 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				2A055F4116E32EF10008297B /* PFMyPageTopTableViewController.h */,
+				2A055F4216E32EF10008297B /* PFMyPageTopTableViewController.m */,
+				2A055F4816E337440008297B /* PFMyPageTopTableCell.h */,
+				2A055F4916E337450008297B /* PFMyPageTopTableCell.m */,
+				2A055F4616E334BD0008297B /* PFMyPageTopTableCell.xib */,
 			);
 			name = MyPage;
 			sourceTree = "<group>";
@@ -643,6 +655,7 @@
 				2A77A77416B5A41000C7369D /* test_imgres_2.jpeg in Resources */,
 				C16FF3B816BE80EB0075B721 /* Default-568h@2x.png in Resources */,
 				C16FF3B916BE80EB0075B721 /* Default@2x.png in Resources */,
+				2A055F4716E334BD0008297B /* PFMyPageTopTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,6 +714,8 @@
 				C16FF3CA16BE9A7F0075B721 /* SignupStep2ViewController.m in Sources */,
 				C1C5CAD116C7BB0700FA3188 /* SignupStep3ViewController.m in Sources */,
 				C133F5C616DA2A82001003A6 /* PFUtil.m in Sources */,
+				2A055F4316E32EF10008297B /* PFMyPageTopTableViewController.m in Sources */,
+				2A055F4A16E337450008297B /* PFMyPageTopTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
