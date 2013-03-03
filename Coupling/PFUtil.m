@@ -201,5 +201,32 @@
 {
     return [NSArray arrayWithObjects:@"飲めない", @"飲めるが好きではない", @"つきあい程度に飲む", @"大好き", nil];
 }
+// top bar button
++ (UIButton *)slideMenuBarButton
+{
+    return [PFUtil buttonWithName:@"button_slide_menu.png" rect:CGRectMake(0, 0, 28, 28)];
+}
+
++ (UIButton *)searchConditionBarButton
+{
+    return [PFUtil buttonWithName:@"button_search_filter.png" rect:CGRectMake(0, 0, 63, 26)];
+}
+
++ (UIButton *)notififcationBarButton
+{
+    return [PFUtil buttonWithName:@"button_notification.png" rect:CGRectMake(0, 0, 28, 28)];
+}
++ (UIButton *)myPageStatusBarButtonWithStatus:(NSInteger)status
+{
+    
+}
+
++ (UIButton *)buttonWithName:(NSString *)name rect:(CGRect)rect
+{
+    UIImage *buttonImage = [UIImage imageNamed:name];
+    UIButton *barButton = [[UIButton alloc] initWithFrame:rect];
+    [barButton setImage:buttonImage forState:UIControlStateNormal];
+    return barButton;
+}
 
 @end

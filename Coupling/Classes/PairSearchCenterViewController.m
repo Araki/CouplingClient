@@ -94,7 +94,9 @@
 		[viewController viewWillAppear:animated];
 	}
     
+    // scrollViewのサイズ
 	self.outletScrollView.contentSize = CGSizeMake(outletScrollView.frame.size.width * [self.controllers count], outletScrollView.frame.size.height);
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -197,7 +199,7 @@
 #pragma mark - IBAction
 
 - (IBAction)actionShowMenuButton:(UIButton *)sender {
-    [self.viewDeckController toggleLeftViewAnimated:YES];
+    [self.viewDeckController toggleLeftView];
 }
 
 - (IBAction)actionNotificationButton:(UIButton *)sender {

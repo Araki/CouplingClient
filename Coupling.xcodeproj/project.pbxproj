@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A055F4316E32EF10008297B /* PFMyPageTopTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A055F4216E32EF10008297B /* PFMyPageTopTableViewController.m */; };
+		2A055F4316E32EF10008297B /* PFMyPageTopPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A055F4216E32EF10008297B /* PFMyPageTopPageViewController.m */; };
 		2A055F4716E334BD0008297B /* PFMyPageTopTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A055F4616E334BD0008297B /* PFMyPageTopTableCell.xib */; };
 		2A055F4A16E337450008297B /* PFMyPageTopTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A055F4916E337450008297B /* PFMyPageTopTableCell.m */; };
 		2A46AA07167496AE00B459A3 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A46AA06167496AE00B459A3 /* FacebookSDK.framework */; };
@@ -102,8 +102,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2A055F4116E32EF10008297B /* PFMyPageTopTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFMyPageTopTableViewController.h; path = Classes/PFMyPageTopTableViewController.h; sourceTree = "<group>"; };
-		2A055F4216E32EF10008297B /* PFMyPageTopTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFMyPageTopTableViewController.m; path = Classes/PFMyPageTopTableViewController.m; sourceTree = "<group>"; };
+		2A055F4116E32EF10008297B /* PFMyPageTopPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFMyPageTopPageViewController.h; path = Classes/PFMyPageTopPageViewController.h; sourceTree = "<group>"; };
+		2A055F4216E32EF10008297B /* PFMyPageTopPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFMyPageTopPageViewController.m; path = Classes/PFMyPageTopPageViewController.m; sourceTree = "<group>"; };
 		2A055F4616E334BD0008297B /* PFMyPageTopTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFMyPageTopTableCell.xib; path = Classes/PFMyPageTopTableCell.xib; sourceTree = "<group>"; };
 		2A055F4816E337440008297B /* PFMyPageTopTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFMyPageTopTableCell.h; path = Classes/PFMyPageTopTableCell.h; sourceTree = "<group>"; };
 		2A055F4916E337450008297B /* PFMyPageTopTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFMyPageTopTableCell.m; path = Classes/PFMyPageTopTableCell.m; sourceTree = "<group>"; };
@@ -277,6 +277,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A055F4B16E365450008297B /* SearchCondition */ = {
+			isa = PBXGroup;
+			children = (
+				2A7D920816BE514B00220708 /* PFSetConditionViewController.h */,
+				2A7D920916BE514C00220708 /* PFSetConditionViewController.m */,
+			);
+			name = SearchCondition;
+			sourceTree = "<group>";
+		};
 		2A77227F1677589D0059AD46 /* ViewDeck */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,8 +313,6 @@
 				2AD7FB6016AC5E5C00BC6535 /* PFPairSearchProfileScrollViewController.xib */,
 				2A7B30E616B5298100C17930 /* PFSlideMenuButton.h */,
 				2A7B30E716B5298200C17930 /* PFSlideMenuButton.m */,
-				2A7D920816BE514B00220708 /* PFSetConditionViewController.h */,
-				2A7D920916BE514C00220708 /* PFSetConditionViewController.m */,
 			);
 			name = PairSearchTop;
 			sourceTree = "<group>";
@@ -352,8 +359,8 @@
 		2A7F085116DA012000FFC881 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
-				2A055F4116E32EF10008297B /* PFMyPageTopTableViewController.h */,
-				2A055F4216E32EF10008297B /* PFMyPageTopTableViewController.m */,
+				2A055F4116E32EF10008297B /* PFMyPageTopPageViewController.h */,
+				2A055F4216E32EF10008297B /* PFMyPageTopPageViewController.m */,
 				2A055F4816E337440008297B /* PFMyPageTopTableCell.h */,
 				2A055F4916E337450008297B /* PFMyPageTopTableCell.m */,
 				2A055F4616E334BD0008297B /* PFMyPageTopTableCell.xib */,
@@ -364,6 +371,7 @@
 		C10A32791632A8C80083F51B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2A055F4B16E365450008297B /* SearchCondition */,
 				2A7F085116DA012000FFC881 /* MyPage */,
 				C16FF3C616BE9A130075B721 /* Signup */,
 				C1138EA516BE5F6E001E30B6 /* Tutorial */,
@@ -714,7 +722,7 @@
 				C16FF3CA16BE9A7F0075B721 /* SignupStep2ViewController.m in Sources */,
 				C1C5CAD116C7BB0700FA3188 /* SignupStep3ViewController.m in Sources */,
 				C133F5C616DA2A82001003A6 /* PFUtil.m in Sources */,
-				2A055F4316E32EF10008297B /* PFMyPageTopTableViewController.m in Sources */,
+				2A055F4316E32EF10008297B /* PFMyPageTopPageViewController.m in Sources */,
 				2A055F4A16E337450008297B /* PFMyPageTopTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

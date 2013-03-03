@@ -96,7 +96,6 @@
         [cell addSubview:aButton];
     }
     
-    // スライドメニューの画面遷移はPFSlideMenuButtonが管理する
     PFSlideMenuButton *theButton = (PFSlideMenuButton *)[cell viewWithTag:kPFSlideMenuButtonTag];
     if (theButton) {
         theButton.section = [indexPath section];

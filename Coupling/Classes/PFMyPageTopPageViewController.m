@@ -6,22 +6,24 @@
 //  Copyright (c) 2013年 tsuchimoto. All rights reserved.
 //
 
-#import "PFMyPageTopTableViewController.h"
+#import "PFMyPageTopPageViewController.h"
 #import "PFMyPageTopTableCell.h"
 #import "IIViewDeckController.h"
 
 
-@interface PFMyPageTopTableViewController ()
+@interface PFMyPageTopPageViewController ()
 
 @end
 
-@implementation PFMyPageTopTableViewController
+@implementation PFMyPageTopPageViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithStyle:style];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.outletTableViewController.delegate = self;
+        UIImage *image = [UIImage imageNamed:@"bg_header.png"];
+        [self.outletNavigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
     }
     return self;
 }
@@ -35,11 +37,6 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,50 +72,11 @@
         NSArray* array = [nib instantiateWithOwner:nil options:nil];
         cell = [array objectAtIndex:0];
     }
-    
-    
+        
     
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
@@ -133,4 +91,19 @@
      */
 }
 
+- (void)viewDidUnload {
+    [self setOutletTableViewController:nil];
+    [self setOutletNavigationBar:nil];
+    [super viewDidUnload];
+}
+- (IBAction)actionSlideMenuBarButton:(id)sender
+{
+    [self.viewDeckController toggleLeftView];
+}
+
+- (IBAction)actionStatusSortBarButton:(id)sender
+{
+    NSLog(@"senderTag = %d", ((UIBarButtonItem *)sender).tag);
+    
+}
 @end

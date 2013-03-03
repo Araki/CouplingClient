@@ -28,9 +28,8 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
     [super viewWillAppear:animated];
-    
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 - (void)viewDidLoad
@@ -39,6 +38,21 @@
     self.navigationController.title = @"お相手検索";
 //    self.agePickerView = [[PFSetAgePickerViewController alloc] initWithNibName:@"PFSetAgePickerViewController"
 //                                                                        bundle:nil];
+    
+    
+    
+    // navigationBarの設定
+    UIButton *topRightBarButton = [PFUtil searchConditionBarButton];
+    [topRightBarButton addTarget:self action:@selector(action) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithCustomView:topRightBarButton];
+    
+    UIButton *topLefttBarButton = [PFUtil slideMenuBarButton];
+    [topLefttBarButton addTarget:self action:@selector(action) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc] initWithCustomView:topLefttBarButton];
+    
+    self.navigationItem.rightBarButtonItem = rightBarButton;
+    self.navigationItem.leftBarButtonItem = leftBarButton;
+
     
     self.conditionListArray = @[@"年齢",
                                 @"住所",

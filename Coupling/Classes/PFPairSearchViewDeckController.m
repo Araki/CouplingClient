@@ -9,7 +9,7 @@
 #import "PFPairSearchViewDeckController.h"
 #import "PairSearchLeftViewController.h"
 #import "PairSearchCenterViewController.h"
-#import "PFMyPageTopTableViewController.h"
+#import "PFMyPageTopPageViewController.h"
 
 @interface PFPairSearchViewDeckController ()
 
@@ -46,9 +46,6 @@
  */
 - (void)changeCenterViewWithSlideMenuIndex:(NSInteger)index
 {
-    
-    
-    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     switch (index) {
         case PairSearch:
@@ -58,10 +55,10 @@
             self.centerController = [storyboard instantiateViewControllerWithIdentifier:@"PairSearchCenterViewController"];
             break;
         case MyPage:
-            if ([self.centerController isKindOfClass:[PFMyPageTopTableViewController class]]) {
+            if ([self.centerController isKindOfClass:[PFMyPageTopPageViewController class]]) {
                 return;
             }
-            self.centerController = [storyboard instantiateViewControllerWithIdentifier:@"PFMyPageTopTableViewController"];
+            self.centerController = [storyboard instantiateViewControllerWithIdentifier:@"PFMyPageTopPageViewController"];
             break;
         case Profile:
             
@@ -91,7 +88,12 @@
             
             break;
     }
-    [self showCenterView:YES];
+    
+    __block PFPairSearchViewDeckController *selfInBlock = self;
+    [self setLeftLedge:-40 completion:^(BOOL finished){
+        [selfInBlock closeLeftView];
+        selfInBlock.leftLedge = 40;
+    }];
 }
 
 // フリックでスライドメニューがでないようにする。スクロールビューのため
@@ -103,7 +105,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 - (void)viewDidLoad

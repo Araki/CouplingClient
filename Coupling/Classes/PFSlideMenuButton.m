@@ -7,7 +7,7 @@
 //
 
 #import "PFSlideMenuButton.h"
-#import "PFMyPageTopTableViewController.h"
+#import "PFMyPageTopPageViewController.h"
 
 @implementation PFSlideMenuButton
 
