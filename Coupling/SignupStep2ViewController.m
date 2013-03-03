@@ -21,7 +21,7 @@
 
 @synthesize tableView;
 @synthesize actionSheet;
-@synthesize selectedRow;
+@synthesize currentPath;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -95,10 +95,12 @@
     static NSString *CellIdentifier = @"NormalCell";
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.textLabel.text = [self profileItemText:row];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     }
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.textLabel.font = [UIFont systemFontOfSize:14.0];
+    cell.textLabel.text = [self profileItemText:row];
+    cell.detailTextLabel.text = @"";
     return cell;
 }
 
@@ -108,9 +110,9 @@
         case 0:
             return @"ニックネーム";
         case 1:
-            return @"お住まいがある都道府県";
+            return @"お住まいのエリア";
         case 2:
-            return @"出身地の都道府県";
+            return @"出身地";
         case 3:
             return @"血液型";
         case 4:
@@ -147,7 +149,7 @@
     self.actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
     self.actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
     
-    UISegmentedControl *closeButton = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObject:@"完了"]];
+    UISegmentedControl *closeButton = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObject:@"閉じる"]];
     closeButton.momentary = YES;
     closeButton.frame = CGRectMake(260, 7.0, 50.0, 30.0);
     closeButton.segmentedControlStyle = UISegmentedControlStyleBar;
@@ -163,7 +165,7 @@
     [self.actionSheet showInView:self.view];
 	[self.actionSheet setFrame:CGRectMake(0, 150, 320, 485)];
     
-    selectedRow = indexPath.row;
+    self.currentPath = indexPath;
 }
 
 #pragma mark UITableViewDataSource
@@ -178,6 +180,15 @@
     return 7;
 }
 
+#pragma mark UIPickerViewDelegate
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:self.currentPath];
+    cell.detailTextLabel.text = [[self arrayForPicker:self.currentPath.row] objectAtIndex:row];
+    [cell setNeedsLayout];
+}
+
 #pragma mark UIPickerViewDataSource
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)picker {
@@ -185,11 +196,11 @@
 }
 
 - (NSInteger)pickerView:(UIPickerView *)picker numberOfRowsInComponent:(NSInteger)component {
-	return [self arrayForPicker:selectedRow].count;
+	return [self arrayForPicker:self.currentPath.row].count;
 }
 
 - (NSString *)pickerView:(UIPickerView *)picker titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return [[self arrayForPicker:selectedRow] objectAtIndex:row];
+    return [[self arrayForPicker:self.currentPath.row] objectAtIndex:row];
 }
 
 #pragma mark -
