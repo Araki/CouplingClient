@@ -214,39 +214,39 @@
 {
     switch (row) {
         case 0:
-            //return @"ニックネーム";
+            // ニックネーム
         case 1:
-            //return @"お住まいがある都道府県";
+            // お住まいのエリア
             return [PFUtil prefectures];
         case 2:
-            //return @"出身地の都道府県";
+            // 出身地の都道府県
             return [PFUtil prefectures];
         case 3:
-            //return @"血液型";
+            //血液型
             return [PFUtil bloodTypes];
         case 4:
-            //return @"身長";
+            // 身長
             return [PFUtil heights];
         case 5:
-            //return @"体型";
+            // 体型
         case 6:
-            //return @"学歴";
+            // 学歴
         case 7:
-            //return @"職業";
+            // 職業
         case 8:
-            //return @"年収";
+            // 年収
         case 9:
-            //return @"休日";
+            // 休日
         case 10:
-            //return @"趣味・活動";
+            // 趣味・活動
         case 11:
-            //return @"性格";
+            // 性格
         case 12:
-            //return @"同居人";
+            // 同居人
         case 13:
-            //return @"タバコ";
+            // タバコ
         case 14:
-            //return @"お酒";
+            // お酒
             
         default:
             break;
