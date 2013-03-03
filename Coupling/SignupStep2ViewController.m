@@ -106,42 +106,8 @@
 
 - (NSString *)profileItemText:(NSInteger)row
 {
-    switch (row) {
-        case 0:
-            return @"ニックネーム";
-        case 1:
-            return @"お住まいのエリア";
-        case 2:
-            return @"出身地";
-        case 3:
-            return @"血液型";
-        case 4:
-            return @"身長";
-        case 5:
-            return @"体型";
-        case 6:
-            return @"学歴";
-        case 7:
-            return @"職業";
-        case 8:
-            return @"年収";
-        case 9:
-            return @"休日";
-        case 10:
-            return @"趣味・活動";
-        case 11:
-            return @"性格";
-        case 12:
-            return @"同居人";
-        case 13:
-            return @"タバコ";
-        case 14:
-            return @"お酒";
-            
-        default:
-            return nil;
-            break;
-    }
+    NSArray *items = [NSArray arrayWithObjects:@"ニックネーム", @"お住まいのエリア", @"出身地", @"血液型", @"身長", @"体型", @"学歴", @"職業", @"年収", @"休日", @"趣味・活動", @"性格", @"同居人", @"タバコ", @"お酒", nil];
+    return (NSString *)[items objectAtIndex:row];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

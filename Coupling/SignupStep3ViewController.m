@@ -55,27 +55,8 @@
 
 - (NSString *)profileItemString:(NSInteger)row
 {
-    switch (row) {
-        case 0:
-            return @"職業";
-        case 1:
-            return @"年収";
-        case 2:
-            return @"休日";
-        case 3:
-            return @"趣味・活動";
-        case 4:
-            return @"性格";
-        case 5:
-            return @"同居人";
-        case 6:
-            return @"タバコ";
-        case 7:
-            return @"お酒";
-        default:
-            return nil;
-            break;
-    }
+    NSArray *items = [NSArray arrayWithObjects:@"職業", @"年収", @"休日", @"趣味・活動", @"性格", @"同居人", @"タバコ", @"お酒", nil];
+    return (NSString *)[items objectAtIndex:row];
 }
 
 #pragma mark UITableViewDataSource
