@@ -28,13 +28,7 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+    [super viewDidLoad];    
     // tableViewのヘッダー画像
     self.headerImage = [UIImage imageNamed:@"bg_header.png"];
 }
@@ -71,8 +65,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return 9;
+    // スライドメニューのボタンの数
+    return 10;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -92,18 +86,20 @@
         PFSlideMenuButton *aButton = [[PFSlideMenuButton alloc] initWithFrame:CGRectMake(0, 0, 320, kPFSlideMenuHeight)];
         [aButton setImage:[self slideMenuImageWithRow:indexPath.row] forState:UIControlStateNormal];
         aButton.tag = kPFSlideMenuButtonTag;
+        
         [aButton addTarget:aButton
                     action:@selector(buttonDidTouchDown:)
           forControlEvents:UIControlEventTouchDown];
+        
         [cell addSubview:aButton];
     }
     
+    // スライドメニューの画面遷移はPFSlideMenuButtonが管理する
     PFSlideMenuButton *theButton = (PFSlideMenuButton *)[cell viewWithTag:kPFSlideMenuButtonTag];
     if (theButton) {
         theButton.section = [indexPath section];
         theButton.row = [indexPath row];
     }
-//    cell.textLabel.text = [NSString stringWithFormat:@"%d", [indexPath row]];
     
     return cell;
 }
@@ -112,31 +108,34 @@
 {
     UIImage *image = nil;
     switch (row) {
-        case 0:
+        case PairSearch:
             image = [UIImage imageNamed:@"button_partner_search.png"];
             break;
-        case 1:
+        case MyPage:
             image = [UIImage imageNamed:@"button_my_page.png"];
             break;
-        case 2:
+        case Profile:
             image = [UIImage imageNamed:@"button_profile.png"];
             break;
-        case 3:
+        case Shop:
             image = [UIImage imageNamed:@"button_shop.png"];
             break;
-        case 4:
+        case Setting:
             image = [UIImage imageNamed:@"button_settings.png"];
             break;
-        case 5:
+        case Notification:
             image = [UIImage imageNamed:@"button_info_from_pairful.png"];
             break;
-        case 6:
+        case Invite:
             image = [UIImage imageNamed:@"button_invite_friends.png"];
             break;
-        case 7:
+        case Help:
+            image = [UIImage imageNamed:@"button_help.png"];
+            break;
+        case TermsOfUse:
             image = [UIImage imageNamed:@"button_tos.png"];
             break;
-        case 8:
+        case ContactUs:
             image = [UIImage imageNamed:@"button_inquiry.png"];
             break;
         default:

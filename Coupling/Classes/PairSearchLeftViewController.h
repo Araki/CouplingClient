@@ -10,6 +10,18 @@
 
 #define kPFSlideMenuHeight      36
 #define kPFSlideMenuButtonTag   1000
+typedef enum {
+    PairSearch = 0,
+    MyPage,
+    Profile,
+    Shop,
+    Setting,
+    Notification,
+    Invite,
+    Help,
+    TermsOfUse,
+    ContactUs
+}kPFSlideMenuList;
 
 @interface PairSearchLeftViewController : UITableViewController
 
