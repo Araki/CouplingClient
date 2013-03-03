@@ -6,12 +6,12 @@
 //  Copyright (c) 2012年 tsuchimoto. All rights reserved.
 //
 
+#import "PFPairSearchViewDeckController.h"
 #import "PairSearchLeftViewController.h"
-#import "PFSlideMenuButton.h"
 
 @interface PairSearchLeftViewController ()
 
-@property (nonatomic, retain) UIImage *headerImage;
+@property (nonatomic, strong) UIImage *headerImage;
 
 @end
 
@@ -22,6 +22,7 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        
     }
     return self;
 }
@@ -84,6 +85,7 @@
                                        reuseIdentifier:CellIdentifier];
         
         PFSlideMenuButton *aButton = [[PFSlideMenuButton alloc] initWithFrame:CGRectMake(0, 0, 320, kPFSlideMenuHeight)];
+        aButton.delegate = self;
         [aButton setImage:[self slideMenuImageWithRow:indexPath.row] forState:UIControlStateNormal];
         aButton.tag = kPFSlideMenuButtonTag;
         
@@ -102,6 +104,15 @@
     }
     
     return cell;
+}
+
+/*
+ * CenterViewControllerのを入れ替える
+ */
+- (void)changeParentCenterViewWithSlideMenuIndex:(NSInteger)index
+{
+    PFPairSearchViewDeckController *parentController = (PFPairSearchViewDeckController *)self.parentViewController;
+    [parentController changeCenterViewWithSlideMenuIndex:index];
 }
 
 - (UIImage *)slideMenuImageWithRow:(NSInteger)row
@@ -145,5 +156,13 @@
     
     return image;
 }
+
+
+#pragma mark- SlideMenuButtonDelegate
+- (void)selectedSlideMenuWithIndex:(NSInteger)index
+{
+    [self changeParentCenterViewWithSlideMenuIndex:index];
+}
+
 
 @end

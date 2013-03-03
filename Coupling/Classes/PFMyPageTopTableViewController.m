@@ -8,6 +8,8 @@
 
 #import "PFMyPageTopTableViewController.h"
 #import "PFMyPageTopTableCell.h"
+#import "IIViewDeckController.h"
+
 
 @interface PFMyPageTopTableViewController ()
 
@@ -35,6 +37,11 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -42,6 +49,11 @@
 }
 
 #pragma mark - Table view data source
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{    
+    return 80;
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

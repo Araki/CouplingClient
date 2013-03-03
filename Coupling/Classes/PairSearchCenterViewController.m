@@ -61,7 +61,7 @@
     [self.outletPageControl setEnabled:NO];
     
     
-#warning test
+    // test
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     PFPairSearchProfileViewController *view1 = [storyboard instantiateViewControllerWithIdentifier:@"PFPairSearchProfileViewController"];
     
@@ -192,6 +192,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+#pragma mark - IBAction
 
 - (IBAction)actionShowMenuButton:(UIButton *)sender {
     [self.viewDeckController toggleLeftViewAnimated:YES];

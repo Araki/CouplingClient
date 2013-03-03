@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PFSlideMenuButton.h"
 
 #define kPFSlideMenuHeight      36
 #define kPFSlideMenuButtonTag   1000
@@ -23,6 +24,10 @@ typedef enum {
     ContactUs
 }kPFSlideMenuList;
 
-@interface PairSearchLeftViewController : UITableViewController
+@interface PairSearchLeftViewController : UITableViewController<PFSlideMenuButtonDelegate>
+
+
+- (void)changeParentCenterViewWithSlideMenuIndex:(NSInteger)index;
+
 
 @end

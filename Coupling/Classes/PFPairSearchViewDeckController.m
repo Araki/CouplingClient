@@ -9,6 +9,7 @@
 #import "PFPairSearchViewDeckController.h"
 #import "PairSearchLeftViewController.h"
 #import "PairSearchCenterViewController.h"
+#import "PFMyPageTopTableViewController.h"
 
 @interface PFPairSearchViewDeckController ()
 
@@ -38,6 +39,59 @@
         // Add any extra init code here
     }
     return self;
+}
+
+/*
+ * SlideMenuのボタンに合わせて画面を入れ替える
+ */
+- (void)changeCenterViewWithSlideMenuIndex:(NSInteger)index
+{
+    
+    
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+    switch (index) {
+        case PairSearch:
+            if ([self.centerController isKindOfClass:[PairSearchCenterViewController class]]) {
+                return;
+            }
+            self.centerController = [storyboard instantiateViewControllerWithIdentifier:@"PairSearchCenterViewController"];
+            break;
+        case MyPage:
+            if ([self.centerController isKindOfClass:[PFMyPageTopTableViewController class]]) {
+                return;
+            }
+            self.centerController = [storyboard instantiateViewControllerWithIdentifier:@"PFMyPageTopTableViewController"];
+            break;
+        case Profile:
+            
+            break;
+        case Shop:
+            
+            break;
+        case Setting:
+            
+            break;
+        case Notification:
+            
+            break;
+        case Invite:
+            
+            break;
+        case Help:
+            
+            break;
+        case TermsOfUse:
+            
+            break;
+        case ContactUs:
+            
+            break;
+        default:
+            
+            break;
+    }
+    [self showCenterView:YES];
 }
 
 // フリックでスライドメニューがでないようにする。スクロールビューのため

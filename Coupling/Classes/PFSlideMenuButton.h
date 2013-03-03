@@ -7,11 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PairSearchLeftViewController.h"
+
+@protocol PFSlideMenuButtonDelegate <NSObject>
+
+/*
+ * タップされたボタンのindexを引数にとる 
+ */
+- (void)selectedSlideMenuWithIndex:(NSInteger)index;
+
+@end
+
 
 @interface PFSlideMenuButton : UIButton
 
 @property (nonatomic, assign) NSInteger section;
 @property (nonatomic, assign) NSInteger row;
+@property (nonatomic, assign) id<PFSlideMenuButtonDelegate> delegate;
 
 @end

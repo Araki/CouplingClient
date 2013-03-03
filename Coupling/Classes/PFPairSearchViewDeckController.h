@@ -11,5 +11,6 @@
 
 @interface PFPairSearchViewDeckController : IIViewDeckController
 
+- (void)changeCenterViewWithSlideMenuIndex:(NSInteger)index;
 
 @end
