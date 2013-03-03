@@ -229,26 +229,37 @@
             return [PFUtil heights];
         case 5:
             // 体型
+            return [PFUtil bodyShapes];
         case 6:
             // 学歴
+            return [PFUtil schoolBackgrounds];
         case 7:
             // 職業
+            return [PFUtil jobs];
         case 8:
             // 年収
+            return [PFUtil incomes];
         case 9:
             // 休日
+            return [PFUtil dayOff];
         case 10:
             // 趣味・活動
+            return [PFUtil hobbies];
         case 11:
             // 性格
+            return [PFUtil personalities];
         case 12:
             // 同居人
+            return [PFUtil roommates];
         case 13:
             // タバコ
+            return [PFUtil smoking];
         case 14:
             // お酒
+            return [PFUtil alcohol];
             
         default:
+            return [NSArray arrayWithObject:nil];
             break;
     }
     
