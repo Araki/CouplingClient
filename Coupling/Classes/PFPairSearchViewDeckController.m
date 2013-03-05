@@ -47,18 +47,20 @@
 - (void)changeCenterViewWithSlideMenuIndex:(NSInteger)index
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+    // slide menu で選んだ画面のviewController
+    UIViewController *viewController = nil;
     switch (index) {
         case PairSearch:
             if ([self.centerController isKindOfClass:[PairSearchCenterViewController class]]) {
                 return;
             }
-            self.centerController = [storyboard instantiateViewControllerWithIdentifier:@"PairSearchCenterViewController"];
+            viewController = [storyboard instantiateViewControllerWithIdentifier:@"PairSearchCenterViewController"];
             break;
         case MyPage:
             if ([self.centerController isKindOfClass:[PFMyPageTopPageViewController class]]) {
                 return;
             }
-            self.centerController = [storyboard instantiateViewControllerWithIdentifier:@"PFMyPageTopPageViewController"];
+            viewController = [storyboard instantiateViewControllerWithIdentifier:@"PFMyPageTopPageViewController"];
             break;
         case Profile:
             
@@ -88,12 +90,14 @@
             
             break;
     }
-    
-    __block PFPairSearchViewDeckController *selfInBlock = self;
-    [self setLeftLedge:-40 completion:^(BOOL finished){
-        [selfInBlock closeLeftView];
-        selfInBlock.leftLedge = 40;
-    }];
+    if (viewController) {
+        __block PFPairSearchViewDeckController *selfInBlock = self;
+        [self setLeftLedge:-40 completion:^(BOOL finished){
+            selfInBlock.centerController = viewController;
+            [selfInBlock closeLeftView];
+            selfInBlock.leftLedge = 40;
+        }];
+    }
 }
 
 // フリックでスライドメニューがでないようにする。スクロールビューのため

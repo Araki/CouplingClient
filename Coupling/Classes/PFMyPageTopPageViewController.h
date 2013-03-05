@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PFMyPageTopPageViewController : UIViewController<UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet UITableView *outletTableViewController;
-@property (weak, nonatomic) IBOutlet UINavigationBar *outletNavigationBar;
+@interface PFMyPageTopPageViewController : UIViewController <UITableViewDelegate>
 
+@property (strong, nonatomic) IBOutlet UITableView *outletTableViewController;
+@property (weak, nonatomic) IBOutlet UINavigationBar *outletNavigationBar;
+@property (strong, nonatomic) NSArray *cellDataArray; // user modelを入れる配列
 
 - (IBAction)actionSlideMenuBarButton:(id)sender;
 - (IBAction)actionStatusSortBarButton:(id)sender;

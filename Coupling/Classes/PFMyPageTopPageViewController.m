@@ -21,22 +21,28 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.outletTableViewController.delegate = self;
-        UIImage *image = [UIImage imageNamed:@"bg_header.png"];
-        [self.outletNavigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
+        
+    }
+    return self;
+}
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        
     }
     return self;
 }
 
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.outletTableViewController.backgroundColor = kPFBackGroundColor;
+    
+    UIImage *image = [UIImage imageNamed:@"bg_header.png"];
+    [self.outletNavigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,6 +65,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+//    return _cellDataArray.count;
     return 10;
 }
 
@@ -71,8 +78,10 @@
         UINib* nib = [UINib nibWithNibName:CellIdentifier bundle:nil];
         NSArray* array = [nib instantiateWithOwner:nil options:nil];
         cell = [array objectAtIndex:0];
+        cell.backgroundColor = kPFBackGroundColor;
+        cell.outletUserPictureImage.image = [UIImage imageNamed:@"test_imgres_1.jpeg"];
     }
-        
+    cell.outletUserAgeLabel.text = [NSString stringWithFormat:@"%d", indexPath.row];
     
     return cell;
 }
