@@ -11,6 +11,7 @@
 		2A055F4716E334BD0008297B /* PFMyPageTopTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A055F4616E334BD0008297B /* PFMyPageTopTableCell.xib */; };
 		2A055F4A16E337450008297B /* PFMyPageTopTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A055F4916E337450008297B /* PFMyPageTopTableCell.m */; };
 		2A46AA07167496AE00B459A3 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A46AA06167496AE00B459A3 /* FacebookSDK.framework */; };
+		2A4D501216E648C90042BF1D /* PFMyProfilePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4D501116E648C90042BF1D /* PFMyProfilePageViewController.m */; };
 		2A77227E167758780059AD46 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A77227B167758640059AD46 /* QuartzCore.framework */; };
 		2A7722841677589D0059AD46 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7722811677589D0059AD46 /* IIViewDeckController.m */; };
 		2A7722851677589D0059AD46 /* WrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7722831677589D0059AD46 /* WrapController.m */; };
@@ -110,6 +111,8 @@
 		2A46AA06167496AE00B459A3 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		2A4D36131674795A0065BD22 /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
 		2A4D3615167479690065BD22 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKResources.bundle; sourceTree = "<group>"; };
+		2A4D501016E648C90042BF1D /* PFMyProfilePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFMyProfilePageViewController.h; path = Classes/PFMyProfilePageViewController.h; sourceTree = "<group>"; };
+		2A4D501116E648C90042BF1D /* PFMyProfilePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFMyProfilePageViewController.m; path = Classes/PFMyProfilePageViewController.m; sourceTree = "<group>"; };
 		2A77227B167758640059AD46 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2A7722801677589D0059AD46 /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIViewDeckController.h; sourceTree = "<group>"; };
 		2A7722811677589D0059AD46 /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIViewDeckController.m; sourceTree = "<group>"; };
@@ -286,6 +289,15 @@
 			name = SearchCondition;
 			sourceTree = "<group>";
 		};
+		2A4D500F16E648920042BF1D /* MyProfile */ = {
+			isa = PBXGroup;
+			children = (
+				2A4D501016E648C90042BF1D /* PFMyProfilePageViewController.h */,
+				2A4D501116E648C90042BF1D /* PFMyProfilePageViewController.m */,
+			);
+			name = MyProfile;
+			sourceTree = "<group>";
+		};
 		2A77227F1677589D0059AD46 /* ViewDeck */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,11 +383,12 @@
 		C10A32791632A8C80083F51B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2A772289167759CC0059AD46 /* PairSearchTop */,
 				2A055F4B16E365450008297B /* SearchCondition */,
 				2A7F085116DA012000FFC881 /* MyPage */,
+				2A4D500F16E648920042BF1D /* MyProfile */,
 				C16FF3C616BE9A130075B721 /* Signup */,
 				C1138EA516BE5F6E001E30B6 /* Tutorial */,
-				2A772289167759CC0059AD46 /* PairSearchTop */,
 				C163A20715E0BABB00F3F25D /* MasterViewController.h */,
 				C163A20815E0BABB00F3F25D /* MasterViewController.m */,
 				C1CFC0A015F1D09E000EB27D /* SearchResultViewController.h */,
@@ -724,6 +737,7 @@
 				C133F5C616DA2A82001003A6 /* PFUtil.m in Sources */,
 				2A055F4316E32EF10008297B /* PFMyPageTopPageViewController.m in Sources */,
 				2A055F4A16E337450008297B /* PFMyPageTopTableCell.m in Sources */,
+				2A4D501216E648C90042BF1D /* PFMyProfilePageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@
 #import "PairSearchLeftViewController.h"
 #import "PairSearchCenterViewController.h"
 #import "PFMyPageTopPageViewController.h"
+#import "PFMyProfilePageViewController.h"
 
 @interface PFPairSearchViewDeckController ()
 
@@ -63,7 +64,7 @@
             viewController = [storyboard instantiateViewControllerWithIdentifier:@"PFMyPageTopPageViewController"];
             break;
         case Profile:
-            
+            viewController = [storyboard instantiateViewControllerWithIdentifier:@"PFMyProfilePageViewController"];
             break;
         case Shop:
             
