@@ -403,15 +403,11 @@
                                 <rect key="frame" x="35" y="66" width="106" height="97"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="uLS-2g-cBB">
-                                <rect key="frame" x="179" y="66" width="104" height="97"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fNp-Kw-mMw">
-                                <rect key="frame" x="66" y="181" width="189" height="39"/>
+                                <rect key="frame" x="37" y="181" width="246" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Button" image="button_view_my_profile.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -457,6 +453,21 @@
                                     <outlet property="delegate" destination="jle-Uk-ZGE" id="EnK-4l-nVm"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Zb3-hM-2ZS">
+                                <rect key="frame" x="176" y="74" width="100" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button" image="button_change_profile_picture.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="wNp-vE-YjE" kind="push" id="UBx-Kh-ROO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -468,7 +479,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g4E-iM-0Nc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="704" y="2387"/>
+            <point key="canvasLocation" x="718" y="2387"/>
+        </scene>
+        <!--Profile Picture Select Table View Controller-->
+        <scene sceneID="Zmx-bF-bU0">
+            <objects>
+                <tableViewController id="wNp-vE-YjE" customClass="PFProfilePictureSelectTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="52U-cq-7SD">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="2Hd-3U-02i" customClass="PFProfilePictureSelectTableViewCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="wNp-vE-YjE" id="ciu-Z7-lnd"/>
+                            <outlet property="delegate" destination="wNp-vE-YjE" id="few-P2-eyy"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="NSC-Fz-Jwh"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B4b-ja-oNw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1079" y="2387"/>
         </scene>
         <!--My Page Top Page View Controller-->
         <scene sceneID="eBi-b2-vpq">
@@ -719,9 +761,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="button_change_profile_picture.png" width="200" height="180"/>
         <image name="button_notification.png" width="57" height="57"/>
         <image name="button_search_filter.png" width="126" height="52"/>
         <image name="button_slide_menu.png" width="57" height="57"/>
+        <image name="button_view_my_profile.png" width="492" height="70"/>
     </resources>
     <classes>
         <class className="DetailViewController" superclassName="UIViewController">
@@ -766,6 +810,20 @@
         </class>
         <class className="PFPairSearchViewDeckController" superclassName="IIViewDeckController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PFPairSearchViewDeckController.h"/>
+        </class>
+        <class className="PFProfilePictureSelectTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFProfilePictureSelectTableViewCell.h"/>
+            <relationships>
+                <relationship kind="action" name="actionDelete:"/>
+                <relationship kind="action" name="actionSetMain:"/>
+                <relationship kind="outlet" name="outletDeleteButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="outletMainImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="outletSetMainButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="outletUserImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="PFProfilePictureSelectTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFProfilePictureSelectTableViewController.h"/>
         </class>
         <class className="PFSetConditionViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PFSetConditionViewController.h"/>

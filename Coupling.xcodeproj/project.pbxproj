@@ -37,6 +37,15 @@
 		2A7B30FA16B52D9800C17930 /* button_shop.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7B30F016B52D9700C17930 /* button_shop.png */; };
 		2A7B30FB16B52D9800C17930 /* button_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7B30F116B52D9700C17930 /* button_profile.png */; };
 		2A7B30FC16B52D9800C17930 /* button_partner_search.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7B30F216B52D9700C17930 /* button_partner_search.png */; };
+		2A7C4BCD16E7B06200871E5B /* PFProfilePictureSelectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7C4BCC16E7B06200871E5B /* PFProfilePictureSelectTableViewCell.m */; };
+		2A7C4BCF16E7B08400871E5B /* PFProfilePictureSelectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A7C4BCE16E7B08400871E5B /* PFProfilePictureSelectTableViewCell.xib */; };
+		2A7C4BD216E7B1B600871E5B /* PFProfilePictureSelectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7C4BD116E7B1B600871E5B /* PFProfilePictureSelectTableViewController.m */; };
+		2A7C4BD416E7BA0700871E5B /* tag_main_picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7C4BD316E7BA0700871E5B /* tag_main_picture.png */; };
+		2A7C4BD916E7BA1B00871E5B /* button_delete_picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7C4BD516E7BA1B00871E5B /* button_delete_picture.png */; };
+		2A7C4BDA16E7BA1B00871E5B /* button_set_main_picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7C4BD616E7BA1B00871E5B /* button_set_main_picture.png */; };
+		2A7C4BDB16E7BA1B00871E5B /* button_change_profile_picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7C4BD716E7BA1B00871E5B /* button_change_profile_picture.png */; };
+		2A7C4BDC16E7BA1B00871E5B /* button_add_picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7C4BD816E7BA1B00871E5B /* button_add_picture.png */; };
+		2A7C4BDE16E7BADB00871E5B /* button_view_my_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7C4BDD16E7BADB00871E5B /* button_view_my_profile.png */; };
 		2A7D920A16BE514C00220708 /* PFSetConditionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7D920916BE514C00220708 /* PFSetConditionViewController.m */; };
 		2AD7FB6116AC5E5C00BC6535 /* PFPairSearchProfileScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD7FB5F16AC5E5C00BC6535 /* PFPairSearchProfileScrollViewController.m */; };
 		2AD7FB6216AC5E5C00BC6535 /* PFPairSearchProfileScrollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AD7FB6016AC5E5C00BC6535 /* PFPairSearchProfileScrollViewController.xib */; };
@@ -144,6 +153,17 @@
 		2A7B30F016B52D9700C17930 /* button_shop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_shop.png; path = Resouces/button/button_shop.png; sourceTree = "<group>"; };
 		2A7B30F116B52D9700C17930 /* button_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_profile.png; path = Resouces/button/button_profile.png; sourceTree = "<group>"; };
 		2A7B30F216B52D9700C17930 /* button_partner_search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_partner_search.png; path = Resouces/button/button_partner_search.png; sourceTree = "<group>"; };
+		2A7C4BCB16E7B06200871E5B /* PFProfilePictureSelectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFProfilePictureSelectTableViewCell.h; path = Classes/PFProfilePictureSelectTableViewCell.h; sourceTree = "<group>"; };
+		2A7C4BCC16E7B06200871E5B /* PFProfilePictureSelectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFProfilePictureSelectTableViewCell.m; path = Classes/PFProfilePictureSelectTableViewCell.m; sourceTree = "<group>"; };
+		2A7C4BCE16E7B08400871E5B /* PFProfilePictureSelectTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFProfilePictureSelectTableViewCell.xib; path = Classes/PFProfilePictureSelectTableViewCell.xib; sourceTree = "<group>"; };
+		2A7C4BD016E7B1B600871E5B /* PFProfilePictureSelectTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFProfilePictureSelectTableViewController.h; path = Classes/PFProfilePictureSelectTableViewController.h; sourceTree = "<group>"; };
+		2A7C4BD116E7B1B600871E5B /* PFProfilePictureSelectTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFProfilePictureSelectTableViewController.m; path = Classes/PFProfilePictureSelectTableViewController.m; sourceTree = "<group>"; };
+		2A7C4BD316E7BA0700871E5B /* tag_main_picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tag_main_picture.png; path = Resouces/tag/tag_main_picture.png; sourceTree = "<group>"; };
+		2A7C4BD516E7BA1B00871E5B /* button_delete_picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_delete_picture.png; path = Resouces/button/button_delete_picture.png; sourceTree = "<group>"; };
+		2A7C4BD616E7BA1B00871E5B /* button_set_main_picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_set_main_picture.png; path = Resouces/button/button_set_main_picture.png; sourceTree = "<group>"; };
+		2A7C4BD716E7BA1B00871E5B /* button_change_profile_picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_change_profile_picture.png; path = Resouces/button/button_change_profile_picture.png; sourceTree = "<group>"; };
+		2A7C4BD816E7BA1B00871E5B /* button_add_picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_add_picture.png; path = Resouces/button/button_add_picture.png; sourceTree = "<group>"; };
+		2A7C4BDD16E7BADB00871E5B /* button_view_my_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_view_my_profile.png; path = Resouces/button/button_view_my_profile.png; sourceTree = "<group>"; };
 		2A7D920816BE514B00220708 /* PFSetConditionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFSetConditionViewController.h; path = Classes/PFSetConditionViewController.h; sourceTree = "<group>"; };
 		2A7D920916BE514C00220708 /* PFSetConditionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSetConditionViewController.m; path = Classes/PFSetConditionViewController.m; sourceTree = "<group>"; };
 		2AD7FB5E16AC5E5B00BC6535 /* PFPairSearchProfileScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFPairSearchProfileScrollViewController.h; path = Classes/PFPairSearchProfileScrollViewController.h; sourceTree = "<group>"; };
@@ -292,6 +312,7 @@
 		2A4D500F16E648920042BF1D /* MyProfile */ = {
 			isa = PBXGroup;
 			children = (
+				2A7C4BC716E7AF3A00871E5B /* PictureSelect */,
 				2A4D501016E648C90042BF1D /* PFMyProfilePageViewController.h */,
 				2A4D501116E648C90042BF1D /* PFMyProfilePageViewController.m */,
 			);
@@ -340,6 +361,11 @@
 		2A7B30CC16B506DB00C17930 /* Button */ = {
 			isa = PBXGroup;
 			children = (
+				2A7C4BD516E7BA1B00871E5B /* button_delete_picture.png */,
+				2A7C4BDD16E7BADB00871E5B /* button_view_my_profile.png */,
+				2A7C4BD616E7BA1B00871E5B /* button_set_main_picture.png */,
+				2A7C4BD716E7BA1B00871E5B /* button_change_profile_picture.png */,
+				2A7C4BD816E7BA1B00871E5B /* button_add_picture.png */,
 				2AEF05DC16B5507E009F5FD7 /* button_search_filter.png */,
 				2AEF05DD16B5507E009F5FD7 /* button_notification.png */,
 				2AEF05DE16B5507E009F5FD7 /* button_slide_menu.png */,
@@ -364,8 +390,21 @@
 		2A7B30CD16B506E200C17930 /* Tag */ = {
 			isa = PBXGroup;
 			children = (
+				2A7C4BD316E7BA0700871E5B /* tag_main_picture.png */,
 			);
 			name = Tag;
+			sourceTree = "<group>";
+		};
+		2A7C4BC716E7AF3A00871E5B /* PictureSelect */ = {
+			isa = PBXGroup;
+			children = (
+				2A7C4BD016E7B1B600871E5B /* PFProfilePictureSelectTableViewController.h */,
+				2A7C4BD116E7B1B600871E5B /* PFProfilePictureSelectTableViewController.m */,
+				2A7C4BCB16E7B06200871E5B /* PFProfilePictureSelectTableViewCell.h */,
+				2A7C4BCC16E7B06200871E5B /* PFProfilePictureSelectTableViewCell.m */,
+				2A7C4BCE16E7B08400871E5B /* PFProfilePictureSelectTableViewCell.xib */,
+			);
+			name = PictureSelect;
 			sourceTree = "<group>";
 		};
 		2A7F085116DA012000FFC881 /* MyPage */ = {
@@ -677,6 +716,13 @@
 				C16FF3B816BE80EB0075B721 /* Default-568h@2x.png in Resources */,
 				C16FF3B916BE80EB0075B721 /* Default@2x.png in Resources */,
 				2A055F4716E334BD0008297B /* PFMyPageTopTableCell.xib in Resources */,
+				2A7C4BCF16E7B08400871E5B /* PFProfilePictureSelectTableViewCell.xib in Resources */,
+				2A7C4BD416E7BA0700871E5B /* tag_main_picture.png in Resources */,
+				2A7C4BD916E7BA1B00871E5B /* button_delete_picture.png in Resources */,
+				2A7C4BDA16E7BA1B00871E5B /* button_set_main_picture.png in Resources */,
+				2A7C4BDB16E7BA1B00871E5B /* button_change_profile_picture.png in Resources */,
+				2A7C4BDC16E7BA1B00871E5B /* button_add_picture.png in Resources */,
+				2A7C4BDE16E7BADB00871E5B /* button_view_my_profile.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -738,6 +784,8 @@
 				2A055F4316E32EF10008297B /* PFMyPageTopPageViewController.m in Sources */,
 				2A055F4A16E337450008297B /* PFMyPageTopTableCell.m in Sources */,
 				2A4D501216E648C90042BF1D /* PFMyProfilePageViewController.m in Sources */,
+				2A7C4BCD16E7B06200871E5B /* PFProfilePictureSelectTableViewCell.m in Sources */,
+				2A7C4BD216E7B1B600871E5B /* PFProfilePictureSelectTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

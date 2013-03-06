@@ -221,6 +221,11 @@
     
 }
 
++ (UIButton *)addPictureButton
+{
+    return [PFUtil buttonWithName:@"button_add_picture.png" rect:CGRectMake(0, 0, 73, 26)];
+}
+
 + (UIButton *)buttonWithName:(NSString *)name rect:(CGRect)rect
 {
     UIImage *buttonImage = [UIImage imageNamed:name];
