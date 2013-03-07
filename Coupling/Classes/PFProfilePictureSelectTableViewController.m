@@ -8,8 +8,11 @@
 
 #import "PFProfilePictureSelectTableViewController.h"
 #import "PFProfilePictureSelectTableViewCell.h"
+#import "PFUserModel.h"
 
 @interface PFProfilePictureSelectTableViewController ()
+
+@property(retain, nonatomic) PFUserModel *user;
 
 @end
 
@@ -39,11 +42,16 @@
     [topRightBarButton addTarget:self action:@selector(addPicture) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithCustomView:topRightBarButton];
     self.navigationItem.rightBarButtonItem = rightBarButton;
-}
-
-- (void)addPicture
-{
-    NSLog(@"add picture");
+    
+    // test
+    self.user = [[PFUserModel alloc] init];
+    
+    UIImage *testImage1 = [UIImage imageNamed:@"test_why_always_me.jpeg"];
+    UIImage *testImage2 = [UIImage imageNamed:@"test_imgres.jpeg"];
+    [self.user.profileImages addObject:testImage1];
+    [self.user.profileImages addObject:testImage2];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,6 +59,57 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+// 写真追加 - NavigationBarの右のボタン
+- (void)addPicture
+{
+    NSString *title         = @"写真追加";
+    NSString *cancel        = @"キャンセル";
+    NSString *takePhotos    = @"写真を撮る";
+    NSString *fromLibrary   = @"ライブラリから選択";
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] init];
+    [actionSheet setDelegate:self];
+    [actionSheet setTitle:title];
+    [actionSheet addButtonWithTitle:takePhotos];
+    [actionSheet addButtonWithTitle:fromLibrary];
+    [actionSheet addButtonWithTitle:cancel];
+    [actionSheet setCancelButtonIndex:2];
+    [actionSheet showInView:self.view];
+}
+
+#pragma mark - Action sheet delegate
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init];
+    [imagePicker setDelegate:self];
+    switch (buttonIndex) {
+        case 0:
+            [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+            [self presentModalViewController:imagePicker animated:YES];
+            break;
+        case 1:
+            [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+            [self presentModalViewController:imagePicker animated:YES];
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker
+        didFinishPickingImage:(UIImage *)image
+                  editingInfo:(NSDictionary *)editingInfo {
+    // 選択されたイメージを追加
+    [self.user.profileImages addObject:image];
+    // リロードする
+    [self.tableView reloadData];
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [self dismissModalViewControllerAnimated:YES];
+}
+
 
 #pragma mark - Table view data source
 
@@ -61,7 +120,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return  10;
+    return  self.user.profileImages.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -79,7 +138,12 @@
         NSArray* array = [nib instantiateWithOwner:nil options:nil];
         cell = [array objectAtIndex:0];
         cell.outletUserImage.image = [UIImage imageNamed:@"test_imgres_1.jpeg"];
+        cell.delegate = self;
     }
+    cell.outletUserImage.image = [self.user.profileImages objectAtIndex:indexPath.row];
+    cell.outletSetMainButton.tag = indexPath.row;
+    cell.outletDeleteButton.tag  = indexPath.row;
+    
     if (indexPath.row == 0) {
         [cell.outletSetMainButton setHidden:YES];
         [cell.outletDeleteButton setHidden:YES];
@@ -93,56 +157,25 @@
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-#pragma mark - Table view delegate
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    NSLog(@"selectedIndexPath.row = %d", indexPath.row);
+}
+
+#pragma mark - PFProfilePictureSelectTableViewCell delegate
+
+- (void)setMainButtonWithIndex:(NSInteger)index
+{
+    // 選択したイメージを一番上に挿入する
+    [self.user.profileImages insertObject:[self.user.profileImages objectAtIndex:index] atIndex:0];
+    [self.user.profileImages removeObjectAtIndex:index + 1];
+    [self.tableView reloadData];
+}
+
+- (void)deleteButtonWithIndex:(NSInteger)index
+{
+    [self.user.profileImages removeObjectAtIndex:index];
+    [self.tableView reloadData];
 }
 
 @end

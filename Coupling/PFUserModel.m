@@ -32,17 +32,18 @@
 {
 	self = [super init];
 	if (self != nil) {
-		self.id = -1;
-		self.username = kPNDefaultUsername;
-		self.fullname = kPNDefaultFullName;
-		self.country = kPNDefaultCountry;
-		self.icon_url = kPNDefaultIconURL;
-		self.relationships = [NSArray array];
-		self.is_guest = kPNIsGuest;
-		self.is_secured = PNIsSecured;
-		self.is_following = kPNIsFollowing;
-		self.is_blocking = NO;
-		self.icon_used = @"default";
+		self.id             = -1;
+		self.username       = kPNDefaultUsername;
+		self.fullname       = kPNDefaultFullName;
+		self.country        = kPNDefaultCountry;
+		self.icon_url       = kPNDefaultIconURL;
+		self.relationships  = [NSArray array];
+		self.is_guest       = kPNIsGuest;
+		self.is_secured     = PNIsSecured;
+		self.is_following   = kPNIsFollowing;
+		self.is_blocking    = NO;
+		self.icon_used      = @"default";
+        self.profileImages  = [NSMutableArray array];
 	}
 	return self;
 }
@@ -52,18 +53,18 @@
 {
 	self = [self init];
 	if (self != nil) {
-		self.id = [[aDictionary objectForKey:@"id"] intValue];
-		self.username = [aDictionary stringValueForKey:@"username" defaultValue:kPNDefaultUsername];
-		self.fullname = [aDictionary stringValueForKey:@"fullname" defaultValue:kPNDefaultFullName];
-		self.country = [aDictionary stringValueForKey:@"country" defaultValue:kPNDefaultCountry];
-		self.icon_url = [aDictionary stringValueForKey:@"icon_url" defaultValue:kPNDefaultIconURL];
-		self.is_guest = [aDictionary boolValueForKey:@"is_guest" defaultValue:kPNIsGuest];
-		self.is_secured = [aDictionary boolValueForKey:@"is_secured" defaultValue:PNIsSecured];
-		self.is_following = [aDictionary boolValueForKey:@"is_following" defaultValue:kPNIsFollowing];
-        self.is_followed = [aDictionary boolValueForKey:@"is_followed" defaultValue:NO];
-		self.is_blocking = [aDictionary boolValueForKey:@"is_blocking" defaultValue:kPNIsBlocking];
-		self.externalId = [aDictionary stringValueForKey:@"external_id" defaultValue:@""];
-        self.email = [aDictionary stringValueForKey:@"email" defaultValue:nil];
+		self.id             = [[aDictionary objectForKey:@"id"] intValue];
+		self.username       = [aDictionary stringValueForKey:@"username" defaultValue:kPNDefaultUsername];
+		self.fullname       = [aDictionary stringValueForKey:@"fullname" defaultValue:kPNDefaultFullName];
+		self.country        = [aDictionary stringValueForKey:@"country" defaultValue:kPNDefaultCountry];
+		self.icon_url       = [aDictionary stringValueForKey:@"icon_url" defaultValue:kPNDefaultIconURL];
+		self.is_guest       = [aDictionary boolValueForKey:@"is_guest" defaultValue:kPNIsGuest];
+		self.is_secured     = [aDictionary boolValueForKey:@"is_secured" defaultValue:PNIsSecured];
+		self.is_following   = [aDictionary boolValueForKey:@"is_following" defaultValue:kPNIsFollowing];
+        self.is_followed    = [aDictionary boolValueForKey:@"is_followed" defaultValue:NO];
+		self.is_blocking    = [aDictionary boolValueForKey:@"is_blocking" defaultValue:kPNIsBlocking];
+		self.externalId     = [aDictionary stringValueForKey:@"external_id" defaultValue:@""];
+        self.email          = [aDictionary stringValueForKey:@"email" defaultValue:nil];
 		self.informationDictionary = aDictionary;
         
         if ([aDictionary hasObjectForKey:@"facebook"]) {
@@ -79,11 +80,11 @@
         if ([aDictionary hasObjectForKey:@"mixi"]) {
             self.mixi_id = [[aDictionary objectForKey:@"mixi"] objectForKey:@"id"];
         }
-        self.birthdate = [aDictionary stringValueForKey:@"birthdate" defaultValue:@""];
-        self.blurb = [aDictionary stringValueForKey:@"blurb" defaultValue:@""];
-        self.city = [aDictionary stringValueForKey:@"city" defaultValue:@""];
-        self.friends_count = [aDictionary intValueForKey:@"friends_count" defaultValue:0];
-        self.gender = [aDictionary stringValueForKey:@"gender" defaultValue:@""];
+        self.birthdate      = [aDictionary stringValueForKey:@"birthdate" defaultValue:@""];
+        self.blurb          = [aDictionary stringValueForKey:@"blurb" defaultValue:@""];
+        self.city           = [aDictionary stringValueForKey:@"city" defaultValue:@""];
+        self.friends_count  = [aDictionary intValueForKey:@"friends_count" defaultValue:0];
+        self.gender         = [aDictionary stringValueForKey:@"gender" defaultValue:@""];
 	}
 	PFCLog(PFLOG_CAT_MODEL_PARSER, @"DATAMODEL-PARSE\n%@", self);	// FOR DEBUG
 	return self;

@@ -47,6 +47,7 @@
 		2A7C4BDC16E7BA1B00871E5B /* button_add_picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7C4BD816E7BA1B00871E5B /* button_add_picture.png */; };
 		2A7C4BDE16E7BADB00871E5B /* button_view_my_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7C4BDD16E7BADB00871E5B /* button_view_my_profile.png */; };
 		2A7D920A16BE514C00220708 /* PFSetConditionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7D920916BE514C00220708 /* PFSetConditionViewController.m */; };
+		2A81F34816E8FBA6005B0D68 /* test_why_always_me.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2A81F34716E8FBA6005B0D68 /* test_why_always_me.jpeg */; };
 		2AD7FB6116AC5E5C00BC6535 /* PFPairSearchProfileScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD7FB5F16AC5E5C00BC6535 /* PFPairSearchProfileScrollViewController.m */; };
 		2AD7FB6216AC5E5C00BC6535 /* PFPairSearchProfileScrollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AD7FB6016AC5E5C00BC6535 /* PFPairSearchProfileScrollViewController.xib */; };
 		2AE6A65216AC0CF500CE2D90 /* PFPairSearchProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE6A65116AC0CF500CE2D90 /* PFPairSearchProfileViewController.m */; };
@@ -166,6 +167,7 @@
 		2A7C4BDD16E7BADB00871E5B /* button_view_my_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_view_my_profile.png; path = Resouces/button/button_view_my_profile.png; sourceTree = "<group>"; };
 		2A7D920816BE514B00220708 /* PFSetConditionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFSetConditionViewController.h; path = Classes/PFSetConditionViewController.h; sourceTree = "<group>"; };
 		2A7D920916BE514C00220708 /* PFSetConditionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSetConditionViewController.m; path = Classes/PFSetConditionViewController.m; sourceTree = "<group>"; };
+		2A81F34716E8FBA6005B0D68 /* test_why_always_me.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_why_always_me.jpeg; sourceTree = "<group>"; };
 		2AD7FB5E16AC5E5B00BC6535 /* PFPairSearchProfileScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFPairSearchProfileScrollViewController.h; path = Classes/PFPairSearchProfileScrollViewController.h; sourceTree = "<group>"; };
 		2AD7FB5F16AC5E5C00BC6535 /* PFPairSearchProfileScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFPairSearchProfileScrollViewController.m; path = Classes/PFPairSearchProfileScrollViewController.m; sourceTree = "<group>"; };
 		2AD7FB6016AC5E5C00BC6535 /* PFPairSearchProfileScrollViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFPairSearchProfileScrollViewController.xib; path = Classes/PFPairSearchProfileScrollViewController.xib; sourceTree = "<group>"; };
@@ -622,6 +624,7 @@
 				2A7B30CC16B506DB00C17930 /* Button */,
 				2A7B30CA16B506D000C17930 /* BackGround */,
 				C16FF3B616BE80EB0075B721 /* Default-568h@2x.png */,
+				2A81F34716E8FBA6005B0D68 /* test_why_always_me.jpeg */,
 				C16FF3B716BE80EB0075B721 /* Default@2x.png */,
 				2A77A77116B5A41000C7369D /* test_imgres_1.jpeg */,
 				2A77A77216B5A41000C7369D /* test_imgres_2.jpeg */,
@@ -723,6 +726,7 @@
 				2A7C4BDB16E7BA1B00871E5B /* button_change_profile_picture.png in Resources */,
 				2A7C4BDC16E7BA1B00871E5B /* button_add_picture.png in Resources */,
 				2A7C4BDE16E7BADB00871E5B /* button_view_my_profile.png in Resources */,
+				2A81F34816E8FBA6005B0D68 /* test_why_always_me.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

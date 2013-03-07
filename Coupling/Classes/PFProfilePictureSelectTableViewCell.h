@@ -8,12 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol PFProfileTableCellDelegate <NSObject>
+
+- (void)setMainButtonWithIndex:(NSInteger)index;
+- (void)deleteButtonWithIndex:(NSInteger)index;
+
+@end
+
 @interface PFProfilePictureSelectTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *outletUserImage;
 @property (weak, nonatomic) IBOutlet UIButton *outletSetMainButton;
 @property (weak, nonatomic) IBOutlet UIButton *outletDeleteButton;
 @property (weak, nonatomic) IBOutlet UIImageView *outletMainImageView;
+@property (assign, nonatomic) id<PFProfileTableCellDelegate> delegate;
 
 - (IBAction)actionSetMain:(id)sender;
 - (IBAction)actionDelete:(id)sender;

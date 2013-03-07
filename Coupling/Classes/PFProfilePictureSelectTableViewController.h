@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PFProfilePictureSelectTableViewCell.h"
 
-@interface PFProfilePictureSelectTableViewController : UITableViewController
+@interface PFProfilePictureSelectTableViewController : UITableViewController<UIActionSheetDelegate,
+                                                                            UIImagePickerControllerDelegate,
+                                                                            UINavigationControllerDelegate,
+                                                                            PFProfileTableCellDelegate>
 
 @end

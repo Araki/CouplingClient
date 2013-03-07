@@ -41,6 +41,7 @@
 @property (retain, nonatomic) NSDictionary* informationDictionary;
 @property (retain, nonatomic) NSString* externalId;
 @property (retain, nonatomic) NSString* email;
+@property (retain ,nonatomic) NSMutableArray *profileImages; // プロフィール写真リスト(UIImageの配列)
 
 // GW only
 @property (retain, nonatomic) NSString *birthdate, *blurb, *city, *gender, *mixi_id;
