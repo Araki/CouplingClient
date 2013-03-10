@@ -9,7 +9,6 @@
 #import <StoreKit/StoreKit.h>
 #import "AppDelegate.h"
 #import "PFGlobal.h"
-#import "DetailViewController.h"
 #import "MyStoreObserver.h"
 #import "FBManager.h"
 

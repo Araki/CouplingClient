@@ -1,24 +1,24 @@
 //
-//  DetailViewController.m
+//  SignupStep1ViewController.m
 //  Coupling
 //
 //  Created by tsuchimoto on 12/08/19.
 //  Copyright (c) 2012年 tsuchimoto. All rights reserved.
 //
 
-#import "DetailViewController.h"
+#import "SignupStep1ViewController.h"
 #import "AppDelegate.h"
 #import "SBJson.h"
 #import "FBManager.h"
 #import "PFHTTPRequestHelper.h"
 #import "SignupStep2ViewController.h"
 
-@interface DetailViewController ()
+@interface SignupStep1ViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 - (void)configureView;
 @end
 
-@implementation DetailViewController
+@implementation SignupStep1ViewController
 
 @synthesize detailDescriptionLabel;
 

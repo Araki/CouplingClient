@@ -1,5 +1,5 @@
 //
-//  DetailViewController.h
+//  SignupStep1ViewController.h
 //  Coupling
 //
 //  Created by tsuchimoto on 12/08/19.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
 
-@interface DetailViewController : UIViewController <UISplitViewControllerDelegate>
+@interface SignupStep1ViewController : UIViewController <UISplitViewControllerDelegate>
 
 @property (strong, nonatomic) id detailItem;
 @property (strong, nonatomic) NSMutableData *responseData;
