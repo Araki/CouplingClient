@@ -46,6 +46,8 @@
 		2A7AF28C16EC84E7006397EC /* send@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7AF27316EC84E7006397EC /* send@2x.png */; };
 		2A7AF28D16EC84E7006397EC /* messageReceived.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 2A7AF27516EC84E7006397EC /* messageReceived.aiff */; };
 		2A7AF28E16EC84E7006397EC /* messageSent.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 2A7AF27616EC84E7006397EC /* messageSent.aiff */; };
+		2A7AF29216EC85FE006397EC /* PFTalkPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7AF29016EC85FE006397EC /* PFTalkPageViewController.m */; };
+		2A7AF29316EC85FE006397EC /* PFTalkPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A7AF29116EC85FE006397EC /* PFTalkPageViewController.xib */; };
 		2A7B30DF16B5180000C17930 /* button_favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7B30DE16B5180000C17930 /* button_favorite.png */; };
 		2A7B30E116B5182300C17930 /* button_like.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7B30E016B5182300C17930 /* button_like.png */; };
 		2A7B30E416B51B0200C17930 /* button_fb_open.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7B30E216B51B0200C17930 /* button_fb_open.png */; };
@@ -194,6 +196,9 @@
 		2A7AF27316EC84E7006397EC /* send@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "send@2x.png"; sourceTree = "<group>"; };
 		2A7AF27516EC84E7006397EC /* messageReceived.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = messageReceived.aiff; sourceTree = "<group>"; };
 		2A7AF27616EC84E7006397EC /* messageSent.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = messageSent.aiff; sourceTree = "<group>"; };
+		2A7AF28F16EC85FE006397EC /* PFTalkPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFTalkPageViewController.h; path = Classes/PFTalkPageViewController.h; sourceTree = "<group>"; };
+		2A7AF29016EC85FE006397EC /* PFTalkPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFTalkPageViewController.m; path = Classes/PFTalkPageViewController.m; sourceTree = "<group>"; };
+		2A7AF29116EC85FE006397EC /* PFTalkPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFTalkPageViewController.xib; path = Classes/PFTalkPageViewController.xib; sourceTree = "<group>"; };
 		2A7B30DE16B5180000C17930 /* button_favorite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_favorite.png; path = Resouces/button/button_favorite.png; sourceTree = "<group>"; };
 		2A7B30E016B5182300C17930 /* button_like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_like.png; path = Resouces/button/button_like.png; sourceTree = "<group>"; };
 		2A7B30E216B51B0200C17930 /* button_fb_open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_fb_open.png; path = Resouces/button/button_fb_open.png; sourceTree = "<group>"; };
@@ -415,6 +420,9 @@
 		2A7AF25416EC6DCC006397EC /* Talk */ = {
 			isa = PBXGroup;
 			children = (
+				2A7AF28F16EC85FE006397EC /* PFTalkPageViewController.h */,
+				2A7AF29016EC85FE006397EC /* PFTalkPageViewController.m */,
+				2A7AF29116EC85FE006397EC /* PFTalkPageViewController.xib */,
 			);
 			name = Talk;
 			sourceTree = "<group>";
@@ -878,6 +886,7 @@
 				2A7AF28C16EC84E7006397EC /* send@2x.png in Resources */,
 				2A7AF28D16EC84E7006397EC /* messageReceived.aiff in Resources */,
 				2A7AF28E16EC84E7006397EC /* messageSent.aiff in Resources */,
+				2A7AF29316EC85FE006397EC /* PFTalkPageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -948,6 +957,7 @@
 				2A7AF27B16EC84E7006397EC /* MessagesViewController.m in Sources */,
 				2A7AF27C16EC84E7006397EC /* NSString+MessagesView.m in Sources */,
 				C1E3C62716ECA40D00BF4C99 /* SignupStep4ViewController.m in Sources */,
+				2A7AF29216EC85FE006397EC /* PFTalkPageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
