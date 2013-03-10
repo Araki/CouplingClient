@@ -74,7 +74,6 @@
 		C163A20015E0BABB00F3F25D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C163A1FE15E0BABB00F3F25D /* InfoPlist.strings */; };
 		C163A20215E0BABB00F3F25D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C163A20115E0BABB00F3F25D /* main.m */; };
 		C163A20615E0BABB00F3F25D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C163A20515E0BABB00F3F25D /* AppDelegate.m */; };
-		C163A20915E0BABB00F3F25D /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C163A20815E0BABB00F3F25D /* MasterViewController.m */; };
 		C163A20C15E0BABB00F3F25D /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C163A20B15E0BABB00F3F25D /* DetailViewController.m */; };
 		C16FF3B416BE60D30075B721 /* PFTutorialStep1Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = C1138EA816BE5F8C001E30B6 /* PFTutorialStep1Controller.m */; };
 		C16FF3B516BE60D80075B721 /* PFTutorialStep2Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = C1138EAA16BE5F8C001E30B6 /* PFTutorialStep2Controller.m */; };
@@ -110,6 +109,7 @@
 		C1CFC0A915F1DEE8000EB27D /* SearchResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1CFC0A815F1DEE8000EB27D /* SearchResultView.xib */; };
 		C1CFC0AD15F20203000EB27D /* photo (1).JPG in Resources */ = {isa = PBXBuildFile; fileRef = C1CFC0AC15F20203000EB27D /* photo (1).JPG */; };
 		C1E2E612166B300B0099B20F /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1E2E611166B300B0099B20F /* Storyboard.storyboard */; };
+		C1E3C60816EC790300BF4C99 /* TitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E3C60716EC790300BF4C99 /* TitleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -219,8 +219,6 @@
 		C163A20315E0BABB00F3F25D /* Coupling-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coupling-Prefix.pch"; sourceTree = "<group>"; };
 		C163A20415E0BABB00F3F25D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C163A20515E0BABB00F3F25D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C163A20715E0BABB00F3F25D /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		C163A20815E0BABB00F3F25D /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		C163A20A15E0BABB00F3F25D /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		C163A20B15E0BABB00F3F25D /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		C16FF3B616BE80EB0075B721 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -279,6 +277,8 @@
 		C1CFC0A815F1DEE8000EB27D /* SearchResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultView.xib; sourceTree = "<group>"; };
 		C1CFC0AC15F20203000EB27D /* photo (1).JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "photo (1).JPG"; sourceTree = "<group>"; };
 		C1E2E611166B300B0099B20F /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		C1E3C60616EC790300BF4C99 /* TitleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleViewController.h; sourceTree = "<group>"; };
+		C1E3C60716EC790300BF4C99 /* TitleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -430,8 +430,8 @@
 				2A4D500F16E648920042BF1D /* MyProfile */,
 				C16FF3C616BE9A130075B721 /* Signup */,
 				C1138EA516BE5F6E001E30B6 /* Tutorial */,
-				C163A20715E0BABB00F3F25D /* MasterViewController.h */,
-				C163A20815E0BABB00F3F25D /* MasterViewController.m */,
+				C1E3C60616EC790300BF4C99 /* TitleViewController.h */,
+				C1E3C60716EC790300BF4C99 /* TitleViewController.m */,
 				C1CFC0A015F1D09E000EB27D /* SearchResultViewController.h */,
 				C1CFC0A115F1D09E000EB27D /* SearchResultViewController.m */,
 				C1CFC0A515F1D39A000EB27D /* SearchResultView.h */,
@@ -739,7 +739,6 @@
 			files = (
 				C163A20215E0BABB00F3F25D /* main.m in Sources */,
 				C163A20615E0BABB00F3F25D /* AppDelegate.m in Sources */,
-				C163A20915E0BABB00F3F25D /* MasterViewController.m in Sources */,
 				C163A20C15E0BABB00F3F25D /* DetailViewController.m in Sources */,
 				C1CFC0A315F1D09E000EB27D /* SearchResultViewController.m in Sources */,
 				C1CFC0A715F1D39A000EB27D /* SearchResultView.m in Sources */,
@@ -790,6 +789,7 @@
 				2A4D501216E648C90042BF1D /* PFMyProfilePageViewController.m in Sources */,
 				2A7C4BCD16E7B06200871E5B /* PFProfilePictureSelectTableViewCell.m in Sources */,
 				2A7C4BD216E7B1B600871E5B /* PFProfilePictureSelectTableViewController.m in Sources */,
+				C1E3C60816EC790300BF4C99 /* TitleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
