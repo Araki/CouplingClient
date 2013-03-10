@@ -352,6 +352,13 @@
 			name = PairSearchTop;
 			sourceTree = "<group>";
 		};
+		2A7AF25416EC6DCC006397EC /* Talk */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Talk;
+			sourceTree = "<group>";
+		};
 		2A7B30CA16B506D000C17930 /* BackGround */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,6 +432,7 @@
 			isa = PBXGroup;
 			children = (
 				2A772289167759CC0059AD46 /* PairSearchTop */,
+				2A7AF25416EC6DCC006397EC /* Talk */,
 				2A055F4B16E365450008297B /* SearchCondition */,
 				2A7F085116DA012000FFC881 /* MyPage */,
 				2A4D500F16E648920042BF1D /* MyProfile */,
