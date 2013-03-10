@@ -32,7 +32,7 @@
 {
     [super viewDidLoad];
     self.tableView.backgroundView = nil;
-    self.tableView.backgroundColor = [UIColor colorWithRed:247.0/255.0 green:245.0/250.0 blue:230.0/250.0 alpha:1.0];
+    self.tableView.backgroundColor = kPFCommonBackGroundColor;
 }
 
 - (void)didReceiveMemoryWarning
