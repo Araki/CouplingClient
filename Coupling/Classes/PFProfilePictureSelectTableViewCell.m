@@ -35,6 +35,7 @@
 
 - (void)actionSetMain:(id)sender
 {
+    // ボタンのタグにtableViewのIndexPath.rowがナンバリングされている->何番目のボタンがタップされたかわかるように。
     self.selectedIndex = ((UIButton *)sender).tag;
     UIAlertView *alert = [[UIAlertView alloc] init];
     alert.tag = 1;

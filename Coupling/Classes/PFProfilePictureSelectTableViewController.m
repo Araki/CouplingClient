@@ -141,6 +141,7 @@
         cell.delegate = self;
     }
     cell.outletUserImage.image = [self.user.profileImages objectAtIndex:indexPath.row];
+    // 何番目のボタンがタップされたかわかるようにボタンのタグにindexPath.rowをナンバリングする
     cell.outletSetMainButton.tag = indexPath.row;
     cell.outletDeleteButton.tag  = indexPath.row;
     
