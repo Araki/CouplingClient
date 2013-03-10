@@ -27,6 +27,7 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = kPFCommonBackGroundColor;
+    self.navigationController.navigationBarHidden = NO;
 }
 
 - (void)didReceiveMemoryWarning
