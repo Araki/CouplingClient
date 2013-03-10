@@ -44,6 +44,7 @@ NSString *const FBSessionStateChangedNotification = @"com.example.Login:FBSessio
 - (void)configureView
 {
     self.view.backgroundColor = kPFCommonBackGroundColor;
+    self.navigationController.navigationBarHidden = NO;
 
     if (self.detailItem) {
         self.detailDescriptionLabel.text = [self.detailItem description];
