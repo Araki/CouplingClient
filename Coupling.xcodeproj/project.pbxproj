@@ -135,6 +135,7 @@
 		C1E2E612166B300B0099B20F /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1E2E611166B300B0099B20F /* Storyboard.storyboard */; };
 		C1E3C60816EC790300BF4C99 /* TitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E3C60716EC790300BF4C99 /* TitleViewController.m */; };
 		C1E3C62416EC8CE700BF4C99 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1E3C62116EC8CDD00BF4C99 /* AudioToolbox.framework */; };
+		C1E3C62716ECA40D00BF4C99 /* SignupStep4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E3C62616ECA40D00BF4C99 /* SignupStep4ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -335,6 +336,8 @@
 		C1E3C60616EC790300BF4C99 /* TitleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleViewController.h; sourceTree = "<group>"; };
 		C1E3C60716EC790300BF4C99 /* TitleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleViewController.m; sourceTree = "<group>"; };
 		C1E3C62116EC8CDD00BF4C99 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		C1E3C62516ECA40D00BF4C99 /* SignupStep4ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupStep4ViewController.h; sourceTree = "<group>"; };
+		C1E3C62616ECA40D00BF4C99 /* SignupStep4ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupStep4ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -697,6 +700,8 @@
 				C16FF3C916BE9A7F0075B721 /* SignupStep2ViewController.m */,
 				C1C5CACF16C7BB0700FA3188 /* SignupStep3ViewController.h */,
 				C1C5CAD016C7BB0700FA3188 /* SignupStep3ViewController.m */,
+				C1E3C62516ECA40D00BF4C99 /* SignupStep4ViewController.h */,
+				C1E3C62616ECA40D00BF4C99 /* SignupStep4ViewController.m */,
 			);
 			name = Signup;
 			sourceTree = "<group>";
@@ -942,6 +947,7 @@
 				2A7AF27A16EC84E7006397EC /* MessageSoundEffect.m in Sources */,
 				2A7AF27B16EC84E7006397EC /* MessagesViewController.m in Sources */,
 				2A7AF27C16EC84E7006397EC /* NSString+MessagesView.m in Sources */,
+				C1E3C62716ECA40D00BF4C99 /* SignupStep4ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

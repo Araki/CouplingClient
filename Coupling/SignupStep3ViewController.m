@@ -105,7 +105,7 @@
 
 - (IBAction)goNextView:(id)sender
 {
-    SignupStep3ViewController *signupViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SignupStep3ViewController"];
+    SignupStep3ViewController *signupViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SignupStep4ViewController"];
     [self.navigationController pushViewController:signupViewController animated:YES];
     
 }
