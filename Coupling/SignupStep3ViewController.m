@@ -10,9 +10,14 @@
 
 @interface SignupStep3ViewController ()
 
+- (void)dismissActionSheet:(id)sender;
+- (NSArray *)arrayForPicker:(NSInteger)row;
+
 @end
 
 @implementation SignupStep3ViewController
+@synthesize actionSheet;
+@synthesize currentPath;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,25 +43,50 @@
 
 #pragma mark UITableViewDelegate
 
-//行に表示するデータの生成
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    
+    static NSString *CellIdentifier = @"NormalCell";
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     }
-    NSInteger row = indexPath.row;
-    cell.textLabel.text = [self profileItemString:row];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.textLabel.font = [UIFont systemFontOfSize:14.0];
+    cell.textLabel.text = [self profileItemText:indexPath.row];
+    cell.detailTextLabel.text = @"";
     return cell;
 }
 
-- (NSString *)profileItemString:(NSInteger)row
+- (NSString *)profileItemText:(NSInteger)row
 {
     NSArray *items = [NSArray arrayWithObjects:@"職業", @"年収", @"休日", @"趣味・活動", @"性格", @"同居人", @"タバコ", @"お酒", nil];
     return (NSString *)[items objectAtIndex:row];
+}
+
+#pragma mark UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
+    self.actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+    
+    UISegmentedControl *closeButton = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObject:@"閉じる"]];
+    closeButton.momentary = YES;
+    closeButton.frame = CGRectMake(260, 7.0, 50.0, 30.0);
+    closeButton.segmentedControlStyle = UISegmentedControlStyleBar;
+    closeButton.tintColor = [UIColor blueColor];
+    [closeButton addTarget:self action:@selector(dismissActionSheet:) forControlEvents:UIControlEventValueChanged];
+    [self.actionSheet addSubview:closeButton];
+    
+    UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 40.0, 0, 0)];
+    pickerView.dataSource = self;
+	pickerView.delegate = self;
+	pickerView.showsSelectionIndicator = YES;
+    [self.actionSheet addSubview:pickerView];
+    [self.actionSheet showInView:self.view];
+	[self.actionSheet setFrame:CGRectMake(0, 150, 320, 485)];
+    
+    self.currentPath = indexPath;
 }
 
 #pragma mark UITableViewDataSource
@@ -79,6 +109,73 @@
     [self.navigationController pushViewController:signupViewController animated:YES];
     
 }
+
+#pragma mark UIPickerViewDelegate
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:self.currentPath];
+    cell.detailTextLabel.text = [[self arrayForPicker:self.currentPath.row] objectAtIndex:row];
+    [cell setNeedsLayout];
+}
+
+#pragma mark UIPickerViewDataSource
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)picker {
+	return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)picker numberOfRowsInComponent:(NSInteger)component {
+	return [self arrayForPicker:self.currentPath.row].count;
+}
+
+- (NSString *)pickerView:(UIPickerView *)picker titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return [[self arrayForPicker:self.currentPath.row] objectAtIndex:row];
+}
+
+#pragma mark -
+
+- (void)dismissActionSheet:(id)sender
+{
+    [self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+}
+
+- (NSArray *)arrayForPicker:(NSInteger)row
+{
+    switch (row) {
+        case 0:
+            // 職業
+            return [PFUtil jobs];
+        case 1:
+            // 年収
+            return [PFUtil incomes];
+        case 2:
+            // 休日
+            return [PFUtil dayOff];
+        case 3:
+            // 趣味・活動
+            return [PFUtil hobbies];
+        case 4:
+            // 性格
+            return [PFUtil personalities];
+        case 5:
+            // 同居人
+            return [PFUtil roommates];
+        case 6:
+            // タバコ
+            return [PFUtil smoking];
+        case 7:
+            // お酒
+            return [PFUtil alcohol];
+            
+        default:
+            return [NSArray arrayWithObject:nil];
+            break;
+    }
+    
+}
+
+
 
 
 @end
