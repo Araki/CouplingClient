@@ -43,7 +43,7 @@ NSString *const FBSessionStateChangedNotification = @"com.example.Login:FBSessio
 
 - (void)configureView
 {
-    // Update the user interface for the detail item.
+    self.view.backgroundColor = kPFCommonBackGroundColor;
 
     if (self.detailItem) {
         self.detailDescriptionLabel.text = [self.detailItem description];
