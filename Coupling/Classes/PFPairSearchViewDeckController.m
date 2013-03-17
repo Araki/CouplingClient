@@ -75,7 +75,7 @@
         case Setting:
             viewController = [storyboard instantiateViewControllerWithIdentifier:@"PFSettingPageViewController"];
             break;
-        case Notification:
+        case Announcement:
             viewController = [storyboard instantiateViewControllerWithIdentifier:@"PFAnnouncementPageViewController"];
             break;
         case Invite:

@@ -106,7 +106,7 @@
 }
 
 /*
- * CenterViewControllerのを入れ替える
+ * CenterViewControllerを入れ替える
  */
 - (void)changeParentCenterViewWithSlideMenuIndex:(NSInteger)index
 {
@@ -133,7 +133,7 @@
         case Setting:
             image = [UIImage imageNamed:@"button_settings.png"];
             break;
-        case Notification:
+        case Announcement:
             image = [UIImage imageNamed:@"button_info_from_pairful.png"];
             break;
         case Invite:

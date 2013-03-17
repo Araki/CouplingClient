@@ -17,7 +17,7 @@ typedef enum {
     Profile,
     Shop,
     Setting,
-    Notification,
+    Announcement,
     Invite,
     Help,
     TermsOfUse,
