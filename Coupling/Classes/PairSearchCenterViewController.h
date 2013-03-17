@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PFPairSearchProfileScrollViewController.h"
 
-@interface PairSearchCenterViewController : UIViewController<UIScrollViewDelegate>
+@interface PairSearchCenterViewController : UIViewController <UIScrollViewDelegate, PFPairSearchProfileDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UIScrollView *outletScrollView;

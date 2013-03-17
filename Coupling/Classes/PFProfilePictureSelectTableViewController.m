@@ -165,6 +165,7 @@
 
 #pragma mark - PFProfilePictureSelectTableViewCell delegate
 
+// メインにするボタン
 - (void)setMainButtonWithIndex:(NSInteger)index
 {
     // 選択したイメージを一番上に挿入する
@@ -173,6 +174,7 @@
     [self.tableView reloadData];
 }
 
+// 削除するボタン
 - (void)deleteButtonWithIndex:(NSInteger)index
 {
     [self.user.profileImages removeObjectAtIndex:index];

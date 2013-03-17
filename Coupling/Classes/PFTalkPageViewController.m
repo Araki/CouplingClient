@@ -23,16 +23,50 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self.tableView setBackgroundColor:kPFBackGroundColor];
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - MessageTableViewController methods
+
+- (BubbleMessageStyle)messageStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // メッセージの吹出しのスタイルを指定する
+    return BubbleMessageStyleIncoming;
+//    return BubbleMessageStyleOutgoing;
+}
+
+- (NSString *)textForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return @"testtetst";
+}
+
+- (void)sendPressed:(UIButton *)sender withText:(NSString *)text
+{
+    
+}
+
+#pragma mark - Table Views delegate
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
 }
 
 @end

@@ -64,6 +64,9 @@
             viewController = [storyboard instantiateViewControllerWithIdentifier:@"PFMyPageTopPageViewController"];
             break;
         case Profile:
+            if ([self.centerController isKindOfClass:[PFMyProfilePageViewController class]]) {
+                return;
+            }
             viewController = [storyboard instantiateViewControllerWithIdentifier:@"PFMyProfilePageViewController"];
             break;
         case Shop:

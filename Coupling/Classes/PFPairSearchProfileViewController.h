@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PFPairSearchProfileScrollViewController.h"
 
 @interface PFPairSearchProfileViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView *outletProfileImageView;
 @property (weak, nonatomic) IBOutlet UIScrollView *outletProfileScrollView;
-
+@property (strong, nonatomic) PFPairSearchProfileScrollViewController *profileScrollPageViewcontroller;// スクロールするプロフィールページ
 
 @end

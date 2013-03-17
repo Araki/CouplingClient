@@ -47,8 +47,11 @@
     NSLog(@"favorite");
 }
 
+// いいねボタンかトークボタンが押されたときのアクション
 - (IBAction)actionLikeOrTalk:(UIButton *)sender {
     NSLog(@"likeOrTalk");
+    // 一時的にトークページへのみ遷移する
+    [self.delegate showTalkPage];
 }
 
 @end

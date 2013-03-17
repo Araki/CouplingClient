@@ -8,7 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol PFPairSearchProfileDelegate <NSObject>
+
+- (void)showTalkPage;
+
+@end
+
 @interface PFPairSearchProfileScrollViewController : UIViewController
+
+@property (assign, nonatomic) id<PFPairSearchProfileDelegate> delegate;
 
 - (IBAction)actionOpenFacebook:(id)sender;
 - (IBAction)actionViewingFacebookPage:(id)sender;

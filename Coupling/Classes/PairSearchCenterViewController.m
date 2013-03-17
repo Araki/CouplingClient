@@ -10,6 +10,7 @@
 #import "IIViewDeckController.h"
 #import "PFPairSearchProfileViewController.h"
 #import "PFSetConditionViewController.h"
+#import "PFTalkPageViewController.h"
 
 @interface PairSearchCenterViewController ()
 
@@ -60,22 +61,26 @@
     // UIPageControl settings
     [self.outletPageControl setEnabled:NO];
     
+    // navigationBarの背景
+    UIImage *image = [UIImage imageNamed:@"bg_header.png"];
+    [self.outletNavigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
+    
     
     // test
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     PFPairSearchProfileViewController *view1 = [storyboard instantiateViewControllerWithIdentifier:@"PFPairSearchProfileViewController"];
+    view1.profileScrollPageViewcontroller.delegate = self;
     
     PFPairSearchProfileViewController *view2 = [storyboard instantiateViewControllerWithIdentifier:@"PFPairSearchProfileViewController"];
+    view2.profileScrollPageViewcontroller.delegate = self;
     
     PFPairSearchProfileViewController *view3 = [storyboard instantiateViewControllerWithIdentifier:@"PFPairSearchProfileViewController"];
+    view3.profileScrollPageViewcontroller.delegate = self;
     
     self.controllers = [[NSMutableArray alloc] initWithObjects:view1,
                                                                view2,
                                                                view3,nil];
     
-    // navigationBarの背景
-    UIImage *image = [UIImage imageNamed:@"bg_header.png"];
-    [self.outletNavigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -195,21 +200,29 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - PairSearchPfofileScrollView Delegate
+
+// トーク画面を表示する
+- (void)showTalkPage
+{
+    [self.navigationController pushViewController:[PFTalkPageViewController new] animated:YES];
+}
 
 #pragma mark - IBAction
 
-- (IBAction)actionShowMenuButton:(UIButton *)sender {
+- (IBAction)actionShowMenuButton:(UIButton *)sender
+{
     [self.viewDeckController toggleLeftView];
 }
 
-- (IBAction)actionNotificationButton:(UIButton *)sender {
+- (IBAction)actionNotificationButton:(UIButton *)sender
+{
     NSLog(@"Notifivation");
-    
 }
 
-- (IBAction)actionSetConditionsButton:(UIButton *)sender {
+- (IBAction)actionSetConditionsButton:(UIButton *)sender
+{
     NSLog(@"setConditions");
-    
 }
 
 - (void)viewDidUnload {
