@@ -1,5 +1,5 @@
 //
-//  PFHelpPageTableViewController.h
+//  PFSettingPageViewController.h
 //  Coupling
 //
 //  Created by Ryo Kamei on 13/03/17.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PFHelpPageTableViewController : UITableViewController
+@interface PFSettingPageViewController : UIViewController <UITableViewDelegate>
 
 @end

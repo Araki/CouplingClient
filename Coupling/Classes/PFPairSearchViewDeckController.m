@@ -73,19 +73,19 @@
             
             break;
         case Setting:
-            
+            viewController = [storyboard instantiateViewControllerWithIdentifier:@"PFSettingPageViewController"];
             break;
         case Notification:
-            
+            viewController = [storyboard instantiateViewControllerWithIdentifier:@"PFAnnouncementPageViewController"];
             break;
         case Invite:
             
             break;
         case Help:
-            
+            viewController = [storyboard instantiateViewControllerWithIdentifier:@"PFHelpPageViewController"];
             break;
         case TermsOfUse:
-            
+            viewController = [storyboard instantiateViewControllerWithIdentifier:@"PFTermsOfUsePageViewController"];
             break;
         case ContactUs:
             

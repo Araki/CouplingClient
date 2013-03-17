@@ -1,5 +1,5 @@
 //
-//  PFAnnouncementTableViewController.h
+//  PFAnnouncementPageViewController.h
 //  Coupling
 //
 //  Created by Ryo Kamei on 13/03/17.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PFAnnouncementTableViewController : UITableViewController
+@interface PFAnnouncementPageViewController : UIViewController <UITableViewDelegate>
 
 @end
