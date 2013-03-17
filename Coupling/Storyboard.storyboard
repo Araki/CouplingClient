@@ -716,7 +716,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="actionSlideMenuButton:" destination="jle-Uk-ZGE" eventType="touchUpInside" id="GLn-Uw-Stm"/>
+                                                    <action selector="actionSlideMenuBarButton:" destination="jle-Uk-ZGE" eventType="touchUpInside" id="mc1-UL-gXQ"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
@@ -882,7 +882,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="actionSlideMenuBarButton:" destination="gYP-UC-Fm6" eventType="touchUpInside" id="uCd-KU-0B9"/>
+                                                    <action selector="actionSlideMenuBarButton:" destination="gYP-UC-Fm6" eventType="touchUpInside" id="Tch-1D-AiX"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
@@ -952,7 +952,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="actionShowMenuButton:" destination="0EK-Zi-7jR" eventType="touchUpInside" id="1a8-wz-LaY"/>
+                                                    <action selector="actionSlideMenuBarButton:" destination="0EK-Zi-7jR" eventType="touchUpInside" id="AcQ-xJ-PZR"/>
                                                 </connections>
                                             </button>
                                         </barButtonItem>
@@ -1107,20 +1107,18 @@
         <class className="PFHelpPageViewController" superclassName="PFAbstractPageViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PFHelpPageViewController.h"/>
         </class>
-        <class className="PFMyPageTopPageViewController" superclassName="UIViewController">
+        <class className="PFMyPageTopPageViewController" superclassName="PFAbstractPageViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PFMyPageTopPageViewController.h"/>
             <relationships>
-                <relationship kind="action" name="actionSlideMenuBarButton:"/>
                 <relationship kind="action" name="actionStatusSortBarButton:"/>
                 <relationship kind="outlet" name="outletNavigationBar" candidateClass="UINavigationBar"/>
                 <relationship kind="outlet" name="outletTableViewController" candidateClass="UITableView"/>
             </relationships>
         </class>
-        <class className="PFMyProfilePageViewController" superclassName="UIViewController">
+        <class className="PFMyProfilePageViewController" superclassName="PFAbstractPageViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PFMyProfilePageViewController.h"/>
             <relationships>
                 <relationship kind="action" name="actionConfirmProfileButton:"/>
-                <relationship kind="action" name="actionSlideMenuButton:"/>
                 <relationship kind="outlet" name="outletNavigationBar" candidateClass="UINavigationBar"/>
                 <relationship kind="outlet" name="outletTableView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="outletUserProfileImageView" candidateClass="UIImageView"/>
@@ -1133,10 +1131,9 @@
                 <relationship kind="outlet" name="outletProfileScrollView" candidateClass="UIScrollView"/>
             </relationships>
         </class>
-        <class className="PFPairSearchTopPageViewController" superclassName="UIViewController">
+        <class className="PFPairSearchTopPageViewController" superclassName="PFAbstractPageViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PFPairSearchTopPageViewController.h"/>
             <relationships>
-                <relationship kind="action" name="actionShowMenuButton:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="outletNavigationBar" candidateClass="UINavigationBar"/>
                 <relationship kind="outlet" name="outletPageControl" candidateClass="UIPageControl"/>
                 <relationship kind="outlet" name="outletScrollView" candidateClass="UIScrollView"/>

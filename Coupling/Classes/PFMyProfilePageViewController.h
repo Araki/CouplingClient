@@ -7,16 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PFAbstractPageViewController.h"
 
-@interface PFMyProfilePageViewController : UIViewController<UITableViewDelegate>
+@interface PFMyProfilePageViewController : PFAbstractPageViewController<UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UINavigationBar *outletNavigationBar;
 @property (weak, nonatomic) IBOutlet UITableView *outletTableView;
 @property (weak, nonatomic) IBOutlet UIImageView *outletUserProfileImageView;
 
-
-
-- (IBAction)actionSlideMenuButton:(id)sender;
 - (IBAction)actionConfirmProfileButton:(id)sender;
 
 

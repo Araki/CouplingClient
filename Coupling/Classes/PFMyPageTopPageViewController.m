@@ -105,10 +105,6 @@
     [self setOutletNavigationBar:nil];
     [super viewDidUnload];
 }
-- (IBAction)actionSlideMenuBarButton:(id)sender
-{
-    [self.viewDeckController toggleLeftView];
-}
 
 - (IBAction)actionStatusSortBarButton:(id)sender
 {

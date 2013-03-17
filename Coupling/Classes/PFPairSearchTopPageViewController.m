@@ -210,11 +210,6 @@
 
 #pragma mark - IBAction
 
-- (IBAction)actionShowMenuButton:(UIButton *)sender
-{
-    [self.viewDeckController toggleLeftView];
-}
-
 - (IBAction)actionNotificationButton:(UIButton *)sender
 {
     NSLog(@"Notifivation");

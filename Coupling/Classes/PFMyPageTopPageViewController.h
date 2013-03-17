@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PFAbstractPageViewController.h"
 
-@interface PFMyPageTopPageViewController : UIViewController <UITableViewDelegate>
+@interface PFMyPageTopPageViewController : PFAbstractPageViewController <UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *outletTableViewController;
 @property (weak, nonatomic) IBOutlet UINavigationBar *outletNavigationBar;
 @property (strong, nonatomic) NSArray *cellDataArray; // user modelを入れる配列
 
-- (IBAction)actionSlideMenuBarButton:(id)sender;
 - (IBAction)actionStatusSortBarButton:(id)sender;
 
 @end

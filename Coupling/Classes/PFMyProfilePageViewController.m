@@ -80,10 +80,6 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
-- (IBAction)actionSlideMenuButton:(id)sender
-{
-    [self.viewDeckController toggleLeftView];
-}
 
 - (IBAction)actionConfirmProfileButton:(id)sender
 {
