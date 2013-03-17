@@ -26,6 +26,7 @@
 		2A7A94E216F5B7C4006DB200 /* PFAnnouncementPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7A94E116F5B7C4006DB200 /* PFAnnouncementPageViewController.m */; };
 		2A7A94E616F5B802006DB200 /* PFHelpPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7A94E516F5B802006DB200 /* PFHelpPageViewController.m */; };
 		2A7A94EA16F5B85E006DB200 /* PFTermsOfUsePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7A94E916F5B85E006DB200 /* PFTermsOfUsePageViewController.m */; };
+		2A7A94EE16F5C889006DB200 /* PFAbstractPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7A94ED16F5C889006DB200 /* PFAbstractPageViewController.m */; };
 		2A7AF27716EC84E7006397EC /* BubbleMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7AF25716EC84E7006397EC /* BubbleMessageCell.m */; };
 		2A7AF27816EC84E7006397EC /* BubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7AF25916EC84E7006397EC /* BubbleView.m */; };
 		2A7AF27916EC84E7006397EC /* MessageInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7AF25B16EC84E7006397EC /* MessageInputView.m */; };
@@ -177,6 +178,8 @@
 		2A7A94E516F5B802006DB200 /* PFHelpPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFHelpPageViewController.m; path = Classes/PFHelpPageViewController.m; sourceTree = "<group>"; };
 		2A7A94E816F5B85E006DB200 /* PFTermsOfUsePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFTermsOfUsePageViewController.h; path = Classes/PFTermsOfUsePageViewController.h; sourceTree = "<group>"; };
 		2A7A94E916F5B85E006DB200 /* PFTermsOfUsePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFTermsOfUsePageViewController.m; path = Classes/PFTermsOfUsePageViewController.m; sourceTree = "<group>"; };
+		2A7A94EC16F5C889006DB200 /* PFAbstractPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFAbstractPageViewController.h; path = Classes/PFAbstractPageViewController.h; sourceTree = "<group>"; };
+		2A7A94ED16F5C889006DB200 /* PFAbstractPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFAbstractPageViewController.m; path = Classes/PFAbstractPageViewController.m; sourceTree = "<group>"; };
 		2A7AF25616EC84E7006397EC /* BubbleMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleMessageCell.h; sourceTree = "<group>"; };
 		2A7AF25716EC84E7006397EC /* BubbleMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleMessageCell.m; sourceTree = "<group>"; };
 		2A7AF25816EC84E7006397EC /* BubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleView.h; sourceTree = "<group>"; };
@@ -624,7 +627,6 @@
 		C10A32791632A8C80083F51B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2A7A94DA16F5B53D006DB200 /* Others */,
 				2A772289167759CC0059AD46 /* PairSearchTop */,
 				2A7AF25416EC6DCC006397EC /* Talk */,
 				2A055F4B16E365450008297B /* SearchCondition */,
@@ -632,6 +634,7 @@
 				2A4D500F16E648920042BF1D /* MyProfile */,
 				C16FF3C616BE9A130075B721 /* Signup */,
 				C1138EA516BE5F6E001E30B6 /* Tutorial */,
+				2A7A94DA16F5B53D006DB200 /* Others */,
 				C1E3C60616EC790300BF4C99 /* TitleViewController.h */,
 				C1E3C60716EC790300BF4C99 /* TitleViewController.m */,
 				C1CFC0A015F1D09E000EB27D /* SearchResultViewController.h */,
@@ -683,6 +686,8 @@
 				C1571E23164FB39900AFB49D /* PFBlocks.h */,
 				C133F5C416DA2A80001003A6 /* PFUtil.h */,
 				C133F5C516DA2A80001003A6 /* PFUtil.m */,
+				2A7A94EC16F5C889006DB200 /* PFAbstractPageViewController.h */,
+				2A7A94ED16F5C889006DB200 /* PFAbstractPageViewController.m */,
 			);
 			name = Lib;
 			sourceTree = "<group>";
@@ -1026,6 +1031,7 @@
 				2A7A94E216F5B7C4006DB200 /* PFAnnouncementPageViewController.m in Sources */,
 				2A7A94E616F5B802006DB200 /* PFHelpPageViewController.m in Sources */,
 				2A7A94EA16F5B85E006DB200 /* PFTermsOfUsePageViewController.m in Sources */,
+				2A7A94EE16F5C889006DB200 /* PFAbstractPageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
