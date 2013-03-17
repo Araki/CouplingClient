@@ -22,6 +22,10 @@
 		2A79C590167C50620088F7F0 /* PFPairSearchTopPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A79C58F167C50620088F7F0 /* PFPairSearchTopPageViewController.m */; };
 		2A79C594167C5DBF0088F7F0 /* PFSlideMenuPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A79C593167C5DBE0088F7F0 /* PFSlideMenuPageViewController.m */; };
 		2A79C596167C72C80088F7F0 /* test_imgres.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2A79C595167C72C80088F7F0 /* test_imgres.jpeg */; };
+		2A7A94DD16F5B608006DB200 /* PFSettingPageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7A94DC16F5B608006DB200 /* PFSettingPageTableViewController.m */; };
+		2A7A94E216F5B7C4006DB200 /* PFAnnouncementTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7A94E116F5B7C4006DB200 /* PFAnnouncementTableViewController.m */; };
+		2A7A94E616F5B802006DB200 /* PFHelpPageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7A94E516F5B802006DB200 /* PFHelpPageTableViewController.m */; };
+		2A7A94EA16F5B85E006DB200 /* PFTermsOfUsePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7A94E916F5B85E006DB200 /* PFTermsOfUsePageViewController.m */; };
 		2A7AF27716EC84E7006397EC /* BubbleMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7AF25716EC84E7006397EC /* BubbleMessageCell.m */; };
 		2A7AF27816EC84E7006397EC /* BubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7AF25916EC84E7006397EC /* BubbleView.m */; };
 		2A7AF27916EC84E7006397EC /* MessageInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7AF25B16EC84E7006397EC /* MessageInputView.m */; };
@@ -165,6 +169,14 @@
 		2A79C592167C5DBE0088F7F0 /* PFSlideMenuPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFSlideMenuPageViewController.h; path = Classes/PFSlideMenuPageViewController.h; sourceTree = "<group>"; };
 		2A79C593167C5DBE0088F7F0 /* PFSlideMenuPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSlideMenuPageViewController.m; path = Classes/PFSlideMenuPageViewController.m; sourceTree = "<group>"; };
 		2A79C595167C72C80088F7F0 /* test_imgres.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_imgres.jpeg; sourceTree = "<group>"; };
+		2A7A94DB16F5B608006DB200 /* PFSettingPageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFSettingPageTableViewController.h; sourceTree = "<group>"; };
+		2A7A94DC16F5B608006DB200 /* PFSettingPageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFSettingPageTableViewController.m; sourceTree = "<group>"; };
+		2A7A94E016F5B7C4006DB200 /* PFAnnouncementTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFAnnouncementTableViewController.h; path = Classes/PFAnnouncementTableViewController.h; sourceTree = "<group>"; };
+		2A7A94E116F5B7C4006DB200 /* PFAnnouncementTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFAnnouncementTableViewController.m; path = Classes/PFAnnouncementTableViewController.m; sourceTree = "<group>"; };
+		2A7A94E416F5B802006DB200 /* PFHelpPageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFHelpPageTableViewController.h; path = Classes/PFHelpPageTableViewController.h; sourceTree = "<group>"; };
+		2A7A94E516F5B802006DB200 /* PFHelpPageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFHelpPageTableViewController.m; path = Classes/PFHelpPageTableViewController.m; sourceTree = "<group>"; };
+		2A7A94E816F5B85E006DB200 /* PFTermsOfUsePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFTermsOfUsePageViewController.h; path = Classes/PFTermsOfUsePageViewController.h; sourceTree = "<group>"; };
+		2A7A94E916F5B85E006DB200 /* PFTermsOfUsePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFTermsOfUsePageViewController.m; path = Classes/PFTermsOfUsePageViewController.m; sourceTree = "<group>"; };
 		2A7AF25616EC84E7006397EC /* BubbleMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleMessageCell.h; sourceTree = "<group>"; };
 		2A7AF25716EC84E7006397EC /* BubbleMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleMessageCell.m; sourceTree = "<group>"; };
 		2A7AF25816EC84E7006397EC /* BubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleView.h; sourceTree = "<group>"; };
@@ -415,6 +427,61 @@
 			name = PairSearchTop;
 			sourceTree = "<group>";
 		};
+		2A7A94DA16F5B53D006DB200 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				2A7A94EB16F5B88C006DB200 /* Inquiry */,
+				2A7A94E716F5B836006DB200 /* TermsOfUse */,
+				2A7A94E316F5B7E0006DB200 /* Help */,
+				2A7A94DF16F5B61B006DB200 /* Announcement */,
+				2A7A94DE16F5B60D006DB200 /* Setting */,
+			);
+			name = Others;
+			sourceTree = "<group>";
+		};
+		2A7A94DE16F5B60D006DB200 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				2A7A94DB16F5B608006DB200 /* PFSettingPageTableViewController.h */,
+				2A7A94DC16F5B608006DB200 /* PFSettingPageTableViewController.m */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
+		2A7A94DF16F5B61B006DB200 /* Announcement */ = {
+			isa = PBXGroup;
+			children = (
+				2A7A94E016F5B7C4006DB200 /* PFAnnouncementTableViewController.h */,
+				2A7A94E116F5B7C4006DB200 /* PFAnnouncementTableViewController.m */,
+			);
+			name = Announcement;
+			sourceTree = "<group>";
+		};
+		2A7A94E316F5B7E0006DB200 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				2A7A94E416F5B802006DB200 /* PFHelpPageTableViewController.h */,
+				2A7A94E516F5B802006DB200 /* PFHelpPageTableViewController.m */,
+			);
+			name = Help;
+			sourceTree = "<group>";
+		};
+		2A7A94E716F5B836006DB200 /* TermsOfUse */ = {
+			isa = PBXGroup;
+			children = (
+				2A7A94E816F5B85E006DB200 /* PFTermsOfUsePageViewController.h */,
+				2A7A94E916F5B85E006DB200 /* PFTermsOfUsePageViewController.m */,
+			);
+			name = TermsOfUse;
+			sourceTree = "<group>";
+		};
+		2A7A94EB16F5B88C006DB200 /* Inquiry */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Inquiry;
+			sourceTree = "<group>";
+		};
 		2A7AF25416EC6DCC006397EC /* Talk */ = {
 			isa = PBXGroup;
 			children = (
@@ -557,6 +624,7 @@
 		C10A32791632A8C80083F51B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2A7A94DA16F5B53D006DB200 /* Others */,
 				2A772289167759CC0059AD46 /* PairSearchTop */,
 				2A7AF25416EC6DCC006397EC /* Talk */,
 				2A055F4B16E365450008297B /* SearchCondition */,
@@ -954,6 +1022,10 @@
 				2A7AF27C16EC84E7006397EC /* NSString+MessagesView.m in Sources */,
 				C1E3C62716ECA40D00BF4C99 /* SignupStep4ViewController.m in Sources */,
 				2A7AF29216EC85FE006397EC /* PFTalkPageViewController.m in Sources */,
+				2A7A94DD16F5B608006DB200 /* PFSettingPageTableViewController.m in Sources */,
+				2A7A94E216F5B7C4006DB200 /* PFAnnouncementTableViewController.m in Sources */,
+				2A7A94E616F5B802006DB200 /* PFHelpPageTableViewController.m in Sources */,
+				2A7A94EA16F5B85E006DB200 /* PFTermsOfUsePageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
