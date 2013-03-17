@@ -1,5 +1,5 @@
 //
-//  PairSearchCenterViewController.h
+//  PFPairSearchTopPageViewController.h
 //  Coupling
 //
 //  Created by Ryo Kamei on 12/12/15.
@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PFPairSearchProfileScrollViewController.h"
+#import "PFScrollingProfilePageViewController.h"
 
-@interface PairSearchCenterViewController : UIViewController <UIScrollViewDelegate, PFPairSearchProfileDelegate>
+@interface PFPairSearchTopPageViewController : UIViewController <UIScrollViewDelegate, PFPairSearchProfileDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UIScrollView *outletScrollView;

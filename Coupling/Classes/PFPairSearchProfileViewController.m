@@ -30,7 +30,7 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         // スクロールするプロフィールページ
-        self.profileScrollPageViewcontroller = [[PFPairSearchProfileScrollViewController alloc] initWithNibName:@"PFPairSearchProfileScrollViewController" bundle:nil];
+        self.scrollingProfileView = [[PFScrollingProfilePageViewController alloc] initWithNibName:@"PFPairSearchProfileScrollViewController" bundle:nil];
         
         
         
@@ -43,11 +43,11 @@
     [super viewDidLoad];
     
     // スクロールするプロフィールページのパラメータ設定
-    float width = self.profileScrollPageViewcontroller.view.frame.size.width;
-    float height = self.profileScrollPageViewcontroller.view.frame.size.height;
-    [self addChildViewController:self.profileScrollPageViewcontroller];
+    float width = self.scrollingProfileView.view.frame.size.width;
+    float height = self.scrollingProfileView.view.frame.size.height;
+    [self addChildViewController:self.scrollingProfileView];
     [self.outletProfileScrollView setContentSize:CGSizeMake(width, height)];
-    [self.outletProfileScrollView addSubview:self.profileScrollPageViewcontroller.view];
+    [self.outletProfileScrollView addSubview:self.scrollingProfileView.view];
     
 	// テスト用
     UIImage *image = [UIImage imageNamed:@"test_imgres.jpeg"];

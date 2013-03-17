@@ -1,5 +1,5 @@
 //
-//  PairSearchLeftViewController.h
+//  PFSlideMenuPageViewController.h
 //  Coupling
 //
 //  Created by Ryo Kamei on 12/12/15.
@@ -24,7 +24,7 @@ typedef enum {
     ContactUs
 }kPFSlideMenuList;
 
-@interface PairSearchLeftViewController : UITableViewController<PFSlideMenuButtonDelegate>
+@interface PFSlideMenuPageViewController : UITableViewController<PFSlideMenuButtonDelegate>
 
 
 - (void)changeParentCenterViewWithSlideMenuIndex:(NSInteger)index;

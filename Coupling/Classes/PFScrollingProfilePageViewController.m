@@ -1,18 +1,18 @@
 //
-//  PFPairSearchProfileScrollViewController.m
+//  PFScrollingProfilePageViewController.m
 //  Coupling
 //
 //  Created by Ryo Kamei on 13/01/21.
 //  Copyright (c) 2013年 tsuchimoto. All rights reserved.
 //
 
-#import "PFPairSearchProfileScrollViewController.h"
+#import "PFScrollingProfilePageViewController.h"
 
-@interface PFPairSearchProfileScrollViewController ()
+@interface PFScrollingProfilePageViewController ()
 
 @end
 
-@implementation PFPairSearchProfileScrollViewController
+@implementation PFScrollingProfilePageViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

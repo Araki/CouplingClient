@@ -1,18 +1,18 @@
 //
-//  PairSearchCenterViewController.m
+//  PFPairSearchTopPageViewController.m
 //  Coupling
 //
 //  Created by Ryo Kamei on 12/12/15.
 //  Copyright (c) 2012年 tsuchimoto. All rights reserved.
 //
 
-#import "PairSearchCenterViewController.h"
+#import "PFPairSearchTopPageViewController.h"
 #import "IIViewDeckController.h"
 #import "PFPairSearchProfileViewController.h"
 #import "PFSetConditionViewController.h"
 #import "PFTalkPageViewController.h"
 
-@interface PairSearchCenterViewController ()
+@interface PFPairSearchTopPageViewController ()
 
 @property (assign) BOOL pageControlUsed;
 @property (assign) NSUInteger page;
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation PairSearchCenterViewController
+@implementation PFPairSearchTopPageViewController
 @synthesize outletScrollView;
 @synthesize outletPageControl;
 @synthesize pageControlUsed = _pageControlUsed;
@@ -69,13 +69,13 @@
     // test
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     PFPairSearchProfileViewController *view1 = [storyboard instantiateViewControllerWithIdentifier:@"PFPairSearchProfileViewController"];
-    view1.profileScrollPageViewcontroller.delegate = self;
+    view1.scrollingProfileView.delegate = self;
     
     PFPairSearchProfileViewController *view2 = [storyboard instantiateViewControllerWithIdentifier:@"PFPairSearchProfileViewController"];
-    view2.profileScrollPageViewcontroller.delegate = self;
+    view2.scrollingProfileView.delegate = self;
     
     PFPairSearchProfileViewController *view3 = [storyboard instantiateViewControllerWithIdentifier:@"PFPairSearchProfileViewController"];
-    view3.profileScrollPageViewcontroller.delegate = self;
+    view3.scrollingProfileView.delegate = self;
     
     self.controllers = [[NSMutableArray alloc] initWithObjects:view1,
                                                                view2,

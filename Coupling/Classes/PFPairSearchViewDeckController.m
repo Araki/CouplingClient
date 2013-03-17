@@ -7,8 +7,8 @@
 //
 
 #import "PFPairSearchViewDeckController.h"
-#import "PairSearchLeftViewController.h"
-#import "PairSearchCenterViewController.h"
+#import "PFSlideMenuPageViewController.h"
+#import "PFPairSearchTopPageViewController.h"
 #import "PFMyPageTopPageViewController.h"
 #import "PFMyProfilePageViewController.h"
 
@@ -31,8 +31,8 @@
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
-    PairSearchLeftViewController *leftController = [storyboard instantiateViewControllerWithIdentifier:@"PairSearchLeftViewController"];
-    PairSearchCenterViewController *centerController = [storyboard instantiateViewControllerWithIdentifier:@"PairSearchCenterViewController"];
+    PFSlideMenuPageViewController *leftController = [storyboard instantiateViewControllerWithIdentifier:@"PairSearchLeftViewController"];
+    PFPairSearchTopPageViewController *centerController = [storyboard instantiateViewControllerWithIdentifier:@"PairSearchCenterViewController"];
     
     self = [super initWithCenterViewController:centerController
                             leftViewController:leftController];
@@ -52,7 +52,7 @@
     UIViewController *viewController = nil;
     switch (index) {
         case PairSearch:
-            if ([self.centerController isKindOfClass:[PairSearchCenterViewController class]]) {
+            if ([self.centerController isKindOfClass:[PFPairSearchTopPageViewController class]]) {
                 return;
             }
             viewController = [storyboard instantiateViewControllerWithIdentifier:@"PairSearchCenterViewController"];

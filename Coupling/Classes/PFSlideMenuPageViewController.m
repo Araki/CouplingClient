@@ -1,5 +1,5 @@
 //
-//  PairSearchLeftViewController.m
+//  PFSlideMenuPageViewController.m
 //  Coupling
 //
 //  Created by Ryo Kamei on 12/12/15.
@@ -7,15 +7,15 @@
 //
 
 #import "PFPairSearchViewDeckController.h"
-#import "PairSearchLeftViewController.h"
+#import "PFSlideMenuPageViewController.h"
 
-@interface PairSearchLeftViewController ()
+@interface PFSlideMenuPageViewController ()
 
 @property (nonatomic, strong) UIImage *headerImage;
 
 @end
 
-@implementation PairSearchLeftViewController
+@implementation PFSlideMenuPageViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {

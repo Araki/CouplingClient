@@ -1,5 +1,5 @@
 //
-//  PFPairSearchProfileScrollViewController.h
+//  PFScrollingProfilePageViewController.h
 //  Coupling
 //
 //  Created by Ryo Kamei on 13/01/21.
@@ -14,7 +14,7 @@
 
 @end
 
-@interface PFPairSearchProfileScrollViewController : UIViewController
+@interface PFScrollingProfilePageViewController : UIViewController
 
 @property (assign, nonatomic) id<PFPairSearchProfileDelegate> delegate;
 

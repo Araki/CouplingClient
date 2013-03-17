@@ -19,8 +19,8 @@
 		2A772293167764C90059AD46 /* test_pairSearchTop.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A772292167764C90059AD46 /* test_pairSearchTop.png */; };
 		2A77A77316B5A41000C7369D /* test_imgres_1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2A77A77116B5A41000C7369D /* test_imgres_1.jpeg */; };
 		2A77A77416B5A41000C7369D /* test_imgres_2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2A77A77216B5A41000C7369D /* test_imgres_2.jpeg */; };
-		2A79C590167C50620088F7F0 /* PairSearchCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A79C58F167C50620088F7F0 /* PairSearchCenterViewController.m */; };
-		2A79C594167C5DBF0088F7F0 /* PairSearchLeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A79C593167C5DBE0088F7F0 /* PairSearchLeftViewController.m */; };
+		2A79C590167C50620088F7F0 /* PFPairSearchTopPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A79C58F167C50620088F7F0 /* PFPairSearchTopPageViewController.m */; };
+		2A79C594167C5DBF0088F7F0 /* PFSlideMenuPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A79C593167C5DBE0088F7F0 /* PFSlideMenuPageViewController.m */; };
 		2A79C596167C72C80088F7F0 /* test_imgres.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2A79C595167C72C80088F7F0 /* test_imgres.jpeg */; };
 		2A7AF27716EC84E7006397EC /* BubbleMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7AF25716EC84E7006397EC /* BubbleMessageCell.m */; };
 		2A7AF27816EC84E7006397EC /* BubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7AF25916EC84E7006397EC /* BubbleView.m */; };
@@ -73,8 +73,8 @@
 		2A7C4BDE16E7BADB00871E5B /* button_view_my_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7C4BDD16E7BADB00871E5B /* button_view_my_profile.png */; };
 		2A7D920A16BE514C00220708 /* PFSetConditionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7D920916BE514C00220708 /* PFSetConditionViewController.m */; };
 		2A81F34816E8FBA6005B0D68 /* test_why_always_me.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2A81F34716E8FBA6005B0D68 /* test_why_always_me.jpeg */; };
-		2AD7FB6116AC5E5C00BC6535 /* PFPairSearchProfileScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD7FB5F16AC5E5C00BC6535 /* PFPairSearchProfileScrollViewController.m */; };
-		2AD7FB6216AC5E5C00BC6535 /* PFPairSearchProfileScrollViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AD7FB6016AC5E5C00BC6535 /* PFPairSearchProfileScrollViewController.xib */; };
+		2AD7FB6116AC5E5C00BC6535 /* PFScrollingProfilePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD7FB5F16AC5E5C00BC6535 /* PFScrollingProfilePageViewController.m */; };
+		2AD7FB6216AC5E5C00BC6535 /* PFScrollingProfilePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AD7FB6016AC5E5C00BC6535 /* PFScrollingProfilePageViewController.xib */; };
 		2AE6A65216AC0CF500CE2D90 /* PFPairSearchProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE6A65116AC0CF500CE2D90 /* PFPairSearchProfileViewController.m */; };
 		2AEF05DA16B54B1F009F5FD7 /* bg_header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AEF05D916B54B1F009F5FD7 /* bg_header@2x.png */; };
 		2AEF05DF16B5507E009F5FD7 /* button_search_filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AEF05DC16B5507E009F5FD7 /* button_search_filter.png */; };
@@ -160,10 +160,10 @@
 		2A772292167764C90059AD46 /* test_pairSearchTop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_pairSearchTop.png; sourceTree = "<group>"; };
 		2A77A77116B5A41000C7369D /* test_imgres_1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_imgres_1.jpeg; sourceTree = "<group>"; };
 		2A77A77216B5A41000C7369D /* test_imgres_2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_imgres_2.jpeg; sourceTree = "<group>"; };
-		2A79C58E167C50610088F7F0 /* PairSearchCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PairSearchCenterViewController.h; path = Classes/PairSearchCenterViewController.h; sourceTree = "<group>"; };
-		2A79C58F167C50620088F7F0 /* PairSearchCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PairSearchCenterViewController.m; path = Classes/PairSearchCenterViewController.m; sourceTree = "<group>"; };
-		2A79C592167C5DBE0088F7F0 /* PairSearchLeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PairSearchLeftViewController.h; path = Classes/PairSearchLeftViewController.h; sourceTree = "<group>"; };
-		2A79C593167C5DBE0088F7F0 /* PairSearchLeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PairSearchLeftViewController.m; path = Classes/PairSearchLeftViewController.m; sourceTree = "<group>"; };
+		2A79C58E167C50610088F7F0 /* PFPairSearchTopPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFPairSearchTopPageViewController.h; path = Classes/PFPairSearchTopPageViewController.h; sourceTree = "<group>"; };
+		2A79C58F167C50620088F7F0 /* PFPairSearchTopPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFPairSearchTopPageViewController.m; path = Classes/PFPairSearchTopPageViewController.m; sourceTree = "<group>"; };
+		2A79C592167C5DBE0088F7F0 /* PFSlideMenuPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFSlideMenuPageViewController.h; path = Classes/PFSlideMenuPageViewController.h; sourceTree = "<group>"; };
+		2A79C593167C5DBE0088F7F0 /* PFSlideMenuPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSlideMenuPageViewController.m; path = Classes/PFSlideMenuPageViewController.m; sourceTree = "<group>"; };
 		2A79C595167C72C80088F7F0 /* test_imgres.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_imgres.jpeg; sourceTree = "<group>"; };
 		2A7AF25616EC84E7006397EC /* BubbleMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleMessageCell.h; sourceTree = "<group>"; };
 		2A7AF25716EC84E7006397EC /* BubbleMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleMessageCell.m; sourceTree = "<group>"; };
@@ -227,9 +227,9 @@
 		2A7D920816BE514B00220708 /* PFSetConditionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFSetConditionViewController.h; path = Classes/PFSetConditionViewController.h; sourceTree = "<group>"; };
 		2A7D920916BE514C00220708 /* PFSetConditionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSetConditionViewController.m; path = Classes/PFSetConditionViewController.m; sourceTree = "<group>"; };
 		2A81F34716E8FBA6005B0D68 /* test_why_always_me.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_why_always_me.jpeg; sourceTree = "<group>"; };
-		2AD7FB5E16AC5E5B00BC6535 /* PFPairSearchProfileScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFPairSearchProfileScrollViewController.h; path = Classes/PFPairSearchProfileScrollViewController.h; sourceTree = "<group>"; };
-		2AD7FB5F16AC5E5C00BC6535 /* PFPairSearchProfileScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFPairSearchProfileScrollViewController.m; path = Classes/PFPairSearchProfileScrollViewController.m; sourceTree = "<group>"; };
-		2AD7FB6016AC5E5C00BC6535 /* PFPairSearchProfileScrollViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFPairSearchProfileScrollViewController.xib; path = Classes/PFPairSearchProfileScrollViewController.xib; sourceTree = "<group>"; };
+		2AD7FB5E16AC5E5B00BC6535 /* PFScrollingProfilePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFScrollingProfilePageViewController.h; path = Classes/PFScrollingProfilePageViewController.h; sourceTree = "<group>"; };
+		2AD7FB5F16AC5E5C00BC6535 /* PFScrollingProfilePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFScrollingProfilePageViewController.m; path = Classes/PFScrollingProfilePageViewController.m; sourceTree = "<group>"; };
+		2AD7FB6016AC5E5C00BC6535 /* PFScrollingProfilePageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFScrollingProfilePageViewController.xib; path = Classes/PFScrollingProfilePageViewController.xib; sourceTree = "<group>"; };
 		2AE6A64516AC094E00CE2D90 /* PFPairSearchProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFPairSearchProfileViewController.h; path = Classes/PFPairSearchProfileViewController.h; sourceTree = "<group>"; };
 		2AE6A65116AC0CF500CE2D90 /* PFPairSearchProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFPairSearchProfileViewController.m; path = Classes/PFPairSearchProfileViewController.m; sourceTree = "<group>"; };
 		2AEF05D916B54B1F009F5FD7 /* bg_header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg_header@2x.png"; path = "Resouces/background/bg_header@2x.png"; sourceTree = "<group>"; };
@@ -400,15 +400,15 @@
 			children = (
 				2A772286167759130059AD46 /* PFPairSearchViewDeckController.h */,
 				2A772287167759130059AD46 /* PFPairSearchViewDeckController.m */,
-				2A79C58E167C50610088F7F0 /* PairSearchCenterViewController.h */,
-				2A79C58F167C50620088F7F0 /* PairSearchCenterViewController.m */,
-				2A79C592167C5DBE0088F7F0 /* PairSearchLeftViewController.h */,
-				2A79C593167C5DBE0088F7F0 /* PairSearchLeftViewController.m */,
+				2A79C58E167C50610088F7F0 /* PFPairSearchTopPageViewController.h */,
+				2A79C58F167C50620088F7F0 /* PFPairSearchTopPageViewController.m */,
+				2A79C592167C5DBE0088F7F0 /* PFSlideMenuPageViewController.h */,
+				2A79C593167C5DBE0088F7F0 /* PFSlideMenuPageViewController.m */,
 				2AE6A64516AC094E00CE2D90 /* PFPairSearchProfileViewController.h */,
 				2AE6A65116AC0CF500CE2D90 /* PFPairSearchProfileViewController.m */,
-				2AD7FB5E16AC5E5B00BC6535 /* PFPairSearchProfileScrollViewController.h */,
-				2AD7FB5F16AC5E5C00BC6535 /* PFPairSearchProfileScrollViewController.m */,
-				2AD7FB6016AC5E5C00BC6535 /* PFPairSearchProfileScrollViewController.xib */,
+				2AD7FB5E16AC5E5B00BC6535 /* PFScrollingProfilePageViewController.h */,
+				2AD7FB5F16AC5E5C00BC6535 /* PFScrollingProfilePageViewController.m */,
+				2AD7FB6016AC5E5C00BC6535 /* PFScrollingProfilePageViewController.xib */,
 				2A7B30E616B5298100C17930 /* PFSlideMenuButton.h */,
 				2A7B30E716B5298200C17930 /* PFSlideMenuButton.m */,
 			);
@@ -833,7 +833,7 @@
 				C1E2E612166B300B0099B20F /* Storyboard.storyboard in Resources */,
 				2A772293167764C90059AD46 /* test_pairSearchTop.png in Resources */,
 				2A79C596167C72C80088F7F0 /* test_imgres.jpeg in Resources */,
-				2AD7FB6216AC5E5C00BC6535 /* PFPairSearchProfileScrollViewController.xib in Resources */,
+				2AD7FB6216AC5E5C00BC6535 /* PFScrollingProfilePageViewController.xib in Resources */,
 				2A7B30DF16B5180000C17930 /* button_favorite.png in Resources */,
 				2A7B30E116B5182300C17930 /* button_like.png in Resources */,
 				2A7B30E416B51B0200C17930 /* button_fb_open.png in Resources */,
@@ -929,10 +929,10 @@
 				2A7722841677589D0059AD46 /* IIViewDeckController.m in Sources */,
 				2A7722851677589D0059AD46 /* WrapController.m in Sources */,
 				2A772288167759130059AD46 /* PFPairSearchViewDeckController.m in Sources */,
-				2A79C590167C50620088F7F0 /* PairSearchCenterViewController.m in Sources */,
-				2A79C594167C5DBF0088F7F0 /* PairSearchLeftViewController.m in Sources */,
+				2A79C590167C50620088F7F0 /* PFPairSearchTopPageViewController.m in Sources */,
+				2A79C594167C5DBF0088F7F0 /* PFSlideMenuPageViewController.m in Sources */,
 				2AE6A65216AC0CF500CE2D90 /* PFPairSearchProfileViewController.m in Sources */,
-				2AD7FB6116AC5E5C00BC6535 /* PFPairSearchProfileScrollViewController.m in Sources */,
+				2AD7FB6116AC5E5C00BC6535 /* PFScrollingProfilePageViewController.m in Sources */,
 				2A7B30E816B5298200C17930 /* PFSlideMenuButton.m in Sources */,
 				C16FF3B416BE60D30075B721 /* PFTutorialStep1Controller.m in Sources */,
 				C16FF3B516BE60D80075B721 /* PFTutorialStep2Controller.m in Sources */,
