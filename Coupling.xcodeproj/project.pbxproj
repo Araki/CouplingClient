@@ -433,11 +433,11 @@
 		2A7A94DA16F5B53D006DB200 /* Others */ = {
 			isa = PBXGroup;
 			children = (
-				2A7A94EB16F5B88C006DB200 /* Inquiry */,
-				2A7A94E716F5B836006DB200 /* TermsOfUse */,
-				2A7A94E316F5B7E0006DB200 /* Help */,
-				2A7A94DF16F5B61B006DB200 /* Announcement */,
 				2A7A94DE16F5B60D006DB200 /* Setting */,
+				2A7A94DF16F5B61B006DB200 /* Announcement */,
+				2A7A94E316F5B7E0006DB200 /* Help */,
+				2A7A94E716F5B836006DB200 /* TermsOfUse */,
+				2A7A94EB16F5B88C006DB200 /* Inquiry */,
 			);
 			name = Others;
 			sourceTree = "<group>";

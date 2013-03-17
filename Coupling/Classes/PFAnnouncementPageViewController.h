@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PFAbstractPageViewController.h"
 
-@interface PFAnnouncementPageViewController : UIViewController <UITableViewDelegate>
+@interface PFAnnouncementPageViewController : PFAbstractPageViewController <UITableViewDelegate>
 
 @end
