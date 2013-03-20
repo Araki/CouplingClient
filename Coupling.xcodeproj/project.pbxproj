@@ -693,6 +693,8 @@
 				C133F5C516DA2A80001003A6 /* PFUtil.m */,
 				2A7A94EC16F5C889006DB200 /* PFAbstractPageViewController.h */,
 				2A7A94ED16F5C889006DB200 /* PFAbstractPageViewController.m */,
+				2A81C31C16F9DFF8005C85A3 /* PFActionSheet.h */,
+				2A81C31D16F9DFF8005C85A3 /* PFActionSheet.m */,
 			);
 			name = Lib;
 			sourceTree = "<group>";
