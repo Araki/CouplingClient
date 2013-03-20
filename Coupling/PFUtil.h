@@ -29,12 +29,15 @@
 + (NSArray *)roommates;
 + (NSArray *)smoking;
 + (NSArray *)alcohol;
++ (NSArray *)searchConditionTitles;
++ (NSArray *)introductions;
++ (NSArray *)lastLogines;
 
 // top bar button
 + (UIButton *)slideMenuBarButton;
 + (UIButton *)searchConditionBarButton;
 + (UIButton *)notififcationBarButton;
-+ (UIButton *)myPageStatusBarButtonWithStatus:(NSInteger)status;
+//+ (UIButton *)myPageStatusBarButtonWithStatus:(NSInteger)status;
 + (UIButton *)addPictureButton;
 
 @end

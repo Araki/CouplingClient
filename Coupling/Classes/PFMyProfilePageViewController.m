@@ -32,6 +32,7 @@
     UIImage *image = [UIImage imageNamed:@"bg_header.png"];
     [self.outletNavigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
     
+    // test
     self.outletUserProfileImageView.image = [UIImage imageNamed:@"test_imgres_1.jpeg"];
 }
 

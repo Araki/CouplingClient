@@ -169,7 +169,7 @@
 
 + (NSArray *)incomes
 {
-    return [NSArray arrayWithObjects:@"200万円未満", @"200万円～400万円", @"400万円～600万円" @"600万円～800万円", @"800万円～1000万円", @"1000万円～1500万円", @"1500万円以上", nil];
+    return [NSArray arrayWithObjects:@"200万円未満", @"200万円～400万円", @"400万円～600万円", @"600万円～800万円", @"800万円～1000万円", @"1000万円～1500万円", @"1500万円以上", nil];
 }
 
 + (NSArray *)dayOff
@@ -187,6 +187,17 @@
     return [NSArray arrayWithObjects:@"優しい", @"素直", @"誠実", @"明るい", @"社交的", @"人見知り", @"知的", @"ドライ", @"ロマンチスト", @"几帳面", @"穏やか", @"寂しがり", @"負けず嫌い", @"家庭的", @"優柔不断", @"決断力がある", @"天然", @"インドア", @"アウトドア", @"楽観的", @"真面目", @"知的", @"照れ屋", @"いつも笑顔", @"上品", @"落ち着いている", @"謙虚", @"厳格", @"冷静", @"好奇心旺盛", @"家庭的", @"仕事好き", @"責任感がある", @"包容力がある", @"面白い", @"さわやか", @"行動力がある", @"熱い", @"気が利く", nil];
 }
 
++ (NSArray *)introductions
+{
+    return @[@"記入あり", @"記入なし"];
+}
+
+
++ (NSArray *)lastLogines
+{
+    return @[@"24時間以内", @"3日以内", @"1週間以内", @"1ヶ月以内", @"1ヶ月以上"];
+}
+
 + (NSArray *)roommates
 {
     return [NSArray arrayWithObjects:@"1人暮らし", @"親や兄弟と同居", @"ルームメイトと同居", @"その他", nil];
@@ -201,6 +212,28 @@
 {
     return [NSArray arrayWithObjects:@"飲めない", @"飲めるが好きではない", @"つきあい程度に飲む", @"大好き", nil];
 }
+
++ (NSArray *)searchConditionTitles
+{
+    return @[@"年齢",
+             @"住所",
+             @"自己紹介文",
+             @"出身地",
+             @"血液型",
+             @"身長",
+             @"体型",
+             @"学歴",
+             @"職業",
+             @"年収",
+             @"休日",
+             @"趣味・活動",
+             @"性格",
+             @"同居人",
+             @"タバコ",
+             @"お酒",
+             @"最終ログイン日"];
+}
+
 // top bar button
 + (UIButton *)slideMenuBarButton
 {
@@ -216,11 +249,12 @@
 {
     return [PFUtil buttonWithName:@"button_notification.png" rect:CGRectMake(0, 0, 28, 28)];
 }
+/*
 + (UIButton *)myPageStatusBarButtonWithStatus:(NSInteger)status
 {
     
 }
-
+*/
 + (UIButton *)addPictureButton
 {
     return [PFUtil buttonWithName:@"button_add_picture.png" rect:CGRectMake(0, 0, 73, 26)];
