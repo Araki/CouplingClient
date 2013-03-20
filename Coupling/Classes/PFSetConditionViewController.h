@@ -28,10 +28,11 @@ typedef enum {
 }kPFConditionList;
 
 #import <UIKit/UIKit.h>
+#import "PFActionSheet.h"
 
-@interface PFSetConditionViewController : UITableViewController <UIActionSheetDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
+@interface PFSetConditionViewController : UITableViewController <PFActionSheetDelegate>
 
-@property (strong, nonatomic) UIActionSheet *actionSheet;
+@property (strong, nonatomic) PFActionSheet *actionSheet;
 @property (strong, nonatomic) NSIndexPath *currentPath;
 
 @end

@@ -92,118 +92,104 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
-    self.actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
-    
-    UISegmentedControl *closeButton = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObject:@"閉じる"]];
-    closeButton.momentary = YES;
-    closeButton.frame = CGRectMake(260, 7.0, 50.0, 30.0);
-    closeButton.segmentedControlStyle = UISegmentedControlStyleBar;
-    closeButton.tintColor = [UIColor blueColor];
-    [closeButton addTarget:self action:@selector(dismissActionSheet:) forControlEvents:UIControlEventValueChanged];
-    [self.actionSheet addSubview:closeButton];
-    
-    UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 40.0, 0, 0)];
-    pickerView.dataSource = self;
-	pickerView.delegate = self;
-	pickerView.showsSelectionIndicator = YES;
-    [self.actionSheet addSubview:pickerView];
-    [self.actionSheet showInView:self.view];
-	[self.actionSheet setFrame:CGRectMake(0, 150, 320, 485)];
-    
+    self.actionSheet = [self actionSheetWithRow:indexPath.row];
     self.currentPath = indexPath;
 }
 
-#pragma mark - Pickerview delegate
-
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-{
-    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:self.currentPath];
-    cell.detailTextLabel.text = [[self arrayForPicker:self.currentPath.row] objectAtIndex:row];
-    [cell setNeedsLayout];
-}
-
-#pragma mark - Pickerview datasource
-
-- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)picker {
-	return 1;
-}
-
-- (NSInteger)pickerView:(UIPickerView *)picker numberOfRowsInComponent:(NSInteger)component {
-	return [self arrayForPicker:self.currentPath.row].count;
-}
-
-- (NSString *)pickerView:(UIPickerView *)picker titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return [[self arrayForPicker:self.currentPath.row] objectAtIndex:row];
-}
-
-
-- (void)dismissActionSheet:(id)sender
+#pragma mark - PFActionSheetDelegate
+- (void)dismissOkButtonWithTitles:(NSArray *)titles
 {
     [self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
 }
 
-
-- (NSArray *)arrayForPicker:(NSInteger)row
+- (PFActionSheet *)actionSheetWithRow:(NSInteger)row
 {
+    NSInteger numOfComponents = 1;
+    NSArray *title1 = nil;
+    NSArray *title2 = nil;
+    NSArray *title3 = nil;
     switch (row) {
         case Age:
             // 年齢
-            return [PFUtil alcohol];
+            title1 = [PFUtil alcohol];
+            break;
         case Address:
             // 居住地
-            return [PFUtil prefectures];
+            title1 = [PFUtil prefectures];
+            break;
         case Introduction:
             // 自己紹介文
-            return [PFUtil introductions];
+            title1 = [PFUtil introductions];
+            break;
         case HomeTown:
             // 出身地
-            return [PFUtil prefectures];
+            title1 = [PFUtil prefectures];
+            break;
         case BloodType:
             // 血液型
-            return [PFUtil bloodTypes];
+            title1 = [PFUtil bloodTypes];
+            break;
         case Height:
             // 身長
-            return [PFUtil heights];
+            numOfComponents = 2;
+            title1 = [PFUtil heights];
+            title2 = [PFUtil heights];
+            break;
         case Body:
             // 体型
-            return [PFUtil bodyShapes];
+            title1 = [PFUtil bodyShapes];
+            break;
         case Education:
             // 学歴
-            return [PFUtil schoolBackgrounds];
+            title1 = [PFUtil schoolBackgrounds];
+            break;
         case Occupation:
             // 職業
-            return [PFUtil jobs];
+            title1 = [PFUtil jobs];
+            break;
         case Income:
             // 年収
-            return [PFUtil incomes];
+            title1 = [PFUtil incomes];
+            break;
         case Holiday:
             // 休日
-            return [PFUtil dayOff];
+            title1 = [PFUtil dayOff];
+            break;
         case Hobbies:
             // 趣味・活動
-            return [PFUtil hobbies];
+            title1 = [PFUtil hobbies];
+            break;
         case Personality:
             // 性格
-            return [PFUtil personalities];
+            title1 = [PFUtil personalities];
+            break;
         case Roommate:
             // 同居人
-            return [PFUtil roommates];
+            title1 = [PFUtil roommates];
+            break;
         case Tabaco:
             // タバコ
-            return [PFUtil smoking];
+            title1 = [PFUtil smoking];
+            break;
         case Alcohol:
             // お酒
-            return [PFUtil alcohol];
+            title1 = [PFUtil alcohol];
+            break;
         case LastLoginData:
             // 最終ログイン日
-            return [PFUtil lastLogines];
+            title1 = [PFUtil lastLogines];
+            break;
             
         default:
-            return [NSArray arrayWithObject:nil];
+            title1 = [NSArray arrayWithObject:nil];
             break;
     }
-    
+    PFActionSheet *sheet = [PFActionSheet sheetWithView:self.view
+                                                  frame:CGRectMake(0, 150, 320, 485)
+                                               delegate:self
+                                     NumberOfComponents:numOfComponents
+                                                 titles:title1, title2, title3, nil];
+    return sheet;
 }
 
 @end
