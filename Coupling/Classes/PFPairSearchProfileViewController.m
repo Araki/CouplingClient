@@ -30,7 +30,8 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         // スクロールするプロフィールページ
-        self.scrollingProfileView = [[PFScrollingProfilePageViewController alloc] initWithNibName:@"PFPairSearchProfileScrollViewController" bundle:nil];
+        self.scrollingProfileView = [[PFScrollingProfilePageViewController alloc] initWithNibName:@"PFScrollingProfilePageViewController" bundle:nil];
+
         
         
         
