@@ -18,7 +18,7 @@
 
 @implementation PFActionSheet
 
-+ (id)sheetWithView:(UIView *)view frame:(CGRect)frame delegate:(id)delegate NumberOfComponents:(NSInteger)numOfComponent titles:(NSArray *)title,...
++ (id)sheetWithView:(UIView *)view frame:(CGRect)frame delegate:(id)delegate titles:(NSArray *)title,...
 {
     NSMutableArray *array = [NSMutableArray array];
 	va_list argp;
@@ -29,17 +29,17 @@
 		value = va_arg(argp,id);
 	}
 	va_end(argp);
-    return [[self alloc] initWithWithView:(UIView *)view frame:(CGRect)frame delegate:(id)delegate numberOfComponents:numOfComponent titles:array];
+    return [[self alloc] initWithWithView:(UIView *)view frame:(CGRect)frame delegate:(id)delegate titles:array];
 }
 
 
-- (id)initWithWithView:(UIView *)view frame:(CGRect)frame delegate:(id)delegate numberOfComponents:(NSInteger)numOfComponent titles:(NSArray *)titles
+- (id)initWithWithView:(UIView *)view frame:(CGRect)frame delegate:(id)delegate titles:(NSArray *)titles
 {
     self = [super initWithTitle:nil delegate:delegate cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
     if (self) {
         // Initialization code
         self.titleArray = titles;
-        self.numberOfComponent = numOfComponent;
+        self.numberOfComponent = titles.count;
         self.PFDelegate = delegate;
         
         self.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
@@ -57,6 +57,7 @@
         self.pickerView.delegate = self;
         self.pickerView.showsSelectionIndicator = YES;
         [self addSubview:self.pickerView];
+        
         [self showInView:view];
         [self setFrame:frame];
     }
@@ -85,9 +86,10 @@
 
 #pragma mark - Pickerview delegate
 
-//- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-//{
-//}
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    [self.PFDelegate selectedWithComponent:component title:[[self.titleArray objectAtIndex:component] objectAtIndex:row]];
+}
 
 #pragma mark - Pickerview datasource
 

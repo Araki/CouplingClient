@@ -102,6 +102,11 @@
     [self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
 }
 
+- (void)selectedWithComponent:(NSInteger)component title:(NSString *)title
+{
+    NSLog(@"component = %d : title = %@", component, title);    
+}
+
 - (PFActionSheet *)actionSheetWithRow:(NSInteger)row
 {
     NSInteger numOfComponents = 1;
@@ -187,7 +192,6 @@
     PFActionSheet *sheet = [PFActionSheet sheetWithView:self.view
                                                   frame:CGRectMake(0, 150, 320, 485)
                                                delegate:self
-                                     NumberOfComponents:numOfComponents
                                                  titles:title1, title2, title3, nil];
     return sheet;
 }
