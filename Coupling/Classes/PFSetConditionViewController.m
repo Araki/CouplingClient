@@ -10,7 +10,8 @@
 
 @interface PFSetConditionViewController ()
 
-@property (strong) NSArray *conditionListArray;
+@property (nonatomic, strong) NSArray *conditionListArray; // 各検索条件のタイトル
+@property (nonatomic, strong) NSMutableArray *detailListArray; // 選択された検索条件が入る
 
 @end
 
@@ -21,6 +22,10 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        _detailListArray = [NSMutableArray arrayWithCapacity:kPFSearchConditionNum];
+        for (int i = 0; i < kPFSearchConditionNum; i++) {
+            [self.detailListArray addObject:[NSNull null]];
+        }
         
     }
     return self;
@@ -37,8 +42,6 @@
     [super viewDidLoad];
     self.navigationController.title = @"お相手検索";    
     
-    
-    // 
     self.conditionListArray = [PFUtil searchConditionTitles];
     
 }
@@ -96,15 +99,17 @@
     self.currentPath = indexPath;
 }
 
-#pragma mark - PFActionSheetDelegate
-- (void)dismissOkButtonWithTitles:(NSArray *)titles
+#pragma mark - PFActionSheet Delegate
+
+- (void)dismissOkButtonWithTitles:(NSArray *)titles type:(kPFActionSheetType)type
 {
+    NSLog(@"titles = %@", titles);
     [self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
 }
 
-- (void)selectedWithComponent:(NSInteger)component title:(NSString *)title
+- (void)selectedWithComponent:(NSInteger)component title:(NSString *)title type:(kPFActionSheetType)type
 {
-    NSLog(@"component = %d : title = %@", component, title);    
+    NSLog(@"component = %d : title = %@", component, title);  
 }
 
 - (PFActionSheet *)actionSheetWithRow:(NSInteger)row
@@ -115,73 +120,56 @@
     NSArray *title3 = nil;
     switch (row) {
         case Age:
-            // 年齢
             title1 = [PFUtil alcohol];
             break;
         case Address:
-            // 居住地
             title1 = [PFUtil prefectures];
             break;
         case Introduction:
-            // 自己紹介文
             title1 = [PFUtil introductions];
             break;
         case HomeTown:
-            // 出身地
             title1 = [PFUtil prefectures];
             break;
         case BloodType:
-            // 血液型
             title1 = [PFUtil bloodTypes];
             break;
         case Height:
-            // 身長
             numOfComponents = 2;
             title1 = [PFUtil heights];
             title2 = [PFUtil heights];
             break;
         case Body:
-            // 体型
             title1 = [PFUtil bodyShapes];
             break;
         case Education:
-            // 学歴
             title1 = [PFUtil schoolBackgrounds];
             break;
         case Occupation:
-            // 職業
             title1 = [PFUtil jobs];
             break;
         case Income:
-            // 年収
             title1 = [PFUtil incomes];
             break;
         case Holiday:
-            // 休日
             title1 = [PFUtil dayOff];
             break;
         case Hobbies:
-            // 趣味・活動
             title1 = [PFUtil hobbies];
             break;
         case Personality:
-            // 性格
             title1 = [PFUtil personalities];
             break;
         case Roommate:
-            // 同居人
             title1 = [PFUtil roommates];
             break;
         case Tabaco:
-            // タバコ
             title1 = [PFUtil smoking];
             break;
         case Alcohol:
-            // お酒
             title1 = [PFUtil alcohol];
             break;
         case LastLoginData:
-            // 最終ログイン日
             title1 = [PFUtil lastLogines];
             break;
             
@@ -189,6 +177,7 @@
             title1 = [NSArray arrayWithObject:nil];
             break;
     }
+    
     PFActionSheet *sheet = [PFActionSheet sheetWithView:self.view
                                                   frame:CGRectMake(0, 150, 320, 485)
                                                delegate:self

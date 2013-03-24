@@ -10,17 +10,23 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum {
+    singleType = 0, // PickerViewのcomponentが１つのタイプ
+    dowbleType,     //          〃            2つのタイプ
+    tripleType      //          〃            3つのタイプ
+}kPFActionSheetType;
+
 @protocol PFActionSheetDelegate <NSObject>
 
 /**
  * okボタンが押されたときに呼ばれる。引数にはPickerViewで選んだTitle(NSString)がComponentごとに配列で入っている。
  */
 @optional
-- (void)dismissOkButtonWithTitles:(NSArray *)titles;
+- (void)dismissOkButtonWithTitles:(NSArray *)titles type:(kPFActionSheetType)type;
 /**
  * 選択されたPickerのcomponentとtitleが渡される
  */
-- (void)selectedWithComponent:(NSInteger)component title:(NSString *)title;
+- (void)selectedWithComponent:(NSInteger)component title:(NSString *)title type:(kPFActionSheetType)type;
 
 @end
 

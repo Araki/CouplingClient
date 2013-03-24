@@ -10,10 +10,10 @@
 
 @interface PFActionSheet ()
 
+@property (nonatomic, assign) NSInteger actionSheetType;
 @property (nonatomic, assign) NSInteger numberOfComponent;
 @property (nonatomic, strong) UIPickerView *pickerView;
 @property (nonatomic, strong) NSMutableArray *selectedTitles; // 選択されたタイトルが入る。
-
 @end
 
 @implementation PFActionSheet
@@ -41,7 +41,20 @@
         self.titleArray = titles;
         self.numberOfComponent = titles.count;
         self.PFDelegate = delegate;
-        
+        switch (self.numberOfComponent) {
+            case 0:
+                self.actionSheetType = singleType;
+                break;
+            case 1:
+                self.actionSheetType = dowbleType;
+                break;
+            case 2:
+                self.actionSheetType = tripleType;
+                break;
+            default:
+                self.actionSheetType = singleType;
+                break;
+        }
         self.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
         
         UISegmentedControl *closeButton = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObject:@"閉じる"]];
@@ -81,14 +94,14 @@
         [selectedTitles addObject:title];
     }
     
-    [self.PFDelegate dismissOkButtonWithTitles:selectedTitles];
+    [self.PFDelegate dismissOkButtonWithTitles:selectedTitles type:self.actionSheetType];
 }
 
 #pragma mark - Pickerview delegate
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    [self.PFDelegate selectedWithComponent:component title:[[self.titleArray objectAtIndex:component] objectAtIndex:row]];
+    [self.PFDelegate selectedWithComponent:component title:[[self.titleArray objectAtIndex:component] objectAtIndex:row] type:self.actionSheetType];
 }
 
 #pragma mark - Pickerview datasource
