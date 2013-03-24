@@ -77,6 +77,7 @@
 		2A7C4BDC16E7BA1B00871E5B /* button_add_picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7C4BD816E7BA1B00871E5B /* button_add_picture.png */; };
 		2A7C4BDE16E7BADB00871E5B /* button_view_my_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7C4BDD16E7BADB00871E5B /* button_view_my_profile.png */; };
 		2A7D920A16BE514C00220708 /* PFSetConditionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7D920916BE514C00220708 /* PFSetConditionViewController.m */; };
+		2A7DB2EC16FF022900F34ED5 /* PFActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7DB2EB16FF022900F34ED5 /* PFActionSheet.m */; };
 		2A81F34816E8FBA6005B0D68 /* test_why_always_me.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2A81F34716E8FBA6005B0D68 /* test_why_always_me.jpeg */; };
 		2AD7FB6116AC5E5C00BC6535 /* PFScrollingProfilePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD7FB5F16AC5E5C00BC6535 /* PFScrollingProfilePageViewController.m */; };
 		2AD7FB6216AC5E5C00BC6535 /* PFScrollingProfilePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AD7FB6016AC5E5C00BC6535 /* PFScrollingProfilePageViewController.xib */; };
@@ -241,8 +242,8 @@
 		2A7C4BDD16E7BADB00871E5B /* button_view_my_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_view_my_profile.png; path = Resouces/button/button_view_my_profile.png; sourceTree = "<group>"; };
 		2A7D920816BE514B00220708 /* PFSetConditionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFSetConditionViewController.h; path = Classes/PFSetConditionViewController.h; sourceTree = "<group>"; };
 		2A7D920916BE514C00220708 /* PFSetConditionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSetConditionViewController.m; path = Classes/PFSetConditionViewController.m; sourceTree = "<group>"; };
-		2A81C31C16F9DFF8005C85A3 /* PFActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFActionSheet.h; path = /Users/Ryo/Documents/MyWork/SouceTree/Coupling/Coupling/Classes/PFActionSheet.h; sourceTree = "<absolute>"; };
-		2A81C31D16F9DFF8005C85A3 /* PFActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFActionSheet.m; path = /Users/Ryo/Documents/MyWork/SouceTree/Coupling/Coupling/Classes/PFActionSheet.m; sourceTree = "<absolute>"; };
+		2A7DB2EA16FF022900F34ED5 /* PFActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFActionSheet.h; path = Classes/PFActionSheet.h; sourceTree = "<group>"; };
+		2A7DB2EB16FF022900F34ED5 /* PFActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFActionSheet.m; path = Classes/PFActionSheet.m; sourceTree = "<group>"; };
 		2A81F34716E8FBA6005B0D68 /* test_why_always_me.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_why_always_me.jpeg; sourceTree = "<group>"; };
 		2AD7FB5E16AC5E5B00BC6535 /* PFScrollingProfilePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFScrollingProfilePageViewController.h; path = Classes/PFScrollingProfilePageViewController.h; sourceTree = "<group>"; };
 		2AD7FB5F16AC5E5C00BC6535 /* PFScrollingProfilePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFScrollingProfilePageViewController.m; path = Classes/PFScrollingProfilePageViewController.m; sourceTree = "<group>"; };
@@ -690,8 +691,8 @@
 				C133F5C516DA2A80001003A6 /* PFUtil.m */,
 				2A7A94EC16F5C889006DB200 /* PFAbstractPageViewController.h */,
 				2A7A94ED16F5C889006DB200 /* PFAbstractPageViewController.m */,
-				2A81C31C16F9DFF8005C85A3 /* PFActionSheet.h */,
-				2A81C31D16F9DFF8005C85A3 /* PFActionSheet.m */,
+				2A7DB2EA16FF022900F34ED5 /* PFActionSheet.h */,
+				2A7DB2EB16FF022900F34ED5 /* PFActionSheet.m */,
 			);
 			name = Lib;
 			sourceTree = "<group>";
@@ -1036,6 +1037,7 @@
 				2A7A94E616F5B802006DB200 /* PFHelpPageViewController.m in Sources */,
 				2A7A94EA16F5B85E006DB200 /* PFTermsOfUsePageViewController.m in Sources */,
 				2A7A94EE16F5C889006DB200 /* PFAbstractPageViewController.m in Sources */,
+				2A7DB2EC16FF022900F34ED5 /* PFActionSheet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
