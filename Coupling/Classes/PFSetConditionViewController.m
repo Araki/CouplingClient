@@ -22,10 +22,7 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
-        _detailListArray = [NSMutableArray arrayWithCapacity:kPFSearchConditionNum];
-        for (int i = 0; i < kPFSearchConditionNum; i++) {
-            [self.detailListArray addObject:[NSNull null]];
-        }
+        
         
     }
     return self;
@@ -41,7 +38,10 @@
 {
     [super viewDidLoad];
     self.navigationController.title = @"お相手検索";    
-    
+    self.detailListArray = [NSMutableArray arrayWithCapacity:kPFSearchConditionNum];
+    for (int i = 0; i < kPFSearchConditionNum; i++) {
+        [self.detailListArray addObject:[NSNull null]];
+    }
     self.conditionListArray = [PFUtil searchConditionTitles];
     
 }
@@ -66,6 +66,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+        UILabel *conditionDetailLabel = cell.detailTextLabel;
+        [conditionDetailLabel setText:@""];
         
     }
     [self updateCell:cell atIndexPath:indexPath];
@@ -76,14 +78,18 @@
 - (void)updateCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     UILabel *conditionTitleLabel = cell.textLabel;
-    UILabel *conditionDetailLabel = cell.detailTextLabel;
+   
     NSString *conditionTitle = [self.conditionListArray objectAtIndex:indexPath.row];
     [conditionTitleLabel setText:conditionTitle];
     [conditionTitleLabel setFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]];
     [conditionTitleLabel setFrame:CGRectMake(0, 0, 200, 30)];
     [conditionTitleLabel setTextAlignment:NSTextAlignmentCenter];
     [conditionTitleLabel setBackgroundColor:kPFBackGroundColor];
-    [conditionDetailLabel setText:@""];
+    if (![[self.detailListArray objectAtIndex:indexPath.row]isEqual:[NSNull null]]) {
+        cell.detailTextLabel.text = [self.detailListArray objectAtIndex:indexPath.row];
+    } else {
+        cell.detailTextLabel.text = @"";
+    }
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -104,12 +110,25 @@
 - (void)dismissOkButtonWithTitles:(NSArray *)titles type:(kPFActionSheetType)type
 {
     NSLog(@"titles = %@", titles);
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:self.currentPath];
+    NSString *detail = nil;
+    if (self.currentPath.row == Height) {
+        NSString *fromValue = [titles objectAtIndex:0];
+        NSString *toValue   = [titles objectAtIndex:1];
+        detail = [NSString stringWithFormat:@"%@cm~%@cm", fromValue, toValue];
+        cell.detailTextLabel.text = detail;
+    } else {
+        detail = [titles objectAtIndex:0];
+        cell.detailTextLabel.text = detail;
+    }
+    [cell setNeedsLayout];
+    [self.detailListArray replaceObjectAtIndex:self.currentPath.row withObject:detail];
     [self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
 }
 
 - (void)selectedWithComponent:(NSInteger)component title:(NSString *)title type:(kPFActionSheetType)type
 {
-    NSLog(@"component = %d : title = %@", component, title);  
+    NSLog(@"component = %d : title = %@", component, title);
 }
 
 - (PFActionSheet *)actionSheetWithRow:(NSInteger)row
