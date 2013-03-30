@@ -45,9 +45,11 @@
     PFTalkDataModel *data1 = [[PFTalkDataModel alloc] init];
     data1.isFromUser = NO;
     data1.message = @"it's partner's first message";
+    data1.timeStamp = [NSDate date];
     PFTalkDataModel *data2 = [[PFTalkDataModel alloc] init];
     data2.isFromUser = YES;
     data2.message = @"it's my first message";
+    data2.timeStamp = [NSDate date];
     self.talkDataArray = [NSMutableArray array];
     [self.talkDataArray addObject:data1];
     [self.talkDataArray addObject:data2];
@@ -84,7 +86,7 @@
 - (BOOL)hasTimestampForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // indexPathにtime stamp を表示させるかどうか
-    return NO;
+    return YES;
 }
 
 // sendボタンを押してメッセージを送る
@@ -94,6 +96,7 @@
     PFTalkDataModel *data = [[PFTalkDataModel alloc] init];
     data.isFromUser = YES;
     data.message = text;
+    data.timeStamp = [NSDate date];
     
     [self.talkDataArray addObject:data];
     // messageをpostする必要あり
