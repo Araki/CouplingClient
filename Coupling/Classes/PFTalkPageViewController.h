@@ -6,8 +6,8 @@
 //  Copyright (c) 2013年 tsuchimoto. All rights reserved.
 //
 
-#import "MessagesViewController.h"
+#import "JSMessagesViewController.h"
 
-@interface PFTalkPageViewController : MessagesViewController
+@interface PFTalkPageViewController : JSMessagesViewController
 
 @end

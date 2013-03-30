@@ -46,12 +46,6 @@
 
 #pragma mark - MessageTableViewController methods
 
-- (BubbleMessageStyle)messageStyleForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // メッセージの吹出しのスタイルを指定する
-    return BubbleMessageStyleIncoming;
-//    return BubbleMessageStyleOutgoing;
-}
 
 - (NSString *)textForRowAtIndexPath:(NSIndexPath *)indexPath
 {
