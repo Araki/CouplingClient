@@ -40,6 +40,19 @@
     // トークする相手の名前をタイトルにする
     self.title = @"Messages";
     
+    
+    //--------dummy data----------
+    PFTalkDataModel *data1 = [[PFTalkDataModel alloc] init];
+    data1.isFromUser = NO;
+    data1.message = @"it's partner's first message";
+    PFTalkDataModel *data2 = [[PFTalkDataModel alloc] init];
+    data2.isFromUser = YES;
+    data2.message = @"it's my first message";
+    self.talkDataArray = [NSMutableArray array];
+    [self.talkDataArray addObject:data1];
+    [self.talkDataArray addObject:data2];
+    //----------------------------
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,37 +72,51 @@
 - (JSBubbleMessageStyle)messageStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // メッセージの吹出しのスタイルを指定する
-    return JSBubbleMessageStyleIncomingDefault;
+    if ([[self.talkDataArray objectAtIndex:indexPath.row] isFromUser]) {
+        // ユーザーから
+        return JSBubbleMessageStyleOutgoingDefault;
+    } else {
+        // 相手から
+        return JSBubbleMessageStyleIncomingDefault;
+    }
 }
 
 - (BOOL)hasTimestampForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // indexPathにtime stamp を表示させるかどうか
-    return YES;
+    return NO;
 }
 
 // sendボタンを押してメッセージを送る
 - (void)sendPressed:(UIButton *)sender withText:(NSString *)text
 {
+    // talkDataArrayにTalkDataModelを追加する
+    PFTalkDataModel *data = [[PFTalkDataModel alloc] init];
+    data.isFromUser = YES;
+    data.message = text;
+    
+    [self.talkDataArray addObject:data];
     // messageをpostする必要あり
     
+    
+    [self finishSend];
 }
 
 #pragma mark - JSMessageViewController DataSource
 - (NSString *)textForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return @"testtetst";
+    return [[self.talkDataArray objectAtIndex:indexPath.row] message];
 }
 
 - (NSDate *)timestampForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [NSDate date];
+    return [[self.talkDataArray objectAtIndex:indexPath.row] timeStamp];
 }
 
 #pragma mark - Table Views delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return self.talkDataArray.count;
 }
 
 @end

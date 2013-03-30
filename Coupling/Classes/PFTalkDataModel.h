@@ -10,4 +10,12 @@
 
 @interface PFTalkDataModel : PFDataModel
 
+@property (nonatomic, assign) BOOL          isFromUser;
+@property (nonatomic, copy)   NSString *    message;
+
+
+@property (nonatomic, strong) NSDate *      timeStamp;
+@property (nonatomic, strong) UIImage *     iconImage;
+
+
 @end

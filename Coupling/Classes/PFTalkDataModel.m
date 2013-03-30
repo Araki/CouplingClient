@@ -7,7 +7,19 @@
 //
 
 #import "PFTalkDataModel.h"
+#import "NSDictionary+GetterExt.h"
 
 @implementation PFTalkDataModel
+
+- (id)initWithDictionary:(NSDictionary *)aDictionary
+{
+    self = [super init];
+    if (self) {
+        self.isFromUser = [aDictionary boolValueForKey:@"is_from_user" defaultValue:YES];
+        self.message    = [aDictionary stringValueForKey:@"message" defaultValue:@""];
+        
+    }
+    return self;
+}
 
 @end

@@ -7,7 +7,10 @@
 //
 
 #import "JSMessagesViewController.h"
+#import "PFTalkDataModel.h"
 
 @interface PFTalkPageViewController : JSMessagesViewController <JSMessagesViewDelegate, JSMessagesViewDataSource>
+
+@property (nonatomic, strong) NSMutableArray *talkDataArray;
 
 @end
