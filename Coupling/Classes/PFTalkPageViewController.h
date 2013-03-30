@@ -8,6 +8,6 @@
 
 #import "JSMessagesViewController.h"
 
-@interface PFTalkPageViewController : JSMessagesViewController
+@interface PFTalkPageViewController : JSMessagesViewController <JSMessagesViewDelegate, JSMessagesViewDataSource>
 
 @end

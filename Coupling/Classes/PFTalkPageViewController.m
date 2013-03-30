@@ -33,8 +33,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.tableView setBackgroundColor:kPFBackGroundColor];
-    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    self.delegate = self;
+    self.dataSource = self;
+    
+    [self setBackgroundColor:kPFBackGroundColor];
+    // トークする相手の名前をタイトルにする
+    self.title = @"Messages";
     
 }
 
@@ -44,23 +48,48 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - MessageTableViewController methods
+#pragma mark - JSMessageViewController Delegate
 
+- (JSMessagesViewTimestampPolicy)timestampPolicyForMessagesView
+{
+    // time stamps のオプション
+    return JSMessagesViewTimestampPolicyAll;
+}
 
+- (JSBubbleMessageStyle)messageStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // メッセージの吹出しのスタイルを指定する
+    return JSBubbleMessageStyleIncomingDefault;
+}
+
+- (BOOL)hasTimestampForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // indexPathにtime stamp を表示させるかどうか
+    return YES;
+}
+
+// sendボタンを押してメッセージを送る
+- (void)sendPressed:(UIButton *)sender withText:(NSString *)text
+{
+    // messageをpostする必要あり
+    
+}
+
+#pragma mark - JSMessageViewController DataSource
 - (NSString *)textForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return @"testtetst";
 }
 
-- (void)sendPressed:(UIButton *)sender withText:(NSString *)text
+- (NSDate *)timestampForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    return [NSDate date];
 }
 
 #pragma mark - Table Views delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return 3;
 }
 
 @end
