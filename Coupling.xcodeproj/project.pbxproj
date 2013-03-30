@@ -55,6 +55,7 @@
 		2A7A250A1706FACF0042BEC2 /* UIButton+JSMessagesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7A24E71706FACF0042BEC2 /* UIButton+JSMessagesView.m */; };
 		2A7A250B1706FACF0042BEC2 /* UIColor+JSMessagesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7A24E91706FACF0042BEC2 /* UIColor+JSMessagesView.m */; };
 		2A7A250C1706FACF0042BEC2 /* UIView+AnimationOptionsForCurve.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7A24EB1706FACF0042BEC2 /* UIView+AnimationOptionsForCurve.m */; };
+		2A7A250F17070D5F0042BEC2 /* PFTalkDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7A250E17070D5F0042BEC2 /* PFTalkDataModel.m */; };
 		2A7A94DD16F5B608006DB200 /* PFSettingPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7A94DC16F5B608006DB200 /* PFSettingPageViewController.m */; };
 		2A7A94E216F5B7C4006DB200 /* PFAnnouncementPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7A94E116F5B7C4006DB200 /* PFAnnouncementPageViewController.m */; };
 		2A7A94E616F5B802006DB200 /* PFHelpPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7A94E516F5B802006DB200 /* PFHelpPageViewController.m */; };
@@ -222,6 +223,8 @@
 		2A7A24E91706FACF0042BEC2 /* UIColor+JSMessagesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+JSMessagesView.m"; sourceTree = "<group>"; };
 		2A7A24EA1706FACF0042BEC2 /* UIView+AnimationOptionsForCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AnimationOptionsForCurve.h"; sourceTree = "<group>"; };
 		2A7A24EB1706FACF0042BEC2 /* UIView+AnimationOptionsForCurve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AnimationOptionsForCurve.m"; sourceTree = "<group>"; };
+		2A7A250D17070D5F0042BEC2 /* PFTalkDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFTalkDataModel.h; path = Classes/PFTalkDataModel.h; sourceTree = "<group>"; };
+		2A7A250E17070D5F0042BEC2 /* PFTalkDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFTalkDataModel.m; path = Classes/PFTalkDataModel.m; sourceTree = "<group>"; };
 		2A7A94DB16F5B608006DB200 /* PFSettingPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFSettingPageViewController.h; sourceTree = "<group>"; };
 		2A7A94DC16F5B608006DB200 /* PFSettingPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFSettingPageViewController.m; sourceTree = "<group>"; };
 		2A7A94E016F5B7C4006DB200 /* PFAnnouncementPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFAnnouncementPageViewController.h; path = Classes/PFAnnouncementPageViewController.h; sourceTree = "<group>"; };
@@ -587,6 +590,8 @@
 			children = (
 				2A7AF28F16EC85FE006397EC /* PFTalkPageViewController.h */,
 				2A7AF29016EC85FE006397EC /* PFTalkPageViewController.m */,
+				2A7A250D17070D5F0042BEC2 /* PFTalkDataModel.h */,
+				2A7A250E17070D5F0042BEC2 /* PFTalkDataModel.m */,
 			);
 			name = Talk;
 			sourceTree = "<group>";
@@ -1080,6 +1085,7 @@
 				2A7A250A1706FACF0042BEC2 /* UIButton+JSMessagesView.m in Sources */,
 				2A7A250B1706FACF0042BEC2 /* UIColor+JSMessagesView.m in Sources */,
 				2A7A250C1706FACF0042BEC2 /* UIView+AnimationOptionsForCurve.m in Sources */,
+				2A7A250F17070D5F0042BEC2 /* PFTalkDataModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
