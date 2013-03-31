@@ -6,7 +6,7 @@
 //  Copyright (c) 2012年 tsuchimoto. All rights reserved.
 //
 
-#import "PFPairSearchViewDeckController.h"
+#import "PFViewDeckController.h"
 #import "PFSlideMenuPageViewController.h"
 
 @interface PFSlideMenuPageViewController ()
@@ -110,7 +110,7 @@
  */
 - (void)changeParentCenterViewWithSlideMenuIndex:(NSInteger)index
 {
-    PFPairSearchViewDeckController *parentController = (PFPairSearchViewDeckController *)self.parentViewController;
+    PFViewDeckController *parentController = (PFViewDeckController *)self.parentViewController;
     [parentController changeCenterViewWithSlideMenuIndex:index];
 }
 

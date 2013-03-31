@@ -1,5 +1,5 @@
 //
-//  PFPairSearchViewDeckController.h
+//  PFViewDeckController.h
 //  Coupling
 //
 //  Created by Ryo Kamei on 12/12/11.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "IIViewDeckController.h"
 
-@interface PFPairSearchViewDeckController : IIViewDeckController
+@interface PFViewDeckController : IIViewDeckController
 
 - (void)changeCenterViewWithSlideMenuIndex:(NSInteger)index;
 

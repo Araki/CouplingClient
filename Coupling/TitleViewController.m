@@ -7,7 +7,7 @@
 //
 
 #import "TitleViewController.h"
-#import "PFPairSearchViewDeckController.h"
+#import "PFViewDeckController.h"
 
 @interface TitleViewController ()
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C3006" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="PxU-id-qzZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="PxU-id-qzZ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -130,10 +130,10 @@
             </objects>
             <point key="canvasLocation" x="645" y="35"/>
         </scene>
-        <!--Pair Search View Deck Controller-->
+        <!--View Deck Controller-->
         <scene sceneID="xp1-HP-ZOZ">
             <objects>
-                <viewController storyboardIdentifier="PFPairSearchViewDeckController" id="kcY-0O-Qmf" customClass="PFPairSearchViewDeckController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PFPairSearchViewDeckController" id="kcY-0O-Qmf" customClass="PFViewDeckController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Y9w-Qx-dvi">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -628,7 +628,7 @@
                                 <rect key="frame" x="0.0" y="44" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <mutableString key="text">最新改訂日：2012年8月21日
+                                <string key="text">最新改訂日：2012年8月21日
 
 Omiaiへようこそ。Omiaiは、日本の登録企業である株式会社ネットマーケティング (以下「当社」といいます)が提供しています。 以下の利用規約（以下「本規約」といいます）は、当社が所有し運営するOmiai（以下「当サービス」といいます）のウェブサイト（omiai-jp.com）及び当サービスの他の資産（Facebookアプリケーション及びFacebookページを含むがそれに限定されない）のすべてのコンテンツと、お客様と当社の間のすべての連絡（メール、電話、その他連絡手段を問いません）に適用されます。当サービスをご利用になる前に、本規約をよくお読みください。 お客様が会員登録をなさるかどうかに関係なく、当サービスをご利用になればお客様は本規約をそのまま承認したことになり、本契約（当社が会員に当サービスを提供する契約）の当事者になったことになります。 本規約を承認しない場合は、当サービスを利用しないでください。 お客様が当サービスのFacebookアプリケーションを許諾した時点で、当サービスを提供するための法的拘束力のある契約にお客様は同意したことになります。
 
@@ -786,7 +786,7 @@ b.投稿内容について
 
 23、当サービスのご利用上の留意点
 当サービスは、真剣に交際相手を探している独身の方に最適なパートナーと知り合うチャンスにめぐり会える可能性を提供するサービスですが、不特定多数の方がご利用になっているために場合によってはサービスを悪用されたり、あるいは適切なコミュニケーションがとれない方が利用されたりする可能性もあります。そういった可能性を十分ご認識のうえ、当サービスのご利用に際して他人に対してどのような個人情報を開示するか、どのようなやりとりをするかについては、常に慎重にお考えください。
-</mutableString>
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1258,9 +1258,6 @@ b.投稿内容について
         <image name="button_view_my_profile.png" width="492" height="70"/>
     </resources>
     <classes>
-        <class className="IIViewDeckController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/IIViewDeckController.h"/>
-        </class>
         <class className="PFAbstractPageViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PFAbstractPageViewController.h"/>
             <relationships>
@@ -1304,9 +1301,6 @@ b.投稿内容について
                 <relationship kind="outlet" name="outletPageControl" candidateClass="UIPageControl"/>
                 <relationship kind="outlet" name="outletScrollView" candidateClass="UIScrollView"/>
             </relationships>
-        </class>
-        <class className="PFPairSearchViewDeckController" superclassName="IIViewDeckController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFPairSearchViewDeckController.h"/>
         </class>
         <class className="PFProfilePictureSelectTableViewCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PFProfilePictureSelectTableViewCell.h"/>

@@ -1,22 +1,22 @@
 //
-//  PFPairSearchViewDeckController.m
+//  PFViewDeckController.m
 //  Coupling
 //
 //  Created by Ryo Kamei on 12/12/11.
 //  Copyright (c) 2012年 tsuchimoto. All rights reserved.
 //
 
-#import "PFPairSearchViewDeckController.h"
+#import "PFViewDeckController.h"
 #import "PFSlideMenuPageViewController.h"
 #import "PFPairSearchTopPageViewController.h"
 #import "PFMyPageTopPageViewController.h"
 #import "PFMyProfilePageViewController.h"
 
-@interface PFPairSearchViewDeckController ()
+@interface PFViewDeckController ()
 
 @end
 
-@implementation PFPairSearchViewDeckController
+@implementation PFViewDeckController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -95,7 +95,7 @@
             break;
     }
     if (viewController) {
-        __block PFPairSearchViewDeckController *selfInBlock = self;
+        __block PFViewDeckController *selfInBlock = self;
         [self setLeftLedge:-40 completion:^(BOOL finished){
             selfInBlock.centerController = viewController;
             [selfInBlock closeLeftView];
