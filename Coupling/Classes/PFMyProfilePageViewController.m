@@ -81,10 +81,10 @@
     NSString *status = nil;
     switch (row) {
         case Profile_NickName:
-//            status = user.username;
+            status = @"ニックネーム";
             break;
-        case Profile_Age:
-            status = @"18";
+        case Profile_Birthdate:
+            status = @"1987/12/25";
             break;
         case Profile_Address:
 

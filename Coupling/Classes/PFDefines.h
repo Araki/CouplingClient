@@ -12,7 +12,7 @@
 
 typedef enum {
     Profile_NickName = 0,   // ニックネーム
-    Profile_Age,            // 年齢
+    Profile_Birthdate,      // 誕生日
     Profile_Address,        // 居住地
     Profile_Introduction,   // 自己紹介文
     Profile_HomeTown,       // 出身地
