@@ -264,6 +264,7 @@
 		2A7C4BD716E7BA1B00871E5B /* button_change_profile_picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_change_profile_picture.png; path = Resouces/button/button_change_profile_picture.png; sourceTree = "<group>"; };
 		2A7C4BD816E7BA1B00871E5B /* button_add_picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_add_picture.png; path = Resouces/button/button_add_picture.png; sourceTree = "<group>"; };
 		2A7C4BDD16E7BADB00871E5B /* button_view_my_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_view_my_profile.png; path = Resouces/button/button_view_my_profile.png; sourceTree = "<group>"; };
+		2A7D288A170818E900DC957F /* PFDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFDefines.h; path = Classes/PFDefines.h; sourceTree = "<group>"; };
 		2A7D920816BE514B00220708 /* PFSetConditionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFSetConditionViewController.h; path = Classes/PFSetConditionViewController.h; sourceTree = "<group>"; };
 		2A7D920916BE514C00220708 /* PFSetConditionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSetConditionViewController.m; path = Classes/PFSetConditionViewController.m; sourceTree = "<group>"; };
 		2A7DB2EA16FF022900F34ED5 /* PFActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFActionSheet.h; path = Classes/PFActionSheet.h; sourceTree = "<group>"; };
@@ -747,6 +748,7 @@
 				2A7A94ED16F5C889006DB200 /* PFAbstractPageViewController.m */,
 				2A7DB2EA16FF022900F34ED5 /* PFActionSheet.h */,
 				2A7DB2EB16FF022900F34ED5 /* PFActionSheet.m */,
+				2A7D288A170818E900DC957F /* PFDefines.h */,
 			);
 			name = Lib;
 			sourceTree = "<group>";

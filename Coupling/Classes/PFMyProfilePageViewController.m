@@ -31,7 +31,7 @@
     self.outletTableView.backgroundColor = kPFBackGroundColor;
     UIImage *image = [UIImage imageNamed:@"bg_header.png"];
     [self.outletNavigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
-    
+        
     // test
     self.outletUserProfileImageView.image = [UIImage imageNamed:@"test_imgres_1.jpeg"];
 }
@@ -61,9 +61,16 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
-        
     }
+    PFUser *user = [PFUser currentUser];
+    UILabel *conditionTitleLabel = cell.textLabel;
     
+    NSString *conditionTitle = [[PFUtil searchConditionTitles] objectAtIndex:indexPath.row];
+    [conditionTitleLabel setText:conditionTitle];
+    [conditionTitleLabel setFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]];
+    [conditionTitleLabel setFrame:CGRectMake(0, 0, 200, 30)];
+    [conditionTitleLabel setTextAlignment:NSTextAlignmentCenter];
+    [conditionTitleLabel setBackgroundColor:kPFBackGroundColor];
     
     return cell;
 }

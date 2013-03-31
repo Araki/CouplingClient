@@ -13,4 +13,5 @@
     #import <Foundation/Foundation.h>
     #import "PFUtil.h"
     #import "PFUser.h"
+    #import "PFDefines.h"
 #endif
