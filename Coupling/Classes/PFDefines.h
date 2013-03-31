@@ -6,7 +6,10 @@
 //  Copyright (c) 2013年 tsuchimoto. All rights reserved.
 //
 
-#define kPFSearchConditionNum   17
+
+//-----プロフィール-----//
+#define kPFProfileTitleListNum   17
+
 typedef enum {
     Age = 0,        // 年齢
     Address,        // 居住地
@@ -25,4 +28,4 @@ typedef enum {
     Tabaco,         // タバコ
     Alcohol,        // お酒
     LastLoginData   // 最終ログイン日
-}kPFConditionList;
+}kPFProfileTitleList;

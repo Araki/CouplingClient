@@ -38,8 +38,8 @@
 {
     [super viewDidLoad];
     self.navigationController.title = @"お相手検索";    
-    self.detailListArray = [NSMutableArray arrayWithCapacity:kPFSearchConditionNum];
-    for (int i = 0; i < kPFSearchConditionNum; i++) {
+    self.detailListArray = [NSMutableArray arrayWithCapacity:kPFProfileTitleListNum];
+    for (int i = 0; i < kPFProfileTitleListNum; i++) {
         [self.detailListArray addObject:[NSNull null]];
     }
     self.conditionListArray = [PFUtil searchConditionTitles];
@@ -57,7 +57,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return kPFSearchConditionNum;
+    return kPFProfileTitleListNum;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -131,7 +131,7 @@
     NSLog(@"component = %d : title = %@", component, title);
 }
 
-- (PFActionSheet *)actionSheetWithRow:(NSInteger)row
+- (PFActionSheet *)actionSheetWithRow:(kPFProfileTitleList)row
 {
     NSInteger numOfComponents = 1;
     NSArray *title1 = nil;
