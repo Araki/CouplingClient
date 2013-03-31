@@ -57,7 +57,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return kPFProfileTitleListNum;
+    return kPFSearchConditionNum;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -112,7 +112,7 @@
     NSLog(@"titles = %@", titles);
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:self.currentPath];
     NSString *detail = nil;
-    if (self.currentPath.row == Height) {
+    if (self.currentPath.row == Condition_Height) {
         NSString *fromValue = [titles objectAtIndex:0];
         NSString *toValue   = [titles objectAtIndex:1];
         detail = [NSString stringWithFormat:@"%@cm~%@cm", fromValue, toValue];
@@ -131,64 +131,64 @@
     NSLog(@"component = %d : title = %@", component, title);
 }
 
-- (PFActionSheet *)actionSheetWithRow:(kPFProfileTitleList)row
+- (PFActionSheet *)actionSheetWithRow:(kPFConditionTitleList)row
 {
     NSInteger numOfComponents = 1;
     NSArray *title1 = nil;
     NSArray *title2 = nil;
     NSArray *title3 = nil;
     switch (row) {
-        case Age:
+        case Condition_Age:
             title1 = [PFUtil alcohol];
             break;
-        case Address:
+        case Condition_Address:
             title1 = [PFUtil prefectures];
             break;
-        case Introduction:
+        case Condition_Introduction:
             title1 = [PFUtil introductions];
             break;
-        case HomeTown:
+        case Condition_HomeTown:
             title1 = [PFUtil prefectures];
             break;
-        case BloodType:
+        case Condition_BloodType:
             title1 = [PFUtil bloodTypes];
             break;
-        case Height:
+        case Condition_Height:
             numOfComponents = 2;
             title1 = [PFUtil heights];
             title2 = [PFUtil heights];
             break;
-        case Body:
+        case Condition_Body:
             title1 = [PFUtil bodyShapes];
             break;
-        case Education:
+        case Condition_Education:
             title1 = [PFUtil schoolBackgrounds];
             break;
-        case Occupation:
+        case Condition_Occupation:
             title1 = [PFUtil jobs];
             break;
-        case Income:
+        case Condition_Income:
             title1 = [PFUtil incomes];
             break;
-        case Holiday:
+        case Condition_Holiday:
             title1 = [PFUtil dayOff];
             break;
-        case Hobbies:
+        case Condition_Hobbies:
             title1 = [PFUtil hobbies];
             break;
-        case Personality:
+        case Condition_Personality:
             title1 = [PFUtil personalities];
             break;
-        case Roommate:
+        case Condition_Roommate:
             title1 = [PFUtil roommates];
             break;
-        case Tabaco:
+        case Condition_Tabaco:
             title1 = [PFUtil smoking];
             break;
-        case Alcohol:
+        case Condition_Alcohol:
             title1 = [PFUtil alcohol];
             break;
-        case LastLoginData:
+        case Condition_LastLoginData:
             title1 = [PFUtil lastLogines];
             break;
             

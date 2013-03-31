@@ -51,8 +51,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    //    return _cellDataArray.count;
-    return 10;
+    return kPFProfileTitleListNum;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -62,19 +61,82 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     }
-    PFUser *user = [PFUser currentUser];
-    UILabel *conditionTitleLabel = cell.textLabel;
+    UILabel *profileTitleLabel = cell.textLabel;
     
-    NSString *conditionTitle = [[PFUtil searchConditionTitles] objectAtIndex:indexPath.row];
-    [conditionTitleLabel setText:conditionTitle];
-    [conditionTitleLabel setFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]];
-    [conditionTitleLabel setFrame:CGRectMake(0, 0, 200, 30)];
-    [conditionTitleLabel setTextAlignment:NSTextAlignmentCenter];
-    [conditionTitleLabel setBackgroundColor:kPFBackGroundColor];
+    NSString *conditionTitle = [[PFUtil profileTitles] objectAtIndex:indexPath.row];
+    [profileTitleLabel setText:conditionTitle];
+    [profileTitleLabel setFont:[UIFont systemFontOfSize:[UIFont systemFontSize]]];
+    [profileTitleLabel setFrame:CGRectMake(0, 0, 200, 30)];
+    [profileTitleLabel setTextAlignment:NSTextAlignmentCenter];
+    [profileTitleLabel setBackgroundColor:kPFBackGroundColor];
     
+    cell.detailTextLabel.text = [self profileStatusForRowAtIndexPath:indexPath];
     return cell;
 }
 
+- (NSString *)profileStatusForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    kPFProfileTitleList row = (kPFProfileTitleList)indexPath.row;
+//    PFUser *user = [PFUser currentUser];
+    NSString *status = nil;
+    switch (row) {
+        case Profile_NickName:
+//            status = user.username;
+            break;
+        case Profile_Age:
+            status = @"18";
+            break;
+        case Profile_Address:
+
+            break;
+        case Profile_Introduction:
+
+            break;
+        case Profile_HomeTown:
+
+            break;
+        case Profile_BloodType:
+
+            break;
+        case Profile_Height:
+
+            break;
+        case Profile_Body:
+
+            break;
+        case Profile_Education:
+
+            break;
+        case Profile_Occupation:
+            
+            break;
+        case Profile_Income:
+            
+            break;
+        case Profile_Holiday:
+            
+            break;
+        case Profile_Hobbies:
+            
+            break;
+        case Profile_Personality:
+            
+            break;
+        case Profile_Roommate:
+            
+            break;
+        case Profile_Tabaco:
+            
+            break;
+        case Profile_Alcohol:
+            
+            break;            
+        default:
+            status = [NSArray arrayWithObject:nil];
+            break;
+    }
+    return status;
+}
 
 #pragma mark - Table view delegate
 

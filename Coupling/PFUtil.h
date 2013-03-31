@@ -30,6 +30,7 @@
 + (NSArray *)smoking;
 + (NSArray *)alcohol;
 + (NSArray *)searchConditionTitles;
++ (NSArray *)profileTitles;
 + (NSArray *)introductions;
 + (NSArray *)lastLogines;
 
