@@ -123,7 +123,6 @@
     }
     [cell setNeedsLayout];
     [self.detailListArray replaceObjectAtIndex:self.currentPath.row withObject:detail];
-    [self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
 }
 
 - (void)selectedWithComponent:(NSInteger)component title:(NSString *)title type:(kPFActionSheetType)type
@@ -198,7 +197,7 @@
     }
     
     PFActionSheet *sheet = [PFActionSheet sheetWithView:self.view
-                                                  frame:CGRectMake(0, 150, 320, 485)
+                                              frameType:defaultFrameType
                                                delegate:self
                                                  titles:title1, title2, title3, nil];
     return sheet;

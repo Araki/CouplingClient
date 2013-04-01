@@ -16,6 +16,12 @@ typedef enum {
     tripleType      //          〃            3つのタイプ
 }kPFActionSheetType;
 
+typedef enum{
+    defaultFrameType = 0,
+}kPFActionSheetFrameType; // ActionSheetのframeを定義するためのenum
+
+#define kPFActionSheetFrameDefault CGRectMake(0, 220, 320, 485)
+
 @protocol PFActionSheetDelegate <NSObject>
 
 /**
@@ -35,5 +41,5 @@ typedef enum {
 @property (nonatomic, assign) id<PFActionSheetDelegate> PFDelegate;
 @property (nonatomic, strong) NSArray *titleArray;// pickerのタイトルが入ったArray。Array.countはcomponentの数と対応する。
 
-+ (id)sheetWithView:(UIView *)view frame:(CGRect)frame delegate:(id)delegate titles:(NSArray *)title,...NS_REQUIRES_NIL_TERMINATION;
++ (id)sheetWithView:(UIView *)view frameType:(kPFActionSheetFrameType)frameType delegate:(id)delegate titles:(NSArray *)title,...NS_REQUIRES_NIL_TERMINATION;
 @end

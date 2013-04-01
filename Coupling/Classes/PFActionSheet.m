@@ -18,7 +18,7 @@
 
 @implementation PFActionSheet
 
-+ (id)sheetWithView:(UIView *)view frame:(CGRect)frame delegate:(id)delegate titles:(NSArray *)title,...
++ (id)sheetWithView:(UIView *)view frameType:(kPFActionSheetFrameType)frameType delegate:(id)delegate titles:(NSArray *)title,...
 {
     NSMutableArray *array = [NSMutableArray array];
 	va_list argp;
@@ -29,11 +29,11 @@
 		value = va_arg(argp,id);
 	}
 	va_end(argp);
-    return [[self alloc] initWithWithView:(UIView *)view frame:(CGRect)frame delegate:(id)delegate titles:array];
+    return [[self alloc] initWithWithView:(UIView *)view frameType:frameType delegate:(id)delegate titles:array];
 }
 
 
-- (id)initWithWithView:(UIView *)view frame:(CGRect)frame delegate:(id)delegate titles:(NSArray *)titles
+- (id)initWithWithView:(UIView *)view frameType:(kPFActionSheetFrameType)frameType delegate:(id)delegate titles:(NSArray *)titles
 {
     self = [super initWithTitle:nil delegate:delegate cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
     if (self) {
@@ -57,13 +57,23 @@
         }
         self.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
         
-        UISegmentedControl *closeButton = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObject:@"閉じる"]];
-        closeButton.momentary = YES;
-        closeButton.frame = CGRectMake(260, 7.0, 50.0, 30.0);
-        closeButton.segmentedControlStyle = UISegmentedControlStyleBar;
-        closeButton.tintColor = [UIColor blueColor];
-        [closeButton addTarget:self action:@selector(dismissActionSheet:) forControlEvents:UIControlEventValueChanged];
-        [self addSubview:closeButton];
+        // ok ボタン
+        UISegmentedControl *okButton = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObject:@"決定"]];
+        okButton.momentary = YES;
+        okButton.frame = CGRectMake(260, 7.0, 50.0, 30.0);
+        okButton.segmentedControlStyle = UISegmentedControlStyleBar;
+        okButton.tintColor = [UIColor blueColor];
+        [okButton addTarget:self action:@selector(dismissActionSheet:) forControlEvents:UIControlEventValueChanged];
+        [self addSubview:okButton];
+        
+        // cancel ボタン
+        UISegmentedControl *cancelButton = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObject:@"キャンセル"]];
+        cancelButton.momentary = YES;
+        cancelButton.frame = CGRectMake(10, 7.0, 70.0, 30.0);
+        cancelButton.segmentedControlStyle = UISegmentedControlStyleBar;
+        cancelButton.tintColor = [UIColor blackColor];
+        [cancelButton addTarget:self action:@selector(cancelButtonAction) forControlEvents:UIControlEventValueChanged];
+        [self addSubview:cancelButton];
         
         self.pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 40.0, 320, 420)];
         self.pickerView.dataSource = self;
@@ -72,15 +82,24 @@
         [self addSubview:self.pickerView];
         
         [self showInView:view];
-        [self setFrame:frame];
+        self.frame = [self frameWithFrameType:frameType];
     }
     return self;
 }
 
-- (void)showInView:(UIView *)view
+- (CGRect)frameWithFrameType:(kPFActionSheetFrameType)frameType
 {
-    
-    [super showInView:view];
+    CGRect frame;
+    switch (frameType) {
+        case defaultFrameType:
+            frame = kPFActionSheetFrameDefault;
+            break;
+            
+        default:
+            frame = kPFActionSheetFrameDefault;
+            break;
+    }
+    return frame;
 }
 
 
@@ -95,6 +114,12 @@
     }
     
     [self.PFDelegate dismissOkButtonWithTitles:selectedTitles type:self.actionSheetType];
+    [self dismissWithClickedButtonIndex:0 animated:YES];
+}
+
+- (void)cancelButtonAction
+{
+    [self dismissWithClickedButtonIndex:0 animated:YES];
 }
 
 #pragma mark - Pickerview delegate
