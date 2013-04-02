@@ -10,6 +10,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define kPFActionSheetFrameDefault CGRectMake(0, 220, 320, 485)
+
 typedef enum {
     singleType = 0, // PickerViewのcomponentが１つのタイプ
     dowbleType,     //          〃            2つのタイプ
@@ -20,7 +22,6 @@ typedef enum{
     defaultFrameType = 0,
 }kPFActionSheetFrameType; // ActionSheetのframeを定義するためのenum
 
-#define kPFActionSheetFrameDefault CGRectMake(0, 220, 320, 485)
 
 @protocol PFActionSheetDelegate <NSObject>
 
