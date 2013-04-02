@@ -13,6 +13,8 @@
 
 @interface PFMyPageTopPageViewController ()
 
+@property (nonatomic, strong) NSArray *displayUserArray; // 実際に表示するユーザーの配列
+
 @end
 
 @implementation PFMyPageTopPageViewController
@@ -44,6 +46,38 @@
     UIImage *image = [UIImage imageNamed:@"bg_header.png"];
     [self.outletNavigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
 }
+/*
+- (void)makeNavigationBarButton
+{
+    UIButton *canTalkButton = [PFUtil searchConditionBarButton];
+    [canTalkButton addTarget:self action:@selector(sortButtonWithButton:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *canTalkBarButton = [[UIBarButtonItem alloc] initWithCustomView:canTalkButton];
+    canTalkButton.tag = SortTyp_CanTalk;
+    
+    UIButton *goodFromPartnerButton = [PFUtil searchConditionBarButton];
+    [goodFromPartnerButton addTarget:self action:@selector(sortButtonWithButton:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *goodFromPartnerBarButton = [[UIBarButtonItem alloc] initWithCustomView:goodFromPartnerButton];
+    goodFromPartnerButton.tag = SortTyp_GoodFromPartner;
+    
+    UIButton *goodFromMeButton = [PFUtil searchConditionBarButton];
+    [goodFromMeButton addTarget:self action:@selector(sortButtonWithButton:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *goodFromMeBarButton = [[UIBarButtonItem alloc] initWithCustomView:goodFromMeButton];
+    goodFromMeButton.tag = SortTyp_GoodFromMe;
+    
+    UIButton *favoriteButton = [PFUtil searchConditionBarButton];
+    [favoriteButton addTarget:self action:@selector(sortButtonWithButton:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *favoriteBarButton = [[UIBarButtonItem alloc] initWithCustomView:favoriteButton];
+    favoriteButton.tag = SortTyp_Favorite;
+    
+    self.outletNavigationBar.topItem.rightBarButtonItems =
+    [NSArray arrayWithObjects:favoriteBarButton, goodFromMeBarButton, goodFromPartnerBarButton, canTalkBarButton, nil];
+}
+*/
+- (void)sortButtonWithButton:(id)sender
+{
+    UIButton *button = (UIButton *)sender;
+    NSLog(@"sort button is touched tag = %d", button.tag);
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -65,7 +99,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//    return _cellDataArray.count;
+//    return self.forDisplayUserArray.count;
     return 10;
 }
 
@@ -109,6 +143,51 @@
 - (IBAction)actionStatusSortBarButton:(id)sender
 {
     NSLog(@"senderTag = %d", ((UIBarButtonItem *)sender).tag);
+    [PFActionSheet sheetWithView:self.view
+                       frameType:defaultFrameType
+                        delegate:self
+                          titles:[PFUtil myPageSortList], nil];
+}
+
+#pragma mark - PFActionSheet Delegate
+
+- (void)dismissOkButtonWithTitles:(NSArray *)titles type:(kPFActionSheetType)type
+{
+    kPFMyPageSortType sortType =
+    [[PFUtil myPageSortList] indexOfObjectPassingTest:^BOOL(id element, NSUInteger idx, BOOL *stop) {
+        return [(NSString *)element isEqualToString:[titles objectAtIndex:0]];
+    }];
+    self.displayUserArray = [self displayUserArrayWithSortType:sortType];
+    [self.outletTableViewController reloadData];
+}
+
+- (NSArray *)displayUserArrayWithSortType:(kPFMyPageSortType)sortType
+{
+    NSArray *displayArray = nil;
+    switch (sortType) {
+        case SortTyp_CanTalk:
+            displayArray = self.canTalkUserArray;
+            break;
+        case SortTyp_GoodFromPartner:
+            displayArray = self.goodFromPartnerUserArray;
+            break;
+        case SortTyp_GoodFromMe:
+            displayArray = self.goodFromMeUserArray;
+            break;
+        case SortTyp_Favorite:
+            displayArray = self.favoriteUserDArray;
+            break;
+            
+        default:
+            break;
+    }
+    return displayArray;
+}
+
+
+- (void)selectedWithComponent:(NSInteger)component title:(NSString *)title type:(kPFActionSheetType)type
+{
     
 }
+
 @end

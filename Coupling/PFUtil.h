@@ -33,6 +33,7 @@
 + (NSArray *)profileTitles;
 + (NSArray *)introductions;
 + (NSArray *)lastLogines;
++ (NSArray *)myPageSortList;
 
 // top bar button
 + (UIButton *)slideMenuBarButton;

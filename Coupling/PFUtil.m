@@ -255,6 +255,14 @@
              @"お酒"];
 }
 
++ (NSArray *)myPageSortList
+{
+    return @[@"お互い",
+             @"相手から",
+             @"自分から",
+             @"お気に入り"];
+}
+
 // top bar button
 + (UIButton *)slideMenuBarButton
 {
