@@ -13,6 +13,7 @@
 #import "FBManager.h"
 
 #import "TestFlight.h"
+#import "TapjoyConnect.h"
 
 @implementation AppDelegate
 
@@ -25,7 +26,11 @@
     if (IsDevice) {
         [TestFlight takeOff:@"Pairful development"];
         [[SKPaymentQueue defaultQueue] addTransactionObserver:[[MyStoreObserver alloc] init]];
+        // connect to Tapjoy
+        [TapjoyConnect requestTapjoyConnect:@"appId" secretKey:@"secretKey"];
     }
+    
+    
     
     return YES;
 }
