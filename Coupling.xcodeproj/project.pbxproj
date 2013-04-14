@@ -88,6 +88,8 @@
 		2A7C4BDE16E7BADB00871E5B /* button_view_my_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7C4BDD16E7BADB00871E5B /* button_view_my_profile.png */; };
 		2A7D920A16BE514C00220708 /* PFSetConditionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7D920916BE514C00220708 /* PFSetConditionViewController.m */; };
 		2A7DB2EC16FF022900F34ED5 /* PFActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7DB2EB16FF022900F34ED5 /* PFActionSheet.m */; };
+		2A7E2B02171AC40D00DE3068 /* TapjoyPublisherLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7E2B00171AC40D00DE3068 /* TapjoyPublisherLibrary.a */; };
+		2A7E2B03171AC40D00DE3068 /* TapjoyResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2A7E2B01171AC40D00DE3068 /* TapjoyResources.bundle */; };
 		2A81F34816E8FBA6005B0D68 /* test_why_always_me.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2A81F34716E8FBA6005B0D68 /* test_why_always_me.jpeg */; };
 		2AD7FB6116AC5E5C00BC6535 /* PFScrollingProfilePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD7FB5F16AC5E5C00BC6535 /* PFScrollingProfilePageViewController.m */; };
 		2AD7FB6216AC5E5C00BC6535 /* PFScrollingProfilePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AD7FB6016AC5E5C00BC6535 /* PFScrollingProfilePageViewController.xib */; };
@@ -269,6 +271,10 @@
 		2A7D920916BE514C00220708 /* PFSetConditionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSetConditionViewController.m; path = Classes/PFSetConditionViewController.m; sourceTree = "<group>"; };
 		2A7DB2EA16FF022900F34ED5 /* PFActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFActionSheet.h; path = Classes/PFActionSheet.h; sourceTree = "<group>"; };
 		2A7DB2EB16FF022900F34ED5 /* PFActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFActionSheet.m; path = Classes/PFActionSheet.m; sourceTree = "<group>"; };
+		2A7E2AFE171AC40D00DE3068 /* TapjoyConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapjoyConnect.h; sourceTree = "<group>"; };
+		2A7E2AFF171AC40D00DE3068 /* TapjoyConnectConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapjoyConnectConstants.h; sourceTree = "<group>"; };
+		2A7E2B00171AC40D00DE3068 /* TapjoyPublisherLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = TapjoyPublisherLibrary.a; sourceTree = "<group>"; };
+		2A7E2B01171AC40D00DE3068 /* TapjoyResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TapjoyResources.bundle; sourceTree = "<group>"; };
 		2A81F34716E8FBA6005B0D68 /* test_why_always_me.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_why_always_me.jpeg; sourceTree = "<group>"; };
 		2AD7FB5E16AC5E5B00BC6535 /* PFScrollingProfilePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFScrollingProfilePageViewController.h; path = Classes/PFScrollingProfilePageViewController.h; sourceTree = "<group>"; };
 		2AD7FB5F16AC5E5C00BC6535 /* PFScrollingProfilePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFScrollingProfilePageViewController.m; path = Classes/PFScrollingProfilePageViewController.m; sourceTree = "<group>"; };
@@ -402,6 +408,7 @@
 				C163A1FA15E0BABB00F3F25D /* CoreGraphics.framework in Frameworks */,
 				C1789BF41622B47300EA631B /* libTestFlight.a in Frameworks */,
 				2A46AA07167496AE00B459A3 /* FacebookSDK.framework in Frameworks */,
+				2A7E2B02171AC40D00DE3068 /* TapjoyPublisherLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,6 +675,17 @@
 			name = ViewDeckController;
 			sourceTree = "<group>";
 		};
+		2A7E2AFD171AC40D00DE3068 /* TapjoyPublisherLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				2A7E2AFE171AC40D00DE3068 /* TapjoyConnect.h */,
+				2A7E2AFF171AC40D00DE3068 /* TapjoyConnectConstants.h */,
+				2A7E2B00171AC40D00DE3068 /* TapjoyPublisherLibrary.a */,
+				2A7E2B01171AC40D00DE3068 /* TapjoyResources.bundle */,
+			);
+			path = TapjoyPublisherLibrary;
+			sourceTree = "<group>";
+		};
 		2A7F085116DA012000FFC881 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -767,6 +785,7 @@
 		C163A1E615E0BABA00F3F25D = {
 			isa = PBXGroup;
 			children = (
+				2A7E2AFD171AC40D00DE3068 /* TapjoyPublisherLibrary */,
 				C1789BEF1622B47300EA631B /* TestFlightSDK1.1 */,
 				C163A1FB15E0BABB00F3F25D /* Coupling */,
 				C163A1F415E0BABB00F3F25D /* Frameworks */,
@@ -1023,6 +1042,7 @@
 				2A7A25071706FACF0042BEC2 /* send@2x.png in Resources */,
 				2A7A25081706FACF0042BEC2 /* messageReceived.aiff in Resources */,
 				2A7A25091706FACF0042BEC2 /* messageSent.aiff in Resources */,
+				2A7E2B03171AC40D00DE3068 /* TapjoyResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1200,6 +1220,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/TestFlightSDK1.1\"",
+					"\"$(SRCROOT)/../../../../Downloads/TapjoyPublisherSDK_iOS_v9.0.3/TapjoyPublisherLibrary\"",
+					"\"$(SRCROOT)/TapjoyPublisherLibrary\"",
 				);
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1226,6 +1248,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/TestFlightSDK1.1\"",
+					"\"$(SRCROOT)/../../../../Downloads/TapjoyPublisherSDK_iOS_v9.0.3/TapjoyPublisherLibrary\"",
+					"\"$(SRCROOT)/TapjoyPublisherLibrary\"",
 				);
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
