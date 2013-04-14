@@ -969,7 +969,7 @@ b.投稿内容について
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g4E-iM-0Nc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2878" y="2667"/>
+            <point key="canvasLocation" x="2878" y="1803"/>
         </scene>
         <!--Profile Picture Select Table View Controller-->
         <scene sceneID="Zmx-bF-bU0">
@@ -1000,7 +1000,7 @@ b.投稿内容について
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B4b-ja-oNw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3239" y="2667"/>
+            <point key="canvasLocation" x="3239" y="1803"/>
         </scene>
         <!--My Page Top Page View Controller-->
         <scene sceneID="eBi-b2-vpq">
@@ -1082,7 +1082,79 @@ b.投稿内容について
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bhv-tC-sb5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2864" y="1958"/>
+            <point key="canvasLocation" x="2878" y="1098"/>
+        </scene>
+        <!--Shop Page View Controller-->
+        <scene sceneID="VgI-et-7jD">
+            <objects>
+                <viewController storyboardIdentifier="PFShopPageViewController" id="ken-kY-iuC" customClass="PFShopPageViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uCt-yh-Z6z">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" id="a9J-NX-n0D">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="kdl-2x-Jhs">
+                                        <barButtonItem key="leftBarButtonItem" id="aQS-St-Fti">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5z4-4z-Fdi">
+                                                <rect key="frame" x="5" y="8" width="28" height="28"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Button" image="button_slide_menu.png">
+                                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="actionSlideMenuBarButton:" destination="ken-kY-iuC" eventType="touchUpInside" id="7md-8E-9Bj"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="cf6-Zr-8tv">
+                                <rect key="frame" x="124" y="103" width="73" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Tapjoy">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="mHB-u0-roB" kind="push" id="m9D-pl-MWG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hm4-cL-hJq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2878" y="2638"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="I6V-xj-YfA">
+            <objects>
+                <viewController id="mHB-u0-roB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QZ5-84-EAq">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Nfe-k2-hWN"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fJy-nM-c6O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3273" y="2638"/>
         </scene>
         <!--Pair Search Top Page View Controller-->
         <scene sceneID="vHv-4m-CK9">
@@ -1258,6 +1330,9 @@ b.投稿内容について
         <image name="button_view_my_profile.png" width="492" height="70"/>
     </resources>
     <classes>
+        <class className="IIViewDeckController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/IIViewDeckController.h"/>
+        </class>
         <class className="PFAbstractPageViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PFAbstractPageViewController.h"/>
             <relationships>
@@ -1322,6 +1397,9 @@ b.投稿内容について
         <class className="PFSettingPageViewController" superclassName="PFAbstractPageViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PFSettingPageViewController.h"/>
         </class>
+        <class className="PFShopPageViewController" superclassName="PFAbstractPageViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFShopPageViewController.h"/>
+        </class>
         <class className="PFSlideMenuPageViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PFSlideMenuPageViewController.h"/>
         </class>
@@ -1333,6 +1411,9 @@ b.投稿内容について
         </class>
         <class className="PFTutorialStep2Controller" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PFTutorialStep2Controller.h"/>
+        </class>
+        <class className="PFViewDeckController" superclassName="IIViewDeckController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFViewDeckController.h"/>
         </class>
         <class className="PurchaseViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PurchaseViewController.h"/>

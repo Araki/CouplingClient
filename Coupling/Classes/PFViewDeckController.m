@@ -11,6 +11,7 @@
 #import "PFPairSearchTopPageViewController.h"
 #import "PFMyPageTopPageViewController.h"
 #import "PFMyProfilePageViewController.h"
+#import "PFShopPageViewController.h"
 
 @interface PFViewDeckController ()
 
@@ -52,25 +53,16 @@
     UIViewController *viewController = nil;
     switch (index) {
         case PairSearch:
-//            if ([self.centerController isKindOfClass:[PFPairSearchTopPageViewController class]]) {
-//                return;
-//            }
             viewController = [storyboard instantiateViewControllerWithIdentifier:@"PairSearchCenterViewController"];
             break;
         case MyPage:
-//            if ([self.centerController isKindOfClass:[PFMyPageTopPageViewController class]]) {
-//                return;
-//            }
             viewController = [storyboard instantiateViewControllerWithIdentifier:@"PFMyPageTopPageViewController"];
             break;
         case Profile:
-//            if ([self.centerController isKindOfClass:[PFMyProfilePageViewController class]]) {
-//                return;
-//            }
             viewController = [storyboard instantiateViewControllerWithIdentifier:@"PFMyProfilePageViewController"];
             break;
         case Shop:
-            
+            viewController = [storyboard instantiateViewControllerWithIdentifier:@"PFShopPageViewController"];
             break;
         case Setting:
             viewController = [storyboard instantiateViewControllerWithIdentifier:@"PFSettingPageViewController"];

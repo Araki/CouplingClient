@@ -102,6 +102,7 @@
 		2AEF05DF16B5507E009F5FD7 /* button_search_filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AEF05DC16B5507E009F5FD7 /* button_search_filter.png */; };
 		2AEF05E016B5507E009F5FD7 /* button_notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AEF05DD16B5507E009F5FD7 /* button_notification.png */; };
 		2AEF05E116B5507E009F5FD7 /* button_slide_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AEF05DE16B5507E009F5FD7 /* button_slide_menu.png */; };
+		2AF042E4171AD6EC0017701F /* PFShopPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF042E3171AD6EC0017701F /* PFShopPageViewController.m */; };
 		C10A328C1632AB6C0083F51B /* SingletonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C10A328B1632AB6C0083F51B /* SingletonObject.m */; };
 		C133F5C616DA2A82001003A6 /* PFUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C133F5C516DA2A80001003A6 /* PFUtil.m */; };
 		C1571E07164F8A7100AFB49D /* PFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1571E06164F8A7100AFB49D /* PFModel.m */; };
@@ -291,6 +292,8 @@
 		2AEF05DC16B5507E009F5FD7 /* button_search_filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_search_filter.png; path = Resouces/button/button_search_filter.png; sourceTree = "<group>"; };
 		2AEF05DD16B5507E009F5FD7 /* button_notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_notification.png; path = Resouces/button/button_notification.png; sourceTree = "<group>"; };
 		2AEF05DE16B5507E009F5FD7 /* button_slide_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_slide_menu.png; path = Resouces/button/button_slide_menu.png; sourceTree = "<group>"; };
+		2AF042E2171AD6EC0017701F /* PFShopPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFShopPageViewController.h; path = Classes/PFShopPageViewController.h; sourceTree = "<group>"; };
+		2AF042E3171AD6EC0017701F /* PFShopPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFShopPageViewController.m; path = Classes/PFShopPageViewController.m; sourceTree = "<group>"; };
 		C10A328A1632AB6C0083F51B /* SingletonObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonObject.h; sourceTree = "<group>"; };
 		C10A328B1632AB6C0083F51B /* SingletonObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonObject.m; sourceTree = "<group>"; };
 		C1138EA716BE5F8C001E30B6 /* PFTutorialStep1Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFTutorialStep1Controller.h; sourceTree = "<group>"; };
@@ -707,6 +710,15 @@
 			name = MyPage;
 			sourceTree = "<group>";
 		};
+		2AF042E1171AD6C40017701F /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				2AF042E2171AD6EC0017701F /* PFShopPageViewController.h */,
+				2AF042E3171AD6EC0017701F /* PFShopPageViewController.m */,
+			);
+			name = Shop;
+			sourceTree = "<group>";
+		};
 		C10A32791632A8C80083F51B /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -717,6 +729,7 @@
 				2A055F4B16E365450008297B /* SearchCondition */,
 				2A7F085116DA012000FFC881 /* MyPage */,
 				2A4D500F16E648920042BF1D /* MyProfile */,
+				2AF042E1171AD6C40017701F /* Shop */,
 				C16FF3C616BE9A130075B721 /* Signup */,
 				C1138EA516BE5F6E001E30B6 /* Tutorial */,
 				2A7A94DA16F5B53D006DB200 /* Others */,
@@ -1136,6 +1149,7 @@
 				2A7A250B1706FACF0042BEC2 /* UIColor+JSMessagesView.m in Sources */,
 				2A7A250C1706FACF0042BEC2 /* UIView+AnimationOptionsForCurve.m in Sources */,
 				2A7A250F17070D5F0042BEC2 /* PFTalkDataModel.m in Sources */,
+				2AF042E4171AD6EC0017701F /* PFShopPageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
