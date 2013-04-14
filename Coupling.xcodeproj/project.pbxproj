@@ -88,8 +88,12 @@
 		2A7C4BDE16E7BADB00871E5B /* button_view_my_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7C4BDD16E7BADB00871E5B /* button_view_my_profile.png */; };
 		2A7D920A16BE514C00220708 /* PFSetConditionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7D920916BE514C00220708 /* PFSetConditionViewController.m */; };
 		2A7DB2EC16FF022900F34ED5 /* PFActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7DB2EB16FF022900F34ED5 /* PFActionSheet.m */; };
-		2A7E2B02171AC40D00DE3068 /* TapjoyPublisherLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7E2B00171AC40D00DE3068 /* TapjoyPublisherLibrary.a */; };
 		2A7E2B03171AC40D00DE3068 /* TapjoyResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2A7E2B01171AC40D00DE3068 /* TapjoyResources.bundle */; };
+		2A7E2B0F171ACD6700DE3068 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7E2B0D171ACD4D00DE3068 /* SystemConfiguration.framework */; };
+		2A7E2B12171ACD9900DE3068 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7E2B10171ACD8400DE3068 /* CoreTelephony.framework */; };
+		2A7E2B15171ACDB100DE3068 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7E2B13171ACDA700DE3068 /* MediaPlayer.framework */; };
+		2A7E2B16171ACDD200DE3068 /* TapjoyPublisherLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A7E2B00171AC40D00DE3068 /* TapjoyPublisherLibrary.a */; };
+		2A7E2B17171ACE1200DE3068 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1789BF01622B47300EA631B /* libTestFlight.a */; };
 		2A81F34816E8FBA6005B0D68 /* test_why_always_me.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2A81F34716E8FBA6005B0D68 /* test_why_always_me.jpeg */; };
 		2AD7FB6116AC5E5C00BC6535 /* PFScrollingProfilePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD7FB5F16AC5E5C00BC6535 /* PFScrollingProfilePageViewController.m */; };
 		2AD7FB6216AC5E5C00BC6535 /* PFScrollingProfilePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AD7FB6016AC5E5C00BC6535 /* PFScrollingProfilePageViewController.xib */; };
@@ -135,7 +139,6 @@
 		C1789BE7162041BC00EA631B /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = C1789BD9162041BC00EA631B /* SBJsonTokeniser.m */; };
 		C1789BE8162041BC00EA631B /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = C1789BDB162041BC00EA631B /* SBJsonUTF8Stream.m */; };
 		C1789BE9162041BC00EA631B /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = C1789BDD162041BC00EA631B /* SBJsonWriter.m */; };
-		C1789BF41622B47300EA631B /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1789BF01622B47300EA631B /* libTestFlight.a */; };
 		C1789BF51622B47300EA631B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C1789BF11622B47300EA631B /* README.md */; };
 		C1789BF61622B47300EA631B /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = C1789BF21622B47300EA631B /* release_notes.md */; };
 		C1789BF81622B50D00EA631B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C1789BF71622B50D00EA631B /* libz.dylib */; };
@@ -275,6 +278,9 @@
 		2A7E2AFF171AC40D00DE3068 /* TapjoyConnectConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapjoyConnectConstants.h; sourceTree = "<group>"; };
 		2A7E2B00171AC40D00DE3068 /* TapjoyPublisherLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = TapjoyPublisherLibrary.a; sourceTree = "<group>"; };
 		2A7E2B01171AC40D00DE3068 /* TapjoyResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TapjoyResources.bundle; sourceTree = "<group>"; };
+		2A7E2B0D171ACD4D00DE3068 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		2A7E2B10171ACD8400DE3068 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		2A7E2B13171ACDA700DE3068 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		2A81F34716E8FBA6005B0D68 /* test_why_always_me.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_why_always_me.jpeg; sourceTree = "<group>"; };
 		2AD7FB5E16AC5E5B00BC6535 /* PFScrollingProfilePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFScrollingProfilePageViewController.h; path = Classes/PFScrollingProfilePageViewController.h; sourceTree = "<group>"; };
 		2AD7FB5F16AC5E5C00BC6535 /* PFScrollingProfilePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFScrollingProfilePageViewController.m; path = Classes/PFScrollingProfilePageViewController.m; sourceTree = "<group>"; };
@@ -397,6 +403,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A7E2B15171ACDB100DE3068 /* MediaPlayer.framework in Frameworks */,
+				2A7E2B12171ACD9900DE3068 /* CoreTelephony.framework in Frameworks */,
+				2A7E2B0F171ACD6700DE3068 /* SystemConfiguration.framework in Frameworks */,
 				C1E3C62416EC8CE700BF4C99 /* AudioToolbox.framework in Frameworks */,
 				2A77227E167758780059AD46 /* QuartzCore.framework in Frameworks */,
 				C1A1CB33162AA5B0002CB9DD /* AdSupport.framework in Frameworks */,
@@ -406,9 +415,9 @@
 				C163A1F615E0BABB00F3F25D /* UIKit.framework in Frameworks */,
 				C163A1F815E0BABB00F3F25D /* Foundation.framework in Frameworks */,
 				C163A1FA15E0BABB00F3F25D /* CoreGraphics.framework in Frameworks */,
-				C1789BF41622B47300EA631B /* libTestFlight.a in Frameworks */,
+				2A7E2B17171ACE1200DE3068 /* libTestFlight.a in Frameworks */,
+				2A7E2B16171ACDD200DE3068 /* TapjoyPublisherLibrary.a in Frameworks */,
 				2A46AA07167496AE00B459A3 /* FacebookSDK.framework in Frameworks */,
-				2A7E2B02171AC40D00DE3068 /* TapjoyPublisherLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -785,8 +794,6 @@
 		C163A1E615E0BABA00F3F25D = {
 			isa = PBXGroup;
 			children = (
-				2A7E2AFD171AC40D00DE3068 /* TapjoyPublisherLibrary */,
-				C1789BEF1622B47300EA631B /* TestFlightSDK1.1 */,
 				C163A1FB15E0BABB00F3F25D /* Coupling */,
 				C163A1F415E0BABB00F3F25D /* Frameworks */,
 				C163A1F215E0BABB00F3F25D /* Products */,
@@ -804,6 +811,11 @@
 		C163A1F415E0BABB00F3F25D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C1789BEF1622B47300EA631B /* TestFlightSDK1.1 */,
+				2A7E2AFD171AC40D00DE3068 /* TapjoyPublisherLibrary */,
+				2A7E2B13171ACDA700DE3068 /* MediaPlayer.framework */,
+				2A7E2B10171ACD8400DE3068 /* CoreTelephony.framework */,
+				2A7E2B0D171ACD4D00DE3068 /* SystemConfiguration.framework */,
 				C1E3C62116EC8CDD00BF4C99 /* AudioToolbox.framework */,
 				2A77227B167758640059AD46 /* QuartzCore.framework */,
 				2A46AA06167496AE00B459A3 /* FacebookSDK.framework */,
@@ -1223,7 +1235,11 @@
 					"\"$(SRCROOT)/../../../../Downloads/TapjoyPublisherSDK_iOS_v9.0.3/TapjoyPublisherLibrary\"",
 					"\"$(SRCROOT)/TapjoyPublisherLibrary\"",
 				);
-				OTHER_LDFLAGS = "-lsqlite3.0";
+				OTHER_LDFLAGS = (
+					"-lsqlite3.0",
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F69FCA64-5A7B-4A2B-A468-4F87364D6A05";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1251,7 +1267,11 @@
 					"\"$(SRCROOT)/../../../../Downloads/TapjoyPublisherSDK_iOS_v9.0.3/TapjoyPublisherLibrary\"",
 					"\"$(SRCROOT)/TapjoyPublisherLibrary\"",
 				);
-				OTHER_LDFLAGS = "-lsqlite3.0";
+				OTHER_LDFLAGS = (
+					"-lsqlite3.0",
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F69FCA64-5A7B-4A2B-A468-4F87364D6A05";
 				TARGETED_DEVICE_FAMILY = 1;
