@@ -143,6 +143,7 @@
 		C1789BF51622B47300EA631B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C1789BF11622B47300EA631B /* README.md */; };
 		C1789BF61622B47300EA631B /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = C1789BF21622B47300EA631B /* release_notes.md */; };
 		C1789BF81622B50D00EA631B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C1789BF71622B50D00EA631B /* libz.dylib */; };
+		C18A837C172BD280009CF384 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18A837B172BD27F009CF384 /* Security.framework */; };
 		C1A1CB31162AA573002CB9DD /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A1CB30162AA573002CB9DD /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C1A1CB33162AA5B0002CB9DD /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A1CB32162AA5B0002CB9DD /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C1C1E35B163D06AC002A9E38 /* FBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C1E35A163D06AC002A9E38 /* FBManager.m */; };
@@ -372,6 +373,7 @@
 		C1789BF21622B47300EA631B /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
 		C1789BF31622B47300EA631B /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		C1789BF71622B50D00EA631B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		C18A837B172BD27F009CF384 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		C1A1CB30162AA573002CB9DD /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		C1A1CB32162AA5B0002CB9DD /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		C1C1E359163D06AC002A9E38 /* FBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBManager.h; sourceTree = "<group>"; };
@@ -406,6 +408,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C18A837C172BD280009CF384 /* Security.framework in Frameworks */,
 				2A7E2B15171ACDB100DE3068 /* MediaPlayer.framework in Frameworks */,
 				2A7E2B12171ACD9900DE3068 /* CoreTelephony.framework in Frameworks */,
 				2A7E2B0F171ACD6700DE3068 /* SystemConfiguration.framework in Frameworks */,
@@ -841,6 +844,7 @@
 				C163A1F515E0BABB00F3F25D /* UIKit.framework */,
 				C163A1F715E0BABB00F3F25D /* Foundation.framework */,
 				C163A1F915E0BABB00F3F25D /* CoreGraphics.framework */,
+				C18A837B172BD27F009CF384 /* Security.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
