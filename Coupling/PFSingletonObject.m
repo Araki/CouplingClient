@@ -1,16 +1,16 @@
 //
-//  SingletonObject.m
+//  PFSingletonObject.m
 //  Coupling
 //
 //  Created by tsuchimoto on 12/10/20.
 //  Copyright (c) 2012年 tsuchimoto. All rights reserved.
 //
 
-#import "SingletonObject.h"
+#import "PFSingletonObject.h"
 
 static NSMutableDictionary *_instances;/**!< this is the dictionary which manages all instance of inheritor of this class */
 
-@implementation SingletonObject
+@implementation PFSingletonObject
 
 + (id)sharedObject {
 	@synchronized(self) {

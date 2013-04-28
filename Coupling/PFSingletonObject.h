@@ -1,5 +1,5 @@
 //
-//  SingletonObject.h
+//  PFSingletonObject.h
 //  Coupling
 //
 //  Created by tsuchimoto on 12/10/20.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SingletonObject : NSObject
+@interface PFSingletonObject : NSObject
 
 + (id)sharedObject;
 

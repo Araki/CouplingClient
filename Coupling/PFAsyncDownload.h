@@ -9,32 +9,19 @@
 #import <Foundation/Foundation.h>
 #import "PFBlocks.h"
 
-@interface PFAsyncDownload : NSObject {
-    long long downloadedContentLength;
-    long long expectedContentLength;
-	BOOL useHTTPCache;
-	BOOL hasCache;
-}
+@interface PFAsyncDownload : NSObject
 
-+ (PFAsyncDownload *)downloader;
+@property (nonatomic, assign) long long downloadedContentLength;
+@property (nonatomic, assign) long long expectedContentLength;
+@property (nonatomic, assign) BOOL useHTTPCache;
+@property (nonatomic, assign) BOOL hasCache;
 
-- (void)downloadFromURL:(NSString*)url
-			  onSuccess:(PFDataBlock)onSuccess
-			  onFailure:(PFErrorBlock)onFailure
-			   onUpdate:(PFAsyncDownloadUpdateBlock)onUpdate;
-
-- (void)downloadFromURL:(NSString*)url
-				 params:(NSDictionary *)params
-			  onSuccess:(PFDataBlock)onSuccess
-			  onFailure:(PFErrorBlock)onFailure
-			   onUpdate:(PFAsyncDownloadUpdateBlock)onUpdate;
-
-- (void)downloadFromURL:(NSString*)url
-				 params:(NSDictionary *)params
-			   useCache:(BOOL)useCache
-			  onSuccess:(PFDataBlock)onSuccess
-			  onFailure:(PFErrorBlock)onFailure
-			   onUpdate:(PFAsyncDownloadUpdateBlock)onUpdate;
++ (PFAsyncDownload *)downloaderWithURL:(NSString*)url
+								params:(NSDictionary *)params
+							  useCache:(BOOL)useCache
+							 onSuccess:(PFDataBlock)onSuccess
+							 onFailure:(PFErrorBlock)onFailure
+							  onUpdate:(PFAsyncDownloadUpdateBlock)onUpdate;
 
 - (void)cancel;
 

@@ -9,70 +9,63 @@
 #import "PFHTTPResponse.h"
 #import "SBJson.h"
 #import "PFLogger.h"
-#import "NSError+Pairful.h"
+#import "PFError.h"
 #import "NSString+Extension.h"
 
 @implementation PFHTTPResponse
 @synthesize jsonString=__jsonString;
 
-#pragma mark - object lifecycle
-
-- (id)initWithJson:(NSString*)json
+- (id)initWithJson:(NSString *)json
 {
-    self = [super init];
-	if (self != nil) {
+	self = [super init];
+	
+	if (self) {
 		self.jsonString = json;
+		
+		PFCLog(PFLOG_CAT_RESPONSE, @"[HTTP Response] %@", [self jsonDictionary]);
 	}
-    PFCLog(PFLOG_CAT_RESPONSE, @"recieved response json : %@", [self jsonDictionary]);
+	
 	return self;
 }
 
-+ (PFHTTPResponse *) responseFromJson:(NSString*)json
++ (PFHTTPResponse *)responseFromJson:(NSString*)json
 {
 	return [[PFHTTPResponse alloc] initWithJson:json];
 }
 
-#pragma mark - methods
-
-- (NSDictionary *)jsonDictionary {
+- (NSDictionary *)jsonDictionary
+{
 	return [self.jsonString JSONValue];
 }
 
-- (BOOL)isValid {
-	return ([self jsonDictionary] != nil);
+- (BOOL)isSuccessful
+{
+	return (!self.isS3ErrorXML && [self jsonDictionary]) ? [[[self jsonDictionary] objectForKey:@"status"] isEqualToString:@"ok"] : NO;
 }
 
-- (BOOL)isSuccessful {
-	if ([self isValid]) {
-		return [[[self jsonDictionary] objectForKey:@"status"] isEqualToString:@"ok"];
-	} else {
-		return NO;
+- (BOOL)isS3ErrorXML
+{
+	if (self.jsonString) {
+		if ([self.jsonString hasPrefix:@"<?xml "]) {
+			if ([self.jsonString rangeOfString:@"<Error>"].location != NSNotFound)
+				return YES;
+		}
 	}
-}
-
-- (BOOL)isS3ErrorXML {
-    if (self.jsonString != nil) {
-        if ([self.jsonString hasPrefix:@"<?xml "]) { // response is xml
-            if ([self.jsonString rangeOfString:@"<Error>"].location != NSNotFound) { // has <Error> tag.
-                return YES;
-            }
-        }
-    }
-    return NO;
+	
+	return NO;
 }
 
 - (NSError *)error
 {
-    if (self.isS3ErrorXML) {
-        NSString* errorString = [self.jsonString substringBetweenPrefix:@"<Error>" andSuffix:@"</Error>"];
-        if (errorString) {
-            return [NSError errorWithCode:[errorString substringBetweenPrefix:@"<Code>" andSuffix:@"</Code>"]
-                                  message:[errorString substringBetweenPrefix:@"<Message>" andSuffix:@"</Message>"]];
-        }
-        return nil;
-    } else {
-        return [NSError errorFromResponse:self.jsonString];
-    }
+	if (self.isS3ErrorXML) {
+		NSString* errorString = [self.jsonString substringBetweenPrefix:@"<Error>" andSuffix:@"</Error>"];
+		if (errorString)
+			return [PFError errorWithCode:PFErrorHTTPResponceError userInfo:nil];
+		
+		return nil;
+	} else {
+		return [PFError errorFromResponse:self.jsonString];
+	}
 }
 
 @end

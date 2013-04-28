@@ -14,7 +14,7 @@
 - (NSString *)serializeIntoHexidecimal:(NSData *)data;
 - (NSString *)substringBetweenPrefix:(NSString *)prefix andSuffix:(NSString *)suffix;
 - (BOOL)containsString:(NSString *)stringToFind;
-//- (NSString *)encodeEscape;
+- (NSString *)encodeEscape;
 - (int)versionIntValue;
 //- (NSString *)firstCharacterCapitalizedString;
 - (NSString *)stringByReplacingInvalidJSONString;

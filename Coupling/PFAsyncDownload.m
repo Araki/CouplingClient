@@ -7,15 +7,12 @@
 //
 
 #import "PFAsyncDownload.h"
-#import "NSError+Pairful.h"
-//#import "NSDictionary+MultiPartFormData.h"
-//#import "PNArchiveManager.h"
-//#import "PNMiscUtil.h"
+#import "PFError.h"
 #import "PFNotificationsName.h"
 
-#define kPNCallbackBlockOnSuccess @"onSuccess"
-#define kPNCallbackBlockOnFailure @"onFailure"
-#define kPNCallbackBlockOnUpdate @"onUpdate"
+#define kPFCallbackBlockOnSuccess @"onSuccess"
+#define kPFCallbackBlockOnFailure @"onFailure"
+#define kPFCallbackBlockOnUpdate @"onUpdate"
 
 @interface PFAsyncDownload()
 @property (retain) NSString* url;
@@ -32,14 +29,11 @@
 @end
 
 @implementation PFAsyncDownload
+@synthesize downloadedContentLength;
+@synthesize expectedContentLength;
+@synthesize useHTTPCache;
+@synthesize hasCache;
 @synthesize url = url_, downloadedData, connection=__connection, shouldKeepRunning, successBlock=__successBlock, failureBlock=__failureBlock, updateBlock=__updateBlock, currentThread, etagHeader, lastModifiedHeader;
-
-- (void)clear
-{
-	self.successBlock = nil;
-	self.failureBlock = nil;
-	self.updateBlock = nil;
-}
 
 + (PFAsyncDownload *)downloader {
 	return [[PFAsyncDownload alloc] init];
@@ -57,22 +51,22 @@
 //						  lastModifiedHeader, @"Last-Modified",
 //						  contents, @"contents", nil];
 //	
-//	[PFArchiveManager archiveObject:data toFile:[PNAsyncDownload cacheFileNameForURL:self.url]];
+//	[PFArchiveManager archiveObject:data toFile:[PFAsyncDownload cacheFileNameForURL:self.url]];
 //}
 
 //+ (NSString *)readEtagHeaderFromCacheForURL:(NSString *)url
 //{
-//	return [[PFArchiveManager unarchiveObjectWithFile:[PNAsyncDownload cacheFileNameForURL:url]] objectForKey:@"ETag"];
+//	return [[PFArchiveManager unarchiveObjectWithFile:[PFAsyncDownload cacheFileNameForURL:url]] objectForKey:@"ETag"];
 //}
 
 //+ (NSString *)readLastModifiedHeaderFromCacheForURL:(NSString *)url
 //{
-//	return [[PFArchiveManager unarchiveObjectWithFile:[PNAsyncDownload cacheFileNameForURL:url]] objectForKey:@"Last-Modified"];
+//	return [[PFArchiveManager unarchiveObjectWithFile:[PFAsyncDownload cacheFileNameForURL:url]] objectForKey:@"Last-Modified"];
 //}
 
 //+ (NSData *)readHTTPContentsFromCacheForURL:(NSString *)url
 //{
-//	return [[PFArchiveManager unarchiveObjectWithFile:[PNAsyncDownload cacheFileNameForURL:url]] objectForKey:@"contents"];
+//	return [[PFArchiveManager unarchiveObjectWithFile:[PFAsyncDownload cacheFileNameForURL:url]] objectForKey:@"contents"];
 //}
 
 - (void)downloadFromURL:(NSString*)url
@@ -122,7 +116,7 @@
 	NSMutableURLRequest* urlRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:self.url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15.0f];
 	
 //	[urlRequest setValue:@"gzip" forHTTPHeaderField:@"Accept-Encoding"];
-//	[urlRequest setValue:[PNMiscUtil userAgent] forHTTPHeaderField:@"User-Agent"];
+//	[urlRequest setValue:[PFMiscUtil userAgent] forHTTPHeaderField:@"User-Agent"];
 	
 //	if (useHTTPCache) {
 //		NSString *etag = [PFAsyncDownload readEtagHeaderFromCacheForURL:self.url];
@@ -155,75 +149,110 @@
 - (void)cancel
 {
 	[self.connection performSelector:@selector(cancel) onThread:self.currentThread withObject:nil waitUntilDone:YES];
-	if (self.failureBlock)
-		self.failureBlock([NSError errorWithCode:@"cancelled" message:@"cancelled."]);
+	if (self.failureBlock) {
+		self.failureBlock([PFError errorWithCode:PFErrorAsyncDownloadCancelled userInfo:nil]);
+		self.failureBlock = nil;
+	}
 	
 	self.shouldKeepRunning = NO;
 }
+
+#pragma mark NSURLConnectionDelegate
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSHTTPURLResponse *)response
 {
 	expectedContentLength = [response expectedContentLength];
 	
-	if ([response statusCode] == 404 || [response statusCode] == 503) {
-		NSString* errorCode = [NSString stringWithFormat:@"%d", [response statusCode]];
-		NSString* errorMessage = [response statusCode] == 404 ? @"File not found." : @"The server is down.";
+	int statusCode = response.statusCode;
+	
+	if (statusCode == 400 || statusCode == 404 || statusCode == 422 || statusCode == 500 || statusCode == 503) {
 		[self.connection performSelector:@selector(cancel) onThread:self.currentThread withObject:nil waitUntilDone:YES];
-		if (self.failureBlock)
-			self.failureBlock([NSError errorWithCode:errorCode message:errorMessage]);
+		
+		if (self.failureBlock) {
+			self.failureBlock([PFError errorWithCode:statusCode + 1000 userInfo:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"%d", statusCode] forKey:@"status_code"]]);
+			self.failureBlock = nil;
+		}
+		
 		self.shouldKeepRunning = NO;
 		[self clear];
 		return;
 	}
 	
 	if (useHTTPCache) {
-		if ([response statusCode] == 304)
+		if (statusCode == 304)
 			hasCache = YES;
-		else if ([response statusCode] == 200) {
+		else if (statusCode == 200) {
 			self.etagHeader = [[response allHeaderFields] objectForKey:@"Etag"];
 			self.lastModifiedHeader = [[response allHeaderFields] objectForKey:@"Last-Modified"];
 		}
 	}
 }
-
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
 	downloadedContentLength += (long long)[data length];
 	[downloadedData appendData:data];
-	if (self.updateBlock) {
-        self.updateBlock(downloadedContentLength, expectedContentLength);
-    }
+	if (self.updateBlock)
+		self.updateBlock(downloadedContentLength, expectedContentLength);
 }
-
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-	if (useHTTPCache && !hasCache) {
-//		[self cacheHTTPContents:downloadedData];
-    }
+	if (useHTTPCache && !hasCache)
+		//[self cacheHTTPContents:downloadedData];
 	
-	if (self.successBlock) {
-//		self.successBlock(hasCache ? [PFAsyncDownload readHTTPContentsFromCacheForURL:self.url] : downloadedData);
-        self.successBlock(downloadedData);
-    }
+	if (self.successBlock)
+		//self.successBlock(hasCache ? [PFAsyncDownload readHTTPContentsFromCacheForURL:self.url] : downloadedData);
+		self.successBlock(downloadedData);
 	
 	self.shouldKeepRunning = NO;
 	[self clear];
 }
-
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
 	if (error.code == NSURLErrorNotConnectedToInternet) {
 		[[NSNotificationCenter defaultCenter] postNotificationName:kPFNotificationFailedToConnectToInternet object:nil];
-		if (self.failureBlock) {
-			self.failureBlock([NSError errorWithCode:@"offline" message:@"Failed to connect internet."]);
-        }
+		
+		if (self.failureBlock)
+			self.failureBlock([PFError errorWithCode:PFErrorNotConnectedToInternet userInfo:[NSDictionary dictionaryWithObject:@"offline" forKey:@"code"]]);
 	} else {
-		if (self.failureBlock) {
+		if (self.failureBlock)
 			self.failureBlock(error);
-        }
 	}
 	
 	self.shouldKeepRunning = NO;
 	[self clear];
 }
+
+#pragma mark object lifecycle
+
++ (PFAsyncDownload *)downloaderWithURL:(NSString*)url
+								params:(NSDictionary *)params
+							  useCache:(BOOL)useCache
+							 onSuccess:(PFDataBlock)onSuccess
+							 onFailure:(PFErrorBlock)onFailure
+							  onUpdate:(PFAsyncDownloadUpdateBlock)onUpdate
+{
+	PFAsyncDownload *download = [[PFAsyncDownload alloc] init];
+	
+	download.url = url;
+	
+	download.successBlock	= onSuccess;
+	download.failureBlock	= onFailure;
+	download.updateBlock	= onUpdate;
+	
+	download.downloadedData = [NSMutableData data];
+	
+	//download.useHTTPCache = useCache;
+	
+	[NSThread detachNewThreadSelector:@selector(downloadInBackgroundWithParameter:) toTarget:download withObject:params];
+	
+	return download;
+}
+
+- (void)clear
+{
+	self.successBlock = nil;
+	self.failureBlock = nil;
+	self.updateBlock = nil;
+}
+
 @end

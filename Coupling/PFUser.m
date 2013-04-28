@@ -8,7 +8,7 @@
 
 #import "PFUser.h"
 #import "PFUserModel.h"
-#import "NSError+Pairful.h"
+#import "PFError.h"
 //#import "PFSessionModel.h"
 //#import "PFUserManager.h"
 #import "PFLogger.h"

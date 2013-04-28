@@ -10,15 +10,11 @@
 
 @interface PFHTTPResponse : NSObject
 
-@property (strong, nonatomic) NSString *jsonString;
+@property (nonatomic, retain) NSString *jsonString;
+@property (readonly) BOOL isSuccessful;
+@property (readonly) NSDictionary *jsonDictionary;
+@property (readonly) NSError *error;
 
-- (id) initWithJson:(NSString *)json;
 + (id) responseFromJson:(NSString *)json;
-
-- (NSDictionary *)jsonDictionary;
-- (BOOL)isValid;
-- (BOOL)isSuccessful;
-- (BOOL)isS3ErrorXML;
-- (NSError *)error;
 
 @end

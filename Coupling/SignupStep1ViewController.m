@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 #import "SBJson.h"
 #import "FBManager.h"
-#import "PFHTTPRequestHelper.h"
+#import "PFHTTPConnector.h"
 #import "SignupStep2ViewController.h"
 
 #import <Security/Security.h>
@@ -140,7 +140,7 @@ NSString *const FBSessionStateChangedNotification = @"com.example.Login:FBSessio
         NSLog(@"@@@@@ starting request session/create");
         NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                                 session.accessToken, @"access_token", uuid, @"device_token", nil];
-        [PFHTTPRequestHelper requestWithCommand:@"/session/create" params:params onSuccess:^(PFHTTPResponse *response) {
+        [PFHTTPConnector requestWithCommand:@"/sessions/create" params:params onSuccess:^(PFHTTPResponse *response) {
             NSLog(@"@@@@@ connection complete: %@", [response jsonDictionary]);
             
         } onFailure:^(NSError *error) {

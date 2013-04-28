@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <FacebookSDK/FacebookSDK.h>
-#import "SingletonObject.h"
+#import "PFSingletonObject.h"
 
 extern NSString *const FBSessionStateChangedNotification;
 
-@interface FBManager : SingletonObject
+@interface FBManager : PFSingletonObject
 
 @property (strong, nonatomic) FBSession *session;
 @property (strong, nonatomic) NSData *deviceToken;

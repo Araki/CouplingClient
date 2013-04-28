@@ -7,7 +7,7 @@
 //
 
 #import "PFUserModel.h"
-#import "NSDictionary+GetterExt.h"
+#import "NSDictionary+Extension.h"
 
 //User
 #define kPNDefaultUsername					@""

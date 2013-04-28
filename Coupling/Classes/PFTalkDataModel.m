@@ -7,7 +7,7 @@
 //
 
 #import "PFTalkDataModel.h"
-#import "NSDictionary+GetterExt.h"
+#import "NSDictionary+Extension.h"
 
 @implementation PFTalkDataModel
 

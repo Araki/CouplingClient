@@ -65,10 +65,10 @@
 	return ([self rangeOfString:stringToFind].location != NSNotFound);
 }
 
-//- (NSString *)encodeEscape
-//{
-//	return (NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)self, NULL, CFSTR (";,/?:@&=+$ #"), kCFStringEncodingUTF8);
-//}
+- (NSString *)encodeEscape
+{
+	return (__bridge NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (__bridge CFStringRef)self, NULL, CFSTR (":/?#[]@!$ &'()*+,;=\"<>%{}|\\^~`"), kCFStringEncodingUTF8);
+}
 
 - (int)versionIntValue
 {
