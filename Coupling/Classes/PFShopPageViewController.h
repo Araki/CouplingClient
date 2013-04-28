@@ -10,4 +10,6 @@
 
 @interface PFShopPageViewController : PFAbstractPageViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *outletOwnPointLabel;
+
 @end

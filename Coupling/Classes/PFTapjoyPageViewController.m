@@ -1,18 +1,19 @@
 //
-//  PFShopPageViewController.m
+//  PFTapjoyPageViewController.m
 //  Coupling
 //
-//  Created by Ryo Kamei on 13/04/14.
+//  Created by Ryo Kamei on 13/04/28.
 //  Copyright (c) 2013年 tsuchimoto. All rights reserved.
 //
 
-#import "PFShopPageViewController.h"
+#import "PFTapjoyPageViewController.h"
+#import "TapjoyConnect.h"
 
-@interface PFShopPageViewController ()
+@interface PFTapjoyPageViewController ()
 
 @end
 
-@implementation PFShopPageViewController
+@implementation PFTapjoyPageViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -23,11 +24,17 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [super viewWillAppear:animated];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
+    [TapjoyConnect showOffersWithViewController:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,8 +43,4 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewDidUnload {
-    [self setOutletOwnPointLabel:nil];
-    [super viewDidUnload];
-}
 @end

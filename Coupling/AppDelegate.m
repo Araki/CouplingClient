@@ -26,12 +26,11 @@
     if (IsDevice) {
         [TestFlight takeOff:@"Pairful development"];
         [[SKPaymentQueue defaultQueue] addTransactionObserver:[[MyStoreObserver alloc] init]];
+        
         // connect to Tapjoy
-        [TapjoyConnect requestTapjoyConnect:@"appId" secretKey:@"secretKey"];
+        [TapjoyConnect requestTapjoyConnect:@"254fe42b-1fa2-480b-9b53-72ecc278d627"
+                                  secretKey:@"sqhBudUInNRtaQtIsAwz"];
     }
-    
-    
-    
     return YES;
 }
 
