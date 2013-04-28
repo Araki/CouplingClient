@@ -61,11 +61,6 @@
     // UIPageControl settings
     [self.outletPageControl setEnabled:NO];
     
-    // navigationBarの背景
-    UIImage *image = [UIImage imageNamed:@"bg_header.png"];
-    [self.outletNavigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
-    
-    
     // test
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     PFPairSearchProfileViewController *view1 = [storyboard instantiateViewControllerWithIdentifier:@"PFPairSearchProfileViewController"];

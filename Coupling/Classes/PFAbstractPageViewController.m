@@ -27,7 +27,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    // navigationBarの背景
+    UIImage *image = [UIImage imageNamed:@"bg_header.png"];
+    [self.outletNavigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)didReceiveMemoryWarning

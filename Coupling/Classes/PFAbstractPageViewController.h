@@ -11,6 +11,9 @@
 @interface PFAbstractPageViewController : UIViewController
 
 
+@property (weak, nonatomic) IBOutlet UINavigationBar *outletNavigationBar;
+
 - (IBAction)actionSlideMenuBarButton:(id)sender;
+
 
 @end
