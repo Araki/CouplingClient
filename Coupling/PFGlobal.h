@@ -9,7 +9,7 @@
 #ifndef Coupling_PFGlobal_h
 #define Coupling_PFGlobal_h
 
-#define kPFEndpointBase							@"https://api.pairful.net/api/v1"
+#define kPFEndpointBase							@"https://api.pairful.net/api"
 
 
 #endif
