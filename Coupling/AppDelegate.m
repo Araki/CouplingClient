@@ -28,8 +28,8 @@
         [[SKPaymentQueue defaultQueue] addTransactionObserver:[[MyStoreObserver alloc] init]];
         
         // connect to Tapjoy
-        [TapjoyConnect requestTapjoyConnect:@"254fe42b-1fa2-480b-9b53-72ecc278d627"
-                                  secretKey:@"sqhBudUInNRtaQtIsAwz"];
+//        [TapjoyConnect requestTapjoyConnect:@"254fe42b-1fa2-480b-9b53-72ecc278d627"
+//                                  secretKey:@"sqhBudUInNRtaQtIsAwz"];
     }
     return YES;
 }
