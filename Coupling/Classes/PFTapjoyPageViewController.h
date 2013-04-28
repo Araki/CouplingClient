@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PFAbstractPageViewController.h"
 
-@interface PFTapjoyPageViewController : UIViewController
+@interface PFTapjoyPageViewController : PFAbstractPageViewController
 
 @end

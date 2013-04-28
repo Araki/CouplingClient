@@ -278,6 +278,11 @@
 {
     return [PFUtil buttonWithName:@"button_notification.png" rect:CGRectMake(0, 0, 28, 28)];
 }
+
++ (UIButton *)backButton
+{
+    return [PFUtil buttonWithName:@"button_back.png" rect:CGRectMake(0, 0, 28.5, 28.5)];
+}
 /*
 + (UIButton *)myPageStatusBarButtonWithStatus:(NSInteger)status
 {

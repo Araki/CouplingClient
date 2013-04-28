@@ -39,6 +39,7 @@
 + (UIButton *)slideMenuBarButton;
 + (UIButton *)searchConditionBarButton;
 + (UIButton *)notififcationBarButton;
++ (UIButton *)backButton;
 //+ (UIButton *)myPageStatusBarButtonWithStatus:(NSInteger)status;
 + (UIButton *)addPictureButton;
 

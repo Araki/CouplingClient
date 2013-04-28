@@ -32,7 +32,7 @@
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
-    PFSlideMenuPageViewController *leftController = [storyboard instantiateViewControllerWithIdentifier:@"PairSearchLeftViewController"];
+    PFSlideMenuPageViewController *leftController = [storyboard instantiateViewControllerWithIdentifier:@"PFSlideMenuPageViewController"];
     PFPairSearchTopPageViewController *centerController = [storyboard instantiateViewControllerWithIdentifier:@"PairSearchCenterViewController"];
     
     self = [super initWithCenterViewController:centerController

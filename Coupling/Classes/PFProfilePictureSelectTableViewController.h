@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "PFProfilePictureSelectTableViewCell.h"
+#import "PFAbstractPageViewController.h"
 
-@interface PFProfilePictureSelectTableViewController : UITableViewController<UIActionSheetDelegate,
+@interface PFProfilePictureSelectTableViewController : PFAbstractPageViewController<UIActionSheetDelegate,
                                                                             UIImagePickerControllerDelegate,
                                                                             UINavigationControllerDelegate,
                                                                             PFProfileTableCellDelegate>

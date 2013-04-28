@@ -24,12 +24,44 @@
     return self;
 }
 
+
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    if (self.outletNavigationBar != nil)
+    {
+        // 背景画像を設定する
+        UIImage *image = [UIImage imageNamed:@"bg_header.png"];
+        [self.outletNavigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
+    }
+    // デフォルトのNavigationBarを使う場合の戻るボタンを設定する。(backBarButtonItemは使わない)
+    else
+    {
+        UIButton *backButton = [PFUtil backButton];
+        [backButton addTarget:self action:@selector(popViewControllerAsNavigationController) forControlEvents:UIControlEventTouchUpInside];
+        UIBarButtonItem *backBarButton = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+        
+        self.navigationItem.leftBarButtonItem = backBarButton;
+        
+        // backBarButtonItemは使わない
+        [self.navigationItem setHidesBackButton:YES];
+    }
+}
+
+- (void)popViewControllerAsNavigationController
+{
+    if (!self.navigationController.navigationBar.hidden) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // navigationBarの背景
-    UIImage *image = [UIImage imageNamed:@"bg_header.png"];
-    [self.outletNavigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
+    
 }
 
 - (void)didReceiveMemoryWarning

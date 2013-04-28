@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "PFActionSheet.h"
+#import "PFAbstractPageViewController.h"
 
-@interface PFSetConditionViewController : UITableViewController <PFActionSheetDelegate>
+@interface PFSetConditionViewController : PFAbstractPageViewController <PFActionSheetDelegate>
 
 @property (strong, nonatomic) PFActionSheet *actionSheet;
 @property (strong, nonatomic) NSIndexPath *currentPath;

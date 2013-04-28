@@ -11,7 +11,8 @@
 @interface PFAbstractPageViewController : UIViewController
 
 
-@property (weak, nonatomic) IBOutlet UINavigationBar *outletNavigationBar;
+@property (weak, nonatomic) IBOutlet UINavigationBar *outletNavigationBar; // スライドメニュー用のボタンをセットしている場合のNavigationBar
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 - (IBAction)actionSlideMenuBarButton:(id)sender;
 
