@@ -29,9 +29,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.outletTableView.backgroundColor = kPFBackGroundColor;
-    UIImage *image = [UIImage imageNamed:@"bg_header.png"];
-    [self.outletNavigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
-        
+    self.view.backgroundColor = kPFCommonBackGroundColor;
+    
+    
     // test
     self.outletUserProfileImageView.image = [UIImage imageNamed:@"test_imgres_1.jpeg"];
 }

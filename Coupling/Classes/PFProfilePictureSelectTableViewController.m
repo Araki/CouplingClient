@@ -36,7 +36,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = kPFBackGroundColor;
+    self.tableView.backgroundColor = kPFBackGroundColor;
 
     // navigationBarの設定
     UIButton *topRightBarButton = [PFUtil addPictureButton];

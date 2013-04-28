@@ -32,6 +32,7 @@
     [super viewDidLoad];    
     // tableViewのヘッダー画像
     self.headerImage = [UIImage imageNamed:@"bg_header.png"];
+    self.view.backgroundColor = kPFCommonBackGroundColor;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

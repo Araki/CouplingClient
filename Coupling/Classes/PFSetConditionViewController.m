@@ -66,7 +66,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
         UILabel *conditionDetailLabel = cell.detailTextLabel;
         [conditionDetailLabel setText:@""];
-        
+        cell.selectionStyle = UITableViewCellSelectionStyleGray;
     }
     [self updateCell:cell atIndexPath:indexPath];
     
