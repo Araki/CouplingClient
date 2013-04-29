@@ -7,6 +7,10 @@
 //
 
 #import "PFAsyncDownload.h"
+#import "NSDictionary+MultiPartFormData.h"
+#import "NSDictionary+Extension.h"
+//#import "PFArchiveManager.h"
+#import "PFMiscUtil.h"
 #import "PFError.h"
 #import "PFNotificationsName.h"
 
@@ -35,15 +39,13 @@
 @synthesize hasCache;
 @synthesize url = url_, downloadedData, connection=__connection, shouldKeepRunning, successBlock=__successBlock, failureBlock=__failureBlock, updateBlock=__updateBlock, currentThread, etagHeader, lastModifiedHeader;
 
-+ (PFAsyncDownload *)downloader {
-	return [[PFAsyncDownload alloc] init];
-}
+#pragma mark helper
 
-+ (NSString *)cacheFileNameForURL:(NSString *)url
-{
-	return [NSString stringWithFormat:@".pankia/http-cache-%d", [url hash]];
-}
-
+//+ (NSString *)cacheFileNameForURL:(NSString *)url
+//{
+//	return [NSString stringWithFormat:@".pairful/http-cache-%d", [url hash]];
+//}
+//
 //- (void)cacheHTTPContents:(NSData *)contents
 //{
 //	NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -53,70 +55,30 @@
 //	
 //	[PFArchiveManager archiveObject:data toFile:[PFAsyncDownload cacheFileNameForURL:self.url]];
 //}
-
+//
 //+ (NSString *)readEtagHeaderFromCacheForURL:(NSString *)url
 //{
 //	return [[PFArchiveManager unarchiveObjectWithFile:[PFAsyncDownload cacheFileNameForURL:url]] objectForKey:@"ETag"];
 //}
-
+//
 //+ (NSString *)readLastModifiedHeaderFromCacheForURL:(NSString *)url
 //{
 //	return [[PFArchiveManager unarchiveObjectWithFile:[PFAsyncDownload cacheFileNameForURL:url]] objectForKey:@"Last-Modified"];
 //}
-
+//
 //+ (NSData *)readHTTPContentsFromCacheForURL:(NSString *)url
 //{
 //	return [[PFArchiveManager unarchiveObjectWithFile:[PFAsyncDownload cacheFileNameForURL:url]] objectForKey:@"contents"];
 //}
 
-- (void)downloadFromURL:(NSString*)url
-			  onSuccess:(PFDataBlock)onSuccess
-			  onFailure:(PFErrorBlock)onFailure
-			   onUpdate:(PFAsyncDownloadUpdateBlock)onUpdate
-{
-	[self downloadFromURL:url params:nil onSuccess:onSuccess onFailure:onFailure onUpdate:onUpdate];
-}
+#pragma mark download
 
-- (void)downloadFromURL:(NSString*)url
-				 params:(NSDictionary *)params
-			  onSuccess:(PFDataBlock)onSuccess
-			  onFailure:(PFErrorBlock)onFailure
-			   onUpdate:(PFAsyncDownloadUpdateBlock)onUpdate
+- (void)downloadInBackgroundWithParameter:(NSDictionary *)params
 {
-	[self downloadFromURL:url params:params useCache:NO onSuccess:onSuccess onFailure:onFailure onUpdate:onUpdate];
-}
-
-- (void)downloadFromURL:(NSString*)url
-				 params:(NSDictionary *)params
-			   useCache:(BOOL)useCache
-			  onSuccess:(PFDataBlock)onSuccess
-			  onFailure:(PFErrorBlock)onFailure
-			   onUpdate:(PFAsyncDownloadUpdateBlock)onUpdate
-{
-	self.url = url;
-	
-	self.successBlock	= onSuccess;
-	self.failureBlock	= onFailure;
-	self.updateBlock	= onUpdate;
-	
-	self.downloadedData = [NSMutableData data];
-	
-	NSMutableDictionary *optionalInfo = [NSMutableDictionary dictionaryWithObject:[NSNumber numberWithBool:useCache] forKey:@"useCache"];
-	if (params)
-		[optionalInfo setObject:params forKey:@"params"];
-	
-	[NSThread detachNewThreadSelector:@selector(downloadInBackgroundWithParameter:) toTarget:self withObject:optionalInfo];
-}
-
-- (void)downloadInBackgroundWithParameter:(NSDictionary *)optionalInfo
-{
-//	NSDictionary *params = [optionalInfo objectForKey:@"params"];
-//	useHTTPCache = [[optionalInfo objectForKey:@"useCache"] boolValue];
-	
 	NSMutableURLRequest* urlRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:self.url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15.0f];
 	
-//	[urlRequest setValue:@"gzip" forHTTPHeaderField:@"Accept-Encoding"];
-//	[urlRequest setValue:[PFMiscUtil userAgent] forHTTPHeaderField:@"User-Agent"];
+	[urlRequest setValue:@"gzip" forHTTPHeaderField:@"Accept-Encoding"];
+	[urlRequest setValue:[PFMiscUtil userAgent] forHTTPHeaderField:@"User-Agent"];
 	
 //	if (useHTTPCache) {
 //		NSString *etag = [PFAsyncDownload readEtagHeaderFromCacheForURL:self.url];
@@ -126,19 +88,21 @@
 //		}
 //	}
 	
-//	if (params) {
+	if (params) {
+		[urlRequest setHTTPMethod:@"POST"];
+        NSLog(@" param %@", [params encodedComponentsJoinedByString:@"&"]);
+        [urlRequest setHTTPBody:[[params encodedComponentsJoinedByString:@"&"] dataUsingEncoding:NSUTF8StringEncoding]];
 //		static NSString *boundary = @"UNIQUEBOUNDARYSTRING";
-//		[urlRequest setHTTPMethod:@"POST"];
 //		NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
 //		[urlRequest addValue:contentType forHTTPHeaderField:@"Content-Type"];
-		
+//		
 //		if ([[params objectForKey:@"is_amazon_record?"] isEqualToString:@"yes"])
 //			[urlRequest setHTTPBody:[params multiPartFormDataRepresentationForAmazonWithBoundary:boundary]];
 //		else
 //			[urlRequest setHTTPBody:[params multiPartFormDataRepresentationWithBoundary:boundary]];
-//	}
+	}
 	
-	self.connection = [NSURLConnection connectionWithRequest:urlRequest delegate:self];
+	self.connection = [[NSURLConnection alloc] initWithRequest:urlRequest delegate:self];
 	self.currentThread = [NSThread currentThread];
 	
 	shouldKeepRunning = YES;
@@ -187,6 +151,7 @@
 		}
 	}
 }
+
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
 	downloadedContentLength += (long long)[data length];
@@ -194,6 +159,7 @@
 	if (self.updateBlock)
 		self.updateBlock(downloadedContentLength, expectedContentLength);
 }
+
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
 	if (useHTTPCache && !hasCache)
@@ -206,6 +172,7 @@
 	self.shouldKeepRunning = NO;
 	[self clear];
 }
+
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
 	if (error.code == NSURLErrorNotConnectedToInternet) {
@@ -241,7 +208,7 @@
 	
 	download.downloadedData = [NSMutableData data];
 	
-	//download.useHTTPCache = useCache;
+	download.useHTTPCache = useCache;
 	
 	[NSThread detachNewThreadSelector:@selector(downloadInBackgroundWithParameter:) toTarget:download withObject:params];
 	

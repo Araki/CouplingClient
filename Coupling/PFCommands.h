@@ -7,4 +7,4 @@
 //
 
 // [Session]
-#define kPFCommandSessionCreate			@"/session/create"
+#define kPFCommandSessionsCreate			@"/sessions/create"

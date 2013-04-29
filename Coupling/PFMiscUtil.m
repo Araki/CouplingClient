@@ -12,6 +12,15 @@
 
 @implementation PFMiscUtil
 
++ (NSString *)userAgent
+{
+	NSString *bundleIdentifier = [[NSDictionary dictionaryWithContentsOfFile:[self pathForBundleResource:@"Info" ofType:@"plist"]] objectForKey:@"CFBundleIdentifier"];
+	
+	NSString *bundleVersion = [[NSDictionary dictionaryWithContentsOfFile:[self pathForBundleResource:@"Info" ofType:@"plist"]] objectForKey:@"CFBundleVersion"];
+	
+	return [NSString stringWithFormat:@"%@ %@", bundleIdentifier, bundleVersion];
+}
+
 + (BOOL)isJailBroken
 {
 #if kPFIgnoreJailbrokenDevices
@@ -27,6 +36,17 @@
 #endif
 	
 	return NO;
+}
+
++ (NSString *)pathForBundleResource:(NSString *)resource ofType:(NSString *)type
+{
+	NSString *path = [[NSBundle mainBundle] pathForResource:resource ofType:type];
+	
+	if (path == nil) {
+		path = [[NSBundle bundleForClass:self] pathForResource:resource ofType:type];
+	}
+	
+	return path;
 }
 
 + (NSString *)urlStringFromPath:(NSString *)path params:(id)params

@@ -498,6 +498,8 @@
 		C1CEE9DB172D1C0300C67DA5 /* PFCommands.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFCommands.h; sourceTree = "<group>"; };
 		C1CEE9DD172D21B300C67DA5 /* PFMiscUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFMiscUtil.h; sourceTree = "<group>"; };
 		C1CEE9DE172D21B300C67DA5 /* PFMiscUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFMiscUtil.m; sourceTree = "<group>"; };
+		C1CEE9E6172E500000C67DA5 /* NSDictionary+MultiPartFormData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+MultiPartFormData.h"; sourceTree = "<group>"; };
+		C1CEE9E7172E500000C67DA5 /* NSDictionary+MultiPartFormData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+MultiPartFormData.m"; sourceTree = "<group>"; };
 		C1CFC0A015F1D09E000EB27D /* SearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultViewController.h; sourceTree = "<group>"; };
 		C1CFC0A115F1D09E000EB27D /* SearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultViewController.m; sourceTree = "<group>"; };
 		C1CFC0A515F1D39A000EB27D /* SearchResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultView.h; sourceTree = "<group>"; };
@@ -923,6 +925,8 @@
 		C10A327A1632A9A90083F51B /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				C1CEE9E6172E500000C67DA5 /* NSDictionary+MultiPartFormData.h */,
+				C1CEE9E7172E500000C67DA5 /* NSDictionary+MultiPartFormData.m */,
 				C1CEE9DD172D21B300C67DA5 /* PFMiscUtil.h */,
 				C1CEE9DE172D21B300C67DA5 /* PFMiscUtil.m */,
 				C1CEE9DB172D1C0300C67DA5 /* PFCommands.h */,

@@ -10,55 +10,10 @@
 #define Coupling_PFNotificationsName_h
 
 // [HTTP Request]
-#define kPFNotificationHTTPRequestToServerIsSent				@"PNNotificationHTTPRequestToServerIsSent"
-#define kPFNotificationFailedToConnectToInternet				@"PNNotificationFailedToConnectToInternet"
-
-// [Achievement]
-#define kPFNotificationAchievementUnlockedInLocalDatabase		@"PNNotificationAchievementUnlockedInLocalDatabase"
-#define kPFNotificationAchievementUnlockedInServerDatabase		@"PNNotificationAchievementUnlockedInServerDatabase"
-
-// [Leaderboard]
-#define kPFNotificationLeaderboardPostScoreFailed				@"PNNotificationLeaderboardPostScoreFailed"
-
-// [TCP]
-#define kPFNotificationConnectionEstablished					@"PNNotificationConnectionEstablished"
-#define kPFNotificationConnectionDisconnected					@"PNNotificationConnectionDisconnected"
+#define kPFNotificationHTTPRequestToServerIsSent				@"PFNotificationHTTPRequestToServerIsSent"
+#define kPFNotificationFailedToConnectToInternet				@"PFNotificationFailedToConnectToInternet"
 
 // [Session]
-#define kPFNotificationSessionBecameInvalid						@"PNNotificationSessionBecameInvalid"
-
-// [Visit]
-#define kPFNotificationRequestForVisitingUser					@"PNNotificationRequestForVisitingUser"
-
-// [WelcomeBack]
-#define kPFNotificationGettingInfoForWelcomeBackMessageDone		@"PNNotificationGettingInfoForWelcomeBackMessageDone"
-
-// [Dashboard]
-#define kPFNotificationDashboardWillDisappear					@"PNNotificationDashboardWillDisappear"
-#define kPFNotificationDashboardDidDisappear					@"PNNotificationDashboardDidDisappear"
-#define kPFNotificationDashboardDidBecomeReady					@"PNNotificationDashboardDidBecomeReady"
-#define kPFNotificationDashboardDidGetCustomBackgroundImageURL	@"PNNotificationDashboardDidGetCustomBackgroundImageURL"
-#define kPFNotificationDashboardDidGetNavigationTitle			@"PNNotificationDashboardDidGetNavigationTitle"
-#define kPFNotificationDashboardDidFinishLoadingPage			@"PNNotificationDashboardDidFinishLoadingPage"
-
-// [View]
-#define kPFNotificationModalViewClosed							@"kPFNotificationModalViewClosed"
-
-// [User]
-#define kPFNotificationUserUpdated								@"PNNotificationUserUpdated"
-
-// [Login]
-#define kPFNotificationUserDidLogin								@"PNNotificationUserDidLogin"
-#define kPFNotificationUserDidLogout							@"PNNotificationUserDidLogout"
-#define kPNManagerFinishLoginNotification						@"PNManagerFinishLoginNotification"
-
-// [Feature Available]
-#define kPFNotificationItemOwnershipDownloaded					@"PNNotificationItemOwnershipDownloaded"
-#define kPFNotificationAchievementUnlocksDownloaded				@"PNNotificationAchievementUnlocksDownloaded"
-#define kPFNotificationLeaderboardScoresDownloaded				@"PNNotificationLeaderboardScoresDownloaded"
-
-// [Purchase]
-#define kPFNotificationInAppPurchasingDidFinishOldTransaction	@"kPFNotificationInAppPurchasingDidFinishOldTransaction"
-
+#define kPFNotificationSessionBecameInvalid						@"PFNotificationSessionBecameInvalid"
 
 #endif

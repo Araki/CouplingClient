@@ -70,7 +70,7 @@
 {
 	[[NSNotificationCenter defaultCenter] postNotificationName:kPFNotificationHTTPRequestToServerIsSent object:nil];
 	
-	if (![params objectForKey:@"session"]) {
+	if (![params objectForKey:@"session"] && ![command isEqualToString:kPFCommandSessionsCreate]) {
 		NSMutableDictionary *newDic = [NSMutableDictionary dictionaryWithDictionary:params];
 		[newDic setObject:[PFUser currentUser].sessionId forKey:@"session"];
 		params = newDic;
