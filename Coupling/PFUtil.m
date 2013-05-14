@@ -63,7 +63,7 @@
 
 + (NSArray *)bloodTypes
 {
-    return [NSArray arrayWithObjects:@"A", @"B", @"C", @"O", @"AB", nil];
+    return [NSArray arrayWithObjects:@"A", @"B", @"O", @"AB", nil];
 }
 
 + (NSArray *)heights

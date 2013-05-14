@@ -56,6 +56,8 @@
 		2A7A250B1706FACF0042BEC2 /* UIColor+JSMessagesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7A24E91706FACF0042BEC2 /* UIColor+JSMessagesView.m */; };
 		2A7A250C1706FACF0042BEC2 /* UIView+AnimationOptionsForCurve.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7A24EB1706FACF0042BEC2 /* UIView+AnimationOptionsForCurve.m */; };
 		2A7A250F17070D5F0042BEC2 /* PFTalkDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7A250E17070D5F0042BEC2 /* PFTalkDataModel.m */; };
+		2A7A739217426C50001D488B /* PFMultipleProfileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7A739117426C50001D488B /* PFMultipleProfileModel.m */; };
+		2A7A739517426C74001D488B /* PFImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7A739417426C74001D488B /* PFImageModel.m */; };
 		2A7A94DD16F5B608006DB200 /* PFSettingPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7A94DC16F5B608006DB200 /* PFSettingPageViewController.m */; };
 		2A7A94E216F5B7C4006DB200 /* PFAnnouncementPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7A94E116F5B7C4006DB200 /* PFAnnouncementPageViewController.m */; };
 		2A7A94E616F5B802006DB200 /* PFHelpPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7A94E516F5B802006DB200 /* PFHelpPageViewController.m */; };
@@ -146,6 +148,7 @@
 		2A83590F172D13AD00FBC6E8 /* button_talk.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358E9172D13AD00FBC6E8 /* button_talk.png */; };
 		2A835910172D13AD00FBC6E8 /* button_tapjoy.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358EA172D13AD00FBC6E8 /* button_tapjoy.png */; };
 		2A835911172D13AD00FBC6E8 /* button_trade.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358EB172D13AD00FBC6E8 /* button_trade.png */; };
+		2A835916172E3FF800FBC6E8 /* PFProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A835915172E3FF700FBC6E8 /* PFProfile.m */; };
 		2A84F646172CC72A00E4F3B7 /* PFTapjoyPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A84F645172CC72A00E4F3B7 /* PFTapjoyPageViewController.m */; };
 		2AD7FB6116AC5E5C00BC6535 /* PFScrollingProfilePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD7FB5F16AC5E5C00BC6535 /* PFScrollingProfilePageViewController.m */; };
 		2AD7FB6216AC5E5C00BC6535 /* PFScrollingProfilePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AD7FB6016AC5E5C00BC6535 /* PFScrollingProfilePageViewController.xib */; };
@@ -285,6 +288,10 @@
 		2A7A24EB1706FACF0042BEC2 /* UIView+AnimationOptionsForCurve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AnimationOptionsForCurve.m"; sourceTree = "<group>"; };
 		2A7A250D17070D5F0042BEC2 /* PFTalkDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFTalkDataModel.h; path = Classes/PFTalkDataModel.h; sourceTree = "<group>"; };
 		2A7A250E17070D5F0042BEC2 /* PFTalkDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFTalkDataModel.m; path = Classes/PFTalkDataModel.m; sourceTree = "<group>"; };
+		2A7A739017426C4F001D488B /* PFMultipleProfileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFMultipleProfileModel.h; path = Classes/PFMultipleProfileModel.h; sourceTree = "<group>"; };
+		2A7A739117426C50001D488B /* PFMultipleProfileModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFMultipleProfileModel.m; path = Classes/PFMultipleProfileModel.m; sourceTree = "<group>"; };
+		2A7A739317426C74001D488B /* PFImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFImageModel.h; path = Classes/PFImageModel.h; sourceTree = "<group>"; };
+		2A7A739417426C74001D488B /* PFImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFImageModel.m; path = Classes/PFImageModel.m; sourceTree = "<group>"; };
 		2A7A94DB16F5B608006DB200 /* PFSettingPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFSettingPageViewController.h; sourceTree = "<group>"; };
 		2A7A94DC16F5B608006DB200 /* PFSettingPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFSettingPageViewController.m; sourceTree = "<group>"; };
 		2A7A94E016F5B7C4006DB200 /* PFAnnouncementPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFAnnouncementPageViewController.h; path = Classes/PFAnnouncementPageViewController.h; sourceTree = "<group>"; };
@@ -388,6 +395,8 @@
 		2A8358E9172D13AD00FBC6E8 /* button_talk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_talk.png; path = Resouces/button/button_talk.png; sourceTree = "<group>"; };
 		2A8358EA172D13AD00FBC6E8 /* button_tapjoy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_tapjoy.png; path = Resouces/button/button_tapjoy.png; sourceTree = "<group>"; };
 		2A8358EB172D13AD00FBC6E8 /* button_trade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_trade.png; path = Resouces/button/button_trade.png; sourceTree = "<group>"; };
+		2A835914172E3FF600FBC6E8 /* PFProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFProfile.h; path = Classes/PFProfile.h; sourceTree = "<group>"; };
+		2A835915172E3FF700FBC6E8 /* PFProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFProfile.m; path = Classes/PFProfile.m; sourceTree = "<group>"; };
 		2A84F644172CC72A00E4F3B7 /* PFTapjoyPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFTapjoyPageViewController.h; path = Classes/PFTapjoyPageViewController.h; sourceTree = "<group>"; };
 		2A84F645172CC72A00E4F3B7 /* PFTapjoyPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFTapjoyPageViewController.m; path = Classes/PFTapjoyPageViewController.m; sourceTree = "<group>"; };
 		2AD7FB5E16AC5E5B00BC6535 /* PFScrollingProfilePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFScrollingProfilePageViewController.h; path = Classes/PFScrollingProfilePageViewController.h; sourceTree = "<group>"; };
@@ -948,15 +957,17 @@
 				C1C1E367163D2C56002A9E38 /* NSString+Extension.h */,
 				C1C1E368163D2C57002A9E38 /* NSString+Extension.m */,
 				C1571DF9164F85C700AFB49D /* PFNotificationsName.h */,
+				C1571DF7164F82C600AFB49D /* PFGlobal.h */,
 				C1571E05164F8A7000AFB49D /* PFModel.h */,
 				C1571E06164F8A7100AFB49D /* PFModel.m */,
 				C1571E08164F8C0900AFB49D /* PFDataModel.h */,
-				C1571DF7164F82C600AFB49D /* PFGlobal.h */,
 				C1571E09164F8C0900AFB49D /* PFDataModel.m */,
 				C1571E0B164F915D00AFB49D /* PFUser.h */,
 				C1571E0C164F915D00AFB49D /* PFUser.m */,
 				C1571E0E164F931600AFB49D /* PFUserModel.h */,
 				C1571E0F164F931700AFB49D /* PFUserModel.m */,
+				2A835914172E3FF600FBC6E8 /* PFProfile.h */,
+				2A835915172E3FF700FBC6E8 /* PFProfile.m */,
 				C1571E11164F958B00AFB49D /* NSDictionary+Extension.h */,
 				C1571E12164F958C00AFB49D /* NSDictionary+Extension.m */,
 				C1571E1D164FB14C00AFB49D /* PFAsyncDownload.h */,
@@ -969,6 +980,10 @@
 				2A7DB2EA16FF022900F34ED5 /* PFActionSheet.h */,
 				2A7DB2EB16FF022900F34ED5 /* PFActionSheet.m */,
 				2A7D288A170818E900DC957F /* PFDefines.h */,
+				2A7A739017426C4F001D488B /* PFMultipleProfileModel.h */,
+				2A7A739117426C50001D488B /* PFMultipleProfileModel.m */,
+				2A7A739317426C74001D488B /* PFImageModel.h */,
+				2A7A739417426C74001D488B /* PFImageModel.m */,
 			);
 			name = Lib;
 			sourceTree = "<group>";
@@ -1384,6 +1399,9 @@
 				2A7A250F17070D5F0042BEC2 /* PFTalkDataModel.m in Sources */,
 				2AF042E4171AD6EC0017701F /* PFShopPageViewController.m in Sources */,
 				2A84F646172CC72A00E4F3B7 /* PFTapjoyPageViewController.m in Sources */,
+				2A835916172E3FF800FBC6E8 /* PFProfile.m in Sources */,
+				2A7A739217426C50001D488B /* PFMultipleProfileModel.m in Sources */,
+				2A7A739517426C74001D488B /* PFImageModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1428,10 +1446,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				OTHER_LDFLAGS = (
-					"-all_load",
-					"-ObjC",
-				);
+				OTHER_LDFLAGS = "";
 				PROVISIONING_PROFILE = "F69FCA64-5A7B-4A2B-A468-4F87364D6A05";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F69FCA64-5A7B-4A2B-A468-4F87364D6A05";
 				SDKROOT = iphoneos;
@@ -1460,10 +1475,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				OTHER_LDFLAGS = (
-					"-all_load",
-					"-ObjC",
-				);
+				OTHER_LDFLAGS = "";
 				PROVISIONING_PROFILE = "F69FCA64-5A7B-4A2B-A468-4F87364D6A05";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F69FCA64-5A7B-4A2B-A468-4F87364D6A05";
 				SDKROOT = iphoneos;
