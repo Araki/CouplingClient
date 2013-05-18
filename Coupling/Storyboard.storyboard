@@ -1134,7 +1134,7 @@ b.投稿内容について
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="mHB-u0-roB" kind="push" id="m9D-pl-MWG"/>
+                                    <action selector="actionShowTapJoyView:" destination="ken-kY-iuC" eventType="touchUpInside" id="I3h-8n-zgQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FZ5-Jn-Kbk">
@@ -1480,13 +1480,14 @@ b.投稿内容について
         <class className="PFShopPageViewController" superclassName="PFAbstractPageViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PFShopPageViewController.h"/>
             <relationships>
+                <relationship kind="action" name="actionShowTapJoyView:"/>
                 <relationship kind="outlet" name="outletOwnPointLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="PFSlideMenuPageViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PFSlideMenuPageViewController.h"/>
         </class>
-        <class className="PFTapjoyPageViewController" superclassName="UIViewController">
+        <class className="PFTapjoyPageViewController" superclassName="PFAbstractPageViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PFTapjoyPageViewController.h"/>
         </class>
         <class className="PFTermsOfUsePageViewController" superclassName="PFAbstractPageViewController">

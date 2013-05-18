@@ -7,6 +7,7 @@
 //
 
 #import "PFShopPageViewController.h"
+#import "TapjoyConnect.h"
 
 @interface PFShopPageViewController ()
 
@@ -39,5 +40,9 @@
 - (void)viewDidUnload {
     [self setOutletOwnPointLabel:nil];
     [super viewDidUnload];
+}
+- (IBAction)actionShowTapJoyView:(id)sender
+{
+    [TapjoyConnect showOffersWithViewController:self];
 }
 @end
