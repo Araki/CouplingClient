@@ -10,7 +10,8 @@
 		2A055F4316E32EF10008297B /* PFMyPageTopPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A055F4216E32EF10008297B /* PFMyPageTopPageViewController.m */; };
 		2A055F4716E334BD0008297B /* PFMyPageTopTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A055F4616E334BD0008297B /* PFMyPageTopTableCell.xib */; };
 		2A055F4A16E337450008297B /* PFMyPageTopTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A055F4916E337450008297B /* PFMyPageTopTableCell.m */; };
-		2A46AA07167496AE00B459A3 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A46AA06167496AE00B459A3 /* FacebookSDK.framework */; };
+		2A17961117476F83004BE000 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A17961017476F83004BE000 /* Social.framework */; };
+		2A46AA07167496AE00B459A3 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A46AA06167496AE00B459A3 /* FacebookSDK.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		2A4D501216E648C90042BF1D /* PFMyProfilePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4D501116E648C90042BF1D /* PFMyProfilePageViewController.m */; };
 		2A77227E167758780059AD46 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A77227B167758640059AD46 /* QuartzCore.framework */; };
 		2A7722841677589D0059AD46 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7722811677589D0059AD46 /* IIViewDeckController.m */; };
@@ -224,6 +225,7 @@
 		2A055F4616E334BD0008297B /* PFMyPageTopTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFMyPageTopTableCell.xib; path = Classes/PFMyPageTopTableCell.xib; sourceTree = "<group>"; };
 		2A055F4816E337440008297B /* PFMyPageTopTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFMyPageTopTableCell.h; path = Classes/PFMyPageTopTableCell.h; sourceTree = "<group>"; };
 		2A055F4916E337450008297B /* PFMyPageTopTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFMyPageTopTableCell.m; path = Classes/PFMyPageTopTableCell.m; sourceTree = "<group>"; };
+		2A17961017476F83004BE000 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		2A46AA06167496AE00B459A3 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		2A4D36131674795A0065BD22 /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
 		2A4D3615167479690065BD22 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKResources.bundle; sourceTree = "<group>"; };
@@ -528,6 +530,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1A1CB31162AA573002CB9DD /* Accounts.framework in Frameworks */,
+				2A17961117476F83004BE000 /* Social.framework in Frameworks */,
 				C18A837C172BD280009CF384 /* Security.framework in Frameworks */,
 				2A7E2B15171ACDB100DE3068 /* MediaPlayer.framework in Frameworks */,
 				2A7E2B12171ACD9900DE3068 /* CoreTelephony.framework in Frameworks */,
@@ -535,7 +539,6 @@
 				C1E3C62416EC8CE700BF4C99 /* AudioToolbox.framework in Frameworks */,
 				2A77227E167758780059AD46 /* QuartzCore.framework in Frameworks */,
 				C1A1CB33162AA5B0002CB9DD /* AdSupport.framework in Frameworks */,
-				C1A1CB31162AA573002CB9DD /* Accounts.framework in Frameworks */,
 				C1789BF81622B50D00EA631B /* libz.dylib in Frameworks */,
 				C162185A1606FE2600F27E37 /* StoreKit.framework in Frameworks */,
 				C163A1F615E0BABB00F3F25D /* UIKit.framework in Frameworks */,
@@ -1002,6 +1005,7 @@
 		C163A1E615E0BABA00F3F25D = {
 			isa = PBXGroup;
 			children = (
+				2A17961017476F83004BE000 /* Social.framework */,
 				C163A1FB15E0BABB00F3F25D /* Coupling */,
 				C163A1F415E0BABB00F3F25D /* Frameworks */,
 				C163A1F215E0BABB00F3F25D /* Products */,
@@ -1503,7 +1507,11 @@
 					"\"$(SRCROOT)/../../../../Downloads/TapjoyPublisherSDK_iOS_v9.0.3/TapjoyPublisherLibrary\"",
 					"\"$(SRCROOT)/TapjoyPublisherLibrary\"",
 				);
-				OTHER_LDFLAGS = "-lsqlite3.0";
+				OTHER_LDFLAGS = (
+					"-lsqlite3.0",
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F69FCA64-5A7B-4A2B-A468-4F87364D6A05";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1531,7 +1539,11 @@
 					"\"$(SRCROOT)/../../../../Downloads/TapjoyPublisherSDK_iOS_v9.0.3/TapjoyPublisherLibrary\"",
 					"\"$(SRCROOT)/TapjoyPublisherLibrary\"",
 				);
-				OTHER_LDFLAGS = "-lsqlite3.0";
+				OTHER_LDFLAGS = (
+					"-lsqlite3.0",
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F69FCA64-5A7B-4A2B-A468-4F87364D6A05";
 				TARGETED_DEVICE_FAMILY = 1;
