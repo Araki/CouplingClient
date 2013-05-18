@@ -10,7 +10,7 @@
 		2A055F4316E32EF10008297B /* PFMyPageTopPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A055F4216E32EF10008297B /* PFMyPageTopPageViewController.m */; };
 		2A055F4716E334BD0008297B /* PFMyPageTopTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A055F4616E334BD0008297B /* PFMyPageTopTableCell.xib */; };
 		2A055F4A16E337450008297B /* PFMyPageTopTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A055F4916E337450008297B /* PFMyPageTopTableCell.m */; };
-		2A17961117476F83004BE000 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A17961017476F83004BE000 /* Social.framework */; };
+		2A17961217477563004BE000 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A17961017476F83004BE000 /* Social.framework */; };
 		2A46AA07167496AE00B459A3 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A46AA06167496AE00B459A3 /* FacebookSDK.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		2A4D501216E648C90042BF1D /* PFMyProfilePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4D501116E648C90042BF1D /* PFMyProfilePageViewController.m */; };
 		2A77227E167758780059AD46 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A77227B167758640059AD46 /* QuartzCore.framework */; };
@@ -531,11 +531,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1A1CB31162AA573002CB9DD /* Accounts.framework in Frameworks */,
-				2A17961117476F83004BE000 /* Social.framework in Frameworks */,
 				C18A837C172BD280009CF384 /* Security.framework in Frameworks */,
 				2A7E2B15171ACDB100DE3068 /* MediaPlayer.framework in Frameworks */,
 				2A7E2B12171ACD9900DE3068 /* CoreTelephony.framework in Frameworks */,
 				2A7E2B0F171ACD6700DE3068 /* SystemConfiguration.framework in Frameworks */,
+				2A17961217477563004BE000 /* Social.framework in Frameworks */,
 				C1E3C62416EC8CE700BF4C99 /* AudioToolbox.framework in Frameworks */,
 				2A77227E167758780059AD46 /* QuartzCore.framework in Frameworks */,
 				C1A1CB33162AA5B0002CB9DD /* AdSupport.framework in Frameworks */,
@@ -1005,7 +1005,6 @@
 		C163A1E615E0BABA00F3F25D = {
 			isa = PBXGroup;
 			children = (
-				2A17961017476F83004BE000 /* Social.framework */,
 				C163A1FB15E0BABB00F3F25D /* Coupling */,
 				C163A1F415E0BABB00F3F25D /* Frameworks */,
 				C163A1F215E0BABB00F3F25D /* Products */,
@@ -1025,6 +1024,7 @@
 			children = (
 				C1789BEF1622B47300EA631B /* TestFlightSDK1.1 */,
 				2A7E2AFD171AC40D00DE3068 /* TapjoyPublisherLibrary */,
+				2A17961017476F83004BE000 /* Social.framework */,
 				2A7E2B13171ACDA700DE3068 /* MediaPlayer.framework */,
 				2A7E2B10171ACD8400DE3068 /* CoreTelephony.framework */,
 				2A7E2B0D171ACD4D00DE3068 /* SystemConfiguration.framework */,
