@@ -11,6 +11,7 @@
 		2A055F4716E334BD0008297B /* PFMyPageTopTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A055F4616E334BD0008297B /* PFMyPageTopTableCell.xib */; };
 		2A055F4A16E337450008297B /* PFMyPageTopTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A055F4916E337450008297B /* PFMyPageTopTableCell.m */; };
 		2A17961217477563004BE000 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A17961017476F83004BE000 /* Social.framework */; };
+		2A1796151747BC7E004BE000 /* PFGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1796141747BC7E004BE000 /* PFGroup.m */; };
 		2A46AA07167496AE00B459A3 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A46AA06167496AE00B459A3 /* FacebookSDK.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		2A4D501216E648C90042BF1D /* PFMyProfilePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4D501116E648C90042BF1D /* PFMyProfilePageViewController.m */; };
 		2A77227E167758780059AD46 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A77227B167758640059AD46 /* QuartzCore.framework */; };
@@ -226,6 +227,8 @@
 		2A055F4816E337440008297B /* PFMyPageTopTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFMyPageTopTableCell.h; path = Classes/PFMyPageTopTableCell.h; sourceTree = "<group>"; };
 		2A055F4916E337450008297B /* PFMyPageTopTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFMyPageTopTableCell.m; path = Classes/PFMyPageTopTableCell.m; sourceTree = "<group>"; };
 		2A17961017476F83004BE000 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		2A1796131747BC7E004BE000 /* PFGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFGroup.h; path = Classes/PFGroup.h; sourceTree = "<group>"; };
+		2A1796141747BC7E004BE000 /* PFGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFGroup.m; path = Classes/PFGroup.m; sourceTree = "<group>"; };
 		2A46AA06167496AE00B459A3 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		2A4D36131674795A0065BD22 /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
 		2A4D3615167479690065BD22 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKResources.bundle; sourceTree = "<group>"; };
@@ -971,6 +974,8 @@
 				C1571E0F164F931700AFB49D /* PFUserModel.m */,
 				2A835914172E3FF600FBC6E8 /* PFProfile.h */,
 				2A835915172E3FF700FBC6E8 /* PFProfile.m */,
+				2A1796131747BC7E004BE000 /* PFGroup.h */,
+				2A1796141747BC7E004BE000 /* PFGroup.m */,
 				C1571E11164F958B00AFB49D /* NSDictionary+Extension.h */,
 				C1571E12164F958C00AFB49D /* NSDictionary+Extension.m */,
 				C1571E1D164FB14C00AFB49D /* PFAsyncDownload.h */,
@@ -1406,6 +1411,7 @@
 				2A835916172E3FF800FBC6E8 /* PFProfile.m in Sources */,
 				2A7A739217426C50001D488B /* PFMultipleProfileModel.m in Sources */,
 				2A7A739517426C74001D488B /* PFImageModel.m in Sources */,
+				2A1796151747BC7E004BE000 /* PFGroup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
