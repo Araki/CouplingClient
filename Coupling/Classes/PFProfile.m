@@ -9,8 +9,7 @@
 #import "PFProfile.h"
 #import "NSDictionary+Extension.h"
 #import "NSString+Extension.h"
-#import "PFMultipleProfileModel.h"
-#import "PFImageModel.h"
+
 
 @implementation PFProfile
 

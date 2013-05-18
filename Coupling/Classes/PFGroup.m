@@ -42,7 +42,6 @@
             NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
             [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZ"];
             self.openingHour = [dateFormatter dateFromString:openingHourString];
-            NSLog(@"created at : %@", self.openingHour);
         }
     }
     return self;

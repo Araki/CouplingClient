@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "PFDataModel.h"
+#import "PFMultipleProfileModel.h"
+#import "PFImageModel.h"
 
 typedef enum {
     female = 0,
