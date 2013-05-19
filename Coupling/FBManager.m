@@ -14,7 +14,8 @@
  * Opens a Facebook session and optionally shows the login UX.
  */
 - (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI {
-    return [FBSession openActiveSessionWithReadPermissions:nil allowLoginUI:allowLoginUI completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
+    NSArray *permissions = [NSArray arrayWithObjects:@"email", @"read_friendlists, "@"user_about_me", @"user_birthday", @"user_work_history", @"user_education_history", @"user_interests", nil];
+    return [FBSession openActiveSessionWithReadPermissions:permissions allowLoginUI:allowLoginUI completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
         [self sessionStateChanged:session state:state error:error];
     }];
 }
