@@ -107,10 +107,7 @@ NSString *const FBSessionStateChangedNotification = @"com.example.Login:FBSessio
 #pragma mark - IBAction
 
 - (IBAction)signup:(id)sender {
-    //[[FBManager sharedObject] openSessionWithAllowLoginUI:YES];
-    
-    SignupStep2ViewController *signupViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SignupStep2ViewController"];
-    [self.navigationController pushViewController:signupViewController animated:YES];
+    [[FBManager sharedObject] openSessionWithAllowLoginUI:YES];
 }
 
 - (IBAction)push:(id)sender {
@@ -140,7 +137,7 @@ NSString *const FBSessionStateChangedNotification = @"com.example.Login:FBSessio
         NSLog(@"@@@@@ starting request session/create");
         NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                                 session.accessToken, @"access_token", uuid, @"device_token", nil];
-        [PFHTTPConnector requestWithCommand:@"/sessions/create" params:params onSuccess:^(PFHTTPResponse *response) {
+        [PFHTTPConnector postWithCommand:kPFCommandSessionsCreate params:params onSuccess:^(PFHTTPResponse *response) {
             NSLog(@"@@@@@ connection complete: %@", [response jsonDictionary]);
             
         } onFailure:^(NSError *error) {
