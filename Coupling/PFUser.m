@@ -286,8 +286,7 @@ static int		p_dedupCounter	= 1;
 //                            JSONBOOL([self isSecuredOrLinked]), @"is_secured_or_linked",
                             self.displayName, @"display_name",
                             JSONBOOL(isFollowed), @"is_followed",
-                            JSONBOOL(isFollowing), @"is_following",
-                            iconTypeName, @"icon_type", nil];
+                            JSONBOOL(isFollowing), @"is_following", nil];
 #undef JSONBOOL
     return fields;
 }
@@ -305,22 +304,6 @@ static int		p_dedupCounter	= 1;
     [dic setObject:JSONString(self.iconURL) forKey:@"icon_url"];
     [dic setObject:JSONInt(self.friendsCount) forKey:@"friends_count"];
     
-    NSString* iconTypeString = nil;
-    switch (self.iconType) {
-        case PNUserIconTypeFacebook:
-            iconTypeString = @"facebook";
-            break;
-        case PNUserIconTypeTwitter:
-            iconTypeString = @"twitter";
-            break;
-        case PNUserIconTypePankia:
-            iconTypeString = @"pankia";
-            break;
-        default:
-            iconTypeString = @"default";
-            break;
-    }
-    [dic setObject:JSONString(iconTypeString) forKey:@"icon_used"];
     [dic setObject:EXTService(self.facebookId) forKey:@"facebook"];
     [dic setObject:EXTService(self.twitterId) forKey:@"twitter"];
     [dic setObject:EXTService(self.mixiId) forKey:@"mixi"];
