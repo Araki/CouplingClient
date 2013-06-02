@@ -162,12 +162,15 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-	if (useHTTPCache && !hasCache)
+
+	if (useHTTPCache && !hasCache) {
 		//[self cacheHTTPContents:downloadedData];
+    }
 	
-	if (self.successBlock)
+	if (self.successBlock) {
 		//self.successBlock(hasCache ? [PFAsyncDownload readHTTPContentsFromCacheForURL:self.url] : downloadedData);
 		self.successBlock(downloadedData);
+    }
 	
 	self.shouldKeepRunning = NO;
 	[self clear];

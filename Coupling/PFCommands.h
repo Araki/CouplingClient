@@ -8,3 +8,4 @@
 
 // [Session]
 #define kPFCommandSessionsCreate			@"/sessions/create"
+#define kPFCommandSessionsVerify			@"/sessions/verify"

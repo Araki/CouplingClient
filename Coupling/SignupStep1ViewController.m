@@ -13,6 +13,8 @@
 #import "PFHTTPConnector.h"
 #import "SignupStep2ViewController.h"
 
+#import "PFViewDeckController.h"
+
 #import <Security/Security.h>
 
 @interface SignupStep1ViewController ()
@@ -128,17 +130,27 @@ NSString *const FBSessionStateChangedNotification = @"com.example.Login:FBSessio
 
 - (void)sessionStateChanged:(NSNotification *)notification
 {
-    FBSession *session = (FBSession *)notification.object;
-    if (session.state == FBSessionStateOpen) {
+    FBSession *fbSession = (FBSession *)notification.object;
+    
+    if (fbSession.state == FBSessionStateOpen) {
         NSString *uuid = [self readUUID];
         if (uuid == nil) {
             uuid = [self createUUID];
         }
-        NSLog(@"@@@@@ starting request session/create");
         NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
-                                session.accessToken, @"access_token", uuid, @"device_token", nil];
+                                fbSession.accessToken, @"access_token", uuid, @"device_token", nil];
         [PFHTTPConnector postWithCommand:kPFCommandSessionsCreate params:params onSuccess:^(PFHTTPResponse *response) {
-            NSLog(@"@@@@@ connection complete: %@", [response jsonDictionary]);
+            NSLog(@"@@@@@ postWithCommand onSuccess");
+            NSString *session = [[response jsonDictionary] valueForKey:@"session"];
+            [PFUser currentUser].sessionId = session;
+            [[PFUser currentUser] saveToCacheAsCurrentUser];
+            
+            dispatch_queue_t mainQueue = dispatch_get_main_queue();
+            dispatch_async(mainQueue, ^{
+                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+                PFViewDeckController *view = [storyboard instantiateViewControllerWithIdentifier:@"PFViewDeckController"];
+                [self.navigationController pushViewController:view animated:YES];
+            });
             
         } onFailure:^(NSError *error) {
             NSLog(@"@@@@@ connection Error: %@", error);

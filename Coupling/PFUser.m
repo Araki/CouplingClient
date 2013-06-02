@@ -28,6 +28,7 @@
 #define	kPNUsersSecuredCache							@"PN_USER_ISSECURED_CACHE"
 #define kPNUsersUserIDCache								@"PN_USER_USERID_CACHE"
 #define kPNUsersExternalIDCache							@"PN_USER_EXTERNALID_CACHE"
+#define kPNUsersSessionIDCache							@"PN_USER_SESSIONID_CACHE"
 
 #define kPNJSONBoolTrue @"true"
 #define kPNJSONBoolFalse @"false"
@@ -178,6 +179,7 @@ static int		p_dedupCounter	= 1;
 	cacheUser.countryCode		= [[NSUserDefaults standardUserDefaults] stringForKey:kPNUsersCountrycodeCache];
 	cacheUser.iconURL			= [[NSUserDefaults standardUserDefaults] stringForKey:kPNUsersIconURLCache];
 	cacheUser.userId			= [[NSUserDefaults standardUserDefaults] stringForKey:kPNUsersUserIDCache];
+	cacheUser.sessionId			= [[NSUserDefaults standardUserDefaults] stringForKey:kPNUsersSessionIDCache];
 	
 	if(!cacheUser.udid){
 		cacheUser.udid = [UIDevice currentDevice].identifierForVendor;
@@ -226,6 +228,7 @@ static int		p_dedupCounter	= 1;
 	[[NSUserDefaults standardUserDefaults] setObject:self.countryCode		forKey:kPNUsersCountrycodeCache];
 	[[NSUserDefaults standardUserDefaults] setObject:self.iconURL			forKey:kPNUsersIconURLCache];
 	[[NSUserDefaults standardUserDefaults] setObject:self.userId			forKey:kPNUsersUserIDCache];
+	[[NSUserDefaults standardUserDefaults] setObject:self.sessionId			forKey:kPNUsersSessionIDCache];
 	
 	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d",self.isGuest]				forKey:kPNUsersGuestCache];
 	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d",self.isSecured]			forKey:kPNUsersSecuredCache];
@@ -248,23 +251,6 @@ static int		p_dedupCounter	= 1;
 
 - (NSDictionary *)dictionaryRepresentation
 {
-    NSString *iconTypeName;
-    
-    switch (iconType) {
-        case PNUserIconTypePankia:
-            iconTypeName = @"pankia";
-            break;
-        case PNUserIconTypeTwitter:
-            iconTypeName = @"twitter";
-            break;
-        case PNUserIconTypeFacebook:
-            iconTypeName = @"facebook";
-            break;
-        default:
-            iconTypeName = @"default";
-            break;
-    }
-    
 #define JSONBOOL(value) (value ? kPNJSONBoolTrue : kPNJSONBoolFalse)
     NSDictionary *fields = [NSDictionary dictionaryWithObjectsAndKeys:
                             userId ? userId : @"", @"user_id",
