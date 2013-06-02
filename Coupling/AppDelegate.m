@@ -9,6 +9,7 @@
 #import <StoreKit/StoreKit.h>
 #import "AppDelegate.h"
 #import "PFGlobal.h"
+#import "PFNotificationsName.h"
 #import "MyStoreObserver.h"
 #import "FBManager.h"
 #import "PFHTTPConnector.h"
@@ -42,8 +43,7 @@
     }
     
     [PFHTTPConnector requestWithCommand:kPFCommandSessionsVerify params:nil onSuccess:^(PFHTTPResponse *response) {
-        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-        [nc postNotificationName:@"verify_completed" object:self userInfo:[response jsonDictionary]];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kPFNotificationSessionVerifySuccess object:self userInfo:[response jsonDictionary]];
         NSLog(@"@@@@@ verify session: %@", [response jsonDictionary]);
     } onFailure:^(NSError *error) {
         NSLog(@"@@@@@ verify Error: %@", error);
