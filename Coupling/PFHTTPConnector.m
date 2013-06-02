@@ -52,9 +52,9 @@
 {
 	[[NSNotificationCenter defaultCenter] postNotificationName:kPFNotificationHTTPRequestToServerIsSent object:nil];
 	
-	if (![params objectForKey:@"session"] && [PFUser currentUser].sessionId) {
+	if (![params objectForKey:@"session_id"] && [PFUser currentUser].sessionId) {
 		NSMutableDictionary *newDic = [NSMutableDictionary dictionaryWithDictionary:params];
-		[newDic setObject:[PFUser currentUser].sessionId forKey:@"session"];
+		[newDic setObject:[PFUser currentUser].sessionId forKey:@"session_id"];
 		params = newDic;
 	}
 	
@@ -70,9 +70,9 @@
 {
 	[[NSNotificationCenter defaultCenter] postNotificationName:kPFNotificationHTTPRequestToServerIsSent object:nil];
 	
-	if (![params objectForKey:@"session"] && ![command isEqualToString:kPFCommandSessionsCreate]) {
+	if (![params objectForKey:@"session_id"] && ![command isEqualToString:kPFCommandSessionsCreate]) {
 		NSMutableDictionary *newDic = [NSMutableDictionary dictionaryWithDictionary:params];
-		[newDic setObject:[PFUser currentUser].sessionId forKey:@"session"];
+		[newDic setObject:[PFUser currentUser].sessionId forKey:@"session_id"];
 		params = newDic;
 	}
 	

@@ -11,8 +11,9 @@
 #import "PFGlobal.h"
 #import "MyStoreObserver.h"
 #import "FBManager.h"
-
 #import "PFHTTPConnector.h"
+
+#import "PFViewDeckController.h"
 
 #import "TestFlight.h"
 #import "TapjoyConnect.h"
@@ -40,8 +41,7 @@
         return YES;
     }
     
-    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:sessionId, @"session_id", nil];
-    [PFHTTPConnector requestWithCommand:kPFCommandSessionsVerify params:params onSuccess:^(PFHTTPResponse *response) {
+    [PFHTTPConnector requestWithCommand:kPFCommandSessionsVerify params:nil onSuccess:^(PFHTTPResponse *response) {
         NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
         [nc postNotificationName:@"verify_completed" object:self userInfo:[response jsonDictionary]];
         NSLog(@"@@@@@ verify session: %@", [response jsonDictionary]);
