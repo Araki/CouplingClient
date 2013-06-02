@@ -114,28 +114,6 @@
 		2A8358C3172D139700FBC6E8 /* bg_popup.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358BA172D139700FBC6E8 /* bg_popup.png */; };
 		2A8358C4172D139700FBC6E8 /* bg_shop_popup.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358BB172D139700FBC6E8 /* bg_shop_popup.png */; };
 		2A8358C5172D139700FBC6E8 /* bg_shop.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358BC172D139700FBC6E8 /* bg_shop.png */; };
-		2A8358EC172D13AD00FBC6E8 /* button_change_profile_picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358C6172D13AD00FBC6E8 /* button_change_profile_picture.png */; };
-		2A8358ED172D13AD00FBC6E8 /* button_delete_picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358C7172D13AD00FBC6E8 /* button_delete_picture.png */; };
-		2A8358EE172D13AD00FBC6E8 /* button_favorite.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358C8172D13AD00FBC6E8 /* button_favorite.png */; };
-		2A8358EF172D13AD00FBC6E8 /* button_fb_open.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358C9172D13AD00FBC6E8 /* button_fb_open.png */; };
-		2A8358F0172D13AD00FBC6E8 /* button_fb_page.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358CA172D13AD00FBC6E8 /* button_fb_page.png */; };
-		2A8358F1172D13AD00FBC6E8 /* button_help.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358CB172D13AD00FBC6E8 /* button_help.png */; };
-		2A8358F2172D13AD00FBC6E8 /* button_info_from_pairful.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358CC172D13AD00FBC6E8 /* button_info_from_pairful.png */; };
-		2A8358F3172D13AD00FBC6E8 /* button_inquiry.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358CD172D13AD00FBC6E8 /* button_inquiry.png */; };
-		2A8358F4172D13AD00FBC6E8 /* button_invite_friends.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358CE172D13AD00FBC6E8 /* button_invite_friends.png */; };
-		2A8358F5172D13AD00FBC6E8 /* button_like.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358CF172D13AD00FBC6E8 /* button_like.png */; };
-		2A8358F6172D13AD00FBC6E8 /* button_my_page.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358D0172D13AD00FBC6E8 /* button_my_page.png */; };
-		2A8358F7172D13AD00FBC6E8 /* button_notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358D1172D13AD00FBC6E8 /* button_notification.png */; };
-		2A8358F8172D13AD00FBC6E8 /* button_partner_search.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358D2172D13AD00FBC6E8 /* button_partner_search.png */; };
-		2A8358F9172D13AD00FBC6E8 /* button_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358D3172D13AD00FBC6E8 /* button_profile.png */; };
-		2A8358FA172D13AD00FBC6E8 /* button_search_filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358D4172D13AD00FBC6E8 /* button_search_filter.png */; };
-		2A8358FB172D13AD00FBC6E8 /* button_set_main_picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358D5172D13AD00FBC6E8 /* button_set_main_picture.png */; };
-		2A8358FC172D13AD00FBC6E8 /* button_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358D6172D13AD00FBC6E8 /* button_settings.png */; };
-		2A8358FD172D13AD00FBC6E8 /* button_shop.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358D7172D13AD00FBC6E8 /* button_shop.png */; };
-		2A8358FE172D13AD00FBC6E8 /* button_slide_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358D8172D13AD00FBC6E8 /* button_slide_menu.png */; };
-		2A8358FF172D13AD00FBC6E8 /* button_tos.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358D9172D13AD00FBC6E8 /* button_tos.png */; };
-		2A835900172D13AD00FBC6E8 /* button_view_my_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358DA172D13AD00FBC6E8 /* button_view_my_profile.png */; };
-		2A835901172D13AD00FBC6E8 /* button_add_picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358DB172D13AD00FBC6E8 /* button_add_picture.png */; };
 		2A835902172D13AD00FBC6E8 /* button_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358DC172D13AD00FBC6E8 /* button_back.png */; };
 		2A835903172D13AD00FBC6E8 /* button_cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358DD172D13AD00FBC6E8 /* button_cancel.png */; };
 		2A835904172D13AD00FBC6E8 /* button_clear.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358DE172D13AD00FBC6E8 /* button_clear.png */; };
@@ -1301,28 +1279,6 @@
 				2A8358C3172D139700FBC6E8 /* bg_popup.png in Resources */,
 				2A8358C4172D139700FBC6E8 /* bg_shop_popup.png in Resources */,
 				2A8358C5172D139700FBC6E8 /* bg_shop.png in Resources */,
-				2A8358EC172D13AD00FBC6E8 /* button_change_profile_picture.png in Resources */,
-				2A8358ED172D13AD00FBC6E8 /* button_delete_picture.png in Resources */,
-				2A8358EE172D13AD00FBC6E8 /* button_favorite.png in Resources */,
-				2A8358EF172D13AD00FBC6E8 /* button_fb_open.png in Resources */,
-				2A8358F0172D13AD00FBC6E8 /* button_fb_page.png in Resources */,
-				2A8358F1172D13AD00FBC6E8 /* button_help.png in Resources */,
-				2A8358F2172D13AD00FBC6E8 /* button_info_from_pairful.png in Resources */,
-				2A8358F3172D13AD00FBC6E8 /* button_inquiry.png in Resources */,
-				2A8358F4172D13AD00FBC6E8 /* button_invite_friends.png in Resources */,
-				2A8358F5172D13AD00FBC6E8 /* button_like.png in Resources */,
-				2A8358F6172D13AD00FBC6E8 /* button_my_page.png in Resources */,
-				2A8358F7172D13AD00FBC6E8 /* button_notification.png in Resources */,
-				2A8358F8172D13AD00FBC6E8 /* button_partner_search.png in Resources */,
-				2A8358F9172D13AD00FBC6E8 /* button_profile.png in Resources */,
-				2A8358FA172D13AD00FBC6E8 /* button_search_filter.png in Resources */,
-				2A8358FB172D13AD00FBC6E8 /* button_set_main_picture.png in Resources */,
-				2A8358FC172D13AD00FBC6E8 /* button_settings.png in Resources */,
-				2A8358FD172D13AD00FBC6E8 /* button_shop.png in Resources */,
-				2A8358FE172D13AD00FBC6E8 /* button_slide_menu.png in Resources */,
-				2A8358FF172D13AD00FBC6E8 /* button_tos.png in Resources */,
-				2A835900172D13AD00FBC6E8 /* button_view_my_profile.png in Resources */,
-				2A835901172D13AD00FBC6E8 /* button_add_picture.png in Resources */,
 				2A835902172D13AD00FBC6E8 /* button_back.png in Resources */,
 				2A835903172D13AD00FBC6E8 /* button_cancel.png in Resources */,
 				2A835904172D13AD00FBC6E8 /* button_clear.png in Resources */,
