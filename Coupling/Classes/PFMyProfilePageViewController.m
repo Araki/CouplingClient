@@ -33,7 +33,7 @@
     
     
     // test
-    self.outletUserProfileImageView.image = [UIImage imageNamed:@"test_imgres_1.jpeg"];
+    self.outletUserProfileImageView.image = [UIImage imageNamed:@"test_imgres.jpeg"];
 }
 
 - (void)didReceiveMemoryWarning

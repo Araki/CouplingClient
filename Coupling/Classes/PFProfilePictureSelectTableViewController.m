@@ -138,7 +138,7 @@
         UINib* nib = [UINib nibWithNibName:@"PFProfilePictureSelectTableViewCell" bundle:nil];
         NSArray* array = [nib instantiateWithOwner:nil options:nil];
         cell = [array objectAtIndex:0];
-        cell.outletUserImage.image = [UIImage imageNamed:@"test_imgres_1.jpeg"];
+        [cell.outletUserImage setContentMode:UIViewContentModeScaleAspectFit];
         cell.delegate = self;
     }
     cell.outletUserImage.image = [self.user.profileImages objectAtIndex:indexPath.row];

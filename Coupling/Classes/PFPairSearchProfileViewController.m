@@ -50,6 +50,10 @@
     [self.outletProfileScrollView setContentSize:CGSizeMake(width, height)];
     [self.outletProfileScrollView addSubview:self.scrollingProfileView.view];
     
+    self.outletProfileImageView.backgroundColor = kPFCommonBackGroundColor;
+    
+    
+    
 	// テスト用
     UIImage *image = [UIImage imageNamed:@"test_imgres.jpeg"];
     [self.outletProfileImageView setImage:image];

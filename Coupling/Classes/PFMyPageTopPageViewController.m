@@ -110,7 +110,7 @@
         NSArray* array = [nib instantiateWithOwner:nil options:nil];
         cell = [array objectAtIndex:0];
         cell.backgroundColor = kPFBackGroundColor;
-        cell.outletUserPictureImage.image = [UIImage imageNamed:@"test_imgres_1.jpeg"];
+        cell.outletUserPictureImage.image = [UIImage imageNamed:@"test_why_always_me.jpeg"];
     }
     cell.outletUserAgeLabel.text = [NSString stringWithFormat:@"%d", indexPath.row];
     
