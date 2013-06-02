@@ -16,6 +16,6 @@
 // [Session]
 #define kPFNotificationSessionBecameInvalid						@"PFNotificationSessionBecameInvalid"
 #define kPFNotificationSessionVerifySuccess                     @"PFNotificationSessionVerifySuccess"
-
+#define kPFNotificationNoSession                                @"PFNotificationNoSession"
 
 #endif

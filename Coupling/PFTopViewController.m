@@ -8,7 +8,10 @@
 
 #import "PFTopViewController.h"
 #import "PFViewDeckController.h"
+#import "PFTutorialStep1Controller.h"
 #import "PFNotificationsName.h"
+
+#import "PFHTTPConnector.h"
 
 @interface PFTopViewController ()
 
@@ -28,7 +31,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    NSString *sessionId = [PFUser currentUser].sessionId;
+    if (sessionId == nil) {
+        [self pushTutorialViewController];
+        return;
+    }
+    
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(handleSessionVerifySuccess:)
+												 name:kPFNotificationSessionVerifySuccess
+                                               object:nil];
+    
+    
+    [PFHTTPConnector requestWithCommand:kPFCommandSessionsVerify params:nil onSuccess:^(PFHTTPResponse *response) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kPFNotificationSessionVerifySuccess object:self userInfo:[response jsonDictionary]];
+        NSLog(@"@@@@@ verify session: %@", [response jsonDictionary]);
+    } onFailure:^(NSError *error) {
+        NSLog(@"@@@@@ verify Error: %@", error);
+    }];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,10 +64,6 @@
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
 
-	[[NSNotificationCenter defaultCenter] addObserver:self
-											 selector:@selector(handleSessionVerifySuccess:)
-												 name:kPFNotificationSessionVerifySuccess
-                                               object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -64,6 +82,13 @@
         PFViewDeckController *view = [storyboard instantiateViewControllerWithIdentifier:@"PFViewDeckController"];
         [self.navigationController pushViewController:view animated:YES];
    });
+}
+
+- (void)pushTutorialViewController
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+    PFTutorialStep1Controller *view = [storyboard instantiateViewControllerWithIdentifier:@"PFTutorialStep1Controller"];
+    [self.navigationController pushViewController:view animated:YES];
 }
 
 @end

@@ -9,12 +9,7 @@
 #import <StoreKit/StoreKit.h>
 #import "AppDelegate.h"
 #import "PFGlobal.h"
-#import "PFNotificationsName.h"
-#import "MyStoreObserver.h"
 #import "FBManager.h"
-#import "PFHTTPConnector.h"
-
-#import "PFViewDeckController.h"
 
 #import "TestFlight.h"
 #import "TapjoyConnect.h"
@@ -35,20 +30,7 @@
         [TapjoyConnect requestTapjoyConnect:@"254fe42b-1fa2-480b-9b53-72ecc278d627"
                                   secretKey:@"sqhBudUInNRtaQtIsAwz"];
     }
-    
-    NSString *sessionId = [PFUser currentUser].sessionId;
-    if (sessionId == nil) {
-        NSLog(@"@@@@@ app delegate sessionid: %@", sessionId);
-        return YES;
-    }
-    
-    [PFHTTPConnector requestWithCommand:kPFCommandSessionsVerify params:nil onSuccess:^(PFHTTPResponse *response) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:kPFNotificationSessionVerifySuccess object:self userInfo:[response jsonDictionary]];
-        NSLog(@"@@@@@ verify session: %@", [response jsonDictionary]);
-    } onFailure:^(NSError *error) {
-        NSLog(@"@@@@@ verify Error: %@", error);
-    }];
-    
+        
     return YES;
 }
 
