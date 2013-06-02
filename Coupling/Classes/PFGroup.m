@@ -21,7 +21,7 @@
         if (friendArray.count) {
             NSMutableArray *array = [NSMutableArray arrayWithCapacity:friendArray.count];
             for (NSDictionary *dic in friendArray){
-                [array addObject:[PFProfile dataModelWithDictionary:dic]];
+                [array addObject:[PFFriendProfile dataModelWithDictionary:dic]];
             }
             self.friends = [NSArray arrayWithArray:array];
         }

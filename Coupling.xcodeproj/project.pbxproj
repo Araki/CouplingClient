@@ -90,6 +90,8 @@
 		2A7C4BDB16E7BA1B00871E5B /* button_change_profile_picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7C4BD716E7BA1B00871E5B /* button_change_profile_picture.png */; };
 		2A7C4BDC16E7BA1B00871E5B /* button_add_picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7C4BD816E7BA1B00871E5B /* button_add_picture.png */; };
 		2A7C4BDE16E7BADB00871E5B /* button_view_my_profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7C4BDD16E7BADB00871E5B /* button_view_my_profile.png */; };
+		2A7CA8DB175B1EB500EDA252 /* PFUserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7CA8DA175B1EB500EDA252 /* PFUserProfile.m */; };
+		2A7CA8DE175B1EE500EDA252 /* PFFriendProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7CA8DD175B1EE500EDA252 /* PFFriendProfile.m */; };
 		2A7D920A16BE514C00220708 /* PFSetConditionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7D920916BE514C00220708 /* PFSetConditionViewController.m */; };
 		2A7DB2EC16FF022900F34ED5 /* PFActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7DB2EB16FF022900F34ED5 /* PFActionSheet.m */; };
 		2A7E2B03171AC40D00DE3068 /* TapjoyResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2A7E2B01171AC40D00DE3068 /* TapjoyResources.bundle */; };
@@ -336,6 +338,10 @@
 		2A7C4BD716E7BA1B00871E5B /* button_change_profile_picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_change_profile_picture.png; path = Resouces/button/button_change_profile_picture.png; sourceTree = "<group>"; };
 		2A7C4BD816E7BA1B00871E5B /* button_add_picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_add_picture.png; path = Resouces/button/button_add_picture.png; sourceTree = "<group>"; };
 		2A7C4BDD16E7BADB00871E5B /* button_view_my_profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_view_my_profile.png; path = Resouces/button/button_view_my_profile.png; sourceTree = "<group>"; };
+		2A7CA8D9175B1EB500EDA252 /* PFUserProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFUserProfile.h; path = Classes/PFUserProfile.h; sourceTree = "<group>"; };
+		2A7CA8DA175B1EB500EDA252 /* PFUserProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFUserProfile.m; path = Classes/PFUserProfile.m; sourceTree = "<group>"; };
+		2A7CA8DC175B1EE500EDA252 /* PFFriendProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFFriendProfile.h; path = Classes/PFFriendProfile.h; sourceTree = "<group>"; };
+		2A7CA8DD175B1EE500EDA252 /* PFFriendProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFFriendProfile.m; path = Classes/PFFriendProfile.m; sourceTree = "<group>"; };
 		2A7D288A170818E900DC957F /* PFDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFDefines.h; path = Classes/PFDefines.h; sourceTree = "<group>"; };
 		2A7D920816BE514B00220708 /* PFSetConditionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFSetConditionViewController.h; path = Classes/PFSetConditionViewController.h; sourceTree = "<group>"; };
 		2A7D920916BE514C00220708 /* PFSetConditionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFSetConditionViewController.m; path = Classes/PFSetConditionViewController.m; sourceTree = "<group>"; };
@@ -974,6 +980,10 @@
 				C1571E0F164F931700AFB49D /* PFUserModel.m */,
 				2A835914172E3FF600FBC6E8 /* PFProfile.h */,
 				2A835915172E3FF700FBC6E8 /* PFProfile.m */,
+				2A7CA8D9175B1EB500EDA252 /* PFUserProfile.h */,
+				2A7CA8DA175B1EB500EDA252 /* PFUserProfile.m */,
+				2A7CA8DC175B1EE500EDA252 /* PFFriendProfile.h */,
+				2A7CA8DD175B1EE500EDA252 /* PFFriendProfile.m */,
 				2A1796131747BC7E004BE000 /* PFGroup.h */,
 				2A1796141747BC7E004BE000 /* PFGroup.m */,
 				C1571E11164F958B00AFB49D /* NSDictionary+Extension.h */,
@@ -1412,6 +1422,8 @@
 				2A7A739217426C50001D488B /* PFMultipleProfileModel.m in Sources */,
 				2A7A739517426C74001D488B /* PFImageModel.m in Sources */,
 				2A1796151747BC7E004BE000 /* PFGroup.m in Sources */,
+				2A7CA8DB175B1EB500EDA252 /* PFUserProfile.m in Sources */,
+				2A7CA8DE175B1EE500EDA252 /* PFFriendProfile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

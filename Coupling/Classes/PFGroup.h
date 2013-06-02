@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "PFProfile.h"
+#import "PFFriendProfile.h"
 
 @interface PFGroup : PFDataModel
 
 @property (nonatomic, retain) PFProfile *   leader; // グループのリーダー
-@property (nonatomic, retain) NSArray *     friends; // リーダーの友達, PFProfileが入っている。
+@property (nonatomic, retain) NSArray *     friends; // リーダーの友達, PFFriendProfileが入っている。
 @property (nonatomic, copy)   NSString *    area;
 @property (nonatomic, copy)   NSString *    relationship;
 @property (nonatomic, copy)   NSString *    request;
