@@ -16,6 +16,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
 - (IBAction)signup:(id)sender;
-- (IBAction)push:(id)sender;
 
 @end
