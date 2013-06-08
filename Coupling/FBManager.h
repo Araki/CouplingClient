@@ -10,8 +10,6 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "PFSingletonObject.h"
 
-extern NSString *const FBSessionStateChangedNotification;
-
 @interface FBManager : PFSingletonObject
 
 @property (strong, nonatomic) FBSession *session;

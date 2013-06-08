@@ -18,4 +18,7 @@
 #define kPFNotificationSessionVerifySuccess                     @"PFNotificationSessionVerifySuccess"
 #define kPFNotificationNoSession                                @"PFNotificationNoSession"
 
+// [Facebook]
+#define kPFNotificationFBSessionStateChanged                    @"PFNotificationFBSessionStateChanged"
+
 #endif

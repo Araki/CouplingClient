@@ -8,6 +8,7 @@
 
 #import "SignupStep1ViewController.h"
 #import "AppDelegate.h"
+#import "PFNotificationsName.h"
 #import "SBJson.h"
 #import "FBManager.h"
 #import "PFHTTPConnector.h"
@@ -25,9 +26,6 @@
 @implementation SignupStep1ViewController
 
 @synthesize detailDescriptionLabel;
-
-NSString *const FBSessionStateChangedNotification = @"com.example.Login:FBSessionStateChangedNotification";
-
 
 #pragma mark - Managing the detail item
 
@@ -61,7 +59,7 @@ NSString *const FBSessionStateChangedNotification = @"com.example.Login:FBSessio
     self.responseData = [NSMutableData dataWithCapacity:0];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(sessionStateChanged:)
-                                                 name:FBSessionStateChangedNotification
+                                                 name:kPFNotificationFBSessionStateChanged
                                                object:nil];
     [self configureView];
 }
@@ -69,7 +67,7 @@ NSString *const FBSessionStateChangedNotification = @"com.example.Login:FBSessio
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:FBSessionStateChangedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kPFNotificationFBSessionStateChanged object:nil];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

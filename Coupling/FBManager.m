@@ -7,6 +7,7 @@
 //
 
 #import "FBManager.h"
+#import "PFNotificationsName.h"
 
 @implementation FBManager
 
@@ -44,7 +45,7 @@
             break;
     }
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:FBSessionStateChangedNotification object:session];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kPFNotificationFBSessionStateChanged object:session];
     
     if (error) {
         UIAlertView *alertView = [[UIAlertView alloc]
