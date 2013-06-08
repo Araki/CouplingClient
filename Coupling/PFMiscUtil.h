@@ -12,5 +12,7 @@
 + (NSString *)userAgent;
 + (NSString *)pathForBundleResource:(NSString *)resource ofType:(NSString *)type;
 + (NSString *)urlStringFromPath:(NSString *)path params:(id)params;
++ (NSString *)readUUID;
++ (NSString *)createUUID;
 
 @end

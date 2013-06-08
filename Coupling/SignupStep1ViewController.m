@@ -12,6 +12,7 @@
 #import "SBJson.h"
 #import "FBManager.h"
 #import "PFHTTPConnector.h"
+#import "PFMiscUtil.h"
 #import "SignupStep2ViewController.h"
 
 #import "PFViewDeckController.h"
@@ -117,9 +118,9 @@
     FBSession *fbSession = (FBSession *)notification.object;
     
     if (fbSession.state == FBSessionStateOpen) {
-        NSString *uuid = [self readUUID];
+        NSString *uuid = [PFMiscUtil readUUID];
         if (uuid == nil) {
-            uuid = [self createUUID];
+            uuid = [PFMiscUtil createUUID];
         }
         NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
                                 fbSession.accessToken, @"access_token", uuid, @"device_token", nil];
@@ -141,42 +142,5 @@
         }];
     }
 }
-
-- (NSString *)readUUID
-{
-    NSMutableDictionary* query = [NSMutableDictionary dictionary];
-    [query setObject:[[NSBundle mainBundle] bundleIdentifier] forKey:(__bridge id)kSecAttrService];
-    [query setObject:(__bridge id)kSecClassGenericPassword forKey:(__bridge id)kSecClass];
-    [query setObject:(__bridge id)kSecMatchLimitAll forKey:(__bridge id)kSecMatchLimit];
-    [query setObject:(__bridge id)kCFBooleanTrue forKey:(__bridge id)kSecReturnData];
-    
-    CFArrayRef attributesRef = nil;
-    OSStatus result = SecItemCopyMatching((__bridge CFDictionaryRef)query, (CFTypeRef *)&attributesRef);
-    NSArray *attributes = (__bridge_transfer NSArray *)attributesRef;
-    NSData *data = [attributes objectAtIndex:0];
-    
-    if (result == noErr) {
-        return [[NSString alloc] initWithBytes:[data bytes] length:[data length] encoding:NSUTF8StringEncoding];
-    }
-    return nil;
-}
-
-- (NSString *)createUUID
-{
-    NSString *uuid = [[NSUUID UUID] UUIDString];
-    
-    NSMutableDictionary *attribute = [NSMutableDictionary dictionary];
-    [attribute setObject:(__bridge id)kSecClassGenericPassword forKey:(__bridge id)kSecClass];
-    [attribute setObject:[[NSBundle mainBundle] bundleIdentifier] forKey:(__bridge id)kSecAttrService];
-    [attribute setObject:[uuid dataUsingEncoding:NSUTF8StringEncoding] forKey:(__bridge id)kSecValueData];
-    OSStatus error = SecItemAdd((__bridge CFDictionaryRef)attribute, NULL);
-    if (error == noErr) {
-        NSLog(@"SecItemAdd: noErr");
-    } else {
-        NSLog(@"SecItemAdd: error(%ld)", error);
-    }
-    return uuid;
-}
-
 
 @end
