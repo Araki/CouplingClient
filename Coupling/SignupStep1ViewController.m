@@ -16,17 +16,23 @@
 #import "SignupStep2ViewController.h"
 
 #import "PFViewDeckController.h"
+#import "PFIndicatorView.h"
 
 #import <Security/Security.h>
 
 @interface SignupStep1ViewController ()
+
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
+
 - (void)configureView;
+- (void)showIndicator;
+- (void)hideIndicator;
+
 @end
 
 @implementation SignupStep1ViewController
 
-@synthesize detailDescriptionLabel;
+@synthesize detailDescriptionLabel, indicatorView;
 
 #pragma mark - Managing the detail item
 
@@ -108,10 +114,21 @@
 #pragma mark - IBAction
 
 - (IBAction)signup:(id)sender {
+    [self showIndicator];
     [[FBManager sharedObject] openSessionWithAllowLoginUI:YES];
 }
 
 #pragma mark - received notification
+
+- (void)showIndicator
+{
+    self.indicatorView = [PFIndicatorView indicatorWithNavigationController:self.navigationController];
+}
+
+- (void)hideIndicator
+{
+    [self.indicatorView removeFromSuperview];
+}
 
 - (void)sessionStateChanged:(NSNotification *)notification
 {
@@ -135,6 +152,7 @@
                 UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
                 SignupStep2ViewController *view = [storyboard instantiateViewControllerWithIdentifier:@"SignupStep2ViewController"];
                 [self.navigationController pushViewController:view animated:YES];
+                [self hideIndicator];
             });
             
         } onFailure:^(NSError *error) {

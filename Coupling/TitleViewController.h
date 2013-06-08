@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class PFIndicatorView;
+
 @interface TitleViewController : UIViewController
+
+@property(nonatomic, retain) PFIndicatorView *indicatorView;
 
 - (IBAction)loginFacebook:(id)sender;
 - (IBAction)showSignupView:(id)sender;

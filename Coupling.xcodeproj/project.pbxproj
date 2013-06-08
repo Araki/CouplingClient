@@ -182,6 +182,7 @@
 		C1A1CB31162AA573002CB9DD /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A1CB30162AA573002CB9DD /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C1A1CB33162AA5B0002CB9DD /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A1CB32162AA5B0002CB9DD /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C1B29F3F175B576C00710EA6 /* PFTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B29F3E175B576B00710EA6 /* PFTopViewController.m */; };
+		C1B29F5817634F0500710EA6 /* PFIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B29F5717634F0400710EA6 /* PFIndicatorView.m */; };
 		C1C1E35B163D06AC002A9E38 /* FBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C1E35A163D06AC002A9E38 /* FBManager.m */; };
 		C1C1E35F163D19A5002A9E38 /* PFHTTPConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C1E35E163D19A5002A9E38 /* PFHTTPConnector.m */; };
 		C1C1E362163D1BB2002A9E38 /* PFHTTPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C1E361163D1BB2002A9E38 /* PFHTTPResponse.m */; };
@@ -479,6 +480,8 @@
 		C1A1CB32162AA5B0002CB9DD /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		C1B29F3D175B576B00710EA6 /* PFTopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFTopViewController.h; sourceTree = "<group>"; };
 		C1B29F3E175B576B00710EA6 /* PFTopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFTopViewController.m; sourceTree = "<group>"; };
+		C1B29F5617634F0300710EA6 /* PFIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFIndicatorView.h; sourceTree = "<group>"; };
+		C1B29F5717634F0400710EA6 /* PFIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFIndicatorView.m; sourceTree = "<group>"; };
 		C1C1E359163D06AC002A9E38 /* FBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBManager.h; sourceTree = "<group>"; };
 		C1C1E35A163D06AC002A9E38 /* FBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBManager.m; sourceTree = "<group>"; };
 		C1C1E35D163D19A5002A9E38 /* PFHTTPConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFHTTPConnector.h; sourceTree = "<group>"; };
@@ -922,6 +925,8 @@
 				C1E2E611166B300B0099B20F /* Storyboard.storyboard */,
 				C1B29F3D175B576B00710EA6 /* PFTopViewController.h */,
 				C1B29F3E175B576B00710EA6 /* PFTopViewController.m */,
+				C1B29F5617634F0300710EA6 /* PFIndicatorView.h */,
+				C1B29F5717634F0400710EA6 /* PFIndicatorView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1386,6 +1391,7 @@
 				2A7CA8DB175B1EB500EDA252 /* PFUserProfile.m in Sources */,
 				2A7CA8DE175B1EE500EDA252 /* PFFriendProfile.m in Sources */,
 				C1B29F3F175B576C00710EA6 /* PFTopViewController.m in Sources */,
+				C1B29F5817634F0500710EA6 /* PFIndicatorView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

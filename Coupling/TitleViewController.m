@@ -13,12 +13,18 @@
 #import "PFMiscUtil.h"
 #import "PFViewDeckController.h"
 #import "SignupStep1ViewController.h"
+#import "PFIndicatorView.h"
 
 @interface TitleViewController ()
+
+- (void)showIndicator;
+- (void)hideIndicator;
 
 @end
 
 @implementation TitleViewController
+
+@synthesize indicatorView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -55,6 +61,7 @@
 
 - (IBAction)loginFacebook:(id)sender
 {
+    [self showIndicator];
     [[FBManager sharedObject] openSessionWithAllowLoginUI:YES];
 }
 
@@ -64,6 +71,16 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     SignupStep1ViewController *view = [storyboard instantiateViewControllerWithIdentifier:@"SignupStep1ViewController"];
     [self.navigationController pushViewController:view animated:YES];
+}
+
+- (void)showIndicator
+{
+    self.indicatorView = [PFIndicatorView indicatorWithNavigationController:self.navigationController];
+}
+
+- (void)hideIndicator
+{
+    [self.indicatorView removeFromSuperview];
 }
 
 - (void)sessionStateChanged:(NSNotification *)notification
@@ -88,6 +105,7 @@
                 UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
                 PFViewDeckController *view = [storyboard instantiateViewControllerWithIdentifier:@"PFViewDeckController"];
                 [self.navigationController pushViewController:view animated:YES];
+                [self hideIndicator];
             });
             
         } onFailure:^(NSError *error) {

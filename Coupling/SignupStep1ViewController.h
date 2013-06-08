@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
 
+@class PFIndicatorView;
+
 @interface SignupStep1ViewController : UIViewController <UISplitViewControllerDelegate>
 
 @property (strong, nonatomic) id detailItem;
 @property (strong, nonatomic) NSMutableData *responseData;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (retain, nonatomic) PFIndicatorView *indicatorView;
 
 - (IBAction)signup:(id)sender;
 
