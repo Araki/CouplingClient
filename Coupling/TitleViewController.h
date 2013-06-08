@@ -10,4 +10,7 @@
 
 @interface TitleViewController : UIViewController
 
+- (IBAction)loginFacebook:(id)sender;
+- (IBAction)showSignupView:(id)sender;
+
 @end

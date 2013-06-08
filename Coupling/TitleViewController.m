@@ -12,6 +12,7 @@
 #import "PFHTTPConnector.h"
 #import "PFMiscUtil.h"
 #import "PFViewDeckController.h"
+#import "SignupStep1ViewController.h"
 
 @interface TitleViewController ()
 
@@ -52,8 +53,17 @@
 
 #pragma mark original method
 
-- (IBAction)loginFacebook:(id)sender {
+- (IBAction)loginFacebook:(id)sender
+{
     [[FBManager sharedObject] openSessionWithAllowLoginUI:YES];
+}
+
+- (IBAction)showSignupView:(id)sender
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kPFNotificationFBSessionStateChanged object:nil];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+    SignupStep1ViewController *view = [storyboard instantiateViewControllerWithIdentifier:@"SignupStep1ViewController"];
+    [self.navigationController pushViewController:view animated:YES];
 }
 
 - (void)sessionStateChanged:(NSNotification *)notification
