@@ -112,20 +112,6 @@ NSString *const FBSessionStateChangedNotification = @"com.example.Login:FBSessio
     [[FBManager sharedObject] openSessionWithAllowLoginUI:YES];
 }
 
-- (IBAction)push:(id)sender {
-    NSLog(@"push");
-    
-    NSMutableData *data = [NSMutableData data];
-    [data appendData:[@"device=" dataUsingEncoding:NSUTF8StringEncoding]];
-    [data appendData:[[FBManager sharedObject] deviceToken]];
-    
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"ホスト名"]];
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [request setHTTPMethod:@"POST"];
-    [request setHTTPBody:data];
-    [NSURLConnection connectionWithRequest:request delegate:self];
-}
-
 #pragma mark - received notification
 
 - (void)sessionStateChanged:(NSNotification *)notification
