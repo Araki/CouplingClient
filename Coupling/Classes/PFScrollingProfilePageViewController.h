@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @protocol PFPairSearchProfileDelegate <NSObject>
-
 - (void)showTalkPage;
 
 @end
@@ -24,5 +23,7 @@
 - (IBAction)actionLikeOrTalk:(UIButton *)sender;
 
 
+-(void)setProfile:(NSDictionary*)dic;
+-(void)setUserId:(NSString*)user_id;
 
 @end

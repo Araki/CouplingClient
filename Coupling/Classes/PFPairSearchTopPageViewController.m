@@ -11,6 +11,8 @@
 #import "PFPairSearchProfileViewController.h"
 #import "PFSetConditionViewController.h"
 #import "PFTalkPageViewController.h"
+#import "ApiController.h"
+#import "PFUser.h"
 
 @interface PFPairSearchTopPageViewController ()
 
@@ -61,20 +63,31 @@
     // UIPageControl settings
     [self.outletPageControl setEnabled:NO];
     
-    // test
+    
+
+    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
-    PFPairSearchProfileViewController *view1 = [storyboard instantiateViewControllerWithIdentifier:@"PFPairSearchProfileViewController"];
-    view1.scrollingProfileView.delegate = self;
+
+    PFUser *user = [PFUser currentUser];
+    NSMutableDictionary *param =  [[NSMutableDictionary alloc] initWithObjects:
+                                   [NSArray arrayWithObjects:user.sessionId,nil]
+                                                                       forKeys: [NSArray arrayWithObjects:@"session_id", nil]];
+    NSDictionary *jsonObject =  [ApiController api:@"users/list"
+                                         andParams:param
+                                        andHttpMethod:@"GET"
+                                       andDelegate:nil
+                                 ];
+    NSMutableArray *userlist = [[NSMutableArray alloc] initWithCapacity:0];
+    if([jsonObject objectForKey:@"users"]) {
+        for (NSDictionary *user  in [jsonObject objectForKey:@"users"]) {
+            PFPairSearchProfileViewController *view1 = [storyboard instantiateViewControllerWithIdentifier:@"PFPairSearchProfileViewController"];
+            view1.scrollingProfileView.delegate = self;
+            view1.user_dic = user;
+            [userlist addObject:view1];
+        }
+    }
     
-    PFPairSearchProfileViewController *view2 = [storyboard instantiateViewControllerWithIdentifier:@"PFPairSearchProfileViewController"];
-    view2.scrollingProfileView.delegate = self;
-    
-    PFPairSearchProfileViewController *view3 = [storyboard instantiateViewControllerWithIdentifier:@"PFPairSearchProfileViewController"];
-    view3.scrollingProfileView.delegate = self;
-    
-    self.controllers = [[NSMutableArray alloc] initWithObjects:view1,
-                                                               view2,
-                                                               view3,nil];
+    self.controllers = [userlist mutableCopy];
     
 }
 
@@ -89,7 +102,9 @@
 	_page = 0;
 	[self.outletPageControl setNumberOfPages:[self.controllers count]];
     
+    NSLog(@"currentPage %d",self.outletPageControl.currentPage);
 	UIViewController *viewController = [self.controllers objectAtIndex:self.outletPageControl.currentPage];
+    NSLog(@"currentPage %d",self.outletPageControl.currentPage);
 	if (viewController.view.superview != nil) {
 		[viewController viewWillAppear:animated];
 	}
