@@ -7,10 +7,12 @@
 //
 
 #import "PFScrollingProfilePageViewController.h"
-#import "ApiController.h"
+#import "PFCommands.h"
 #import "PFProfile.h"
 #import "PFUtil.h"
 #import "PFUser.h"
+#import "PFHTTPConnector.h"
+
 
 @interface PFScrollingProfilePageViewController ()
 {
@@ -53,7 +55,8 @@
     //いいね！ステータス 0:未 1:済 2:フレンド
     int like_status;
     
-    NSArray *apiary;
+    NSArray *favcommandary;
+    NSArray *likecommandary;
     
     
 }
@@ -76,71 +79,124 @@
     // Do any additional setup after loading the view from its nib.
     fav_status = 0;
     like_status = 0;
-    apiary = [NSArray arrayWithObjects:@"create",@"destory" ,nil];
+    favcommandary = [NSArray arrayWithObjects:kPFCommendFavoritesCreate,kPFCommendFavoritesDelete ,nil];
+    likecommandary = [NSArray arrayWithObjects:kPFCommendLikesCreate,kPFCommendLikesDelete ,nil];
 }
 
--(void)check
+
+-(void)checkLike:(PFUser*)user
 {
-    PFUser *user = [PFUser currentUser];
-    ///////フレンドかどうか
-    NSMutableDictionary *param =  [[NSMutableDictionary alloc] initWithObjects:
+    
+    NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjects:
+                                    [NSArray arrayWithObjects:user.sessionId, target_id,nil]
+                                                                        forKeys: [NSArray arrayWithObjects:@"session_id", @"target_id", nil]];
+    
+    [PFHTTPConnector requestWithCommand:kPFCommendLikesShow params:params onSuccess:^(PFHTTPResponse *response) {
+        NSString *status = [[response jsonDictionary] valueForKey:@"status"];
+        dispatch_queue_t mainQueue = dispatch_get_main_queue();
+        dispatch_async(mainQueue, ^{
+            if([status isEqual:@"OK"]) {
+                //いいね済み
+                [self changeLikeStatus:1];
+            } else {
+                [self changeLikeStatus:0];
+            }
+        });
+        
+    } onFailure:^(NSError *error) {
+        NSLog(@"@@@@@ connection Error: %@", error);
+    }];
+    
+}
+
+-(void)checkFriend:(PFUser*)user
+{
+    
+    NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjects:
                                    [NSArray arrayWithObjects:user.sessionId, target_id,nil]
                                                                        forKeys: [NSArray arrayWithObjects:@"session_id", @"target_id", nil]];
-    // friends/show
-    NSDictionary *jsonObject =  [ApiController api:@"friends/show"
-                                         andParams:param
-                                     andHttpMethod:@"GET"
-                                       andDelegate:nil
-                                 ];
-    if([[jsonObject objectForKey:@"status"]isEqual:@"OK" ]) {
-        //フレンド済み
-        [self changeLikeStatus:2];
-    } else {
-        ///////いいね！済みかどうか
-        // likes/show
-        jsonObject =  [ApiController api:@"likes/show"
-                               andParams:param
-                           andHttpMethod:@"GET"
-                             andDelegate:nil
-                       ];
-        if([[jsonObject objectForKey:@"status"]isEqual:@"OK" ]) {
-            [self changeLikeStatus:1];
+
+    [PFHTTPConnector requestWithCommand:kPFCommendFriendsShow params:params onSuccess:^(PFHTTPResponse *response) {
+        NSString *status = [[response jsonDictionary] valueForKey:@"status"];
+
+        if([status isEqual:@"OK"]) {
+            dispatch_queue_t mainQueue = dispatch_get_main_queue();
+            dispatch_async(mainQueue, ^{
+                //フレンド済み
+                [self changeLikeStatus:2];
+            });
         } else {
-            [self changeLikeStatus:0];
+            [self checkLike:user];
         }
-    }
+        
+    } onFailure:^(NSError *error) {
+        NSLog(@"@@@@@ connection Error: %@", error);
+    }];
     
+}
+-(void)checkFav:(PFUser*)user
+{
+    NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjects:
+                                    [NSArray arrayWithObjects:user.sessionId, target_id,nil]
+                                                                        forKeys: [NSArray arrayWithObjects:@"session_id", @"target_id", nil]];
+    
+    [PFHTTPConnector requestWithCommand:kPFCommendFavoritesShow params:params onSuccess:^(PFHTTPResponse *response) {
+        NSString *status = [[response jsonDictionary] valueForKey:@"status"];
+        dispatch_queue_t mainQueue = dispatch_get_main_queue();
+        dispatch_async(mainQueue, ^{
+            if([status isEqual:@"OK"]) {
+                //お気に入り済み
+                [self changeFavStatus:1];
+            } else {
+                [self changeFavStatus:0];
+            }
+        });
+        
+    } onFailure:^(NSError *error) {
+        NSLog(@"@@@@@ connection Error: %@", error);
+    }];
+    
+}
+
+-(void)checkUserDetail:(PFUser*)user
+{
+    
+    NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjects:
+                                   [NSArray arrayWithObjects:user.sessionId,nil]
+                                                                       forKeys: [NSArray arrayWithObjects:@"session_id", nil]];
+    
+    [PFHTTPConnector requestWithCommand:[NSString stringWithFormat:kPFCommendUsersShow,target_id] params:params onSuccess:^(PFHTTPResponse *response) {
+        NSString *status = [[response jsonDictionary] valueForKey:@"status"];
+        NSDictionary *pro = [[[response jsonDictionary] objectForKey:@"user"]objectForKey:@"profile"];
+        if([status isEqual:@"OK"]) {
+            dispatch_queue_t mainQueue = dispatch_get_main_queue();
+            dispatch_async(mainQueue, ^{
+                point_label.text =  [NSString stringWithFormat:@"%@",[pro objectForKey:@"like_point"]];
+                if([pro objectForKey:@"facebook_id"] == nil) {
+                    facebook_btn.enabled = NO;
+                    facebook_btn2.enabled = NO;
+                }
+            });
+        }
+        
+    } onFailure:^(NSError *error) {
+        NSLog(@"@@@@@ connection Error: %@", error);
+    }];
+
+    
+}
+-(void)check
+{
+    
+    PFUser *user = [PFUser currentUser];
+    ///////フレンドかどうか
+    [self checkFriend:user];
     ///////お気に入り済みかどうか
-    // favorites/show
-    jsonObject =  [ApiController api:@"favorites/show"
-                           andParams:param
-                       andHttpMethod:@"GET"
-                         andDelegate:nil
-                   ];
-    if([[jsonObject objectForKey:@"status"]isEqual:@"OK" ]) {
-        [self changeFavStatus:1];
-    } else {
-        [self changeFavStatus:0];
-    }
-    
+    [self checkFav:user];
+
     ///////ユーザー詳細
-    param =  [[NSMutableDictionary alloc] initWithObjects:
-              [NSArray arrayWithObjects:user.sessionId,nil]
-                        forKeys: [NSArray arrayWithObjects:@"session_id", nil]];
-    // users/(:id)/show
-    jsonObject =  [ApiController api:[NSString stringWithFormat:@"users/%@/show",target_id]
-                           andParams:param
-                       andHttpMethod:@"GET"
-                         andDelegate:nil
-                   ];
-    if([[jsonObject objectForKey:@"status"]isEqual:@"OK" ]) {
-        NSDictionary *pro = [[jsonObject objectForKey:@"user"]objectForKey:@"profile"];
-        point_label.text =  [NSString stringWithFormat:@"%@",[pro objectForKey:@"like_point"]];
-        if([pro objectForKey:@"facebook_id"] == nil) {
-            facebook_btn.enabled = NO;
-            facebook_btn2.enabled = NO;
-        }
-    }
+    [self checkFav:user];
+
 }
 
 //いいね！管理
@@ -179,21 +235,24 @@
 
 - (IBAction)actionFavorite:(id)sender {
     PFUser *user = [PFUser currentUser];
-    NSMutableDictionary *param =  [[NSMutableDictionary alloc] initWithObjects:
-                             [NSArray arrayWithObjects:user.sessionId, target_id,nil]
-                            forKeys: [NSArray arrayWithObjects:@"session_id", @"target_id", nil]];
-    //favorites/create
-    NSDictionary *jsonObject =  [ApiController
-                                 api:[NSString stringWithFormat:@"favorites/%@",
-                                      [apiary objectAtIndex:fav_status]]
-                                 andParams:param
-                                 andHttpMethod:@"POST"
-                                 andDelegate:nil
-                                 ];
+    NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjects:
+                                   [NSArray arrayWithObjects:user.sessionId, target_id,nil]
+                                                                       forKeys: [NSArray arrayWithObjects:@"session_id", @"target_id", nil]];
+    
+    [PFHTTPConnector postWithCommand:[favcommandary objectAtIndex:fav_status]
+                              params:params onSuccess:^(PFHTTPResponse *response) {
+        NSString *status = [[response jsonDictionary] valueForKey:@"status"];
+        if([status isEqual:@"OK"]) {
+            dispatch_queue_t mainQueue = dispatch_get_main_queue();
+            dispatch_async(mainQueue, ^{
+                [self changeFavStatus:(fav_status==1?0:1)];
+            });
+        }
+        
+    } onFailure:^(NSError *error) {
+        NSLog(@"@@@@@ connection Error: %@", error);
+    }];
 
-    if([[jsonObject objectForKey:@"status"]isEqual:@"OK" ]) {
-        [self changeFavStatus:(fav_status==1?0:1)];
-    }
 }
 
 // いいねボタンかトークボタンが押されたときのアクション
@@ -202,21 +261,23 @@
         [self.delegate showTalkPage];
     } else {
         PFUser *user = [PFUser currentUser];
-        NSMutableDictionary *param =  [[NSMutableDictionary alloc] initWithObjects:
-                                       [NSArray arrayWithObjects:user.sessionId, target_id,nil]
-                                                                           forKeys: [NSArray arrayWithObjects:@"session_id", @"target_id", nil]];
-
-        //likes/create
-        NSDictionary *jsonObject =  [ApiController
-                                     api:[NSString stringWithFormat:@"likes/%@",
-                                          [apiary objectAtIndex:like_status]]
-                                     andParams:param
-                                     andHttpMethod:@"POST"
-                                     andDelegate:nil
-                                     ];
-        if([[jsonObject objectForKey:@"status"]isEqual:@"OK" ]) {
-            [self changeLikeStatus:(like_status==1?0:1)];
-        }
+        NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjects:
+                                        [NSArray arrayWithObjects:user.sessionId, target_id,nil]
+                                                                            forKeys: [NSArray arrayWithObjects:@"session_id", @"target_id", nil]];
+        
+        [PFHTTPConnector postWithCommand:[likecommandary objectAtIndex:like_status]
+                                  params:params onSuccess:^(PFHTTPResponse *response) {
+                                      NSString *status = [[response jsonDictionary] valueForKey:@"status"];
+                                      if([status isEqual:@"OK"]) {
+                                          dispatch_queue_t mainQueue = dispatch_get_main_queue();
+                                          dispatch_async(mainQueue, ^{
+                                              [self changeLikeStatus:(like_status==1?0:1)];
+                                          });
+                                      }
+                                      
+                                  } onFailure:^(NSError *error) {
+                                      NSLog(@"@@@@@ connection Error: %@", error);
+                                  }];
     }
 }
 

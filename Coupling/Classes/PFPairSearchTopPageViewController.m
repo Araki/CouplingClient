@@ -11,8 +11,9 @@
 #import "PFPairSearchProfileViewController.h"
 #import "PFSetConditionViewController.h"
 #import "PFTalkPageViewController.h"
-#import "ApiController.h"
 #import "PFUser.h"
+#import "PFCommands.h"
+#import "PFHTTPConnector.h"
 
 @interface PFPairSearchTopPageViewController ()
 
@@ -69,26 +70,29 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
 
     PFUser *user = [PFUser currentUser];
-    NSMutableDictionary *param =  [[NSMutableDictionary alloc] initWithObjects:
+    NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjects:
                                    [NSArray arrayWithObjects:user.sessionId,nil]
                                                                        forKeys: [NSArray arrayWithObjects:@"session_id", nil]];
-    NSDictionary *jsonObject =  [ApiController api:@"users/list"
-                                         andParams:param
-                                        andHttpMethod:@"GET"
-                                       andDelegate:nil
-                                 ];
+
+    
     NSMutableArray *userlist = [[NSMutableArray alloc] initWithCapacity:0];
-    if([jsonObject objectForKey:@"users"]) {
-        for (NSDictionary *user  in [jsonObject objectForKey:@"users"]) {
-            PFPairSearchProfileViewController *view1 = [storyboard instantiateViewControllerWithIdentifier:@"PFPairSearchProfileViewController"];
-            view1.scrollingProfileView.delegate = self;
-            view1.user_dic = user;
-            [userlist addObject:view1];
+    [PFHTTPConnector requestWithCommand:kPFCommendUsersList params:params onSuccess:^(PFHTTPResponse *response) {
+        NSDictionary *jsonObject = [response jsonDictionary];
+        if([jsonObject objectForKey:@"users"]) {
+            dispatch_queue_t mainQueue = dispatch_get_main_queue();
+            dispatch_async(mainQueue, ^{
+                for (NSDictionary *user  in [jsonObject objectForKey:@"users"]) {
+                    PFPairSearchProfileViewController *view1 = [storyboard instantiateViewControllerWithIdentifier:@"PFPairSearchProfileViewController"];
+                    view1.scrollingProfileView.delegate = self;
+                    view1.user_dic = user;
+                    [userlist addObject:view1];
+                }
+                self.controllers = [userlist mutableCopy];
+            });
         }
-    }
-    
-    self.controllers = [userlist mutableCopy];
-    
+    } onFailure:^(NSError *error) {
+        NSLog(@"@@@@@ connection Error: %@", error);
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
