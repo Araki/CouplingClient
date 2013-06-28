@@ -11,6 +11,9 @@
 #import "PFPairSearchProfileViewController.h"
 #import "PFSetConditionViewController.h"
 #import "PFTalkPageViewController.h"
+#import "PFUser.h"
+#import "PFCommands.h"
+#import "PFHTTPConnector.h"
 
 @interface PFPairSearchTopPageViewController ()
 
@@ -61,21 +64,35 @@
     // UIPageControl settings
     [self.outletPageControl setEnabled:NO];
     
-    // test
+    
+
+    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
-    PFPairSearchProfileViewController *view1 = [storyboard instantiateViewControllerWithIdentifier:@"PFPairSearchProfileViewController"];
-    view1.scrollingProfileView.delegate = self;
+
+    PFUser *user = [PFUser currentUser];
+    NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjects:
+                                   [NSArray arrayWithObjects:user.sessionId,nil]
+                                                                       forKeys: [NSArray arrayWithObjects:@"session_id", nil]];
+
     
-    PFPairSearchProfileViewController *view2 = [storyboard instantiateViewControllerWithIdentifier:@"PFPairSearchProfileViewController"];
-    view2.scrollingProfileView.delegate = self;
-    
-    PFPairSearchProfileViewController *view3 = [storyboard instantiateViewControllerWithIdentifier:@"PFPairSearchProfileViewController"];
-    view3.scrollingProfileView.delegate = self;
-    
-    self.controllers = [[NSMutableArray alloc] initWithObjects:view1,
-                                                               view2,
-                                                               view3,nil];
-    
+    NSMutableArray *userlist = [[NSMutableArray alloc] initWithCapacity:0];
+    [PFHTTPConnector requestWithCommand:kPFCommendUsersList params:params onSuccess:^(PFHTTPResponse *response) {
+        NSDictionary *jsonObject = [response jsonDictionary];
+        if([jsonObject objectForKey:@"users"]) {
+            dispatch_queue_t mainQueue = dispatch_get_main_queue();
+            dispatch_async(mainQueue, ^{
+                for (NSDictionary *user  in [jsonObject objectForKey:@"users"]) {
+                    PFPairSearchProfileViewController *view1 = [storyboard instantiateViewControllerWithIdentifier:@"PFPairSearchProfileViewController"];
+                    view1.scrollingProfileView.delegate = self;
+                    view1.user_dic = user;
+                    [userlist addObject:view1];
+                }
+                self.controllers = [userlist mutableCopy];
+            });
+        }
+    } onFailure:^(NSError *error) {
+        NSLog(@"@@@@@ connection Error: %@", error);
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -89,7 +106,9 @@
 	_page = 0;
 	[self.outletPageControl setNumberOfPages:[self.controllers count]];
     
+    NSLog(@"currentPage %d",self.outletPageControl.currentPage);
 	UIViewController *viewController = [self.controllers objectAtIndex:self.outletPageControl.currentPage];
+    NSLog(@"currentPage %d",self.outletPageControl.currentPage);
 	if (viewController.view.superview != nil) {
 		[viewController viewWillAppear:animated];
 	}
