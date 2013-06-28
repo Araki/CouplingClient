@@ -48,6 +48,7 @@
         if (characters.count) {
             NSMutableArray *array = [NSMutableArray arrayWithCapacity:characters.count];
             for (NSDictionary *dic in characters){
+                if([dic respondsToSelector:@selector(objectForKey)])
                 [array addObject:[PFMultipleProfileModel dataModelWithDictionary:dic]];
             }
             self.characters = [NSArray arrayWithArray:array];
@@ -57,6 +58,7 @@
         if (hobbies.count) {
             NSMutableArray *array = [NSMutableArray arrayWithCapacity:hobbies.count];
             for (NSDictionary *dic in hobbies){
+                if([dic respondsToSelector:@selector(objectForKey)])
                 [array addObject:[PFMultipleProfileModel dataModelWithDictionary:dic]];
             }
             self.hobbies = [NSArray arrayWithArray:array];
@@ -66,6 +68,7 @@
         if (specialities.count) {
             NSMutableArray *array = [NSMutableArray arrayWithCapacity:specialities.count];
             for (NSDictionary *dic in specialities){
+                if([dic respondsToSelector:@selector(objectForKey)])
                 [array addObject:[PFMultipleProfileModel dataModelWithDictionary:dic]];
             }
             self.specialities = [NSArray arrayWithArray:array];
@@ -75,6 +78,7 @@
         if (images.count) {
             NSMutableArray *array = [NSMutableArray arrayWithCapacity:images.count];
             for (NSDictionary *dic in images){
+                if([dic respondsToSelector:@selector(objectForKey)])
                 [array addObject:[PFImageModel dataModelWithDictionary:dic]];
             }
             self.images = [NSArray arrayWithArray:array];

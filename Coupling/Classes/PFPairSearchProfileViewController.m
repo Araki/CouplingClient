@@ -9,8 +9,12 @@
 #import "PFPairSearchProfileViewController.h"
 #import "PFTalkPageViewController.h"
 
-@interface PFPairSearchProfileViewController ()
 
+@interface PFPairSearchProfileViewController ()
+{
+    NSMutableData* data;
+    
+}
 @end
 
 @implementation PFPairSearchProfileViewController
@@ -55,11 +59,55 @@
     
     
 	// テスト用
-    UIImage *image = [UIImage imageNamed:@"test_imgres.jpeg"];
-    [self.outletProfileImageView setImage:image];
+//    UIImage *image = [UIImage imageNamed:@"test_imgres.jpeg"];
+    //    [self.outletProfileImageView setImage:image];
+    [self.scrollingProfileView setProfile:[_user_dic objectForKey:@"profile"]];
+    [self.scrollingProfileView setUserId:[_user_dic objectForKey:@"id"]];
+    data = [[NSMutableData alloc] initWithCapacity:0];
+    NSURLRequest *req = [NSURLRequest
+                         requestWithURL:[NSURL URLWithString:[self getMainImageUrl:[[_user_dic objectForKey:@"profile"] objectForKey:@"images"]]]
+                         cachePolicy:NSURLRequestUseProtocolCachePolicy
+                         timeoutInterval:30.0];
+    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:req delegate:self];
+    if(conn) {
+        
+    }
     
-    
-    
+}
+
+-(NSString*)getMainImageUrl:(NSArray*)image_ary{
+    for (NSDictionary *image in image_ary) {
+        if([[image objectForKey:@"is_main"] boolValue] == true) {
+            return [image objectForKey:@"url"];
+        }
+    }
+    return nil;
+}
+-(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
+    [data setLength:0];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)nsdata{
+    [data appendData:nsdata];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
+    [self abort:connection];
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection{
+    [self.outletProfileImageView setImage:[UIImage imageWithData:data]];
+    [self abort:connection];
+}
+
+-(void)abort:(NSURLConnection * )conn{
+    if(conn != nil){
+        [conn cancel];
+        conn = nil;
+    }
+    if(data != nil){
+        data = nil;
+    }
 }
 
 - (void)didReceiveMemoryWarning

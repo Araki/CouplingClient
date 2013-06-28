@@ -170,7 +170,7 @@
 	[PFAsyncDownload downloaderWithURL:self.url params:(self.requestType == kPFHTTPClientRequestTypeGET)? nil: self.params useCache:NO onSuccess:successBlock onFailure:failureBlock onUpdate:nil];
 	
 	dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-	dispatch_release(semaphore);
+//	dispatch_release(semaphore);
 	semaphore = nil;
 	
 	self.onSuccess = nil;
