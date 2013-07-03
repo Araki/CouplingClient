@@ -60,7 +60,7 @@
     
 	// テスト用
 //    UIImage *image = [UIImage imageNamed:@"test_imgres.jpeg"];
-    //    [self.outletProfileImageView setImage:image];
+//    [self.outletProfileImageView setImage:image];
     [self.scrollingProfileView setProfile:[_user_dic objectForKey:@"profile"]];
     [self.scrollingProfileView setUserId:[_user_dic objectForKey:@"id"]];
     data = [[NSMutableData alloc] initWithCapacity:0];

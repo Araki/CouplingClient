@@ -297,7 +297,7 @@
     gender_label.text = [PFUtil.prefectures objectAtIndex:profile.gender];
     job_label.text = [PFUtil.jobs objectAtIndex:profile.job];
     holiday_label.text = [PFUtil.dayOff objectAtIndex:profile.holiday];
-    hobbies_label.text = [PFUtil.prefectures objectAtIndex:profile.holiday];
+//    hobbies_label.text = [PFUtil.hobbies objectAtIndex:profile.holiday];
     NSMutableString *hobbies = [NSMutableString new];
     for (int i=0; [profile.hobbies count]; i++) {
 //        [hobbies appendString:[PFUtil.hobbies objectAtIndex:[[[profile.hobbies objectAtIndex:i] objectForKey:@"id"] intValue]]];
@@ -308,8 +308,8 @@
     hobbies_label.text = hobbies;
     
     income_label.text = [PFUtil.incomes objectAtIndex:profile.income];
-    schoolBackGoround_label.text = [PFUtil.prefectures objectAtIndex:profile.schoolBackGoround];
-    proportion_label.text = [PFUtil.prefectures objectAtIndex:profile.proportion];
+    schoolBackGoround_label.text = [PFUtil.schoolBackgrounds objectAtIndex:profile.schoolBackGoround];
+    proportion_label.text = [PFUtil.bodyShapes objectAtIndex:profile.proportion];
     smoking_label.text = [PFUtil.smoking objectAtIndex:profile.smoking];
     alcohol_label.text = [PFUtil.alcohol objectAtIndex:profile.alcohol];
     roommate_label.text = [PFUtil.roommates objectAtIndex:profile.roommate];

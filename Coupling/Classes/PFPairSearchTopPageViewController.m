@@ -88,6 +88,36 @@
                     [userlist addObject:view1];
                 }
                 self.controllers = [userlist mutableCopy];
+                
+                //viewWiillApper
+                for (NSUInteger i =0; i < [self.controllers count]; i++) {
+                    [self loadScrollViewWithPage:i];
+                }
+                
+                self.outletPageControl.currentPage = 0;
+                _page = 0;
+                [self.outletPageControl setNumberOfPages:[self.controllers count]];
+                
+                NSLog(@"currentPage %d",self.outletPageControl.currentPage);
+                UIViewController *viewController = [self.controllers objectAtIndex:self.outletPageControl.currentPage];
+                NSLog(@"currentPage %d",self.outletPageControl.currentPage);
+                if (viewController.view.superview != nil) {
+                    [viewController viewWillAppear:YES];
+                }
+                
+                // scrollViewのサイズ
+                self.outletScrollView.contentSize = CGSizeMake(outletScrollView.frame.size.width * [self.controllers count], outletScrollView.frame.size.height);
+                
+                //viewDidApper
+                if([self.controllers count] > 0) {
+                    
+                    UIViewController *viewController = [self.controllers objectAtIndex:self.outletPageControl.currentPage];
+                    if (viewController.view.superview != nil) {
+                        [viewController viewDidAppear:YES];
+                    }
+                }
+
+
             });
         }
     } onFailure:^(NSError *error) {
@@ -98,6 +128,8 @@
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
     
+    
+    /*
 	for (NSUInteger i =0; i < [self.controllers count]; i++) {
 		[self loadScrollViewWithPage:i];
 	}
@@ -116,14 +148,27 @@
     // scrollViewのサイズ
 	self.outletScrollView.contentSize = CGSizeMake(outletScrollView.frame.size.width * [self.controllers count], outletScrollView.frame.size.height);
 
+     */
 }
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
-	UIViewController *viewController = [self.controllers objectAtIndex:self.outletPageControl.currentPage];
-	if (viewController.view.superview != nil) {
-		[viewController viewDidAppear:animated];
-	}
+    /*
+    if([self.controllers count] > 0) {
+        
+        UIViewController *viewController = [self.controllers objectAtIndex:self.outletPageControl.currentPage];
+        if (viewController.view.superview != nil) {
+            [viewController viewDidAppear:animated];
+        }
+    }
+     */    if([self.controllers count] > 0) {
+         
+         UIViewController *viewController = [self.controllers objectAtIndex:self.outletPageControl.currentPage];
+         if (viewController.view.superview != nil) {
+             [viewController viewDidAppear:animated];
+         }
+     }
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

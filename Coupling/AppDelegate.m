@@ -16,10 +16,16 @@
 
 @implementation AppDelegate
 
+void caughtExceptionHandler(NSException *exception) {
+    NSLog(@"%@", [exception callStackSymbols]);
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert)];
     
+    
+    NSSetUncaughtExceptionHandler(&caughtExceptionHandler);
     
     // add payment transaction observer
     if (IsDevice) {
@@ -30,7 +36,7 @@
         [TapjoyConnect requestTapjoyConnect:@"254fe42b-1fa2-480b-9b53-72ecc278d627"
                                   secretKey:@"sqhBudUInNRtaQtIsAwz"];
     }
-        
+    
     return YES;
 }
 
