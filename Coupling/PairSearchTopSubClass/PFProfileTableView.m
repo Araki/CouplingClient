@@ -42,6 +42,8 @@
 
 - (void)initUserWithData:(NSDictionary *)userDict
 {
+    [self setContentOffset:CGPointZero];
+    
     if ([userDict objectForKey:@"profile"] == [NSNull null])
     {
         return;
@@ -51,7 +53,6 @@
     user = [[PFProfile alloc] initWithDictionary:[userDict objectForKey:@"profile"]];
     //ヘッダーセット
     [headerView initViewWithUser:[userDict objectForKey:@"profile"]];
-    [self setContentOffset:CGPointZero];
     
     [self reloadData];
 }

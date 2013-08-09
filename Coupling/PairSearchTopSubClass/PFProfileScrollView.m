@@ -183,6 +183,18 @@
             [self setViews];
         }
     }
+    
+    if (x < 0)
+    {
+        if (!isShow)
+        {
+            [self setContentOffset:CGPointZero];
+        }
+    }
+    else if (x > 640)
+    {
+        [self setContentOffset:CGPointMake(640, 0)];
+    }
 }
 
 
