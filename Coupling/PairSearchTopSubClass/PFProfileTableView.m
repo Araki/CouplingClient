@@ -46,11 +46,12 @@
     {
         return;
     }
-        
+    
     //情報セット
     user = [[PFProfile alloc] initWithDictionary:[userDict objectForKey:@"profile"]];
     //ヘッダーセット
     [headerView initViewWithUser:[userDict objectForKey:@"profile"]];
+    [self setContentOffset:CGPointZero];
     
     [self reloadData];
 }
