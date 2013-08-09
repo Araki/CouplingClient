@@ -75,7 +75,7 @@
         }
         
         NSArray *images = [aDictionary objectForKey:@"images"];
-        if (images.count) {
+        if ([images count] != 0) {
             NSMutableArray *array = [NSMutableArray arrayWithCapacity:images.count];
             for (NSDictionary *dic in images){
                 if([dic respondsToSelector:@selector(objectForKey)])

@@ -119,7 +119,7 @@
 - (UIImage *)resizeImage:(UIImage *)image
 {
     //	自分が作りたい画像の大きさを決めて描画領域を作る。
-	CGRect bounds = CGRectMake(0, 0, 300, 200);
+	CGRect bounds = CGRectMake(0, 0, 320, 320);
 	//	ボタンの内容部高さ x 0.95を最大とする。
 	double wide = bounds.size.height;
 	CGSize size = image.size;

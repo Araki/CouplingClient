@@ -12,9 +12,6 @@
 
 @interface PFPairSearchTopPageViewController : PFAbstractPageViewController <UIScrollViewDelegate, PFPairSearchProfileDelegate>
 
-
-@property (weak, nonatomic) IBOutlet UIScrollView *outletScrollView;
-@property (weak, nonatomic) IBOutlet UIPageControl *outletPageControl;
 @property (weak, nonatomic) IBOutlet UINavigationBar *outletNavigationBar;
 
 

@@ -14,6 +14,7 @@
 #import "PFUser.h"
 #import "PFCommands.h"
 #import "PFHTTPConnector.h"
+#import "PFProfileScrollView.h"
 
 @interface PFPairSearchTopPageViewController ()
 
@@ -25,18 +26,20 @@
 @end
 
 @implementation PFPairSearchTopPageViewController
-@synthesize outletScrollView;
-@synthesize outletPageControl;
+{
+    PFProfileScrollView *profileScrollView;
+}
 @synthesize pageControlUsed = _pageControlUsed;
 @synthesize page = _page;
 @synthesize rotating = _rotating;
 @synthesize controllers = _controllers;
 
+#pragma mark - Init
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    if (self)
+    {
     }
     return self;
 }
@@ -44,36 +47,32 @@
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
-    if (self) {
-        
+    if (self)
+    {
     }
     return self;
 }
 
+- (void)initView
+{
+    profileScrollView = [[PFProfileScrollView alloc] initWithFrame:CGRectMake(0, 44, 320, self.view.frame.size.height - 44)];
+    [self.view addSubview:profileScrollView];
+}
+
+#pragma mark - View Life Cycle
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.    
-    // UIScrollViewSettings
-	[self.outletScrollView setPagingEnabled:YES];
-	[self.outletScrollView setScrollEnabled:YES];
-	[self.outletScrollView setShowsHorizontalScrollIndicator:NO];
-	[self.outletScrollView setShowsVerticalScrollIndicator:NO];
-	[self.outletScrollView setDelegate:self];
     
-    // UIPageControl settings
-    [self.outletPageControl setEnabled:NO];
+    //初期化
+    [self initView];
     
-    
-
-    
+    //Storyboard取得
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
 
+    //User情報
     PFUser *user = [PFUser currentUser];
-    NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjects:
-                                   [NSArray arrayWithObjects:user.sessionId,nil]
-                                                                       forKeys: [NSArray arrayWithObjects:@"session_id", nil]];
-
+    NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjects:[NSArray arrayWithObjects:user.sessionId,nil] forKeys: [NSArray arrayWithObjects:@"session_id", nil]];
     
     NSMutableArray *userlist = [[NSMutableArray alloc] initWithCapacity:0];
     [PFHTTPConnector requestWithCommand:kPFCommendUsersList params:params onSuccess:^(PFHTTPResponse *response) {
@@ -81,13 +80,19 @@
         if([jsonObject objectForKey:@"users"]) {
             dispatch_queue_t mainQueue = dispatch_get_main_queue();
             dispatch_async(mainQueue, ^{
+                
+                //ScrollView初期化
+                [profileScrollView initUserWithData:[jsonObject objectForKey:@"users"]];
+                
+                /*
                 for (NSDictionary *user  in [jsonObject objectForKey:@"users"]) {
                     PFPairSearchProfileViewController *view1 = [storyboard instantiateViewControllerWithIdentifier:@"PFPairSearchProfileViewController"];
-                    view1.scrollingProfileView.delegate = self;
+                    //view1.scrollingProfileView.delegate = self;
                     view1.user_dic = user;
                     [userlist addObject:view1];
                 }
                 self.controllers = [userlist mutableCopy];
+                 */
             });
         }
     } onFailure:^(NSError *error) {
@@ -95,9 +100,11 @@
     }];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated
+{
 	[super viewWillAppear:animated];
     
+    /*
 	for (NSUInteger i =0; i < [self.controllers count]; i++) {
 		[self loadScrollViewWithPage:i];
 	}
@@ -115,34 +122,33 @@
     
     // scrollViewのサイズ
 	self.outletScrollView.contentSize = CGSizeMake(outletScrollView.frame.size.width * [self.controllers count], outletScrollView.frame.size.height);
-
+     */
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated
+{
 	[super viewDidAppear:animated];
-	UIViewController *viewController = [self.controllers objectAtIndex:self.outletPageControl.currentPage];
-	if (viewController.view.superview != nil) {
-		[viewController viewDidAppear:animated];
-	}
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
-	UIViewController *viewController = [self.controllers objectAtIndex:self.outletPageControl.currentPage];
-	if (viewController.view.superview != nil) {
-		[viewController viewWillDisappear:animated];
-	}
+- (void)viewWillDisappear:(BOOL)animated
+{
 	[super viewWillDisappear:animated];
 }
 
-- (void)viewDidDisappear:(BOOL)animated {
-	UIViewController *viewController = [self.controllers objectAtIndex:self.outletPageControl.currentPage];
-	if (viewController.view.superview != nil) {
-		[viewController viewDidDisappear:animated];
-	}
+- (void)viewDidDisappear:(BOOL)animated
+{
 	[super viewDidDisappear:animated];
 }
 
-- (void)loadScrollViewWithPage:(int)page {
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+}
+
+- (void)loadScrollViewWithPage:(int)page
+{
+    
+    /*
     if (page < 0 || page >= [self.controllers count])
         return;
     
@@ -160,12 +166,13 @@
         controller.view.frame = frame;
         [self.outletScrollView addSubview:controller.view];
     }
+     */
 }
 
-#pragma mark -
 #pragma mark UIScrollViewDelegate methods
-
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+/*
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
+{
 	UIViewController *oldViewController = [self.controllers objectAtIndex:_page];
 	UIViewController *newViewController = [self.controllers objectAtIndex:self.outletPageControl.currentPage];
 	[oldViewController viewDidDisappear:YES];
@@ -174,7 +181,8 @@
 	_page = self.outletPageControl.currentPage;
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)sender {
+- (void)scrollViewDidScroll:(UIScrollView *)sender
+{
     // We don't want a "feedback loop" between the UIPageControl and the scroll delegate in
     // which a scroll event generated from the user hitting the page control triggers updates from
     // the delegate method. We use a boolean to disable the delegate logic when the page control is used.
@@ -207,12 +215,8 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     _pageControlUsed = NO;
 }
+ */
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - PairSearchPfofileScrollView Delegate
 
@@ -234,9 +238,8 @@
     NSLog(@"setConditions");
 }
 
-- (void)viewDidUnload {
-    [self setOutletScrollView:nil];
-    [self setOutletPageControl:nil];
+- (void)viewDidUnload
+{
     [self setOutletNavigationBar:nil];
     [super viewDidUnload];
 }

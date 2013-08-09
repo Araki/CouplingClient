@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *outletProfileImageView;
 @property (weak, nonatomic) IBOutlet UIScrollView *outletProfileScrollView;
+
 @property (strong, nonatomic) PFScrollingProfilePageViewController *scrollingProfileView;// スクロールするプロフィールページ
 
 @property (weak,nonatomic) NSDictionary *user_dic;

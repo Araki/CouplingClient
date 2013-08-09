@@ -8,6 +8,25 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PFProfileScrollView : UIScrollView
+@protocol PFProfileScrollViewDelegate;
+
+@interface PFProfileScrollView : UIScrollView <UIScrollViewDelegate>
+
+//Delegate
+@property (nonatomic, assign) id <PFProfileScrollViewDelegate> profileScrollViewDelegate;
+
+//ユーザ表示
+- (void)initUserWithData:(NSArray *)users;
+//ユーザ追加読み込み
+- (void)addUserWithData:(NSArray *)users;
+//View・ユーザ情報の初期化
+- (void)resetData;
+
+@end
+
+@protocol PFProfileScrollViewDelegate <NSObject>
+
+@optional
+- (void)scrollView:(PFProfileScrollView *)scrollView didScrollPage:(int)currentPage;
 
 @end

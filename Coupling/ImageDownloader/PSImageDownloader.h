@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "TMCache.h"
 
-typedef void (^loadBlock)(UIImage *image, NSString *url, NSError *erro);
+typedef void (^loadBlock)(UIImage *image, NSString *url, NSError *error);
 
 @interface PSImageDownloader : NSObject
 

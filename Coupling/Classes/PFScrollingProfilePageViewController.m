@@ -282,11 +282,14 @@
 }
 
 
--(void)setUserId:(NSString*)user_id{
+-(void)setUserId:(NSString*)user_id
+{
     target_id = [NSString stringWithFormat:@"%@",user_id];
     [self performSelector:@selector(check) withObject:nil];
 }
--(void)setProfile:(NSDictionary*)dic{
+
+-(void)setProfile:(NSDictionary*)dic
+{
     PFProfile *profile = [[PFProfile alloc] initWithDictionary:dic];
     nickname_label.text = profile.nickName;
     age_label.text      = [NSString stringWithFormat:@"%d歳",profile.age];

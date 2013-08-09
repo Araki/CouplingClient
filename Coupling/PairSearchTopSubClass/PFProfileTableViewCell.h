@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PFProfile.h"
 
 @interface PFProfileTableViewCell : UITableViewCell
+
+- (void)initCell:(PFProfile *)dict withRow:(int)row;
 
 @end

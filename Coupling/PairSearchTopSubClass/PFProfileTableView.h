@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PFProfileTableView : UITableView
+@interface PFProfileTableView : UITableView <UITableViewDelegate, UITableViewDataSource>
+
+- (void)initUserWithData:(NSDictionary *)userDict;
 
 @end
