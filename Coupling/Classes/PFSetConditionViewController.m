@@ -176,9 +176,6 @@
         case Condition_Personality:
             title1 = [PFUtil personalities];
             break;
-        case Condition_Roommate:
-            title1 = [PFUtil roommates];
-            break;
         case Condition_Tabaco:
             title1 = [PFUtil smoking];
             break;

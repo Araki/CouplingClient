@@ -33,7 +33,6 @@
     IBOutlet UILabel *proportion_label;
     IBOutlet UILabel *smoking_label;
     IBOutlet UILabel *alcohol_label;
-    IBOutlet UILabel *roommate_label;
     
     IBOutlet UITextView *introduction_text;
     
@@ -315,7 +314,6 @@
     proportion_label.text = [PFUtil.prefectures objectAtIndex:profile.proportion];
     smoking_label.text = [PFUtil.smoking objectAtIndex:profile.smoking];
     alcohol_label.text = [PFUtil.alcohol objectAtIndex:profile.alcohol];
-    roommate_label.text = [PFUtil.roommates objectAtIndex:profile.roommate];
     introduction_text.text = profile.introduction;
     
 }

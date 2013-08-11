@@ -18,13 +18,6 @@ typedef enum {
 
 
 typedef enum {
-    single = 0,         // 1人暮らし
-    withFamiry,         // 親や兄弟と同居
-    withRoommate,       // ルームメイトと同居
-    otherRoommateType,  // その他
-}kRoommate;
-
-typedef enum {
     slimProportion = 0,     // 細い
     littleSlimProportion,   // ちょっと細い
     normalProportion,       // 普通
@@ -95,7 +88,6 @@ typedef enum {
 @property (nonatomic, assign) NSInteger     birthPlace;     // 出身地：都道府県コード番号順に順ずる
 @property (nonatomic, assign) NSInteger     prefecture;     // 県??：都道府県コード番号順に順ずる
 
-@property (nonatomic, assign) kRoommate     roommate;       // ルームメイト
 @property (nonatomic, assign) NSInteger     height;         // 身長
 @property (nonatomic, assign) kProportion   proportion;     // 体型
 @property (nonatomic, assign) kBLoodType    bloodType;      // 血液型

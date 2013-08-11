@@ -122,9 +122,6 @@
         case Profile_Personality:
             
             break;
-        case Profile_Roommate:
-            
-            break;
         case Profile_Tabaco:
             
             break;

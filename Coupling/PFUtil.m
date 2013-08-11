@@ -198,11 +198,6 @@
     return @[@"24時間以内", @"3日以内", @"1週間以内", @"1ヶ月以内", @"1ヶ月以上"];
 }
 
-+ (NSArray *)roommates
-{
-    return [NSArray arrayWithObjects:@"1人暮らし", @"親や兄弟と同居", @"ルームメイトと同居", @"その他", nil];
-}
-
 + (NSArray *)smoking
 {
     return [NSArray arrayWithObjects:@"吸わない", @"時々吸う", @"吸う", nil];

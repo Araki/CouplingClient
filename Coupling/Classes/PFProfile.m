@@ -27,7 +27,6 @@
         self.age                = [aDictionary intValueForKey:@"age"                defaultValue:0];
         self.birthPlace         = [aDictionary intValueForKey:@"birth_place"        defaultValue:0];
         self.prefecture         = [aDictionary intValueForKey:@"prefecture"         defaultValue:0];
-        self.roommate           = [aDictionary intValueForKey:@"roommate"           defaultValue:0];
         self.height             = [aDictionary intValueForKey:@"height"             defaultValue:0];
         self.proportion         = [aDictionary intValueForKey:@"proportion"         defaultValue:0];
         self.bloodType          = [aDictionary intValueForKey:@"blood_type"         defaultValue:0];

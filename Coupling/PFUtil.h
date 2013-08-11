@@ -26,7 +26,6 @@
 + (NSArray *)dayOff;
 + (NSArray *)hobbies;
 + (NSArray *)personalities;
-+ (NSArray *)roommates;
 + (NSArray *)smoking;
 + (NSArray *)alcohol;
 + (NSArray *)searchConditionTitles;

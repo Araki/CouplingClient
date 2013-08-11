@@ -159,12 +159,9 @@
             // 性格
             return [PFUtil personalities];
         case 5:
-            // 同居人
-            return [PFUtil roommates];
-        case 6:
             // タバコ
             return [PFUtil smoking];
-        case 7:
+        case 6:
             // お酒
             return [PFUtil alcohol];
             

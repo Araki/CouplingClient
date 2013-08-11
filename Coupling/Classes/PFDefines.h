@@ -25,7 +25,6 @@ typedef enum {
     Profile_Holiday,        // 休日
     Profile_Hobbies,        // 趣味・活動
     Profile_Personality,    // 性格
-    Profile_Roommate,       // 同居人
     Profile_Tabaco,         // タバコ
     Profile_Alcohol,        // お酒
 }kPFProfileTitleList;
@@ -47,7 +46,6 @@ typedef enum {
     Condition_Holiday = 10,   // 休日
     Condition_Hobbies,        // 趣味・活動
     Condition_Personality,    // 性格
-    Condition_Roommate,       // 同居人
     Condition_Tabaco,         // タバコ
     Condition_Alcohol,        // お酒
     Condition_LastLoginData   // 最終ログイン日
