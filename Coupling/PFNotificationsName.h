@@ -16,6 +16,7 @@
 // [Session]
 #define kPFNotificationSessionBecameInvalid						@"PFNotificationSessionBecameInvalid"
 #define kPFNotificationSessionVerifySuccess                     @"PFNotificationSessionVerifySuccess"
+#define kPFNotificationSessionVerifyFailure                     @"PFNotificationSessionVerifyFailure"
 #define kPFNotificationNoSession                                @"PFNotificationNoSession"
 
 // [Facebook]

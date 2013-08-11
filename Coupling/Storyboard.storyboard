@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="PxU-id-qzZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="PxU-id-qzZ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -108,7 +108,7 @@
         <!--Title View Controller-->
         <scene sceneID="5co-0n-WpA">
             <objects>
-                <viewController id="3o9-MZ-xW2" customClass="TitleViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TitleViewController" id="3o9-MZ-xW2" customClass="TitleViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f17-Nq-Aq4">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1432,141 +1432,6 @@ b.投稿内容について
         <image name="button_trade.png" width="164" height="70"/>
         <image name="button_view_my_profile.png" width="492" height="70"/>
     </resources>
-    <classes>
-        <class className="IIViewDeckController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/IIViewDeckController.h"/>
-        </class>
-        <class className="PFAbstractPageViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFAbstractPageViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="actionSlideMenuBarButton:"/>
-                <relationship kind="outlet" name="outletNavigationBar" candidateClass="UINavigationBar"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="PFAnnouncementPageViewController" superclassName="PFAbstractPageViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFAnnouncementPageViewController.h"/>
-        </class>
-        <class className="PFHelpPageViewController" superclassName="PFAbstractPageViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFHelpPageViewController.h"/>
-        </class>
-        <class className="PFMyPageTopPageViewController" superclassName="PFAbstractPageViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFMyPageTopPageViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="actionStatusSortBarButton:"/>
-                <relationship kind="outlet" name="outletNavigationBar" candidateClass="UINavigationBar"/>
-                <relationship kind="outlet" name="outletTableViewController" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="PFMyProfilePageViewController" superclassName="PFAbstractPageViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFMyProfilePageViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="actionConfirmProfileButton:"/>
-                <relationship kind="outlet" name="outletNavigationBar" candidateClass="UINavigationBar"/>
-                <relationship kind="outlet" name="outletTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="outletUserProfileImageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="PFPairSearchProfileViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFPairSearchProfileViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="outletProfileImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="outletProfileScrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="PFPairSearchTopPageViewController" superclassName="PFAbstractPageViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFPairSearchTopPageViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="outletNavigationBar" candidateClass="UINavigationBar"/>
-                <relationship kind="outlet" name="outletPageControl" candidateClass="UIPageControl"/>
-                <relationship kind="outlet" name="outletScrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="PFProfilePictureSelectTableViewController" superclassName="PFAbstractPageViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFProfilePictureSelectTableViewController.h"/>
-        </class>
-        <class className="PFSetConditionViewController" superclassName="PFAbstractPageViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFSetConditionViewController.h"/>
-        </class>
-        <class className="PFSettingPageViewController" superclassName="PFAbstractPageViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFSettingPageViewController.h"/>
-        </class>
-        <class className="PFShopPageViewController" superclassName="PFAbstractPageViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFShopPageViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="actionShowTapJoyView:"/>
-                <relationship kind="outlet" name="outletOwnPointLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="PFSlideMenuPageViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFSlideMenuPageViewController.h"/>
-        </class>
-        <class className="PFTapjoyPageViewController" superclassName="PFAbstractPageViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFTapjoyPageViewController.h"/>
-        </class>
-        <class className="PFTermsOfUsePageViewController" superclassName="PFAbstractPageViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFTermsOfUsePageViewController.h"/>
-        </class>
-        <class className="PFTopViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFTopViewController.h"/>
-        </class>
-        <class className="PFTutorialStep1Controller" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFTutorialStep1Controller.h"/>
-        </class>
-        <class className="PFTutorialStep2Controller" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFTutorialStep2Controller.h"/>
-        </class>
-        <class className="PFViewDeckController" superclassName="IIViewDeckController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PFViewDeckController.h"/>
-        </class>
-        <class className="PurchaseViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PurchaseViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="buy:"/>
-                <relationship kind="outlet" name="button" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="SearchResultView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchResultView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="SearchResultViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchResultViewController.h"/>
-        </class>
-        <class className="SignupStep1ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SignupStep1ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="signup:"/>
-                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SignupStep2ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SignupStep2ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="goNextView:"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="SignupStep3ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SignupStep3ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="goNextView:"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="SignupStep4ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SignupStep4ViewController.h"/>
-        </class>
-        <class className="TitleViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TitleViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="loginFacebook:"/>
-                <relationship kind="action" name="showSignupView:"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
