@@ -154,7 +154,7 @@
 
 + (NSArray *)bodyShapes
 {
-    return [NSArray arrayWithObjects:@"スリム（細め)", @"やや細め", @"普通", @"筋肉質" , @"ややぽっちゃり", @"ぽっちゃり", @"太め", nil];
+    return [NSArray arrayWithObjects:@"スリム（細め)", @"やや細め", @"普通", @"グラマー", @"筋肉質" , @"ややぽっちゃり", @"ぽっちゃり", @"太め", nil];
 }
 
 + (NSArray *)schoolBackgrounds
