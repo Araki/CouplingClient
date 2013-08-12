@@ -102,7 +102,7 @@
             }
             else
             {
-                [descriptionLabel setFrame:CGRectMake(descriptionLabel.frame.origin.x, self.frame.size.height - size.height - 3, descriptionLabel.frame.size.width, size.height)];
+                [descriptionLabel setFrame:CGRectMake(descriptionLabel.frame.origin.x, self.frame.size.height - size.height - 6, descriptionLabel.frame.size.width, size.height)];
             }
             
             //描画処理

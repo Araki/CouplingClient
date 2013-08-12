@@ -61,6 +61,9 @@
     leftTableView   = [[PFProfileTableView alloc] initWithFrame:CGRectMake(0  , 0, 320, self.frame.size.height)];
     centerTableview = [[PFProfileTableView alloc] initWithFrame:CGRectMake(320, 0, 320, self.frame.size.height)];
     rightTableView  = [[PFProfileTableView alloc] initWithFrame:CGRectMake(640, 0, 320, self.frame.size.height)];
+    [leftTableView   setProfileTableViewDelegate:self];
+    [centerTableview setProfileTableViewDelegate:self];
+    [rightTableView  setProfileTableViewDelegate:self];
     [self addSubview:leftTableView];
     [self addSubview:centerTableview];
     [self addSubview:rightTableView];
@@ -100,6 +103,11 @@
 - (void)resetData
 {
     usersArray = [NSMutableArray arrayWithCapacity:0];
+}
+
+- (void)addUserLoading
+{
+    
 }
 
 - (void)setViews
@@ -153,6 +161,19 @@
         [self setContentSize:CGSizeMake(320 * 3, self.frame.size.height)];
         [self setContentOffset:CGPointMake(320, 0)];
     }
+    
+    [self.profileScrollViewDelegate scrollView:self didScrollPage:currentPage];
+}
+
+#pragma mark - Tableview Delegate
+- (void)showTalkView:(PFProfile *)user
+{
+    [self.profileScrollViewDelegate showTalkPage:user];
+}
+
+- (void)showPictures:(PFProfile *)user
+{
+    [self.profileScrollViewDelegate showPictures:user];
 }
 
 #pragma mark - ScrollView Delegate

@@ -28,6 +28,8 @@
 @implementation PFPairSearchTopPageViewController
 {
     PFProfileScrollView *profileScrollView;
+    //表示データ
+    NSArray *dataArray;
 }
 @synthesize pageControlUsed = _pageControlUsed;
 @synthesize page = _page;
@@ -56,6 +58,7 @@
 - (void)initView
 {
     profileScrollView = [[PFProfileScrollView alloc] initWithFrame:CGRectMake(0, 44, 320, self.view.frame.size.height - 44)];
+    [profileScrollView setProfileScrollViewDelegate:self];
     [self.view addSubview:profileScrollView];
 }
 
@@ -80,19 +83,9 @@
         if([jsonObject objectForKey:@"users"]) {
             dispatch_queue_t mainQueue = dispatch_get_main_queue();
             dispatch_async(mainQueue, ^{
-                
                 //ScrollView初期化
                 [profileScrollView initUserWithData:[jsonObject objectForKey:@"users"]];
-                
-                /*
-                for (NSDictionary *user  in [jsonObject objectForKey:@"users"]) {
-                    PFPairSearchProfileViewController *view1 = [storyboard instantiateViewControllerWithIdentifier:@"PFPairSearchProfileViewController"];
-                    //view1.scrollingProfileView.delegate = self;
-                    view1.user_dic = user;
-                    [userlist addObject:view1];
-                }
-                self.controllers = [userlist mutableCopy];
-                 */
+                dataArray = [NSArray arrayWithArray:[jsonObject objectForKey:@"users"]];
             });
         }
     } onFailure:^(NSError *error) {
@@ -103,26 +96,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
-    
-    /*
-	for (NSUInteger i =0; i < [self.controllers count]; i++) {
-		[self loadScrollViewWithPage:i];
-	}
-    
-	self.outletPageControl.currentPage = 0;
-	_page = 0;
-	[self.outletPageControl setNumberOfPages:[self.controllers count]];
-    
-    NSLog(@"currentPage %d",self.outletPageControl.currentPage);
-	UIViewController *viewController = [self.controllers objectAtIndex:self.outletPageControl.currentPage];
-    NSLog(@"currentPage %d",self.outletPageControl.currentPage);
-	if (viewController.view.superview != nil) {
-		[viewController viewWillAppear:animated];
-	}
-    
-    // scrollViewのサイズ
-	self.outletScrollView.contentSize = CGSizeMake(outletScrollView.frame.size.width * [self.controllers count], outletScrollView.frame.size.height);
-     */
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -145,89 +118,33 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void)loadScrollViewWithPage:(int)page
-{
-    
-    /*
-    if (page < 0 || page >= [self.controllers count])
-        return;
-    
-	// replace the placeholder if necessary
-    UIViewController *controller = [self.controllers objectAtIndex:page];
-    if (controller == nil) {
-		return;
-    }
-    
-	// add the controller's view to the scroll view
-    if (controller.view.superview == nil) {
-        CGRect frame = self.outletScrollView.frame;
-        frame.origin.x = frame.size.width * page;
-        frame.origin.y = 0;
-        controller.view.frame = frame;
-        [self.outletScrollView addSubview:controller.view];
-    }
-     */
-}
-
-#pragma mark UIScrollViewDelegate methods
-/*
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
-{
-	UIViewController *oldViewController = [self.controllers objectAtIndex:_page];
-	UIViewController *newViewController = [self.controllers objectAtIndex:self.outletPageControl.currentPage];
-	[oldViewController viewDidDisappear:YES];
-	[newViewController viewDidAppear:YES];
-    
-	_page = self.outletPageControl.currentPage;
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)sender
-{
-    // We don't want a "feedback loop" between the UIPageControl and the scroll delegate in
-    // which a scroll event generated from the user hitting the page control triggers updates from
-    // the delegate method. We use a boolean to disable the delegate logic when the page control is used.
-    if (_pageControlUsed || _rotating) {
-        // do nothing - the scroll was initiated from the page control, not the user dragging
-        return;
-    }
-	
-    // Switch the indicator when more than 50% of the previous/next page is visible
-    CGFloat pageWidth = self.outletScrollView.frame.size.width;
-    int page = floor((self.outletScrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
-	if (self.outletPageControl.currentPage != page) {
-		UIViewController *oldViewController = [self.controllers objectAtIndex:self.outletPageControl.currentPage];
-		UIViewController *newViewController = [self.controllers objectAtIndex:page];
-		[oldViewController viewWillDisappear:YES];
-		[newViewController viewWillAppear:YES];
-		self.outletPageControl.currentPage = page;
-		[oldViewController viewDidDisappear:YES];
-		[newViewController viewDidAppear:YES];
-		_page = page;
-	}
-}
-
-// At the begin of scroll dragging, reset the boolean used when scrolls originate from the UIPageControl
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    _pageControlUsed = NO;
-}
-
-// At the end of scroll animation, reset the boolean used when scrolls originate from the UIPageControl
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    _pageControlUsed = NO;
-}
- */
-
-
-#pragma mark - PairSearchPfofileScrollView Delegate
-
-// トーク画面を表示する
-- (void)showTalkPage
+#pragma mark - PFProfileScrollView Delegate
+- (void)showTalkPage:(PFProfile *)user
 {
     [self.navigationController pushViewController:[PFTalkPageViewController new] animated:YES];
 }
 
-#pragma mark - IBAction
+- (void)showPictures:(PFProfile *)user
+{
+    
+}
 
+- (void)scrollView:(PFProfileScrollView *)scrollView didScrollPage:(int)currentPage
+{
+    if ([dataArray count] == 0 || currentPage == 0) return;
+    
+    //ScrollViewのページ遷移Delegate
+    if ([dataArray count] == currentPage - 1)
+    {
+        //最終ページまでいったので追加読み込み処理
+        
+        
+        
+        
+    }
+}
+
+#pragma mark - IBAction
 - (IBAction)actionNotificationButton:(UIButton *)sender
 {
     NSLog(@"Notifivation");

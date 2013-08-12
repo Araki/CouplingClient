@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PFProfileTableView.h"
 
 @protocol PFProfileScrollViewDelegate;
 
-@interface PFProfileScrollView : UIScrollView <UIScrollViewDelegate>
+@interface PFProfileScrollView : UIScrollView <UIScrollViewDelegate, PFProfileTableViewDelegate>
 
 //Delegate
 @property (nonatomic, assign) id <PFProfileScrollViewDelegate> profileScrollViewDelegate;
@@ -21,6 +22,8 @@
 - (void)addUserWithData:(NSArray *)users;
 //View・ユーザ情報の初期化
 - (void)resetData;
+//追加読み込み
+- (void)addUserLoading;
 
 @end
 
@@ -28,5 +31,7 @@
 
 @optional
 - (void)scrollView:(PFProfileScrollView *)scrollView didScrollPage:(int)currentPage;
+- (void)showPictures:(PFProfile *)user;
+- (void)showTalkPage:(PFProfile *)user;
 
 @end

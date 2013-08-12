@@ -7,9 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PFProfileTableHeaderView.h"
 
-@interface PFProfileTableView : UITableView <UITableViewDelegate, UITableViewDataSource>
+@protocol PFProfileTableViewDelegate;
+
+@interface PFProfileTableView : UITableView <UITableViewDelegate, UITableViewDataSource, PFProfileTableViewHeaderDelegate>
+
+//Delegate
+@property (nonatomic, assign) id <PFProfileTableViewDelegate> profileTableViewDelegate;
 
 - (void)initUserWithData:(NSDictionary *)userDict;
+
+@end
+
+@protocol PFProfileTableViewDelegate <NSObject>
+
+@optional
+- (void)showTalkView:(PFProfile *)user;
+- (void)showPictures:(PFProfile *)user;
 
 @end

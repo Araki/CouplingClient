@@ -36,7 +36,8 @@
 - (void)initTableView
 {
     //ヘッダー
-    headerView = [[PFProfileTableHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 320)];
+    headerView = [[PFProfileTableHeaderView alloc] initWithFrame:CGRectMake(0, 0, 320, 320 + 80)];
+    [headerView setHeaderViewDelegate:self];
     [self setTableHeaderView:headerView];
 }
 
@@ -55,6 +56,17 @@
     [headerView initViewWithUser:[userDict objectForKey:@"profile"]];
     
     [self reloadData];
+}
+
+#pragma mark - PFProfile HeaderView Delegate
+- (void)showPictures
+{
+    [self.profileTableViewDelegate showPictures:user];
+}
+
+- (void)showTalkPage
+{
+    [self.profileTableViewDelegate showTalkView:user];
 }
 
 #pragma mark - UITableView Delegate

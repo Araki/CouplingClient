@@ -9,8 +9,21 @@
 #import <UIKit/UIKit.h>
 #import "PFProfile.h"
 
+@protocol PFProfileTableViewHeaderDelegate; 
+
 @interface PFProfileTableHeaderView : UIView
 
+//Delagte
+@property (nonatomic, assign) id <PFProfileTableViewHeaderDelegate> headerViewDelegate;
+
 - (void)initViewWithUser:(NSDictionary *)user;
+
+@end
+
+@protocol PFProfileTableViewHeaderDelegate <NSObject>
+
+@optional
+- (void)showPictures;
+- (void)showTalkPage;
 
 @end
