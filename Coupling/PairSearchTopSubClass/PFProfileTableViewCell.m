@@ -135,82 +135,28 @@
             titleStr       = @"自己紹介";
             break;
         case 1:
-            descriptionStr = [[PFUtil prefectures] objectAtIndex:[user birthPlace]];
-            titleStr       = @"出身地";
-            break;
-        case 2:
             descriptionStr = [[PFUtil bloodTypes] objectAtIndex:[user bloodType]];
             titleStr       = @"血液型";
             break;
-        case 3:
-            descriptionStr  = [NSString stringWithFormat:@"%dcm %@",[user height], [[PFUtil bodyShapes] objectAtIndex:[user proportion]]];
+        case 2:
+            descriptionStr  = [[PFUtil bodyShapes] objectAtIndex:[user proportion]];
             titleStr       = @"体型";
             break;
-        case 4:
+        case 3:
             descriptionStr = [[PFUtil schoolBackgrounds] objectAtIndex:[user schoolBackGoround]];
             titleStr       = @"学歴";
             break;
-        case 5:
+        case 4:
             descriptionStr = [[PFUtil jobs] objectAtIndex:[user job]];
             titleStr       = @"職業";
             break;
-        case 6:
+        case 5:
             descriptionStr = [[PFUtil incomes] objectAtIndex:[user income]];
             titleStr       = @"年収";
             break;
-        case 7:
+        case 6:
             descriptionStr = [[PFUtil dayOff] objectAtIndex:[user holiday]];
             titleStr       = @"休日";
-            break;
-        case 8:
-            //TODO: 仕様確認
-            descriptionStr = @"";
-            titleStr       = @"趣味・活動";
-            break;
-        case 9:
-            //TODO: 仕様確認
-            descriptionStr = @"";
-            titleStr       = @"生活";
-            break;
-        case 10:
-            //TODO: 仕様確認
-            descriptionStr = @"";
-            titleStr       = @"同居人";
-            break;
-        case 11:
-            titleStr       = @"タバコ";
-            switch ([user smoking]) {
-                case 0:
-                    descriptionStr = @"吸わない";
-                    break;
-                case 1:
-                    descriptionStr = @"時々吸う";
-                    break;
-                case 2:
-                    descriptionStr = @"吸う";
-                    break;
-                default:
-                    break;
-            }
-            break;
-        case 12:
-            titleStr       = @"お酒";
-            switch ([user alcohol]) {
-                case 1:
-                    descriptionStr = @"飲めない";
-                    break;
-                case 2:
-                    descriptionStr = @"飲めるが好きではない";
-                    break;
-                case 3:
-                    descriptionStr = @"付き合い程度に飲む";
-                    break;
-                case 4:
-                    descriptionStr = @"大好き";
-                    break;
-                default:
-                    break;
-            }
             break;
         default:
             break;

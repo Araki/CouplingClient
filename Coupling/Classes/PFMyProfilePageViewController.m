@@ -92,13 +92,7 @@
         case Profile_Introduction:
 
             break;
-        case Profile_HomeTown:
-
-            break;
         case Profile_BloodType:
-
-            break;
-        case Profile_Height:
 
             break;
         case Profile_Body:
@@ -116,18 +110,6 @@
         case Profile_Holiday:
             
             break;
-        case Profile_Hobbies:
-            
-            break;
-        case Profile_Personality:
-            
-            break;
-        case Profile_Tabaco:
-            
-            break;
-        case Profile_Alcohol:
-            
-            break;            
         default:
             status = [NSArray arrayWithObject:nil];
             break;

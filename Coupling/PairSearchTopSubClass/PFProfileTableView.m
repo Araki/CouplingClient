@@ -100,28 +100,6 @@
         {
             description = [user introduction];
         }
-        else if (indexPath.row == 4)
-        {
-            description = [user jobDescription];
-        }
-        else if (indexPath.row == 5)
-        {
-            description = [user jobDescription];
-        }
-        else if (indexPath.row == 8)
-        {
-            for (NSString *str in [user hobbies])
-            {
-                if ([description isEqualToString:@""])
-                {
-                    description = [NSString stringWithFormat:@"%@",str];
-                }
-                else
-                {
-                    description = [NSString stringWithFormat:@"%@、%@",description,str];
-                }
-            }
-        }
         CGSize size = [description sizeWithFont:[UIFont fontWithName:@"Helvetica" size:13.0f] constrainedToSize:CGSizeMake(200, 500) lineBreakMode:UILineBreakModeWordWrap];
         if (size.height <= 30)
         {

@@ -185,42 +185,23 @@
             // お住まいのエリア
             return [PFUtil prefectures];
         case 2:
-            // 出身地の都道府県
-            return [PFUtil prefectures];
-        case 3:
             //血液型
             return [PFUtil bloodTypes];
-        case 4:
-            // 身長
-            return [PFUtil heights];
-        case 5:
+        case 3:
             // 体型
             return [PFUtil bodyShapes];
-        case 6:
+        case 4:
             // 学歴
             return [PFUtil schoolBackgrounds];
-        case 7:
+        case 5:
             // 職業
             return [PFUtil jobs];
-        case 8:
+        case 6:
             // 年収
             return [PFUtil incomes];
-        case 9:
+        case 7:
             // 休日
             return [PFUtil dayOff];
-        case 10:
-            // 趣味・活動
-            return [PFUtil hobbies];
-        case 11:
-            // 性格
-            return [PFUtil personalities];
-        case 12:
-            // タバコ
-            return [PFUtil smoking];
-        case 13:
-            // お酒
-            return [PFUtil alcohol];
-            
         default:
             return [NSArray arrayWithObject:nil];
             break;

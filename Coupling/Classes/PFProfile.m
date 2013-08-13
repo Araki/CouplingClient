@@ -25,23 +25,13 @@
         self.introduction       = [aDictionary stringValueForKey:@"introduction"    defaultValue:nil];
         self.gender             = [aDictionary intValueForKey:@"gender"             defaultValue:0];
         self.age                = [aDictionary intValueForKey:@"age"                defaultValue:0];
-        self.birthPlace         = [aDictionary intValueForKey:@"birth_place"        defaultValue:0];
         self.prefecture         = [aDictionary intValueForKey:@"prefecture"         defaultValue:0];
-        self.height             = [aDictionary intValueForKey:@"height"             defaultValue:0];
         self.proportion         = [aDictionary intValueForKey:@"proportion"         defaultValue:0];
         self.bloodType          = [aDictionary intValueForKey:@"blood_type"         defaultValue:0];
-        self.marialHistory      = [aDictionary intValueForKey:@"marial_history"     defaultValue:0];
-        self.marriageTime       = [aDictionary intValueForKey:@"marriage_time"      defaultValue:0];
-        self.smoking            = [aDictionary intValueForKey:@"smoking"            defaultValue:0];
-        self.alcohol            = [aDictionary intValueForKey:@"alcohol"            defaultValue:0];
         self.job                = [aDictionary intValueForKey:@"job"                defaultValue:0];
-        self.jobDescription     = [aDictionary stringValueForKey:@"job_description" defaultValue:nil];
-        self.workPlace          = [aDictionary stringValueForKey:@"work_place"      defaultValue:nil];
         self.income             = [aDictionary intValueForKey:@"income"             defaultValue:0];
         self.schoolBackGoround  = [aDictionary intValueForKey:@"school_background"  defaultValue:0];
         self.holiday            = [aDictionary intValueForKey:@"holiday"            defaultValue:0];
-        self.sociability        = [aDictionary intValueForKey:@"sociability"        defaultValue:0];
-        self.dislike            = [aDictionary stringValueForKey:@"dislike"         defaultValue:0];
         
         NSArray *characters = [aDictionary objectForKey:@"characters"];
         if (characters.count) {
@@ -51,16 +41,6 @@
                 [array addObject:[PFMultipleProfileModel dataModelWithDictionary:dic]];
             }
             self.characters = [NSArray arrayWithArray:array];
-        }
-        
-        NSArray *hobbies = [aDictionary objectForKey:@"hobbies"];
-        if (hobbies.count) {
-            NSMutableArray *array = [NSMutableArray arrayWithCapacity:hobbies.count];
-            for (NSDictionary *dic in hobbies){
-                if([dic respondsToSelector:@selector(objectForKey)])
-                [array addObject:[PFMultipleProfileModel dataModelWithDictionary:dic]];
-            }
-            self.hobbies = [NSArray arrayWithArray:array];
         }
         
         NSArray *specialities = [aDictionary objectForKey:@"specialities"];

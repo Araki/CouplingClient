@@ -20,19 +20,15 @@
     IBOutlet UILabel *age_label;
     IBOutlet UILabel *prefecture_label;
     IBOutlet UILabel *country_label;
-    IBOutlet UILabel *height_label;
     IBOutlet UILabel *blood_type_label;
     IBOutlet UILabel *gender_label;
     IBOutlet UILabel *job_label;
     
-    IBOutlet UILabel *hobbies_label;
     IBOutlet UILabel *holiday_label;
     IBOutlet UILabel *income_label;
     
     IBOutlet UILabel *schoolBackGoround_label;
     IBOutlet UILabel *proportion_label;
-    IBOutlet UILabel *smoking_label;
-    IBOutlet UILabel *alcohol_label;
     
     IBOutlet UITextView *introduction_text;
     
@@ -294,26 +290,14 @@
     age_label.text      = [NSString stringWithFormat:@"%d歳",profile.age];
     prefecture_label.text = [PFUtil.prefectures objectAtIndex:profile.prefecture];
 //    country_label.text = profile.;
-    height_label.text = [PFUtil.prefectures objectAtIndex:profile.height];
     blood_type_label.text = [PFUtil.bloodTypes objectAtIndex:profile.bloodType];
     gender_label.text = [PFUtil.prefectures objectAtIndex:profile.gender];
     job_label.text = [PFUtil.jobs objectAtIndex:profile.job];
     holiday_label.text = [PFUtil.dayOff objectAtIndex:profile.holiday];
-    hobbies_label.text = [PFUtil.prefectures objectAtIndex:profile.holiday];
-    NSMutableString *hobbies = [NSMutableString new];
-    for (int i=0; [profile.hobbies count]; i++) {
-//        [hobbies appendString:[PFUtil.hobbies objectAtIndex:[[[profile.hobbies objectAtIndex:i] objectForKey:@"id"] intValue]]];
-        [hobbies appendString:[PFUtil.hobbies objectAtIndex:[[profile.hobbies objectAtIndex:i]intValue]]];
-        if(i != [profile.hobbies count] -1 )
-            [hobbies appendString:@","];
-    }
-    hobbies_label.text = hobbies;
     
     income_label.text = [PFUtil.incomes objectAtIndex:profile.income];
     schoolBackGoround_label.text = [PFUtil.prefectures objectAtIndex:profile.schoolBackGoround];
     proportion_label.text = [PFUtil.prefectures objectAtIndex:profile.proportion];
-    smoking_label.text = [PFUtil.smoking objectAtIndex:profile.smoking];
-    alcohol_label.text = [PFUtil.alcohol objectAtIndex:profile.alcohol];
     introduction_text.text = profile.introduction;
     
 }

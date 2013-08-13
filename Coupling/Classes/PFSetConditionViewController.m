@@ -109,16 +109,8 @@
 {
     NSLog(@"titles = %@", titles);
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:self.currentPath];
-    NSString *detail = nil;
-    if (self.currentPath.row == Condition_Height) {
-        NSString *fromValue = [titles objectAtIndex:0];
-        NSString *toValue   = [titles objectAtIndex:1];
-        detail = [NSString stringWithFormat:@"%@cm~%@cm", fromValue, toValue];
-        cell.detailTextLabel.text = detail;
-    } else {
-        detail = [titles objectAtIndex:0];
-        cell.detailTextLabel.text = detail;
-    }
+    NSString *detail = [titles objectAtIndex:0];
+    cell.detailTextLabel.text = detail;
     [cell setNeedsLayout];
     [self.detailListArray replaceObjectAtIndex:self.currentPath.row withObject:detail];
 }
@@ -135,25 +127,14 @@
     NSArray *title2 = nil;
     NSArray *title3 = nil;
     switch (row) {
-        case Condition_Age:
-            title1 = [PFUtil alcohol];
-            break;
         case Condition_Address:
             title1 = [PFUtil prefectures];
             break;
         case Condition_Introduction:
             title1 = [PFUtil introductions];
             break;
-        case Condition_HomeTown:
-            title1 = [PFUtil prefectures];
-            break;
         case Condition_BloodType:
             title1 = [PFUtil bloodTypes];
-            break;
-        case Condition_Height:
-            numOfComponents = 2;
-            title1 = [PFUtil heights];
-            title2 = [PFUtil heights];
             break;
         case Condition_Body:
             title1 = [PFUtil bodyShapes];
@@ -169,18 +150,6 @@
             break;
         case Condition_Holiday:
             title1 = [PFUtil dayOff];
-            break;
-        case Condition_Hobbies:
-            title1 = [PFUtil hobbies];
-            break;
-        case Condition_Personality:
-            title1 = [PFUtil personalities];
-            break;
-        case Condition_Tabaco:
-            title1 = [PFUtil smoking];
-            break;
-        case Condition_Alcohol:
-            title1 = [PFUtil alcohol];
             break;
         case Condition_LastLoginData:
             title1 = [PFUtil lastLogines];
