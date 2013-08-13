@@ -45,9 +45,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewDidUnload {
+- (void)viewDidUnload
+{
     self.actionSheet = nil;
     [super viewDidUnload];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
 }
 
 #pragma mark UITableViewDelegate
@@ -106,7 +113,7 @@
 
 - (NSString *)profileItemText:(NSInteger)row
 {
-    NSArray *items = [NSArray arrayWithObjects:@"ニックネーム", @"お住まいのエリア", @"出身地", @"血液型", @"身長", @"体型", @"学歴", @"職業", @"年収", @"休日", @"趣味・活動", @"性格", @"同居人", @"タバコ", @"お酒", nil];
+    NSArray *items = [NSArray arrayWithObjects:@"ニックネーム", @"お住まいのエリア", @"血液型", @"体型", @"学歴", @"職業", @"年収", @"休日", nil];
     return (NSString *)[items objectAtIndex:row];
 }
 
