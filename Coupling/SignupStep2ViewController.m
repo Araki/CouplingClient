@@ -157,9 +157,7 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:self.currentPath];
-    cell.detailTextLabel.text = [[self arrayForPicker:self.currentPath.row] objectAtIndex:row];
-    [cell setNeedsLayout];
+    self.selectedRow = row;
 }
 
 #pragma mark UIPickerViewDataSource
@@ -180,6 +178,10 @@
 
 - (void)dismissActionSheet:(id)sender
 {
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:self.currentPath];
+    cell.detailTextLabel.text = [[self arrayForPicker:self.currentPath.row] objectAtIndex:self.selectedRow];
+    self.selectedRow = 0;
+    [cell setNeedsLayout];
     [self.actionSheet dismissWithClickedButtonIndex:0 animated:YES];
 }
 
