@@ -86,11 +86,11 @@
     switch (buttonIndex) {
         case 0:
             [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
-            [self presentModalViewController:imagePicker animated:YES];
+            [self presentViewController:imagePicker animated:YES completion:nil];
             break;
         case 1:
             [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-            [self presentModalViewController:imagePicker animated:YES];
+            [self presentViewController:imagePicker animated:YES completion:nil];
             break;
         default:
             break;
@@ -108,7 +108,7 @@
 }
 
 -(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
