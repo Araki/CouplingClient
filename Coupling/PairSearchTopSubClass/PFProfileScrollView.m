@@ -22,6 +22,8 @@
     //表示フラグ
     BOOL isShow;
     BOOL isScroll;
+    //読み込みインジケーター
+    UIActivityIndicatorView *indicator;
 }
 
 #pragma mark - Init
@@ -56,6 +58,12 @@
     [self setDelegate:self];
     [self setContentSize:CGSizeMake(320 * 3, self.frame.size.height)];
     [self setContentOffset:CGPointMake(320 * 1, 0)];
+    
+    //インジケーター
+    indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [indicator setFrame:CGRectMake(320 * 2 + 30, (self.frame.size.height / 2) - (indicator.frame.size.height / 2), indicator.frame.size.width, indicator.frame.size.height)];
+    [self addSubview:indicator];
+    [indicator setHidden:YES];
     
     //TableView初期化
     leftTableView   = [[PFProfileTableView alloc] initWithFrame:CGRectMake(0  , 0, 320, self.frame.size.height)];
@@ -96,7 +104,14 @@
 
 - (void)addUserWithData:(NSArray *)users
 {
+    [indicator stopAnimating];
+    [indicator setHidden:YES];
     
+    NSMutableArray *joinArray = [NSMutableArray arrayWithArray:usersArray];
+    [joinArray addObjectsFromArray:users];
+    usersArray = [NSMutableArray arrayWithArray:joinArray];
+    
+    [self setViews];
     
 }
 
@@ -107,7 +122,8 @@
 
 - (void)addUserLoading
 {
-    
+    [indicator setHidden:NO];
+    [indicator startAnimating];
 }
 
 - (void)setViews

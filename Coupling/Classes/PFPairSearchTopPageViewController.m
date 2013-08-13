@@ -69,14 +69,10 @@
     //初期化
     [self initView];
     
-    //Storyboard取得
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
-
     //User情報
     PFUser *user = [PFUser currentUser];
     NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjects:[NSArray arrayWithObjects:user.sessionId,nil] forKeys: [NSArray arrayWithObjects:@"session_id", nil]];
     
-    NSMutableArray *userlist = [[NSMutableArray alloc] initWithCapacity:0];
     [PFHTTPConnector requestWithCommand:kPFCommendUsersList params:params onSuccess:^(PFHTTPResponse *response) {
         NSDictionary *jsonObject = [response jsonDictionary];
         if([jsonObject objectForKey:@"users"]) {
@@ -130,16 +126,33 @@
 
 - (void)scrollView:(PFProfileScrollView *)scrollView didScrollPage:(int)currentPage
 {
-    if ([dataArray count] == 0 || currentPage == 0) return;
+    if ([dataArray count] == 0 || currentPage == 0 || currentPage == 1 ) return;
+    
+    NSLog(@"page == %d count == %d",currentPage,[dataArray count]);
     
     //ScrollViewのページ遷移Delegate
-    if ([dataArray count] == currentPage - 1)
+    if ([dataArray count] - 2 == currentPage)
     {
         //最終ページまでいったので追加読み込み処理
-        
-        
-        
-        
+        [scrollView addUserLoading];
+        //TODO: 仮のユーザ追加
+        PFUser *user = [PFUser currentUser];
+        NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjects:[NSArray arrayWithObjects:user.sessionId,nil] forKeys: [NSArray arrayWithObjects:@"session_id", nil]];
+        [PFHTTPConnector requestWithCommand:kPFCommendUsersList params:params onSuccess:^(PFHTTPResponse *response) {
+            NSDictionary *jsonObject = [response jsonDictionary];
+            if([jsonObject objectForKey:@"users"]) {
+                dispatch_queue_t mainQueue = dispatch_get_main_queue();
+                dispatch_async(mainQueue, ^{
+                    //ScrollView初期化
+                    [profileScrollView addUserWithData:[jsonObject objectForKey:@"users"]];
+                    NSMutableArray *joinArray = [NSMutableArray arrayWithArray:dataArray];
+                    [joinArray addObjectsFromArray:[jsonObject objectForKey:@"users"]];
+                    dataArray = [NSArray arrayWithArray:joinArray];
+                });
+            }
+        } onFailure:^(NSError *error) {
+            NSLog(@"@@@@@ connection Error: %@", error);
+        }];
     }
 }
 

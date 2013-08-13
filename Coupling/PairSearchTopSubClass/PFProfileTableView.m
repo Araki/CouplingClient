@@ -79,7 +79,7 @@
 {
     if (user != nil)
     {
-        return 13;
+        return 7;
     }
     else
     {
@@ -106,7 +106,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0 || indexPath.row == 8 || indexPath.row == 4 || indexPath.row == 5)
+    if (indexPath.row == 0 || indexPath.row == 4 || indexPath.row == 5)
     {
         NSString *description = @"";
         if (indexPath.row == 0)
@@ -129,7 +129,7 @@
         {
             if (indexPath.row == 0)
             {
-                return size.height + 28;
+                return size.height + 23;
             }
             else
             {

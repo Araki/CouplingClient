@@ -20,6 +20,8 @@
     UILabel *lastLoginLabel;
     //写真ボタン
     UIButton *pictureButton;
+    //写真枚数ラベル
+    UILabel *pictureLabel;
     //名前
     UILabel *nameLabel;
     //年齢,住所
@@ -28,9 +30,11 @@
     UIButton *favoriteButton;
     //いいねボタン
     UIButton *likeButton;
+    //いいね数ラベル
+    UILabel *likeLabel;
     //ユーザID
     NSString *targetID;
-    //
+    //お気に入り・いいね配列
     NSArray *favcommandary;
     NSArray *likecommandary;
     //お気に入りステータス 0:未 1:済
@@ -68,6 +72,12 @@
     [pictureButton setFrame:CGRectMake(5, 290, 47, 20)];
     [pictureButton addTarget:self action:@selector(showPicture) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:pictureButton];
+    //写真ラベル
+    pictureLabel = [[UILabel alloc] initWithFrame:CGRectMake(52, 290, 50, 20)];
+    [pictureLabel setBackgroundColor:[UIColor clearColor]];
+    [pictureLabel setFont:[UIFont fontWithName:@"Helvetica" size:12]];
+    [pictureLabel setTextColor:[UIColor grayColor]];
+    [self addSubview:pictureLabel];
     //名前
     nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 325, 250, 20)];
     [nameLabel setBackgroundColor:[UIColor clearColor]];
@@ -90,6 +100,14 @@
     [likeButton setFrame:CGRectMake(130, 365, 170, 35)];
     [likeButton addTarget:self action:@selector(like) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:likeButton];
+    //イイネ数
+    likeLabel = [[UILabel alloc] initWithFrame:CGRectMake(240, 368, 52, 30)];
+    [likeLabel setText:@"残り19"];
+    [likeLabel setBackgroundColor:[UIColor clearColor]];
+    [likeLabel setTextColor:[UIColor whiteColor]];
+    [likeLabel setFont:[UIFont fontWithName:@"Helvetica-Bold" size:14]];
+    [likeLabel setTextAlignment:NSTextAlignmentRight];
+    [self addSubview:likeLabel];
 }
 
 - (void)initViewWithUser:(NSDictionary *)user
@@ -122,8 +140,11 @@
     [nameLabel setText:[userData objectForKey:@"nickname"]];
     
     //写真枚数
-    NSString *picture = [NSString stringWithFormat:@"写真%d枚",[[user objectForKey:@"images"] count]];
-    [pictureButton setTitle:picture forState:UIControlStateNormal];
+    NSString *picture = [NSString stringWithFormat:@"%d枚",[[user objectForKey:@"images"] count]];
+    [pictureLabel setText:picture];
+
+    //TODO: 残りいいね数を更新する
+    
     
     [self checkUser];
 }
@@ -272,14 +293,17 @@
     like_status = state;
     if (state == 0)
     {
+        [likeLabel setHidden:NO];
         [likeButton setImage:[UIImage imageNamed:@"button_like.png"] forState:UIControlStateNormal];
     }
     else if (state == 1)
     {
+        [likeLabel setHidden:YES];
         [likeButton setImage:[UIImage imageNamed:@"button_liked.png"] forState:UIControlStateNormal];
     }
     else if (state == 2)
     {
+        [likeLabel setHidden:YES];
         [likeButton setImage:[UIImage imageNamed:@"button_talk.png"] forState:UIControlStateNormal];
     }
 }
