@@ -8,7 +8,6 @@
 
 #import "PFPairSearchTopPageViewController.h"
 #import "IIViewDeckController.h"
-#import "PFPairSearchProfileViewController.h"
 #import "PFSetConditionViewController.h"
 #import "PFTalkPageViewController.h"
 #import "PFUser.h"

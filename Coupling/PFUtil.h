@@ -18,17 +18,11 @@
 
 + (NSArray *)prefectures;
 + (NSArray *)bloodTypes;
-+ (NSArray *)heights;
 + (NSArray *)bodyShapes;
 + (NSArray *)schoolBackgrounds;
 + (NSArray *)jobs;
 + (NSArray *)incomes;
 + (NSArray *)dayOff;
-+ (NSArray *)hobbies;
-+ (NSArray *)personalities;
-+ (NSArray *)roommates;
-+ (NSArray *)smoking;
-+ (NSArray *)alcohol;
 + (NSArray *)searchConditionTitles;
 + (NSArray *)profileTitles;
 + (NSArray *)introductions;

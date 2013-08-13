@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PFScrollingProfilePageViewController.h"
 #import "PFAbstractPageViewController.h"
 #import "PFProfileScrollView.h"
 
-@interface PFPairSearchTopPageViewController : PFAbstractPageViewController <UIScrollViewDelegate, PFPairSearchProfileDelegate, PFProfileScrollViewDelegate>
+@interface PFPairSearchTopPageViewController : PFAbstractPageViewController <UIScrollViewDelegate, PFProfileScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UINavigationBar *outletNavigationBar;
 

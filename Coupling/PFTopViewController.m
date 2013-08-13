@@ -9,6 +9,7 @@
 #import "PFTopViewController.h"
 #import "PFViewDeckController.h"
 #import "PFTutorialStep1Controller.h"
+#import "TitleViewController.h"
 #import "PFNotificationsName.h"
 
 #import "PFHTTPConnector.h"
@@ -36,18 +37,23 @@
     if (sessionId == nil) {
         [self pushTutorialViewController];
         return;
+        
     }
     
 	[[NSNotificationCenter defaultCenter] addObserver:self
 											 selector:@selector(handleSessionVerifySuccess:)
 												 name:kPFNotificationSessionVerifySuccess
                                                object:nil];
-    
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(handleSessionVerifyFailure:)
+												 name:kPFNotificationSessionVerifyFailure
+                                               object:nil];
     
     [PFHTTPConnector requestWithCommand:kPFCommandSessionsVerify params:nil onSuccess:^(PFHTTPResponse *response) {
         [[NSNotificationCenter defaultCenter] postNotificationName:kPFNotificationSessionVerifySuccess object:self userInfo:[response jsonDictionary]];
         NSLog(@"@@@@@ verify session: %@", [response jsonDictionary]);
     } onFailure:^(NSError *error) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kPFNotificationSessionVerifyFailure object:self userInfo:nil];
         NSLog(@"@@@@@ verify Error: %@", error);
     }];
 
@@ -70,6 +76,7 @@
 {
     [super viewWillDisappear:animated];
 	[[NSNotificationCenter defaultCenter] removeObserver:kPFNotificationSessionVerifySuccess];
+	[[NSNotificationCenter defaultCenter] removeObserver:kPFNotificationSessionVerifyFailure];
 }
 
 #pragma mark -
@@ -82,6 +89,16 @@
         PFViewDeckController *view = [storyboard instantiateViewControllerWithIdentifier:@"PFViewDeckController"];
         [self.navigationController pushViewController:view animated:YES];
    });
+}
+
+- (void)handleSessionVerifyFailure:(NSNotification *)notification
+{
+    dispatch_queue_t mainQueue = dispatch_get_main_queue();
+    dispatch_async(mainQueue, ^{
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+        TitleViewController *view = [storyboard instantiateViewControllerWithIdentifier:@"TitleViewController"];
+        [self.navigationController pushViewController:view animated:YES];
+    });
 }
 
 - (void)pushTutorialViewController

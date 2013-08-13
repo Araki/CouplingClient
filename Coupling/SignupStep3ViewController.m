@@ -152,22 +152,6 @@
         case 2:
             // 休日
             return [PFUtil dayOff];
-        case 3:
-            // 趣味・活動
-            return [PFUtil hobbies];
-        case 4:
-            // 性格
-            return [PFUtil personalities];
-        case 5:
-            // 同居人
-            return [PFUtil roommates];
-        case 6:
-            // タバコ
-            return [PFUtil smoking];
-        case 7:
-            // お酒
-            return [PFUtil alcohol];
-            
         default:
             return [NSArray arrayWithObject:nil];
             break;

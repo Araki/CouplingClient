@@ -18,13 +18,6 @@ typedef enum {
 
 
 typedef enum {
-    single = 0,         // 1人暮らし
-    withFamiry,         // 親や兄弟と同居
-    withRoommate,       // ルームメイトと同居
-    otherRoommateType,  // その他
-}kRoommate;
-
-typedef enum {
     slimProportion = 0,     // 細い
     littleSlimProportion,   // ちょっと細い
     normalProportion,       // 普通
@@ -40,19 +33,6 @@ typedef enum {
     typeO,
     typeAB,
 }kBLoodType;
-
-typedef enum {
-    notSmoking = 0, // 吸わない
-    sometimesSmoke, // 時々吸う
-    smoke           // 吸う
-}kSmoking;
-
-typedef enum {
-    cantDrink = 0,      // 飲めない
-    canDrinkButDislike, // 飲めるが好きではない
-    drinkSocially,      // 付き合い程度に飲む
-    loveDrink,          // 大好き
-}kAlcohol;
 
 typedef enum {
     less200 = 0,
@@ -92,31 +72,17 @@ typedef enum {
 @property (nonatomic, assign) kGender       gender;         // 性別
 @property (nonatomic, assign) NSInteger     age;            // 年齢
 
-@property (nonatomic, assign) NSInteger     birthPlace;     // 出身地：都道府県コード番号順に順ずる
 @property (nonatomic, assign) NSInteger     prefecture;     // 県??：都道府県コード番号順に順ずる
 
-@property (nonatomic, assign) kRoommate     roommate;       // ルームメイト
-@property (nonatomic, assign) NSInteger     height;         // 身長
 @property (nonatomic, assign) kProportion   proportion;     // 体型
 @property (nonatomic, assign) kBLoodType    bloodType;      // 血液型
 
-@property (nonatomic, assign) NSInteger     marialHistory; // TODO:仕様確認
-@property (nonatomic, assign) NSInteger     marriageTime;  // TODO:仕様確認
-
-@property (nonatomic, assign) kSmoking      smoking;        // タバコ
-@property (nonatomic, assign) kAlcohol      alcohol;        // お酒
-
 @property (nonatomic, assign) NSInteger     job;            // 仕事の種類：PFUtilのjobsにひもづく
-@property (nonatomic, copy)   NSString *    jobDescription; // 仕事についての詳細
-@property (nonatomic, copy)   NSString *    workPlace;      // 職場
 @property (nonatomic, assign) kIncomType    income;         // 収入
 @property (nonatomic, assign) kSchoolBackGround schoolBackGoround;  // 最終学歴
 @property (nonatomic, assign) kHoliday      holiday;        // 休日：PFUtilのdayoffと紐づく
-@property (nonatomic, assign) NSInteger     sociability;    // 社交性：personalitiesとひもづく
-@property (nonatomic, copy)   NSString *    dislike;        // 嫌いな物
 
 @property (nonatomic, retain) NSArray *     characters;     // 性格
-@property (nonatomic, retain) NSArray *     hobbies;        // 趣味
 @property (nonatomic, retain) NSArray *     specialities;   // 特技
 @property (nonatomic, retain) NSArray *     images;         // PFImageModelが配列ではいっている
 
