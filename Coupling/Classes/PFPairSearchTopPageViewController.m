@@ -8,7 +8,6 @@
 
 #import "PFPairSearchTopPageViewController.h"
 #import "IIViewDeckController.h"
-#import "PFPairSearchProfileViewController.h"
 #import "PFSetConditionViewController.h"
 #import "PFTalkPageViewController.h"
 #import "PFUser.h"
@@ -83,16 +82,6 @@
                 
                 //ScrollView初期化
                 [profileScrollView initUserWithData:[jsonObject objectForKey:@"users"]];
-                
-                /*
-                for (NSDictionary *user  in [jsonObject objectForKey:@"users"]) {
-                    PFPairSearchProfileViewController *view1 = [storyboard instantiateViewControllerWithIdentifier:@"PFPairSearchProfileViewController"];
-                    //view1.scrollingProfileView.delegate = self;
-                    view1.user_dic = user;
-                    [userlist addObject:view1];
-                }
-                self.controllers = [userlist mutableCopy];
-                 */
             });
         }
     } onFailure:^(NSError *error) {
