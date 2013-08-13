@@ -122,7 +122,6 @@
 
 - (PFActionSheet *)actionSheetWithRow:(kPFConditionTitleList)row
 {
-    NSInteger numOfComponents = 1;
     NSArray *title1 = nil;
     NSArray *title2 = nil;
     NSArray *title3 = nil;

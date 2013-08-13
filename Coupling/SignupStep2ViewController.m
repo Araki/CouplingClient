@@ -78,7 +78,7 @@
         field.borderStyle = UITextBorderStyleRoundedRect;
         field.font = [UIFont boldSystemFontOfSize:[UIFont labelFontSize]];
         field.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-        field.textAlignment = UITextAlignmentCenter;
+        field.textAlignment = NSTextAlignmentCenter;
         field.returnKeyType = UIReturnKeyDone;
         field.clearButtonMode = UITextFieldViewModeNever;
         field.adjustsFontSizeToFitWidth = YES;

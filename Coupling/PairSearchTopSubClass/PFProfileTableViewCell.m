@@ -79,7 +79,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
 
             [descriptionLabel setText:description];
-            CGSize size = [description sizeWithFont:[UIFont fontWithName:@"Helvetica" size:13.0f] constrainedToSize:CGSizeMake(200, 500) lineBreakMode:UILineBreakModeWordWrap];
+            CGSize size = [description sizeWithFont:[UIFont fontWithName:@"Helvetica" size:13.0f] constrainedToSize:CGSizeMake(200, 500) lineBreakMode:NSLineBreakByWordWrapping];
             if (row == 0)
             {
                 [descriptionLabel setFrame:CGRectMake(20, 7, 270, size.height)];
@@ -118,8 +118,8 @@
     [[UIColor blackColor] set];
     [title     drawInRect:CGRectMake(20, 7, 100, 20)
                  withFont:[UIFont fontWithName:@"Helvetica-Bold" size:13.0f]
-            lineBreakMode:UILineBreakModeTailTruncation
-                alignment:UITextAlignmentLeft];
+            lineBreakMode:NSLineBreakByTruncatingTail
+                alignment:NSTextAlignmentLeft];
 }
 
 #pragma mark - Self Methods
