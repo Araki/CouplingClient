@@ -137,6 +137,7 @@
 		2AEF05E016B5507E009F5FD7 /* button_notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AEF05DD16B5507E009F5FD7 /* button_notification.png */; };
 		2AEF05E116B5507E009F5FD7 /* button_slide_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AEF05DE16B5507E009F5FD7 /* button_slide_menu.png */; };
 		2AF042E4171AD6EC0017701F /* PFShopPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF042E3171AD6EC0017701F /* PFShopPageViewController.m */; };
+		2AFA27E117BA4B1F0021A209 /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AFA27E017BA4B1F0021A209 /* AWSS3.framework */; };
 		C10A328C1632AB6C0083F51B /* PFSingletonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C10A328B1632AB6C0083F51B /* PFSingletonObject.m */; };
 		C133F5C616DA2A82001003A6 /* PFUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C133F5C516DA2A80001003A6 /* PFUtil.m */; };
 		C1571E07164F8A7100AFB49D /* PFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1571E06164F8A7100AFB49D /* PFModel.m */; };
@@ -401,6 +402,7 @@
 		2AEF05DE16B5507E009F5FD7 /* button_slide_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_slide_menu.png; path = Resouces/button/button_slide_menu.png; sourceTree = "<group>"; };
 		2AF042E2171AD6EC0017701F /* PFShopPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFShopPageViewController.h; path = Classes/PFShopPageViewController.h; sourceTree = "<group>"; };
 		2AF042E3171AD6EC0017701F /* PFShopPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFShopPageViewController.m; path = Classes/PFShopPageViewController.m; sourceTree = "<group>"; };
+		2AFA27E017BA4B1F0021A209 /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSS3.framework; sourceTree = "<group>"; };
 		C10A328A1632AB6C0083F51B /* PFSingletonObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFSingletonObject.h; sourceTree = "<group>"; };
 		C10A328B1632AB6C0083F51B /* PFSingletonObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFSingletonObject.m; sourceTree = "<group>"; };
 		C1138EA716BE5F8C001E30B6 /* PFTutorialStep1Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFTutorialStep1Controller.h; sourceTree = "<group>"; };
@@ -556,6 +558,7 @@
 				2A7E2B17171ACE1200DE3068 /* libTestFlight.a in Frameworks */,
 				2A7E2B16171ACDD200DE3068 /* TapjoyPublisherLibrary.a in Frameworks */,
 				2A46AA07167496AE00B459A3 /* FacebookSDK.framework in Frameworks */,
+				2AFA27E117BA4B1F0021A209 /* AWSS3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1039,6 +1042,7 @@
 		C163A1F415E0BABB00F3F25D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2AFA27E017BA4B1F0021A209 /* AWSS3.framework */,
 				C1789BEF1622B47300EA631B /* TestFlightSDK1.1 */,
 				2A7E2AFD171AC40D00DE3068 /* TapjoyPublisherLibrary */,
 				2A17961017476F83004BE000 /* Social.framework */,
