@@ -1,12 +1,12 @@
 //
-//  PFTopViewController.m
+//  PFSplashViewController.m
 //  Coupling
 //
 //  Created by tsuchimoto on 13/06/02.
 //  Copyright (c) 2013年 tsuchimoto. All rights reserved.
 //
 
-#import "PFTopViewController.h"
+#import "PFSplashViewController.h"
 #import "PFViewDeckController.h"
 #import "PFTutorialStep1Controller.h"
 #import "TitleViewController.h"
@@ -14,11 +14,11 @@
 
 #import "PFHTTPConnector.h"
 
-@interface PFTopViewController ()
+@interface PFSplashViewController ()
 
 @end
 
-@implementation PFTopViewController
+@implementation PFSplashViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

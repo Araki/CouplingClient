@@ -178,7 +178,7 @@
 		C18A837C172BD280009CF384 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C18A837B172BD27F009CF384 /* Security.framework */; };
 		C1A1CB31162AA573002CB9DD /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A1CB30162AA573002CB9DD /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C1A1CB33162AA5B0002CB9DD /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A1CB32162AA5B0002CB9DD /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		C1B29F3F175B576C00710EA6 /* PFTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B29F3E175B576B00710EA6 /* PFTopViewController.m */; };
+		C1B29F3F175B576C00710EA6 /* PFSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B29F3E175B576B00710EA6 /* PFSplashViewController.m */; };
 		C1B29F5817634F0500710EA6 /* PFIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B29F5717634F0400710EA6 /* PFIndicatorView.m */; };
 		C1C1E35B163D06AC002A9E38 /* FBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C1E35A163D06AC002A9E38 /* FBManager.m */; };
 		C1C1E35F163D19A5002A9E38 /* PFHTTPConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C1E35E163D19A5002A9E38 /* PFHTTPConnector.m */; };
@@ -478,8 +478,8 @@
 		C18A837B172BD27F009CF384 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		C1A1CB30162AA573002CB9DD /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		C1A1CB32162AA5B0002CB9DD /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
-		C1B29F3D175B576B00710EA6 /* PFTopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFTopViewController.h; sourceTree = "<group>"; };
-		C1B29F3E175B576B00710EA6 /* PFTopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFTopViewController.m; sourceTree = "<group>"; };
+		C1B29F3D175B576B00710EA6 /* PFSplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFSplashViewController.h; sourceTree = "<group>"; };
+		C1B29F3E175B576B00710EA6 /* PFSplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFSplashViewController.m; sourceTree = "<group>"; };
 		C1B29F5617634F0300710EA6 /* PFIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFIndicatorView.h; sourceTree = "<group>"; };
 		C1B29F5717634F0400710EA6 /* PFIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFIndicatorView.m; sourceTree = "<group>"; };
 		C1C1E359163D06AC002A9E38 /* FBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBManager.h; sourceTree = "<group>"; };
@@ -935,8 +935,8 @@
 				C16218531606FB2000F27E37 /* PurchaseViewController.h */,
 				C16218541606FB2000F27E37 /* PurchaseViewController.m */,
 				C1E2E611166B300B0099B20F /* Storyboard.storyboard */,
-				C1B29F3D175B576B00710EA6 /* PFTopViewController.h */,
-				C1B29F3E175B576B00710EA6 /* PFTopViewController.m */,
+				C1B29F3D175B576B00710EA6 /* PFSplashViewController.h */,
+				C1B29F3E175B576B00710EA6 /* PFSplashViewController.m */,
 				C1B29F5617634F0300710EA6 /* PFIndicatorView.h */,
 				C1B29F5717634F0400710EA6 /* PFIndicatorView.m */,
 			);
@@ -1438,7 +1438,7 @@
 				2A1796151747BC7E004BE000 /* PFGroup.m in Sources */,
 				2A7CA8DB175B1EB500EDA252 /* PFUserProfile.m in Sources */,
 				2A7CA8DE175B1EE500EDA252 /* PFFriendProfile.m in Sources */,
-				C1B29F3F175B576C00710EA6 /* PFTopViewController.m in Sources */,
+				C1B29F3F175B576C00710EA6 /* PFSplashViewController.m in Sources */,
 				C1B29F5817634F0500710EA6 /* PFIndicatorView.m in Sources */,
 				FAC09CAA17B4D36C008ECFF3 /* PFProfileScrollView.m in Sources */,
 				FAC09CB317B4D412008ECFF3 /* PFProfileTableView.m in Sources */,

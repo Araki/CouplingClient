@@ -1,5 +1,5 @@
 //
-//  PFTopViewController.h
+//  PFSplashViewController.h
 //  Coupling
 //
 //  Created by tsuchimoto on 13/06/02.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PFTopViewController : UIViewController
+@interface PFSplashViewController : UIViewController
 
 @end
