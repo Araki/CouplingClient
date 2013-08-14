@@ -20,6 +20,7 @@
 @implementation SignupStep2ViewController
 
 @synthesize tableView;
+@synthesize nicknameField;
 @synthesize actionSheet;
 @synthesize currentPath;
 
@@ -82,19 +83,16 @@
         label.text = @"ニックネーム";
         [cell.contentView addSubview:label];
         
-        UITextField *field = [[UITextField alloc] initWithFrame:CGRectMake(120.0, 10.0, 170.0, 20.0)];
-        field.delegate = self;
-        field.borderStyle = UITextBorderStyleRoundedRect;
-        field.font = [UIFont boldSystemFontOfSize:[UIFont labelFontSize]];
-        field.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-        field.textAlignment = NSTextAlignmentCenter;
-        field.returnKeyType = UIReturnKeyDone;
-        field.clearButtonMode = UITextFieldViewModeNever;
-        field.adjustsFontSizeToFitWidth = YES;
-        
-        //[textField addTarget:self action:@selector(done:) forControlEvents:UIControlEventEditingDidEndOnExit];
-        
-        [cell.contentView addSubview:field];
+        self.nicknameField = [[UITextField alloc] initWithFrame:CGRectMake(120.0, 10.0, 170.0, 20.0)];
+        self.nicknameField.delegate = self;
+        self.nicknameField.borderStyle = UITextBorderStyleRoundedRect;
+        self.nicknameField.font = [UIFont boldSystemFontOfSize:[UIFont labelFontSize]];
+        self.nicknameField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+        self.nicknameField.textAlignment = NSTextAlignmentCenter;
+        self.nicknameField.returnKeyType = UIReturnKeyDone;
+        self.nicknameField.clearButtonMode = UITextFieldViewModeNever;
+        self.nicknameField.adjustsFontSizeToFitWidth = YES;
+        [cell.contentView addSubview:self.nicknameField];
     }
     return cell;
 }
@@ -105,12 +103,12 @@
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.textLabel.font = [UIFont systemFontOfSize:14.0];
+        cell.detailTextLabel.text = nil;
     }
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.font = [UIFont systemFontOfSize:14.0];
     cell.textLabel.text = [self profileItemText:row];
-    cell.detailTextLabel.text = @"";
     return cell;
 }
 
@@ -235,8 +233,25 @@
 
 - (IBAction)goNextView:(id)sender
 {
+    if (self.nicknameField.text == nil) {
+        [self showAlert:@"ニックネームを確認してください。"];
+        return;
+    }
+    for (int i = 1; i < [self.tableView numberOfRowsInSection:0]; i++) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+        if ([self.tableView cellForRowAtIndexPath:indexPath].detailTextLabel.text == nil) {
+            [self showAlert:[NSString stringWithFormat:@"%@を確認してください。", [self profileItemText:i]]];
+            return;
+        }
+    }
     SignupStep4ViewController *signupViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SignupStep4ViewController"];
     [self.navigationController pushViewController:signupViewController animated:YES];
+}
+
+- (void)showAlert:(NSString *)message
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Pairful" message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
 }
 
 @end

@@ -11,6 +11,7 @@
 @interface SignupStep2ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) UITextField *nicknameField;
 @property (strong, nonatomic) UIActionSheet *actionSheet;
 @property (strong, nonatomic) NSIndexPath *currentPath;
 @property (assign, nonatomic) NSInteger selectedRow;
