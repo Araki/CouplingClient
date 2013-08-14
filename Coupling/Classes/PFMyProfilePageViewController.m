@@ -29,6 +29,42 @@
     return self;
 }
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        PFUser *user = [PFUser currentUser];
+        
+        NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjects:[NSArray arrayWithObjects:user.sessionId,nil] forKeys: [NSArray arrayWithObjects:@"session_id", nil]];
+        
+        [PFHTTPConnector requestWithCommand:kPFCommandProfileShow params:params onSuccess:^(PFHTTPResponse *response) {
+            NSDictionary *jsonObject = [response jsonDictionary];
+            NSDictionary *profileDic = [jsonObject objectForKey:@"profile"];
+            if(profileDic) {
+                dispatch_queue_t mainQueue = dispatch_get_main_queue();
+                dispatch_async(mainQueue, ^{
+                    _profile = [PFProfile dataModelWithDictionary:profileDic];
+                    [self showProfileImage];
+                    NSLog(@"myProfileJson = %@", [jsonObject description]);
+                });
+            }
+        } onFailure:^(NSError *error) {
+            NSLog(@"@@@@@ connection Error: %@", error);
+        }];
+    }
+    return self;
+}
+
+- (void)showProfileImage
+{
+    NSArray *imagesArray = self.profile.images;
+    for (PFImageModel *imageModel in imagesArray) {
+        if (imageModel.isMain) {
+            self.outletUserProfileImageView.image = imageModel.image;
+        }
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -39,29 +75,6 @@
     
     // test
     self.outletUserProfileImageView.image = [UIImage imageNamed:@"test_imgres.jpeg"];
-    
-    PFUser *user = [PFUser currentUser];
-    
-    NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjects:[NSArray arrayWithObjects:user.sessionId,nil] forKeys: [NSArray arrayWithObjects:@"session_id", nil]];
-    
-    [PFHTTPConnector requestWithCommand:kPFCommandProfileShow params:params onSuccess:^(PFHTTPResponse *response) {
-        NSDictionary *jsonObject = [response jsonDictionary];
-        NSDictionary *profileDic = [jsonObject objectForKey:@"profile"];
-        if(profileDic) {
-            dispatch_queue_t mainQueue = dispatch_get_main_queue();
-            dispatch_async(mainQueue, ^{
-                self.profile = [PFProfile dataModelWithDictionary:profileDic];
-                
-                NSLog(@"myProfileJson = %@", [jsonObject description]);
-            });
-        }
-    } onFailure:^(NSError *error) {
-        NSLog(@"@@@@@ connection Error: %@", error);
-    }];
-    
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning

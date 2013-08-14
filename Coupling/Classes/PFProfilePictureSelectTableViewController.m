@@ -92,15 +92,14 @@
     switch (buttonIndex) {
         case 0:
             [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
-            [self presentViewController:imagePicker animated:YES completion:nil];
             break;
         case 1:
             [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-            [self presentViewController:imagePicker animated:YES completion:nil];
             break;
         default:
             break;
     }
+    [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker
@@ -108,12 +107,16 @@
                   editingInfo:(NSDictionary *)editingInfo {
     // 選択されたイメージを追加
     [self.user.profileImages addObject:image];
+    // 追加された画像をアップロード
+    [self commitProfileWithImage:image];
+    
     // リロードする
     [self.tableView reloadData];
     [self dismissModalViewControllerAnimated:YES];
 }
 
--(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -191,7 +194,9 @@
 - (void)commitProfileWithImage:(UIImage *)image
 {
     PFUser *user = [PFUser currentUser];
-
+    
+    __block NSData *saveImageData = UIImagePNGRepresentation(image);
+    
     NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjectsAndKeys:user.sessionId, @"session_id", nil];    
     
     [PFHTTPConnector postWithCommand:kPFCommandImageCreate
@@ -203,10 +208,18 @@
         
         PFS3FormModel *form = [PFS3FormModel dataModelWithDictionary:jsonObject];
         
-        
         AmazonS3Client *s3 = [[AmazonS3Client alloc] initWithAccessKey:form.accessKeyId withSecretKey:form.secretKey];
         
-        
+        @try {
+            S3PutObjectRequest *por = [[S3PutObjectRequest alloc] initWithKey:form.key inBucket:form.bucketName];
+            por.contentType = @"image/png";
+            por.data = saveImageData;
+            
+            [s3 putObject:por];
+        }
+        @catch (AmazonClientException *exception) {
+            NSLog(@"Error uploading image to S3: %@", exception.message);
+        }
     }
     onFailure:^(NSError *error)
     {
