@@ -14,21 +14,10 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "S3Response.h"
+#import "AmazonClientException.h"
 
-#ifdef AWS_MULTI_FRAMEWORK
-#import <AWSRuntime/AmazonSDKUtil.h>
-#else
-#import "AmazonSDKUtil.h"
-#endif
-
-/** Contains the response from a putObject operation.
- *
- */
-@interface S3CopyObjectResponse:S3Response {
-    NSDate *lastModified;
+/** Exception for request signing errors */
+@interface AmazonSignatureException:AmazonClientException {
 }
-
-@property (nonatomic, retain) NSDate *lastModified;
 
 @end

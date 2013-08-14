@@ -13,22 +13,13 @@
  * permissions and limitations under the License.
  */
 
-#import <Foundation/Foundation.h>
-#import "S3Response.h"
+#import "AmazonAbstractWebServiceClient.h"
 
-#ifdef AWS_MULTI_FRAMEWORK
-#import <AWSRuntime/AmazonSDKUtil.h>
-#else
-#import "AmazonSDKUtil.h"
-#endif
 
-/** Contains the response from a putObject operation.
- *
- */
-@interface S3CopyObjectResponse:S3Response {
-    NSDate *lastModified;
+@interface AmazonAbstractJsonWebServiceClient : AmazonAbstractWebServiceClient
+{
 }
 
-@property (nonatomic, retain) NSDate *lastModified;
-
 @end
+
+

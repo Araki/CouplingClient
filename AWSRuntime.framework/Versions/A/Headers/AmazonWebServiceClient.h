@@ -13,22 +13,22 @@
  * permissions and limitations under the License.
  */
 
-#import <Foundation/Foundation.h>
-#import "S3Response.h"
+#import "AmazonAbstractWebServiceClient.h"
 
-#ifdef AWS_MULTI_FRAMEWORK
-#import <AWSRuntime/AmazonSDKUtil.h>
-#else
-#import "AmazonSDKUtil.h"
-#endif
-
-/** Contains the response from a putObject operation.
- *
- */
-@interface S3CopyObjectResponse:S3Response {
-    NSDate *lastModified;
+@interface AmazonWebServiceClient:AmazonAbstractWebServiceClient
+{
 }
 
-@property (nonatomic, retain) NSDate *lastModified;
+/** Inits the client with the access key and the secret key.
+ *
+ * @param accessKey The AWS Access Key
+ * @param secretKey The AWS Secret Key
+ *
+ * See our blog to learn more about Managing Credentials in Mobile Applications.
+ * @see http://mobile.awsblog.com/post/Tx31X75XISXHRH8/Managing-Credentials-in-Mobile-Applications
+ */
+-(id)initWithAccessKey:(NSString *)accessKey withSecretKey:(NSString *)secretKey;
 
 @end
+
+

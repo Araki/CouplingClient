@@ -21,7 +21,7 @@
 #ifdef AWS_MULTI_FRAMEWORK
 #import <AWSRuntime/AmazonServiceResponse.h>
 #else
-#import "../AmazonServiceResponse.h"
+#import "AmazonServiceResponse.h"
 #endif
 
 

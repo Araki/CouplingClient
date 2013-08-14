@@ -18,7 +18,7 @@
 #ifdef AWS_MULTI_FRAMEWORK
 #import <AWSRuntime/AmazonLogger.h>
 #else
-#import "../AmazonLogger.h"
+#import "AmazonLogger.h"
 #endif
 
 #import "S3AbstractPutRequest.h"

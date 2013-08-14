@@ -14,27 +14,21 @@
  */
 
 #import <Foundation/Foundation.h>
-
-#ifdef AWS_MULTI_FRAMEWORK
-#import <AWSRuntime/AmazonClientException.h>
-#else
+#import "AmazonServiceException.h"
 #import "AmazonClientException.h"
-#endif
 
-#import "S3Request.h"
-#import "S3Constants.h"
+extern NSString *const AWSiOSSDKServiceErrorDomain;
+extern NSString *const AWSiOSSDKClientErrorDomain;
 
-/** contains the parameters used for the to restore object from Amazon Glacier.
- *
- */
-@interface S3RestoreObjectRequest:S3Request {
+@interface AmazonErrorHandler : NSObject
+{
 }
 
--(id)initWithKey:(NSString *)aKey withBucket:(NSString *)aBucket withDays:(NSInteger)theDays;
-
--(NSString *) toXml;
-
-/** The number of days the restored object should remain active for **/
-@property (nonatomic, assign) NSInteger days;
++ (void)shouldThrowExceptions __attribute__((deprecated));
++ (void)shouldNotThrowExceptions;
++ (BOOL)throwsExceptions;
++ (NSError *)errorFromExceptionWithThrowsExceptionOption:(NSException *)exception;
++ (NSError *)errorFromException:(NSException *)exception;
++ (NSError *)errorFromException:(NSException *)exception serviceErrorDomain:(NSString *)serviceErrorDomain clientErrorDomain:(NSString *)clientErrorDomain;
 
 @end

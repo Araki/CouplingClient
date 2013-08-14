@@ -18,7 +18,7 @@
 #ifdef AWS_MULTI_FRAMEWORK
 #import <AWSRuntime/AmazonClientException.h>
 #else
-#import "../AmazonClientException.h"
+#import "AmazonClientException.h"
 #endif
 
 #import "S3Request.h"

@@ -18,7 +18,7 @@
 #ifdef AWS_MULTI_FRAMEWORK
 #import <AWSRuntime/AmazonSDKUtil.h>
 #else
-#import "../AmazonSDKUtil.h"
+#import "AmazonSDKUtil.h"
 #endif
 
 #define kS3ResponseHdrContentType           @"response-content-type"

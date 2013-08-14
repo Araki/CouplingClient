@@ -13,22 +13,5 @@
  * permissions and limitations under the License.
  */
 
-#import <Foundation/Foundation.h>
-#import "S3Response.h"
-
-#ifdef AWS_MULTI_FRAMEWORK
-#import <AWSRuntime/AmazonSDKUtil.h>
-#else
-#import "AmazonSDKUtil.h"
-#endif
-
-/** Contains the response from a putObject operation.
- *
- */
-@interface S3CopyObjectResponse:S3Response {
-    NSDate *lastModified;
-}
-
-@property (nonatomic, retain) NSDate *lastModified;
-
-@end
+#warning The SBJson.h header is deprecated. Please change it to AWS_SBJson.h or include your own copy of SBJson instead.
+#include "AWS_SBJson.h"

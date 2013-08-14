@@ -14,21 +14,25 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "S3Response.h"
 
-#ifdef AWS_MULTI_FRAMEWORK
-#import <AWSRuntime/AmazonSDKUtil.h>
-#else
-#import "AmazonSDKUtil.h"
-#endif
 
-/** Contains the response from a putObject operation.
- *
- */
-@interface S3CopyObjectResponse:S3Response {
-    NSDate *lastModified;
+@interface AmazonMD5Util:NSObject {
 }
 
-@property (nonatomic, retain) NSDate *lastModified;
+/**
+ * Returns a Base 64 encoded MD5 of the given data.
+ **/
++(NSString *)base64md5FromData:(NSData *)data;
+
+/**
+ * Returns a Base 64 encoded MD5 of the data read from the given input stream.
+ *
+ * The stream is expected to already have been opened.
+ * The caller is expected to close the stream.
+ * Nil will be returned if the MD5 could not be properly computed.
+ *
+ * @exception NSException thrown if unable to read stream.
+ **/
++(NSString *)base64md5FromStream:(NSInputStream *)inputStream;
 
 @end

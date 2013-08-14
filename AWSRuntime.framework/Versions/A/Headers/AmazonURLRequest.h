@@ -14,21 +14,17 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "S3Response.h"
+#import "AmazonCredentials.h"
 
-#ifdef AWS_MULTI_FRAMEWORK
-#import <AWSRuntime/AmazonSDKUtil.h>
-#else
-#import "AmazonSDKUtil.h"
-#endif
-
-/** Contains the response from a putObject operation.
- *
- */
-@interface S3CopyObjectResponse:S3Response {
-    NSDate *lastModified;
+@interface AmazonURLRequest:NSMutableURLRequest {
+    NSString          *endpointHost;
+    Class             requestClass;
+    AmazonCredentials *credentials;
 }
 
-@property (nonatomic, retain) NSDate *lastModified;
+@property (nonatomic, retain) NSString          *endpointHost;
+@property (nonatomic, assign) Class             requestClass;
+@property (nonatomic, assign) AmazonCredentials *credentials;
 
 @end
+

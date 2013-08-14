@@ -18,7 +18,7 @@
 #ifdef AWS_MULTI_FRAMEWORK
 #import <AWSRuntime/AmazonClientException.h>
 #else
-#import "../AmazonClientException.h"
+#import "AmazonClientException.h"
 #endif
 
 /** Utilities for validating bucket names */

@@ -8,8 +8,13 @@
 
 #import "PFMyProfilePageViewController.h"
 #import "IIViewDeckController.h"
+#import "PFHTTPConnector.h"
+#import "PFProfile.h"
+#import "SignupStep2ViewController.h"
 
 @interface PFMyProfilePageViewController ()
+
+@property (nonatomic, strong) PFProfile *profile;
 
 @end
 
@@ -34,6 +39,29 @@
     
     // test
     self.outletUserProfileImageView.image = [UIImage imageNamed:@"test_imgres.jpeg"];
+    
+    PFUser *user = [PFUser currentUser];
+    
+    NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjects:[NSArray arrayWithObjects:user.sessionId,nil] forKeys: [NSArray arrayWithObjects:@"session_id", nil]];
+    
+    [PFHTTPConnector requestWithCommand:kPFCommandProfileShow params:params onSuccess:^(PFHTTPResponse *response) {
+        NSDictionary *jsonObject = [response jsonDictionary];
+        NSDictionary *profileDic = [jsonObject objectForKey:@"profile"];
+        if(profileDic) {
+            dispatch_queue_t mainQueue = dispatch_get_main_queue();
+            dispatch_async(mainQueue, ^{
+                self.profile = [PFProfile dataModelWithDictionary:profileDic];
+                
+                NSLog(@"myProfileJson = %@", [jsonObject description]);
+            });
+        }
+    } onFailure:^(NSError *error) {
+        NSLog(@"@@@@@ connection Error: %@", error);
+    }];
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -77,17 +105,18 @@
 - (NSString *)profileStatusForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     kPFProfileTitleList row = (kPFProfileTitleList)indexPath.row;
-//    PFUser *user = [PFUser currentUser];
     NSString *status = nil;
+    PFProfile *prof = self.profile;
+        
     switch (row) {
         case Profile_NickName:
-            status = @"ニックネーム";
+            status = prof.nickName;
             break;
         case Profile_Birthdate:
-            status = @"1987/12/25";
+
             break;
         case Profile_Address:
-
+            
             break;
         case Profile_Introduction:
 
@@ -117,21 +146,12 @@
     return status;
 }
 
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-}
-
+// profile変更用の画面に遷移
 - (IBAction)actionConfirmProfileButton:(id)sender
 {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+    SignupStep2ViewController *view = [storyboard instantiateViewControllerWithIdentifier:@"SignupStep2ViewController"];
+    [self.navigationController pushViewController:view animated:YES];
     
 }
 - (void)viewDidUnload {

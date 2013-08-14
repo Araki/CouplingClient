@@ -12,6 +12,7 @@
 		2A055F4A16E337450008297B /* PFMyPageTopTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A055F4916E337450008297B /* PFMyPageTopTableCell.m */; };
 		2A17961217477563004BE000 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A17961017476F83004BE000 /* Social.framework */; };
 		2A1796151747BC7E004BE000 /* PFGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A1796141747BC7E004BE000 /* PFGroup.m */; };
+		2A20260F17BA62A20026AAD6 /* PFS3FormModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A20260E17BA62A20026AAD6 /* PFS3FormModel.m */; };
 		2A46AA07167496AE00B459A3 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A46AA06167496AE00B459A3 /* FacebookSDK.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		2A4D501216E648C90042BF1D /* PFMyProfilePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A4D501116E648C90042BF1D /* PFMyProfilePageViewController.m */; };
 		2A77227E167758780059AD46 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A77227B167758640059AD46 /* QuartzCore.framework */; };
@@ -132,12 +133,16 @@
 		2A835911172D13AD00FBC6E8 /* button_trade.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A8358EB172D13AD00FBC6E8 /* button_trade.png */; };
 		2A835916172E3FF800FBC6E8 /* PFProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A835915172E3FF700FBC6E8 /* PFProfile.m */; };
 		2A84F646172CC72A00E4F3B7 /* PFTapjoyPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A84F645172CC72A00E4F3B7 /* PFTapjoyPageViewController.m */; };
+		2AC5B65617BA6F91004C6496 /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AC5B65517BA6F91004C6496 /* AWSS3.framework */; };
+		2AC5B65917BA7211004C6496 /* AWSRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AC5B65817BA7211004C6496 /* AWSRuntime.framework */; };
+		2AD7FB6116AC5E5C00BC6535 /* PFScrollingProfilePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD7FB5F16AC5E5C00BC6535 /* PFScrollingProfilePageViewController.m */; };
+		2AD7FB6216AC5E5C00BC6535 /* PFScrollingProfilePageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AD7FB6016AC5E5C00BC6535 /* PFScrollingProfilePageViewController.xib */; };
+		2AE6A65216AC0CF500CE2D90 /* PFPairSearchProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AE6A65116AC0CF500CE2D90 /* PFPairSearchProfileViewController.m */; };
 		2AEF05DA16B54B1F009F5FD7 /* bg_header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AEF05D916B54B1F009F5FD7 /* bg_header@2x.png */; };
 		2AEF05DF16B5507E009F5FD7 /* button_search_filter.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AEF05DC16B5507E009F5FD7 /* button_search_filter.png */; };
 		2AEF05E016B5507E009F5FD7 /* button_notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AEF05DD16B5507E009F5FD7 /* button_notification.png */; };
 		2AEF05E116B5507E009F5FD7 /* button_slide_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AEF05DE16B5507E009F5FD7 /* button_slide_menu.png */; };
 		2AF042E4171AD6EC0017701F /* PFShopPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF042E3171AD6EC0017701F /* PFShopPageViewController.m */; };
-		2AFA27E117BA4B1F0021A209 /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AFA27E017BA4B1F0021A209 /* AWSS3.framework */; };
 		C10A328C1632AB6C0083F51B /* PFSingletonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C10A328B1632AB6C0083F51B /* PFSingletonObject.m */; };
 		C133F5C616DA2A82001003A6 /* PFUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C133F5C516DA2A80001003A6 /* PFUtil.m */; };
 		C1571E07164F8A7100AFB49D /* PFModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1571E06164F8A7100AFB49D /* PFModel.m */; };
@@ -217,6 +222,7 @@
 		2A17961017476F83004BE000 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		2A1796131747BC7E004BE000 /* PFGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFGroup.h; path = Classes/PFGroup.h; sourceTree = "<group>"; };
 		2A1796141747BC7E004BE000 /* PFGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFGroup.m; path = Classes/PFGroup.m; sourceTree = "<group>"; };
+		2A20260E17BA62A20026AAD6 /* PFS3FormModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFS3FormModel.m; path = Classes/PFS3FormModel.m; sourceTree = "<group>"; };
 		2A46AA06167496AE00B459A3 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		2A4D36131674795A0065BD22 /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
 		2A4D3615167479690065BD22 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKResources.bundle; sourceTree = "<group>"; };
@@ -396,13 +402,20 @@
 		2A835915172E3FF700FBC6E8 /* PFProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFProfile.m; path = Classes/PFProfile.m; sourceTree = "<group>"; };
 		2A84F644172CC72A00E4F3B7 /* PFTapjoyPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFTapjoyPageViewController.h; path = Classes/PFTapjoyPageViewController.h; sourceTree = "<group>"; };
 		2A84F645172CC72A00E4F3B7 /* PFTapjoyPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFTapjoyPageViewController.m; path = Classes/PFTapjoyPageViewController.m; sourceTree = "<group>"; };
+		2AC5B65517BA6F91004C6496 /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSS3.framework; sourceTree = "<group>"; };
+		2AC5B65817BA7211004C6496 /* AWSRuntime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSRuntime.framework; sourceTree = "<group>"; };
+		2AC738C117BA5EF100CA0019 /* PFS3FormModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFS3FormModel.h; path = Classes/PFS3FormModel.h; sourceTree = "<group>"; };
+		2AD7FB5E16AC5E5B00BC6535 /* PFScrollingProfilePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFScrollingProfilePageViewController.h; path = Classes/PFScrollingProfilePageViewController.h; sourceTree = "<group>"; };
+		2AD7FB5F16AC5E5C00BC6535 /* PFScrollingProfilePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFScrollingProfilePageViewController.m; path = Classes/PFScrollingProfilePageViewController.m; sourceTree = "<group>"; };
+		2AD7FB6016AC5E5C00BC6535 /* PFScrollingProfilePageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFScrollingProfilePageViewController.xib; path = Classes/PFScrollingProfilePageViewController.xib; sourceTree = "<group>"; };
+		2AE6A64516AC094E00CE2D90 /* PFPairSearchProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFPairSearchProfileViewController.h; path = Classes/PFPairSearchProfileViewController.h; sourceTree = "<group>"; };
+		2AE6A65116AC0CF500CE2D90 /* PFPairSearchProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFPairSearchProfileViewController.m; path = Classes/PFPairSearchProfileViewController.m; sourceTree = "<group>"; };
 		2AEF05D916B54B1F009F5FD7 /* bg_header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg_header@2x.png"; path = "Resouces/background/bg_header@2x.png"; sourceTree = "<group>"; };
 		2AEF05DC16B5507E009F5FD7 /* button_search_filter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_search_filter.png; path = Resouces/button/button_search_filter.png; sourceTree = "<group>"; };
 		2AEF05DD16B5507E009F5FD7 /* button_notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_notification.png; path = Resouces/button/button_notification.png; sourceTree = "<group>"; };
 		2AEF05DE16B5507E009F5FD7 /* button_slide_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_slide_menu.png; path = Resouces/button/button_slide_menu.png; sourceTree = "<group>"; };
 		2AF042E2171AD6EC0017701F /* PFShopPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFShopPageViewController.h; path = Classes/PFShopPageViewController.h; sourceTree = "<group>"; };
 		2AF042E3171AD6EC0017701F /* PFShopPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFShopPageViewController.m; path = Classes/PFShopPageViewController.m; sourceTree = "<group>"; };
-		2AFA27E017BA4B1F0021A209 /* AWSS3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AWSS3.framework; sourceTree = "<group>"; };
 		C10A328A1632AB6C0083F51B /* PFSingletonObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFSingletonObject.h; sourceTree = "<group>"; };
 		C10A328B1632AB6C0083F51B /* PFSingletonObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFSingletonObject.m; sourceTree = "<group>"; };
 		C1138EA716BE5F8C001E30B6 /* PFTutorialStep1Controller.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFTutorialStep1Controller.h; sourceTree = "<group>"; };
@@ -558,7 +571,8 @@
 				2A7E2B17171ACE1200DE3068 /* libTestFlight.a in Frameworks */,
 				2A7E2B16171ACDD200DE3068 /* TapjoyPublisherLibrary.a in Frameworks */,
 				2A46AA07167496AE00B459A3 /* FacebookSDK.framework in Frameworks */,
-				2AFA27E117BA4B1F0021A209 /* AWSS3.framework in Frameworks */,
+				2AC5B65617BA6F91004C6496 /* AWSS3.framework in Frameworks */,
+				2AC5B65917BA7211004C6496 /* AWSRuntime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -989,6 +1003,8 @@
 				2A7CA8DA175B1EB500EDA252 /* PFUserProfile.m */,
 				2A7CA8DC175B1EE500EDA252 /* PFFriendProfile.h */,
 				2A7CA8DD175B1EE500EDA252 /* PFFriendProfile.m */,
+				2AC738C117BA5EF100CA0019 /* PFS3FormModel.h */,
+				2A20260E17BA62A20026AAD6 /* PFS3FormModel.m */,
 				2A1796131747BC7E004BE000 /* PFGroup.h */,
 				2A1796141747BC7E004BE000 /* PFGroup.m */,
 				C1571E11164F958B00AFB49D /* NSDictionary+Extension.h */,
@@ -1042,7 +1058,8 @@
 		C163A1F415E0BABB00F3F25D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2AFA27E017BA4B1F0021A209 /* AWSS3.framework */,
+				2AC5B65817BA7211004C6496 /* AWSRuntime.framework */,
+				2AC5B65517BA6F91004C6496 /* AWSS3.framework */,
 				C1789BEF1622B47300EA631B /* TestFlightSDK1.1 */,
 				2A7E2AFD171AC40D00DE3068 /* TapjoyPublisherLibrary */,
 				2A17961017476F83004BE000 /* Social.framework */,
@@ -1452,6 +1469,7 @@
 				FAC09CC217B4E4DD008ECFF3 /* TMMemoryCache.m in Sources */,
 				FAC09CC517B4E4EA008ECFF3 /* PSImageDownloader.m in Sources */,
 				FAC09CC817B4E5E5008ECFF3 /* PFProfileTableViewCell.m in Sources */,
+				2A20260F17BA62A20026AAD6 /* PFS3FormModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1537,6 +1555,7 @@
 		C163A21C15E0BABB00F3F25D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kosuke Araki (9879JF8BN3)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1545,6 +1564,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coupling/Coupling-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/AWSRuntime.framework/Headers\"";
 				INFOPLIST_FILE = "Coupling/Coupling-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
@@ -1569,6 +1589,7 @@
 		C163A21D15E0BABB00F3F25D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kosuke Araki (9879JF8BN3)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1577,6 +1598,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Coupling/Coupling-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/AWSRuntime.framework/Headers\"";
 				INFOPLIST_FILE = "Coupling/Coupling-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (

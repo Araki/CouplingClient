@@ -26,6 +26,7 @@
 @property (nonatomic, retain) NSString* max_version;
 @property (nonatomic, retain) NSDictionary* originalDictionary;
 
++ (id)data;
 - (id)initWithDictionary:(NSDictionary*)aDictionary;
 + (id)dataModelWithDictionary:(NSDictionary*)aDictionary;
 + (NSArray*)dataModelsFromArray:(NSArray*)anArray;

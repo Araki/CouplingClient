@@ -20,8 +20,8 @@
 #import <AWSRuntime/AmazonWebServiceClient.h>
 #import <AWSRuntime/AmazonSDKUtil.h>
 #else
-#import "../AmazonWebServiceClient.h"
-#import "../AmazonSDKUtil.h"
+#import "AmazonWebServiceClient.h"
+#import "AmazonSDKUtil.h"
 #endif
 
 #import "S3Constants.h"

@@ -12,6 +12,11 @@
 @implementation PFDataModel
 @synthesize min_version, max_version, originalDictionary;
 
++ (id)data
+{
+    return [[self alloc] init];
+}
+
 - (id)initWithDictionary:(NSDictionary*)aDic
 {
 	self = [super init];

@@ -21,9 +21,9 @@
 #import <AWSRuntime/AmazonAuthUtils.h>
 #import <AWSRuntime/AmazonServiceRequest.h>
 #else
-#import "../AmazonSDKUtil.h"
-#import "../AmazonAuthUtils.h"
-#import "../AmazonServiceRequest.h"
+#import "AmazonSDKUtil.h"
+#import "AmazonAuthUtils.h"
+#import "AmazonServiceRequest.h"
 #endif
 
 #import "S3Constants.h"

@@ -9,10 +9,14 @@
 #import "PFProfilePictureSelectTableViewController.h"
 #import "PFProfilePictureSelectTableViewCell.h"
 #import "PFUserModel.h"
+#import "PFHTTPConnector.h"
+#import <AWSS3/AmazonS3Client.h>
+#import "PFS3FormModel.h"
+
 
 @interface PFProfilePictureSelectTableViewController ()
 
-@property(retain, nonatomic) PFUserModel *user;
+@property(nonatomic, strong) PFUserModel *user;
 
 @end
 
@@ -37,12 +41,14 @@
 {
     [super viewDidLoad];
     self.tableView.backgroundColor = kPFBackGroundColor;
-
+    
     // navigationBarの設定
     UIButton *topRightBarButton = [PFUtil addPictureButton];
     [topRightBarButton addTarget:self action:@selector(addPicture) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithCustomView:topRightBarButton];
     self.navigationItem.rightBarButtonItem = rightBarButton;
+    
+    self.navigationController.delegate = self;
     
     // test
     self.user = [[PFUserModel alloc] init];
@@ -180,6 +186,32 @@
 {
     [self.user.profileImages removeObjectAtIndex:index];
     [self.tableView reloadData];
+}
+
+- (void)commitProfileWithImage:(UIImage *)image
+{
+    PFUser *user = [PFUser currentUser];
+
+    NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjectsAndKeys:user.sessionId, @"session_id", nil];    
+    
+    [PFHTTPConnector postWithCommand:kPFCommandImageCreate
+                              params:params
+                           onSuccess:^(PFHTTPResponse *response)
+    {
+        NSDictionary *jsonObject = [response jsonDictionary];
+        NSLog(@"@@@@@@ jsonObject = %@", [jsonObject description]);
+        
+        PFS3FormModel *form = [PFS3FormModel dataModelWithDictionary:jsonObject];
+        
+        
+        AmazonS3Client *s3 = [[AmazonS3Client alloc] initWithAccessKey:form.accessKeyId withSecretKey:form.secretKey];
+        
+        
+    }
+    onFailure:^(NSError *error)
+    {
+        NSLog(@"@@@@@ connection Error: %@", error);
+    }];
 }
 
 @end
