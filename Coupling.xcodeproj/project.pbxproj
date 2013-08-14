@@ -185,7 +185,6 @@
 		C1C1E362163D1BB2002A9E38 /* PFHTTPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C1E361163D1BB2002A9E38 /* PFHTTPResponse.m */; };
 		C1C1E366163D2660002A9E38 /* PFError.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C1E365163D2660002A9E38 /* PFError.m */; };
 		C1C1E369163D2C57002A9E38 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C1E368163D2C57002A9E38 /* NSString+Extension.m */; };
-		C1C5CAD116C7BB0700FA3188 /* SignupStep3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1C5CAD016C7BB0700FA3188 /* SignupStep3ViewController.m */; };
 		C1CEE9DF172D36BB00C67DA5 /* PFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CEE9DA172D161A00C67DA5 /* PFHTTPClient.m */; };
 		C1CEE9E0172D38D200C67DA5 /* PFHTTPClientManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CEE9D7172D160E00C67DA5 /* PFHTTPClientManager.m */; };
 		C1CEE9E1172D38EE00C67DA5 /* PFMiscUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C1CEE9DE172D21B300C67DA5 /* PFMiscUtil.m */; };
@@ -493,8 +492,6 @@
 		C1C1E365163D2660002A9E38 /* PFError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFError.m; sourceTree = "<group>"; };
 		C1C1E367163D2C56002A9E38 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
 		C1C1E368163D2C57002A9E38 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
-		C1C5CACF16C7BB0700FA3188 /* SignupStep3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupStep3ViewController.h; sourceTree = "<group>"; };
-		C1C5CAD016C7BB0700FA3188 /* SignupStep3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupStep3ViewController.m; sourceTree = "<group>"; };
 		C1CEE9D6172D160E00C67DA5 /* PFHTTPClientManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFHTTPClientManager.h; sourceTree = "<group>"; };
 		C1CEE9D7172D160E00C67DA5 /* PFHTTPClientManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFHTTPClientManager.m; sourceTree = "<group>"; };
 		C1CEE9D9172D161A00C67DA5 /* PFHTTPClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFHTTPClient.h; sourceTree = "<group>"; };
@@ -1098,8 +1095,6 @@
 				C163A20B15E0BABB00F3F25D /* SignupStep1ViewController.m */,
 				C16FF3C816BE9A7F0075B721 /* SignupStep2ViewController.h */,
 				C16FF3C916BE9A7F0075B721 /* SignupStep2ViewController.m */,
-				C1C5CACF16C7BB0700FA3188 /* SignupStep3ViewController.h */,
-				C1C5CAD016C7BB0700FA3188 /* SignupStep3ViewController.m */,
 				C1E3C62516ECA40D00BF4C99 /* SignupStep4ViewController.h */,
 				C1E3C62616ECA40D00BF4C99 /* SignupStep4ViewController.m */,
 			);
@@ -1401,7 +1396,6 @@
 				C16FF3B516BE60D80075B721 /* PFTutorialStep2Controller.m in Sources */,
 				2A7D920A16BE514C00220708 /* PFSetConditionViewController.m in Sources */,
 				C16FF3CA16BE9A7F0075B721 /* SignupStep2ViewController.m in Sources */,
-				C1C5CAD116C7BB0700FA3188 /* SignupStep3ViewController.m in Sources */,
 				C133F5C616DA2A82001003A6 /* PFUtil.m in Sources */,
 				C1CEE9E1172D38EE00C67DA5 /* PFMiscUtil.m in Sources */,
 				2A055F4316E32EF10008297B /* PFMyPageTopPageViewController.m in Sources */,

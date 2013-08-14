@@ -7,7 +7,7 @@
 //
 
 #import "SignupStep2ViewController.h"
-#import "SignupStep3ViewController.h"
+#import "SignupStep4ViewController.h"
 #import "PFUtil.h"
 
 @interface SignupStep2ViewController ()
@@ -75,6 +75,7 @@
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10.0, 10.0, 100.0, 20.0)];
         label.backgroundColor = [UIColor clearColor];
         label.font = [UIFont systemFontOfSize:14.0];
@@ -104,6 +105,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.textLabel.font = [UIFont systemFontOfSize:14.0];
     cell.textLabel.text = [self profileItemText:row];
@@ -119,6 +121,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.row == 0) {
+        return;
+        
+    }
     self.actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
     self.actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
     
@@ -150,7 +156,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 7;
+    return 8;
 }
 
 #pragma mark UIPickerViewDelegate
@@ -220,7 +226,7 @@
 
 - (IBAction)goNextView:(id)sender
 {
-    SignupStep3ViewController *signupViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SignupStep3ViewController"];
+    SignupStep4ViewController *signupViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"SignupStep4ViewController"];
     [self.navigationController pushViewController:signupViewController animated:YES];
 }
 
