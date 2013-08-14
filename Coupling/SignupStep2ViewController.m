@@ -83,6 +83,7 @@
         [cell.contentView addSubview:label];
         
         UITextField *field = [[UITextField alloc] initWithFrame:CGRectMake(120.0, 10.0, 170.0, 20.0)];
+        field.delegate = self;
         field.borderStyle = UITextBorderStyleRoundedRect;
         field.font = [UIFont boldSystemFontOfSize:[UIFont labelFontSize]];
         field.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
@@ -178,6 +179,14 @@
 
 - (NSString *)pickerView:(UIPickerView *)picker titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     return [[self arrayForPicker:self.currentPath.row] objectAtIndex:row];
+}
+
+#pragma mark UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 #pragma mark -
