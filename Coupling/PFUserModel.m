@@ -10,40 +10,23 @@
 #import "NSDictionary+Extension.h"
 
 //User
-#define kPNDefaultUsername					@""
-#define kPNDefaultFullName					@""
-#define kPNDefaultCountry					@"--"
-#define kPNDefaultIconURL					@""
-#define kPNDefaultTwitterID					@""
-#define kPNIsGuest							YES
-#define PNIsSecured							NO
-#define kPNIsFollowing						NO
-#define kPNIsBlocking						NO
+#define kPFDefaultNickname					@""
+#define kPFDefaultFacebookId				@""
+#define kPFDefaultEmail                     @""
+#define kPFDefaultIntroduction              @""
 
 @implementation PFUserModel
-@synthesize id = _id, username = _username, fullname = _fullname, country = _country, icon_url = _icon_url;
-@synthesize is_guest = _is_guest, is_secured = _is_secured, twitter_id = _twitter_id, facebook_id = _facebook_id;
-@synthesize is_following = _is_following, is_followed, relationships = _relationships, is_blocking = _is_blocking;
-@synthesize icon_used, email;
-@synthesize externalId, informationDictionary;
-@synthesize birthdate, blurb, city, friends_count, gender, mixi_id;
+@synthesize id, nickname, facebook_id, email, introduction, gender, age, blood_type, proportion, school, industry, job, income, holiday, status;
 
 - (id) init
 {
 	self = [super init];
 	if (self != nil) {
 		self.id             = -1;
-		self.username       = kPNDefaultUsername;
-		self.fullname       = kPNDefaultFullName;
-		self.country        = kPNDefaultCountry;
-		self.icon_url       = kPNDefaultIconURL;
-		self.relationships  = [NSArray array];
-		self.is_guest       = kPNIsGuest;
-		self.is_secured     = PNIsSecured;
-		self.is_following   = kPNIsFollowing;
-		self.is_blocking    = NO;
-		self.icon_used      = @"default";
-        self.profileImages  = [NSMutableArray array];
+		self.nickname       = kPFDefaultNickname;
+		self.facebook_id    = kPFDefaultFacebookId;
+		self.email          = kPFDefaultEmail;
+        self.introduction   = kPFDefaultIntroduction;
 	}
 	return self;
 }
@@ -54,37 +37,19 @@
 	self = [self init];
 	if (self != nil) {
 		self.id             = [[aDictionary objectForKey:@"id"] intValue];
-		self.username       = [aDictionary stringValueForKey:@"username" defaultValue:kPNDefaultUsername];
-		self.fullname       = [aDictionary stringValueForKey:@"fullname" defaultValue:kPNDefaultFullName];
-		self.country        = [aDictionary stringValueForKey:@"country" defaultValue:kPNDefaultCountry];
-		self.icon_url       = [aDictionary stringValueForKey:@"icon_url" defaultValue:kPNDefaultIconURL];
-		self.is_guest       = [aDictionary boolValueForKey:@"is_guest" defaultValue:kPNIsGuest];
-		self.is_secured     = [aDictionary boolValueForKey:@"is_secured" defaultValue:PNIsSecured];
-		self.is_following   = [aDictionary boolValueForKey:@"is_following" defaultValue:kPNIsFollowing];
-        self.is_followed    = [aDictionary boolValueForKey:@"is_followed" defaultValue:NO];
-		self.is_blocking    = [aDictionary boolValueForKey:@"is_blocking" defaultValue:kPNIsBlocking];
-		self.externalId     = [aDictionary stringValueForKey:@"external_id" defaultValue:@""];
-        self.email          = [aDictionary stringValueForKey:@"email" defaultValue:nil];
-		self.informationDictionary = aDictionary;
-        
-        if ([aDictionary hasObjectForKey:@"facebook"]) {
-            self.facebook_id = [[aDictionary objectForKey:@"facebook"] objectForKey:@"id"];
-        }
-        
-		if ([aDictionary hasObjectForKey:@"twitter"]) {
-            self.twitter_id = [[aDictionary objectForKey:@"twitter"] objectForKey:@"id"];
-		}
-		self.icon_used = [aDictionary stringValueForKey:@"icon_used" defaultValue:@"default"];
-        
-        // GW only
-        if ([aDictionary hasObjectForKey:@"mixi"]) {
-            self.mixi_id = [[aDictionary objectForKey:@"mixi"] objectForKey:@"id"];
-        }
-        self.birthdate      = [aDictionary stringValueForKey:@"birthdate" defaultValue:@""];
-        self.blurb          = [aDictionary stringValueForKey:@"blurb" defaultValue:@""];
-        self.city           = [aDictionary stringValueForKey:@"city" defaultValue:@""];
-        self.friends_count  = [aDictionary intValueForKey:@"friends_count" defaultValue:0];
-        self.gender         = [aDictionary stringValueForKey:@"gender" defaultValue:@""];
+		self.nickname       = [aDictionary stringValueForKey:@"nickname" defaultValue:kPFDefaultNickname];
+		self.facebook_id    = [aDictionary stringValueForKey:@"facebook_id" defaultValue:kPFDefaultFacebookId];
+		self.email          = [aDictionary stringValueForKey:@"email" defaultValue:kPFDefaultEmail];
+		self.introduction   = [aDictionary stringValueForKey:@"introduction" defaultValue:kPFDefaultIntroduction];
+		self.gender         = [aDictionary intValueForKey:@"gender" defaultValue:0];
+		self.age            = [aDictionary intValueForKey:@"age" defaultValue:0];
+		self.blood_type     = [aDictionary intValueForKey:@"blood_type" defaultValue:0];
+        self.proportion     = [aDictionary intValueForKey:@"proportion" defaultValue:0];
+		self.school         = [aDictionary intValueForKey:@"school" defaultValue:0];
+		self.industry       = [aDictionary intValueForKey:@"industry" defaultValue:0];
+        self.job            = [aDictionary intValueForKey:@"job" defaultValue:0];
+        self.income         = [aDictionary intValueForKey:@"income" defaultValue:0];
+        self.holiday        = [aDictionary intValueForKey:@"holiday" defaultValue:0];
 	}
 	PFCLog(PFLOG_CAT_MODEL_PARSER, @"DATAMODEL-PARSE\n%@", self);	// FOR DEBUG
 	return self;
@@ -92,8 +57,8 @@
 
 - (NSString *)description
 {
-	return [NSString stringWithFormat:@"<%@ :%p>\n id: %d\n username: %@\n fullname: %@\n country:%@\n icon_url:%@\n twitter_id:%@\n is_guest:%d\n is_secured:%d\n is_following:%d\n is_blocking:%d\n relationships:%p",
-			NSStringFromClass([self class]),self,_id, _username, _fullname, _country, _icon_url, _twitter_id, _is_guest, _is_secured, _is_following, _is_blocking, _relationships];
+	return [NSString stringWithFormat:@"<%@ :%p>\n id: %d\n nickname: %@\n facebook_id: %@\n email:%@\n introduction:%@\n gender:%d\n age:%d\n blood_type:%d\n proportion:%d\n school:%d\n industry:%d\n job:%d\n income:%d\n holiday:%d\n",
+			NSStringFromClass([self class]),self, self.id, self.nickname, self.facebook_id, self.email, self.introduction, self.gender, self.age, self.blood_type, self.proportion, self.school, self.industry, self.job, self.income, self.holiday];
 }
 
 @end

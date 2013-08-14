@@ -28,88 +28,44 @@ typedef enum {
 	// Sessions.
 	NSString	*userId;
 	NSString	*sessionId;
-	NSString	*publicSessionId;
-	NSString	*gameId;
-    NSDate      *sessionCreatedAt;
 	
 	// UserInfos.
-//	NSString	*udid;
 	NSUUID      *udid;
-	NSString	*username;
-    NSString    *fullname;
-	NSString	*status;
-	NSString	*countryCode;
-	NSString	*iconURL;
-	NSString	*twitterId;
+	NSString	*nickname;
     NSString	*facebookId;
-	BOOL		isGuest;
-	BOOL		isSecured;
-	BOOL		isLinkTwitter;
-	PNUserIconType	iconType;
-	NSString		*externalId;
     NSString    *email;
-    BOOL        isFollowing;
-    BOOL        isFollowed;
-    
-    // GW only
-    NSString *birthdate, *blurb, *city, *gender, *mixiId;
-    int friendsCount;
+    NSString    *introduction;
+    NSInteger   gender;
+    NSInteger   age;
+    NSInteger   bloodType;
+    NSInteger   proportion;
+    NSInteger   school;
+    NSInteger   industry;
+    NSInteger   job;
+    NSInteger   income;
+    NSInteger   holiday;
+    NSInteger   status;
 }
 
-/**
- * A string value that represents ID of user. (read-only)
- */
 @property(retain) NSString* userId;
 @property(retain) NSString* sessionId;
-@property(retain) NSString* publicSessionId;
-@property(retain) NSString* gameId;
-@property(retain) NSDate* sessionCreatedAt;
-
 @property(retain) NSUUID* udid;
-@property(retain) NSString* username;
-@property(retain) NSString* fullname;
-@property(retain) NSString* status;
-@property(retain) NSString* gradeName;
-@property(retain) NSString* countryCode;
-@property(retain) NSString* iconURL;
-
-/**
- * The twitter ID of user. (read-only)
- */
-@property(retain) NSString* twitterId;
-
-/**
- * The facebook ID of user. (read-only)
- */
+@property(retain) NSString* nickname;
 @property(retain) NSString* facebookId;
-
-/**
- * The mixi ID of user. (read-only)
- */
-@property(retain) NSString* mixiId;
-
-@property(nonatomic, assign) BOOL isGuest;
-
-/**
- * The sum of all achievement points. (read-only)
- */
-@property(nonatomic, assign) BOOL isSecured;
-@property(nonatomic, assign) BOOL isLinkTwitter;
-@property(nonatomic, assign) PNUserIconType iconType;
-@property(retain) NSString* externalId;
 @property(retain) NSString* email;
-@property(assign) BOOL isFollowed, isFollowing;
+@property(retain) NSString* introduction;
 
-/**
- * A string value that represents name to display.
- * If user is not registered yet, this property has auto-generated username (ex. guest12345).
- * Otherwise, full name. (read-only)
- */
-@property (readonly) NSString* displayName;
+@property(nonatomic, assign) NSInteger gender;
+@property(nonatomic, assign) NSInteger age;
+@property(nonatomic, assign) NSInteger bloodType;
+@property(nonatomic, assign) NSInteger proportion;
+@property(nonatomic, assign) NSInteger school;
+@property(nonatomic, assign) NSInteger industry;
+@property(nonatomic, assign) NSInteger job;
+@property(nonatomic, assign) NSInteger income;
+@property(nonatomic, assign) NSInteger holiday;
+@property(nonatomic, assign) NSInteger status;
 
-// GW only
-@property (retain) NSString *birthdate, *blurb, *city, *gender;
-@property (assign) int friendsCount;
 
 /**
  * Returns the PNUser instance that represents current user.

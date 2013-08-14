@@ -16,19 +16,23 @@
 //#import "PFMiscUtil.h"
 //#import "PNSettingManager.h"
 
-#define kPNOfflineGuestAccount							@"PLAYER"
-#define kPNDefaultGradeName								@""
-
 //user cache data paths
-#define	kPNUsersUserNameCache							@"PN_USER_USERNAME_CACHE"
-#define	kPNUsersFullNameCache							@"PN_USER_FULLNAME_CACHE"
-#define	kPNUsersCountrycodeCache						@"PN_USER_COUNTRYCODE_CACHE"
-#define	kPNUsersIconURLCache							@"PN_USER_ICONURL_CACHE"
-#define kPNUsersGuestCache								@"PN_USER_ISGUEST_CACHE"
-#define	kPNUsersSecuredCache							@"PN_USER_ISSECURED_CACHE"
-#define kPNUsersUserIDCache								@"PN_USER_USERID_CACHE"
-#define kPNUsersExternalIDCache							@"PN_USER_EXTERNALID_CACHE"
-#define kPNUsersSessionIDCache							@"PN_USER_SESSIONID_CACHE"
+#define kPFUsersUserIDCache								@"PF_USER_USERID_CACHE"
+#define kPFUsersSessionIDCache							@"PF_USER_SESSIONID_CACHE"
+#define	kPFUsersNicknameCache							@"PF_USER_NICKNAME_CACHE"
+#define	kPFUsersFacebookIdCache							@"PF_USER_FACEBOOKID_CACHE"
+#define	kPFUsersEmailCache                              @"PF_USER_EMAIL_CACHE"
+#define	kPFUsersIntroductionCache                       @"PF_USER_INTRODUCTION_CACHE"
+#define	kPFUsersGenderCache                             @"PF_USER_GENDER_CACHE"
+#define	kPFUsersAgeCache                                @"PF_USER_AGE_CACHE"
+#define	kPFUsersBloodTypeCache                          @"PF_USER_BLOODTYPE_CACHE"
+#define	kPFUsersProportionCache                         @"PF_USER_PROPORTION_CACHE"
+#define	kPFUsersSchoolCache                             @"PF_USER_SCHOOL_CACHE"
+#define	kPFUsersIndustryCache                           @"PF_USER_INDUSTRY_CACHE"
+#define	kPFUsersJobCache                                @"PF_USER_JOB_CACHE"
+#define	kPFUsersIncomeCache                             @"PF_USER_INCOME_CACHE"
+#define	kPFUsersHolidayCache                            @"PF_USER_HOLIDAY_CACHE"
+#define	kPFUsersStatusCache                             @"PF_USER_STATUS_CACHE"
 
 #define kPNJSONBoolTrue @"true"
 #define kPNJSONBoolFalse @"false"
@@ -38,14 +42,23 @@ static int		p_dedupCounter	= 1;
 
 @implementation PFUser
 
-@synthesize userId,sessionId,publicSessionId,gameId,sessionCreatedAt;
-@synthesize udid,username,fullname,status,gradeName,countryCode;
-@synthesize iconURL,twitterId,facebookId;
-@synthesize isGuest,isSecured,isLinkTwitter;
-@synthesize iconType,externalId, email;
-@synthesize isFollowed, isFollowing;
-@synthesize birthdate, blurb, city, friendsCount, gender, mixiId;
-
+@synthesize userId;
+@synthesize sessionId;
+@synthesize udid;
+@synthesize nickname;
+@synthesize facebookId;
+@synthesize email;
+@synthesize introduction;
+@synthesize gender;
+@synthesize age;
+@synthesize bloodType;
+@synthesize proportion;
+@synthesize school;
+@synthesize industry;
+@synthesize job;
+@synthesize income;
+@synthesize holiday;
+@synthesize status;
 
 //- (NSString*)displayName {
 //    if (fullname != nil && [fullname length] > 1) {
@@ -82,8 +95,6 @@ static int		p_dedupCounter	= 1;
 {
 	self = [super init];
 	if (self != nil) {
-		self.isGuest                    = YES;
-		self.isSecured                  = NO;
 	}
 	return  self;
 }
@@ -100,39 +111,20 @@ static int		p_dedupCounter	= 1;
 - (void)updateFieldsFromUserModel:(PFUserModel *)aModel
 {
 	if (aModel.id) self.userId = [NSString stringWithFormat:@"%d", aModel.id];
-	if (aModel.username) self.username = aModel.username;
-	if (aModel.fullname) self.fullname = aModel.fullname;
-	if (aModel.country) self.countryCode = aModel.country;
-	if (aModel.icon_url) self.iconURL = aModel.icon_url;
-    
-	if (self.isGuest == YES) self.isGuest = aModel.is_guest;
-	if (self.isSecured == NO) self.isSecured = aModel.is_secured;
-	
-    self.facebookId = aModel.facebook_id;
-    self.twitterId = aModel.twitter_id;
-	
-	if ([aModel.icon_used isEqualToString:@"twitter"]) { iconType = PNUserIconTypeTwitter; }
-    else if ([aModel.icon_used isEqualToString:@"facebook"]) { iconType = PNUserIconTypeFacebook; }
-    else if ([aModel.icon_used isEqualToString:@"pankia"]) { iconType = PNUserIconTypePankia; }
-	else if ([aModel.icon_used isEqualToString:@"mixi"]) { iconType = PNUserIconTypeMixi; }
-	else {
-        iconType = PNUserIconTypeDefault;
-        self.iconURL = nil;
-	}
-    
-	if (aModel.externalId != nil) self.externalId = aModel.externalId;
-	if (aModel.email != nil) self.email = aModel.email;
-    
-    self.isFollowing = aModel.is_following;
-    self.isFollowed = aModel.is_followed;
-    
-    // GW only
-    self.birthdate = aModel.birthdate;
-    self.blurb = aModel.blurb;
-    self.city = aModel.city;
-    self.friendsCount = aModel.friends_count;
-    self.gender = aModel.gender;
-    self.mixiId = aModel.mixi_id;
+	if (aModel.nickname) self.nickname = aModel.nickname;
+	if (aModel.facebook_id) self.facebookId = aModel.facebook_id;
+	if (aModel.email) self.email = aModel.email;
+	if (aModel.introduction) self.introduction = aModel.introduction;
+	self.gender = aModel.gender;
+    self.age = aModel.age;
+    self.bloodType = aModel.blood_type;
+    self.proportion = aModel.proportion;
+    self.school = aModel.school;
+    self.industry = aModel.industry;
+    self.job = aModel.job;
+    self.income = aModel.income;
+    self.holiday = aModel.holiday;
+    self.status = aModel.status;
 }
 
 - (void)socialServiceConnectorDidReceiveTwitterIconURL:(NSString*)twitterIconURL
@@ -154,7 +146,7 @@ static int		p_dedupCounter	= 1;
 
 + (int)currentUserId
 {
-	if ([PFUser currentUser] != nil && [PFUser currentUser].isGuest == NO && [PFUser currentUser].userId != nil) {
+	if ([PFUser currentUser] != nil && [PFUser currentUser].userId != nil) {
 		return [[PFUser currentUser].userId intValue];
 	} else {
 		return 0;
@@ -173,47 +165,27 @@ static int		p_dedupCounter	= 1;
 + (PFUser *)loadFromCache
 {
 	PFUser*	cacheUser			= [PFUser user];
-	cacheUser.username			= [[NSUserDefaults standardUserDefaults] stringForKey:kPNUsersUserNameCache];
-	cacheUser.username			= [[NSUserDefaults standardUserDefaults] stringForKey:kPNUsersFullNameCache];
-	cacheUser.externalId		= [[NSUserDefaults standardUserDefaults] stringForKey:kPNUsersExternalIDCache];
-	cacheUser.countryCode		= [[NSUserDefaults standardUserDefaults] stringForKey:kPNUsersCountrycodeCache];
-	cacheUser.iconURL			= [[NSUserDefaults standardUserDefaults] stringForKey:kPNUsersIconURLCache];
-	cacheUser.userId			= [[NSUserDefaults standardUserDefaults] stringForKey:kPNUsersUserIDCache];
-	cacheUser.sessionId			= [[NSUserDefaults standardUserDefaults] stringForKey:kPNUsersSessionIDCache];
+	cacheUser.userId			= [[NSUserDefaults standardUserDefaults] stringForKey:kPFUsersUserIDCache];
+	cacheUser.sessionId			= [[NSUserDefaults standardUserDefaults] stringForKey:kPFUsersSessionIDCache];
+	cacheUser.nickname			= [[NSUserDefaults standardUserDefaults] stringForKey:kPFUsersNicknameCache];
+	cacheUser.facebookId		= [[NSUserDefaults standardUserDefaults] stringForKey:kPFUsersFacebookIdCache];
+	cacheUser.email             = [[NSUserDefaults standardUserDefaults] stringForKey:kPFUsersEmailCache];
+	cacheUser.introduction      = [[NSUserDefaults standardUserDefaults] stringForKey:kPFUsersIntroductionCache];
+	cacheUser.gender            = [[NSUserDefaults standardUserDefaults] integerForKey:kPFUsersGenderCache];
+	cacheUser.age               = [[NSUserDefaults standardUserDefaults] integerForKey:kPFUsersAgeCache];
+	cacheUser.bloodType         = [[NSUserDefaults standardUserDefaults] integerForKey:kPFUsersBloodTypeCache];
+	cacheUser.proportion        = [[NSUserDefaults standardUserDefaults] integerForKey:kPFUsersProportionCache];
+	cacheUser.school            = [[NSUserDefaults standardUserDefaults] integerForKey:kPFUsersSchoolCache];
+	cacheUser.industry          = [[NSUserDefaults standardUserDefaults] integerForKey:kPFUsersIndustryCache];
+	cacheUser.job               = [[NSUserDefaults standardUserDefaults] integerForKey:kPFUsersJobCache];
+	cacheUser.income            = [[NSUserDefaults standardUserDefaults] integerForKey:kPFUsersIncomeCache];
+	cacheUser.holiday           = [[NSUserDefaults standardUserDefaults] integerForKey:kPFUsersHolidayCache];
+	cacheUser.status            = [[NSUserDefaults standardUserDefaults] integerForKey:kPFUsersStatusCache];
 	
 	if(!cacheUser.udid){
 		cacheUser.udid = [UIDevice currentDevice].identifierForVendor;
 	}
-	if(!cacheUser.username) {
-		double rndNum = arc4random()%100000;
-		//p_currentUser.username = [NSString stringWithFormat:@"%@%.0f",[[UIDevice currentDevice] model],rndNum];
-		cacheUser.username = [NSString stringWithFormat:@"%@%.0f",kPNOfflineGuestAccount,rndNum];
-	}
-	if (!cacheUser.countryCode) {
-		cacheUser.countryCode = kPNCountryCodeDefault;
-	}
-	
-	NSString* is_guest;
-    is_guest = [[NSUserDefaults standardUserDefaults] stringForKey:kPNUsersGuestCache];
-	if (is_guest != nil) {
-		cacheUser.isGuest		= [is_guest boolValue];
-	}
-	else {
-		cacheUser.isGuest = YES;
-	}
-	
-	NSString* is_secured;
-    is_secured = [[NSUserDefaults standardUserDefaults] stringForKey:kPNUsersGuestCache];
-	if (is_secured) {
-		cacheUser.isSecured		= [is_secured boolValue];
-	}
-	else {
-		cacheUser.isSecured = NO;
-	}
-	if (cacheUser.gradeName == nil) {
-		cacheUser.gradeName = kPNDefaultGradeName;
-	}
-	
+    
 	return cacheUser;
 }
 
@@ -222,16 +194,23 @@ static int		p_dedupCounter	= 1;
  そうすることで、次回起動時にインターネットに接続されていない状況でもユーザ情報を復元することができます。
  */
 - (void)saveToCacheAsCurrentUser{
-	[[NSUserDefaults standardUserDefaults] setObject:self.username			forKey:kPNUsersUserNameCache];
-	[[NSUserDefaults standardUserDefaults] setObject:self.fullname			forKey:kPNUsersFullNameCache];
-	[[NSUserDefaults standardUserDefaults] setObject:self.externalId			forKey:kPNUsersExternalIDCache];
-	[[NSUserDefaults standardUserDefaults] setObject:self.countryCode		forKey:kPNUsersCountrycodeCache];
-	[[NSUserDefaults standardUserDefaults] setObject:self.iconURL			forKey:kPNUsersIconURLCache];
-	[[NSUserDefaults standardUserDefaults] setObject:self.userId			forKey:kPNUsersUserIDCache];
-	[[NSUserDefaults standardUserDefaults] setObject:self.sessionId			forKey:kPNUsersSessionIDCache];
+	[[NSUserDefaults standardUserDefaults] setObject:self.userId		forKey:kPFUsersUserIDCache];
+	[[NSUserDefaults standardUserDefaults] setObject:self.sessionId		forKey:kPFUsersSessionIDCache];
+	[[NSUserDefaults standardUserDefaults] setObject:self.nickname		forKey:kPFUsersNicknameCache];
+	[[NSUserDefaults standardUserDefaults] setObject:self.facebookId	forKey:kPFUsersFacebookIdCache];
+	[[NSUserDefaults standardUserDefaults] setObject:self.email         forKey:kPFUsersEmailCache];
+	[[NSUserDefaults standardUserDefaults] setObject:self.introduction  forKey:kPFUsersIntroductionCache];
+	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", self.gender] forKey:kPFUsersGenderCache];
+	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", self.age] forKey:kPFUsersAgeCache];
+	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", self.bloodType] forKey:kPFUsersBloodTypeCache];
+	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", self.proportion] forKey:kPFUsersProportionCache];
+	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", self.school] forKey:kPFUsersSchoolCache];
+	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", self.industry] forKey:kPFUsersIndustryCache];
+	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", self.job] forKey:kPFUsersJobCache];
+	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", self.income] forKey:kPFUsersIncomeCache];
+	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", self.holiday] forKey:kPFUsersHolidayCache];
+	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", self.status] forKey:kPFUsersStatusCache];
 	
-	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d",self.isGuest]				forKey:kPNUsersGuestCache];
-	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d",self.isSecured]			forKey:kPNUsersSecuredCache];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 }
 
@@ -255,24 +234,20 @@ static int		p_dedupCounter	= 1;
     NSDictionary *fields = [NSDictionary dictionaryWithObjectsAndKeys:
                             userId ? userId : @"", @"user_id",
                             sessionId ? sessionId : @"", @"session_id",
-                            publicSessionId ? publicSessionId : @"", @"public_session_id",
-//                            sessionCreatedAt ? [PNMiscUtil stringFromDate:sessionCreatedAt] : @"", @"session_created_at",
-                            gameId ? gameId : @"", @"game_id",
-                            username ? username : @"", @"username",
-                            fullname ? fullname : @"", @"fullname",
-                            email ? email : @"", @"email",
-                            status ? status : @"", @"status",
-                            gradeName ? gradeName : @"", @"grade_name",
-                            countryCode ? countryCode : @"", @"country_code",
-                            iconURL ? iconURL : @"", @"icon_url",
-                            twitterId ? twitterId : @"", @"twitter_id",
+                            nickname ? nickname : @"", @"nick_name",
                             facebookId ? facebookId : @"", @"facebook_id",
-                            JSONBOOL(isGuest), @"is_guest",
-                            JSONBOOL(isSecured), @"is_secured",
-//                            JSONBOOL([self isSecuredOrLinked]), @"is_secured_or_linked",
-                            self.displayName, @"display_name",
-                            JSONBOOL(isFollowed), @"is_followed",
-                            JSONBOOL(isFollowing), @"is_following", nil];
+                            email ? email : @"", @"email",
+                            introduction ? introduction : @"", @"introduction",
+                            gender, @"gender",
+                            age, @"age",
+                            bloodType, @"blood_type",
+                            proportion, @"proportion",
+                            school, @"school",
+                            industry, @"industry",
+                            job, @"job",
+                            income, @"income",
+                            holiday, @"holiday",
+                            status, @"status", nil];
 #undef JSONBOOL
     return fields;
 }
@@ -283,26 +258,22 @@ static int		p_dedupCounter	= 1;
 #define JSONInt(value) ([NSString stringWithFormat:@"%d", value])
 #define EXTService(value) (value ? [NSDictionary dictionaryWithObject:value forKey:@"id"] : [NSNull null])
     NSMutableDictionary* dic = [NSMutableDictionary dictionary];
-    [dic setObject:JSONString(self.username) forKey:@"username"];
-    [dic setObject:JSONString(self.gender) forKey:@"gender"];
-    [dic setObject:JSONString(self.fullname) forKey:@"fullname"];
-    [dic setObject:JSONString(self.countryCode) forKey:@"country"];
-    [dic setObject:JSONString(self.iconURL) forKey:@"icon_url"];
-    [dic setObject:JSONInt(self.friendsCount) forKey:@"friends_count"];
-    
-    [dic setObject:EXTService(self.facebookId) forKey:@"facebook"];
-    [dic setObject:EXTService(self.twitterId) forKey:@"twitter"];
-    [dic setObject:EXTService(self.mixiId) forKey:@"mixi"];
-    
-    [dic setObject:JSONString(birthdate) forKey:@"birthdate"];
-    [dic setObject:JSONString(blurb) forKey:@"blurb"];
-    [dic setObject:JSONString(city) forKey:@"city"];
-    
-    [dic setObject:JSONString(userId) forKey:@"id"];
-    
-    [dic setObject:JSONBOOL(self.isFollowed) forKey:@"is_followed"];
-    [dic setObject:JSONBOOL(self.isFollowing) forKey:@"is_following"];
-    
+    [dic setObject:JSONString(self.userId) forKey:@"id"];
+    [dic setObject:JSONString(self.sessionId) forKey:@"session_id"];
+    [dic setObject:JSONString(self.nickname) forKey:@"nickname"];
+    [dic setObject:JSONString(self.facebookId) forKey:@"facebook_id"];
+    [dic setObject:JSONString(self.email) forKey:@"email"];
+    [dic setObject:JSONString(self.introduction) forKey:@"introduction"];
+    [dic setObject:JSONInt(self.gender) forKey:@"gender"];
+    [dic setObject:JSONInt(self.age) forKey:@"age"];
+    [dic setObject:JSONInt(self.bloodType) forKey:@"blood_type"];
+    [dic setObject:JSONInt(self.proportion) forKey:@"proportion"];
+    [dic setObject:JSONInt(self.school) forKey:@"school"];
+    [dic setObject:JSONInt(self.industry) forKey:@"industry"];
+    [dic setObject:JSONInt(self.job) forKey:@"job"];
+    [dic setObject:JSONInt(self.income) forKey:@"income"];
+    [dic setObject:JSONInt(self.holiday) forKey:@"holiday"];
+    [dic setObject:JSONInt(self.status) forKey:@"status"];
 #undef JSONString
 #undef JSONInt
 #undef EXTService

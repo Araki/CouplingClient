@@ -12,38 +12,26 @@
  @brief ユーザに関するJSONから作られる構造体
  */
 @interface PFUserModel : PFDataModel {
-	NSInteger _id;
-	NSString* _username;
-	NSString* _fullname;
-	NSString* _country;
-	NSString* _icon_url;
-	BOOL _is_guest;
-	BOOL _is_secured;
-	NSString *_twitter_id;
-    NSString *_facebook_id;
-	BOOL _is_following;
-    BOOL is_followed;
-	BOOL _is_blocking;
-	NSArray *_relationships;
-	NSString* icon_used;
+	NSInteger id;
+    NSString* nickname;
+    NSString* facebook_id;
     NSString* email;
-    
-    // GW only
-    NSString *birthdate, *blurb, *city, *gender, *mixi_id; // GW only
-    int friends_count;
+    NSString* introduction;
+    NSInteger gender;
+    NSInteger age;
+    NSInteger blood_type;
+    NSInteger proportion;
+    NSInteger school;
+    NSInteger industry;
+    NSInteger job;
+    NSInteger income;
+    NSInteger holiday;
+    NSInteger status;
 }
 
 @property (assign, nonatomic) NSInteger id;
-@property (retain, nonatomic) NSString *username, *fullname, *country, *icon_url, *twitter_id, *facebook_id;
-@property (assign, nonatomic) BOOL is_guest, is_secured, is_following, is_blocking, is_followed;
-@property (retain, nonatomic) NSArray *relationships;
-@property (retain, nonatomic) NSString* icon_used;
-@property (retain, nonatomic) NSDictionary* informationDictionary;
-@property (retain, nonatomic) NSString* externalId;
-@property (retain, nonatomic) NSString* email;
+@property (retain, nonatomic) NSString *nickname, *facebook_id, *email, *introduction;
+@property (assign, nonatomic) NSInteger gender, age, blood_type, proportion, school, industry, job, income, holiday, status;
 @property (retain ,nonatomic) NSMutableArray *profileImages; // プロフィール写真リスト(UIImageの配列)
 
-// GW only
-@property (retain, nonatomic) NSString *birthdate, *blurb, *city, *gender, *mixi_id;
-@property (assign, nonatomic) int friends_count;
 @end
