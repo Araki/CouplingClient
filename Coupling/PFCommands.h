@@ -10,6 +10,9 @@
 #define kPFCommandSessionsCreate			@"/sessions/create"
 #define kPFCommandSessionsVerify			@"/sessions/verify"
 
+// [User]
+#define kPFCommandProfileShow               @"/account/show_profile"
+#define kPFCommandImageCreate               @"/images/create"
 
 // {Users}
 #define kPFCommendUsersList                 @"/users/list"

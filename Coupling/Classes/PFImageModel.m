@@ -8,6 +8,7 @@
 
 #import "PFImageModel.h"
 #import "NSDictionary+Extension.h"
+#import "PSImageDownloader.h"
 
 @implementation PFImageModel
 
@@ -26,6 +27,16 @@
         NSString *urlString = [aDictionary stringValueForKey:@"url" defaultValue:nil];
         if (urlString) {
             self.url = [NSURL URLWithString:urlString];
+            [[PSImageDownloader sharedInstance] getImage:urlString
+                                              onComplete:^(UIImage *image, NSString *url, NSError *error) {
+                                                  if (error == nil)
+                                                  {
+                                                      if ([urlString isEqualToString:url])
+                                                      {
+                                                          self.image = image;
+                                                      }
+                                                  }
+                                              }];
         }
         
         self.isMain = [[aDictionary stringValueForKey:@"is_main" defaultValue:nil] boolValue];

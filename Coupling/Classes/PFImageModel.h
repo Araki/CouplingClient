@@ -13,5 +13,6 @@
 @property (nonatomic, assign) NSDate *      createdAt;
 @property (nonatomic, assign) BOOL          isMain;
 @property (nonatomic, assign) NSURL *       url;
+@property (nonatomic, strong) UIImage *     image;
 
 @end
