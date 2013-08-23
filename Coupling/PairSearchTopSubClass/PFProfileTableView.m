@@ -79,7 +79,7 @@
 {
     if (user != nil)
     {
-        return 7;
+        return 10;
     }
     else
     {
@@ -106,17 +106,17 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0 || indexPath.row == 4 || indexPath.row == 5)
+    if (indexPath.row == 9 || indexPath.row == 4 || indexPath.row == 5)
     {
         NSString *description = @"";
-        if (indexPath.row == 0)
+        if (indexPath.row == 9)
         {
             description = [user introduction];
         }
         CGSize size = [description sizeWithFont:[UIFont fontWithName:@"Helvetica" size:13.0f] constrainedToSize:CGSizeMake(200, 500) lineBreakMode:NSLineBreakByWordWrapping];
         if (size.height <= 30)
         {
-            if (indexPath.row == 0)
+            if (indexPath.row == 9)
             {
                 return 50;
             }
@@ -127,7 +127,7 @@
         }
         else
         {
-            if (indexPath.row == 0)
+            if (indexPath.row == 9)
             {
                 return size.height + 23;
             }

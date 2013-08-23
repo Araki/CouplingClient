@@ -80,18 +80,18 @@
 
             [descriptionLabel setText:description];
             CGSize size = [description sizeWithFont:[UIFont fontWithName:@"Helvetica" size:13.0f] constrainedToSize:CGSizeMake(200, 500) lineBreakMode:NSLineBreakByWordWrapping];
-            if (row == 0)
+            if (row == 9)
             {
                 [descriptionLabel setFrame:CGRectMake(20, 7, 270, size.height)];
             }
             else
             {
-                [descriptionLabel setFrame:CGRectMake(100, 7, 200, size.height)];
+                [descriptionLabel setFrame:CGRectMake(130, 7, 200, size.height)];
             }
             
             if (size.height - 25 <= 0)
             {
-                if (row == 0)
+                if (row == 9)
                 {
                     [descriptionLabel setFrame:CGRectMake(descriptionLabel.frame.origin.x, 28, descriptionLabel.frame.size.width, size.height)];
                 }
@@ -130,31 +130,46 @@
     NSString *descriptionStr = @"";
     NSString *titleStr = @"";
     switch (row) {
-        case 0:
+        case 9:
             descriptionStr = [user introduction];
             titleStr       = @"自己紹介";
             break;
+        case 0:
+            //TODO: JSONの値を表示する
+            descriptionStr = @"";
+            titleStr       = @"合コン参加人数";
+            break;
         case 1:
+            //TODO: JSONの値を表示する
+            descriptionStr = @"";
+            titleStr       = @"合コン希望場所";
+            break;
+        case 2:
+            //TODO: JSONの値を表示する
+            descriptionStr = @"";
+            titleStr       = @"合コン希望時間";
+            break;
+        case 3:
             descriptionStr = [[PFUtil bloodTypes] objectAtIndex:[user bloodType]];
             titleStr       = @"血液型";
             break;
-        case 2:
+        case 4:
             descriptionStr  = [[PFUtil bodyShapes] objectAtIndex:[user proportion]];
             titleStr       = @"体型";
             break;
-        case 3:
+        case 5:
             descriptionStr = [[PFUtil schoolBackgrounds] objectAtIndex:[user schoolBackGoround]];
             titleStr       = @"学歴";
             break;
-        case 4:
+        case 6:
             descriptionStr = [[PFUtil jobs] objectAtIndex:[user job]];
             titleStr       = @"職業";
             break;
-        case 5:
+        case 7:
             descriptionStr = [[PFUtil incomes] objectAtIndex:[user income]];
             titleStr       = @"年収";
             break;
-        case 6:
+        case 8:
             descriptionStr = [[PFUtil dayOff] objectAtIndex:[user holiday]];
             titleStr       = @"休日";
             break;
