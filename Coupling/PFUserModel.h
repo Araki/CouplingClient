@@ -17,6 +17,7 @@
     NSString* facebook_id;
     NSString* email;
     NSString* introduction;
+    NSInteger prefecture;
     NSInteger gender;
     NSInteger age;
     NSInteger blood_type;
@@ -31,7 +32,7 @@
 
 @property (assign, nonatomic) NSInteger id;
 @property (retain, nonatomic) NSString *nickname, *facebook_id, *email, *introduction;
-@property (assign, nonatomic) NSInteger gender, age, blood_type, proportion, school, industry, job, income, holiday, status;
+@property (assign, nonatomic) NSInteger prefecture, gender, age, blood_type, proportion, school, industry, job, income, holiday, status;
 @property (retain ,nonatomic) NSMutableArray *profileImages; // プロフィール写真リスト(UIImageの配列)
 
 @end

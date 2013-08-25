@@ -16,7 +16,7 @@
 #define kPFDefaultIntroduction              @""
 
 @implementation PFUserModel
-@synthesize id, nickname, facebook_id, email, introduction, gender, age, blood_type, proportion, school, industry, job, income, holiday, status;
+@synthesize id, nickname, facebook_id, email, introduction, prefecture, gender, age, blood_type, proportion, school, industry, job, income, holiday, status;
 
 - (id) init
 {

@@ -13,14 +13,6 @@
 
 #define kPNCountryCodeDefault       @"COUNTRY_CODE_NONE"
 
-typedef enum {
-	PNUserIconTypeDefault,
-    PNUserIconTypePankia,
-	PNUserIconTypeTwitter,
-	PNUserIconTypeFacebook,
-	PNUserIconTypeMixi
-} PNUserIconType;
-
 /**
  * PFUser class manages information about user.
  */
@@ -35,6 +27,7 @@ typedef enum {
     NSString	*facebookId;
     NSString    *email;
     NSString    *introduction;
+    NSInteger   prefecture;
     NSInteger   gender;
     NSInteger   age;
     NSInteger   bloodType;
@@ -55,6 +48,7 @@ typedef enum {
 @property(retain) NSString* email;
 @property(retain) NSString* introduction;
 
+@property(nonatomic, assign) NSInteger prefecture;
 @property(nonatomic, assign) NSInteger gender;
 @property(nonatomic, assign) NSInteger age;
 @property(nonatomic, assign) NSInteger bloodType;

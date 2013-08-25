@@ -23,6 +23,7 @@
 #define	kPFUsersFacebookIdCache							@"PF_USER_FACEBOOKID_CACHE"
 #define	kPFUsersEmailCache                              @"PF_USER_EMAIL_CACHE"
 #define	kPFUsersIntroductionCache                       @"PF_USER_INTRODUCTION_CACHE"
+#define kPFUsersPrefecture                              @"PF_USER_PREFECTURE"
 #define	kPFUsersGenderCache                             @"PF_USER_GENDER_CACHE"
 #define	kPFUsersAgeCache                                @"PF_USER_AGE_CACHE"
 #define	kPFUsersBloodTypeCache                          @"PF_USER_BLOODTYPE_CACHE"
@@ -115,6 +116,7 @@ static int		p_dedupCounter	= 1;
 	if (aModel.facebook_id) self.facebookId = aModel.facebook_id;
 	if (aModel.email) self.email = aModel.email;
 	if (aModel.introduction) self.introduction = aModel.introduction;
+    self.prefecture = aModel.prefecture;
 	self.gender = aModel.gender;
     self.age = aModel.age;
     self.bloodType = aModel.blood_type;
@@ -200,6 +202,7 @@ static int		p_dedupCounter	= 1;
 	[[NSUserDefaults standardUserDefaults] setObject:self.facebookId	forKey:kPFUsersFacebookIdCache];
 	[[NSUserDefaults standardUserDefaults] setObject:self.email         forKey:kPFUsersEmailCache];
 	[[NSUserDefaults standardUserDefaults] setObject:self.introduction  forKey:kPFUsersIntroductionCache];
+	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", self.prefecture] forKey:kPFUsersPrefecture];
 	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", self.gender] forKey:kPFUsersGenderCache];
 	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", self.age] forKey:kPFUsersAgeCache];
 	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", self.bloodType] forKey:kPFUsersBloodTypeCache];
@@ -238,6 +241,7 @@ static int		p_dedupCounter	= 1;
                             facebookId ? facebookId : @"", @"facebook_id",
                             email ? email : @"", @"email",
                             introduction ? introduction : @"", @"introduction",
+                            prefecture, @"prefecture",
                             gender, @"gender",
                             age, @"age",
                             bloodType, @"blood_type",
