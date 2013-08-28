@@ -145,8 +145,11 @@
 
     //TODO: 残りいいね数を更新する
     
-    
+    //お気に入り判定等
     [self checkUser];
+    
+    //ログイン時間
+    [self lastLogin:user];
 }
 
 
@@ -306,6 +309,49 @@
         [likeLabel setHidden:YES];
         [likeButton setImage:[UIImage imageNamed:@"button_talk.png"] forState:UIControlStateNormal];
     }
+}
+
+- (void)lastLogin:(NSDictionary *)user
+{
+    [lastLoginLabel setText:@""];
+    PFProfile *profile = [[PFProfile alloc] initWithDictionary:user];
+    //データ取得
+    dispatch_queue_t gcd_queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(gcd_queue, ^{
+        
+        NSString *str;
+        
+        //今日の日にち作成
+        NSDate *now = [NSDate date];
+        float tmp= [now timeIntervalSinceDate:[profile updatedAt]];
+        int hh = (int)(tmp / 3600);
+        if(hh < 24)
+        {
+            str = @"24時間以内";
+        }
+        else if (hh < 72)
+        {
+            str = @"３日以内";
+        }
+        else if (hh < 168)
+        {
+            str = @"１週間以内";
+        }
+        else if (hh < 720)
+        {
+            str = @"１ヶ月以内";
+        }
+        else
+        {
+            str = @"１ヶ月以上";
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [lastLoginLabel setText:str];
+        });
+    });
+    
+    
 }
 
 @end

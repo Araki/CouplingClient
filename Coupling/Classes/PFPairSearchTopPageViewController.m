@@ -29,6 +29,8 @@
     PFProfileScrollView *profileScrollView;
     //表示データ
     NSArray *dataArray;
+    //page
+    int page;
 }
 @synthesize pageControlUsed = _pageControlUsed;
 @synthesize page = _page;
@@ -70,6 +72,7 @@
     [self initView];
     
     //User情報
+    page = 0;
     PFUser *user = [PFUser currentUser];
     NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjects:[NSArray arrayWithObjects:user.sessionId,nil] forKeys: [NSArray arrayWithObjects:@"session_id", nil]];
     
@@ -78,6 +81,7 @@
         if([jsonObject objectForKey:@"users"]) {
             dispatch_queue_t mainQueue = dispatch_get_main_queue();
             dispatch_async(mainQueue, ^{
+                page ++;
                 //ScrollView初期化
                 [profileScrollView initUserWithData:[jsonObject objectForKey:@"users"]];
                 dataArray = [NSArray arrayWithArray:[jsonObject objectForKey:@"users"]];
@@ -137,12 +141,13 @@
         [scrollView addUserLoading];
         //TODO: 仮のユーザ追加
         PFUser *user = [PFUser currentUser];
-        NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjects:[NSArray arrayWithObjects:user.sessionId,nil] forKeys: [NSArray arrayWithObjects:@"session_id", nil]];
+        NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjects:[NSArray arrayWithObjects:user.sessionId,page ,nil] forKeys: [NSArray arrayWithObjects:@"session_id", @"page", nil]];
         [PFHTTPConnector requestWithCommand:kPFCommendUsersList params:params onSuccess:^(PFHTTPResponse *response) {
             NSDictionary *jsonObject = [response jsonDictionary];
             if([jsonObject objectForKey:@"users"]) {
                 dispatch_queue_t mainQueue = dispatch_get_main_queue();
                 dispatch_async(mainQueue, ^{
+                    page ++;
                     //ScrollView初期化
                     [profileScrollView addUserWithData:[jsonObject objectForKey:@"users"]];
                     NSMutableArray *joinArray = [NSMutableArray arrayWithArray:dataArray];
