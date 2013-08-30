@@ -53,7 +53,7 @@
     //情報セット
     user = [[PFProfile alloc] initWithDictionary:[userDict objectForKey:@"profile"]];
     //ヘッダーセット
-    [headerView initViewWithUser:[userDict objectForKey:@"profile"]];
+    [headerView initViewWithUser:userDict];
     
     [self reloadData];
 }

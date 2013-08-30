@@ -139,9 +139,8 @@
     {
         //最終ページまでいったので追加読み込み処理
         [scrollView addUserLoading];
-        //TODO: 仮のユーザ追加
         PFUser *user = [PFUser currentUser];
-        NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjects:[NSArray arrayWithObjects:user.sessionId,page ,nil] forKeys: [NSArray arrayWithObjects:@"session_id", @"page", nil]];
+        NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjects:[NSArray arrayWithObjects:user.sessionId, [NSString stringWithFormat:@"%d",page], @"25",nil] forKeys: [NSArray arrayWithObjects:@"session_id", @"page", @"per",nil]];
         [PFHTTPConnector requestWithCommand:kPFCommendUsersList params:params onSuccess:^(PFHTTPResponse *response) {
             NSDictionary *jsonObject = [response jsonDictionary];
             if([jsonObject objectForKey:@"users"]) {

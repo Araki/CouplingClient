@@ -9,6 +9,9 @@
 #import "PFProfileTableHeaderView.h"
 #import "PSImageDownloader.h"
 #import "PFHTTPConnector.h"
+#import "NSDictionary+Extension.h"
+#import "NSString+Extension.h"
+
 
 @implementation PFProfileTableHeaderView
 {
@@ -112,7 +115,7 @@
 
 - (void)initViewWithUser:(NSDictionary *)user
 {
-    userData = [NSDictionary dictionaryWithDictionary:user];
+    userData = [[NSDictionary dictionaryWithDictionary:user] objectForKey:@"profile"];
     targetID = [userData objectForKey:@"id"];
     
     [self changeFavoriteState:0];
@@ -122,7 +125,7 @@
     likecommandary = [NSArray arrayWithObjects:kPFCommendLikesCreate,kPFCommendLikesDelete ,nil];
     
     //プロフィール画像
-    //NSString *imageUrl = [[[user objectForKey:@"images"] objectAtIndex:0] objectForKey:@"url"];
+    //NSString *imageUrl = [[[userData objectForKey:@"images"] objectAtIndex:0] objectForKey:@"url"];
     //TODO: 画像のURLが死んでいるので今は仮の画像
     //仮URL: http://huhennews.net/images/pro/m3391-4223-12040109-2.jpg
     NSString *imageUrl = @"http://huhennews.net/images/pro/m3391-4223-12040109-2.jpg";
@@ -140,7 +143,7 @@
     [nameLabel setText:[userData objectForKey:@"nickname"]];
     
     //写真枚数
-    NSString *picture = [NSString stringWithFormat:@"%d枚",[[user objectForKey:@"images"] count]];
+    NSString *picture = [NSString stringWithFormat:@"%d枚",[[userData objectForKey:@"images"] count]];
     [pictureLabel setText:picture];
 
     //TODO: 残りいいね数を更新する
@@ -312,18 +315,23 @@
 }
 
 - (void)lastLogin:(NSDictionary *)user
-{
+{    
     [lastLoginLabel setText:@""];
-    PFProfile *profile = [[PFProfile alloc] initWithDictionary:user];
     //データ取得
     dispatch_queue_t gcd_queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(gcd_queue, ^{
         
+        //最終ログイン時間取得
+        NSString *lasrAtString = [user stringValueForKey:@"last_login_at" defaultValue:nil];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ssZ"];
+        NSDate *lastDate = [dateFormatter dateFromString:lasrAtString];
+
         NSString *str;
         
         //今日の日にち作成
         NSDate *now = [NSDate date];
-        float tmp= [now timeIntervalSinceDate:[profile updatedAt]];
+        float tmp= [now timeIntervalSinceDate:lastDate];
         int hh = (int)(tmp / 3600);
         if(hh < 24)
         {
