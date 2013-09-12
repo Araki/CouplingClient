@@ -7,6 +7,7 @@
 //
 
 #import "SignupStep4ViewController.h"
+#import "PFTutorialViewController.h"
 
 @interface SignupStep4ViewController ()
 
@@ -39,6 +40,12 @@
 {
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = NO;
+}
+
+- (IBAction)done:(id)sender
+{
+    PFTutorialViewController *tutorial = [[PFTutorialViewController alloc] initWithNibName:@"PFTutorialViewController" bundle:nil];
+    [self.navigationController pushViewController:tutorial animated:YES];
 }
 
 @end

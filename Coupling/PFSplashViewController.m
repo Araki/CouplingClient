@@ -33,12 +33,15 @@
 {
     [super viewDidLoad];
     
+    //仕様変更に伴いチュートリアルは登録終了後に 
+    /*
     NSString *sessionId = [PFUser currentUser].sessionId;
-    if (sessionId == nil) {
+    if (sessionId == nil)
+    {
         [self pushTutorialViewController];
         return;
-        
     }
+     */
     
 	[[NSNotificationCenter defaultCenter] addObserver:self
 											 selector:@selector(handleSessionVerifySuccess:)

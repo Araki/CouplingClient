@@ -10,4 +10,6 @@
 
 @interface SignupStep4ViewController : UIViewController
 
+- (IBAction)done:(id)sender;
+
 @end

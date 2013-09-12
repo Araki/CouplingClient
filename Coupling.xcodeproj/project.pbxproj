@@ -196,6 +196,9 @@
 		C1E3C60816EC790300BF4C99 /* TitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E3C60716EC790300BF4C99 /* TitleViewController.m */; };
 		C1E3C62416EC8CE700BF4C99 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1E3C62116EC8CDD00BF4C99 /* AudioToolbox.framework */; };
 		C1E3C62716ECA40D00BF4C99 /* SignupStep4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E3C62616ECA40D00BF4C99 /* SignupStep4ViewController.m */; };
+		FA91A66B17E2136D00EB8AA1 /* PFTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA91A66917E2136D00EB8AA1 /* PFTutorialViewController.m */; };
+		FA91A66C17E2136D00EB8AA1 /* PFTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA91A66A17E2136D00EB8AA1 /* PFTutorialViewController.xib */; };
+		FA91A66F17E213DA00EB8AA1 /* PFTutorialScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA91A66E17E213DA00EB8AA1 /* PFTutorialScrollView.m */; };
 		FAC09CAA17B4D36C008ECFF3 /* PFProfileScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC09CA917B4D36C008ECFF3 /* PFProfileScrollView.m */; };
 		FAC09CB317B4D412008ECFF3 /* PFProfileTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC09CB217B4D412008ECFF3 /* PFProfileTableView.m */; };
 		FAC09CB617B4D436008ECFF3 /* PFProfileTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC09CB517B4D436008ECFF3 /* PFProfileTableHeaderView.m */; };
@@ -513,6 +516,11 @@
 		C1E3C62116EC8CDD00BF4C99 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		C1E3C62516ECA40D00BF4C99 /* SignupStep4ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupStep4ViewController.h; sourceTree = "<group>"; };
 		C1E3C62616ECA40D00BF4C99 /* SignupStep4ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupStep4ViewController.m; sourceTree = "<group>"; };
+		FA91A66817E2136D00EB8AA1 /* PFTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFTutorialViewController.h; sourceTree = "<group>"; };
+		FA91A66917E2136D00EB8AA1 /* PFTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFTutorialViewController.m; sourceTree = "<group>"; };
+		FA91A66A17E2136D00EB8AA1 /* PFTutorialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFTutorialViewController.xib; sourceTree = "<group>"; };
+		FA91A66D17E213DA00EB8AA1 /* PFTutorialScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFTutorialScrollView.h; sourceTree = "<group>"; };
+		FA91A66E17E213DA00EB8AA1 /* PFTutorialScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFTutorialScrollView.m; sourceTree = "<group>"; };
 		FAC09CA817B4D36C008ECFF3 /* PFProfileScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFProfileScrollView.h; sourceTree = "<group>"; };
 		FAC09CA917B4D36C008ECFF3 /* PFProfileScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFProfileScrollView.m; sourceTree = "<group>"; };
 		FAC09CB117B4D411008ECFF3 /* PFProfileTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFProfileTableView.h; sourceTree = "<group>"; };
@@ -1012,6 +1020,11 @@
 				C1138EA816BE5F8C001E30B6 /* PFTutorialStep1Controller.m */,
 				C1138EA916BE5F8C001E30B6 /* PFTutorialStep2Controller.h */,
 				C1138EAA16BE5F8C001E30B6 /* PFTutorialStep2Controller.m */,
+				FA91A66817E2136D00EB8AA1 /* PFTutorialViewController.h */,
+				FA91A66917E2136D00EB8AA1 /* PFTutorialViewController.m */,
+				FA91A66A17E2136D00EB8AA1 /* PFTutorialViewController.xib */,
+				FA91A66D17E213DA00EB8AA1 /* PFTutorialScrollView.h */,
+				FA91A66E17E213DA00EB8AA1 /* PFTutorialScrollView.m */,
 			);
 			name = Tutorial;
 			sourceTree = "<group>";
@@ -1345,6 +1358,7 @@
 				2A83590F172D13AD00FBC6E8 /* button_talk.png in Resources */,
 				2A835910172D13AD00FBC6E8 /* button_tapjoy.png in Resources */,
 				2A835911172D13AD00FBC6E8 /* button_trade.png in Resources */,
+				FA91A66C17E2136D00EB8AA1 /* PFTutorialViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1442,6 +1456,8 @@
 				FAC09CC217B4E4DD008ECFF3 /* TMMemoryCache.m in Sources */,
 				FAC09CC517B4E4EA008ECFF3 /* PSImageDownloader.m in Sources */,
 				FAC09CC817B4E5E5008ECFF3 /* PFProfileTableViewCell.m in Sources */,
+				FA91A66B17E2136D00EB8AA1 /* PFTutorialViewController.m in Sources */,
+				FA91A66F17E213DA00EB8AA1 /* PFTutorialScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
