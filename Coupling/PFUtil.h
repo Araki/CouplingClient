@@ -37,4 +37,7 @@
 //+ (UIButton *)myPageStatusBarButtonWithStatus:(NSInteger)status;
 + (UIButton *)addPictureButton;
 
+//画面判定
++ (BOOL)is4inch;
+
 @end

@@ -26,7 +26,15 @@
     [self.scrollView setShowsVerticalScrollIndicator:NO];
     [self.scrollView setShowsHorizontalScrollIndicator:NO];
     [self.scrollView setBounces:NO];
-    [self.scrollView initImages:[NSArray arrayWithObjects:[UIImage imageNamed:@"test_imgres_2.jpeg"], [UIImage imageNamed:@"test_imgres_2.jpeg"], [UIImage imageNamed:@"test_imgres_2.jpeg"], nil]];
+    //TODO: ここで4inchと3.5インチの画像を振り分けて下さい
+    if ([PFUtil is4inch])
+    {
+         [self.scrollView initImages:[NSArray arrayWithObjects:[UIImage imageNamed:@"test_imgres_2.jpeg"], [UIImage imageNamed:@"test_imgres_2.jpeg"], [UIImage imageNamed:@"test_imgres_2.jpeg"], nil]];
+    }
+    else
+    {
+        [self.scrollView initImages:[NSArray arrayWithObjects:[UIImage imageNamed:@"test_imgres_2.jpeg"], [UIImage imageNamed:@"test_imgres_2.jpeg"], [UIImage imageNamed:@"test_imgres_2.jpeg"], nil]];
+    }
     //pageControl
     [self.pageControl setNumberOfPages:IMAGE_COUNT];
     //NavigationBar

@@ -177,4 +177,13 @@
     return barButton;
 }
 
++ (BOOL)is4inch
+{
+    if ([[UIScreen mainScreen] bounds].size.height >= 568.0f)
+    {
+        return YES;
+    }
+    return NO;
+}
+
 @end
