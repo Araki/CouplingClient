@@ -14,6 +14,7 @@
 #import "PFCommands.h"
 #import "PFHTTPConnector.h"
 #import "PFProfileScrollView.h"
+#import "PFLoginBonusViewController.h"
 
 @interface PFPairSearchTopPageViewController ()
 
@@ -31,6 +32,8 @@
     NSArray *dataArray;
     //page
     int page;
+    //ボーナスView
+    PFLoginBonusViewController *bonusView;
 }
 @synthesize pageControlUsed = _pageControlUsed;
 @synthesize page = _page;
@@ -95,6 +98,12 @@
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
+    
+    //ログインボーナス判定
+    if ([PFUtil isLoginBonus])
+    {
+        [self showBonusView];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -176,4 +185,32 @@
     [self setOutletNavigationBar:nil];
     [super viewDidUnload];
 }
+
+#pragma mark - Bonus View
+- (void)showBonusView
+{
+    bonusView = [[PFLoginBonusViewController alloc] initWithNibName:@"PFLoginBonusViewController" bundle:nil];
+    [bonusView.view setFrame:self.view.bounds];
+    [bonusView.view setAlpha:0];
+    [bonusView.doneButton addTarget:self action:@selector(hideBonusView) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:bonusView.view];
+    [UIView animateWithDuration:0.5f
+                     animations:^{
+                         [bonusView.view setAlpha:1];
+                     }
+                     completion:^(BOOL finished){
+                     }];
+}
+
+- (void)hideBonusView
+{
+    [UIView animateWithDuration:0.5f
+                     animations:^{
+                         [bonusView.view setAlpha:0];
+                     }
+                     completion:^(BOOL finished){
+                         [bonusView.view removeFromSuperview];
+                     }];
+}
+
 @end

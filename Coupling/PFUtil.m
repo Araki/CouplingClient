@@ -186,4 +186,33 @@
     return NO;
 }
 
++ (BOOL)isLoginBonus
+{
+    //now
+    NSDate *now = [NSDate date];
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setLocale:[NSLocale currentLocale]];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *dateString = [dateFormatter stringFromDate:now];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults objectForKey:@"LoginBonus"] == nil)
+    {
+        [defaults setObject:dateString forKey:@"LoginBonus"];
+        [defaults synchronize];
+        return YES;
+    }
+    
+    if ([[defaults objectForKey:@"LoginBonus"] isEqualToString:dateString])
+    {
+        return NO;
+    }
+    else
+    {
+        [defaults setObject:dateString forKey:@"LoginBonus"];
+        [defaults synchronize];
+        return YES;
+    }
+}
+
 @end

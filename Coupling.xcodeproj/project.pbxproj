@@ -207,6 +207,8 @@
 		FAC09CC217B4E4DD008ECFF3 /* TMMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC09CBF17B4E4DD008ECFF3 /* TMMemoryCache.m */; };
 		FAC09CC517B4E4EA008ECFF3 /* PSImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC09CC417B4E4EA008ECFF3 /* PSImageDownloader.m */; };
 		FAC09CC817B4E5E5008ECFF3 /* PFProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC09CC717B4E5E5008ECFF3 /* PFProfileTableViewCell.m */; };
+		FAE8ADC717E2EC81007D7128 /* PFLoginBonusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE8ADC517E2EC81007D7128 /* PFLoginBonusViewController.m */; };
+		FAE8ADC817E2EC81007D7128 /* PFLoginBonusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE8ADC617E2EC81007D7128 /* PFLoginBonusViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -537,6 +539,9 @@
 		FAC09CC417B4E4EA008ECFF3 /* PSImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSImageDownloader.m; sourceTree = "<group>"; };
 		FAC09CC617B4E5E5008ECFF3 /* PFProfileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFProfileTableViewCell.h; sourceTree = "<group>"; };
 		FAC09CC717B4E5E5008ECFF3 /* PFProfileTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFProfileTableViewCell.m; sourceTree = "<group>"; };
+		FAE8ADC417E2EC81007D7128 /* PFLoginBonusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFLoginBonusViewController.h; sourceTree = "<group>"; };
+		FAE8ADC517E2EC81007D7128 /* PFLoginBonusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFLoginBonusViewController.m; sourceTree = "<group>"; };
+		FAE8ADC617E2EC81007D7128 /* PFLoginBonusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFLoginBonusViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -919,6 +924,7 @@
 		C10A32791632A8C80083F51B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FAE8ADC317E2EC67007D7128 /* LoginBonus */,
 				2A7D28891707FEEB00DC957F /* ViewDeckController */,
 				2A7D28881707FE8500DC957F /* SlideMenu */,
 				2A772289167759CC0059AD46 /* PairSearchTop */,
@@ -1213,6 +1219,16 @@
 			path = TMCache;
 			sourceTree = "<group>";
 		};
+		FAE8ADC317E2EC67007D7128 /* LoginBonus */ = {
+			isa = PBXGroup;
+			children = (
+				FAE8ADC417E2EC81007D7128 /* PFLoginBonusViewController.h */,
+				FAE8ADC517E2EC81007D7128 /* PFLoginBonusViewController.m */,
+				FAE8ADC617E2EC81007D7128 /* PFLoginBonusViewController.xib */,
+			);
+			path = LoginBonus;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1359,6 +1375,7 @@
 				2A835910172D13AD00FBC6E8 /* button_tapjoy.png in Resources */,
 				2A835911172D13AD00FBC6E8 /* button_trade.png in Resources */,
 				FA91A66C17E2136D00EB8AA1 /* PFTutorialViewController.xib in Resources */,
+				FAE8ADC817E2EC81007D7128 /* PFLoginBonusViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1458,6 +1475,7 @@
 				FAC09CC817B4E5E5008ECFF3 /* PFProfileTableViewCell.m in Sources */,
 				FA91A66B17E2136D00EB8AA1 /* PFTutorialViewController.m in Sources */,
 				FA91A66F17E213DA00EB8AA1 /* PFTutorialScrollView.m in Sources */,
+				FAE8ADC717E2EC81007D7128 /* PFLoginBonusViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

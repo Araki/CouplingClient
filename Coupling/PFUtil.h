@@ -39,5 +39,7 @@
 
 //画面判定
 + (BOOL)is4inch;
+//ログインボーナス判定
++ (BOOL)isLoginBonus;
 
 @end
