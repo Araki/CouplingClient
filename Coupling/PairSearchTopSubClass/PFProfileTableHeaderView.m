@@ -172,7 +172,7 @@
     [PFHTTPConnector requestWithCommand:kPFCommendFriendsShow params:params onSuccess:^(PFHTTPResponse *response) {
         NSString *status = [[response jsonDictionary] valueForKey:@"status"];
         
-        if([status isEqual:@"OK"]) {
+        if([status isEqualToString:@"OK"] || [status isEqualToString:@"ok"]) {
             dispatch_queue_t mainQueue = dispatch_get_main_queue();
             dispatch_async(mainQueue, ^{
                 //フレンド済み
@@ -196,7 +196,7 @@
         NSString *status = [[response jsonDictionary] valueForKey:@"status"];
         dispatch_queue_t mainQueue = dispatch_get_main_queue();
         dispatch_async(mainQueue, ^{
-            if([status isEqual:@"OK"]) {
+            if([status isEqualToString:@"OK"] || [status isEqualToString:@"ok"]) {
                 //お気に入り済み
                 [self changeFavoriteState:1];
             } else {
@@ -217,7 +217,8 @@
         NSString *status = [[response jsonDictionary] valueForKey:@"status"];
         dispatch_queue_t mainQueue = dispatch_get_main_queue();
         dispatch_async(mainQueue, ^{
-            if([status isEqual:@"OK"]) {
+            if([status isEqualToString:@"OK"] || [status isEqualToString:@"ok"])
+            {
                 //いいね済み
                 [self changeLikeState:1];
             } else {
@@ -239,7 +240,9 @@
     [PFHTTPConnector postWithCommand:[favcommandary objectAtIndex:fav_status]
                               params:params onSuccess:^(PFHTTPResponse *response) {
                                   NSString *status = [[response jsonDictionary] valueForKey:@"status"];
-                                  if([status isEqual:@"OK"]) {
+                                  NSLog(@"%@",status);
+                                  if([status isEqualToString:@"ok"] || [status isEqualToString:@"OK"])
+                                  {
                                       dispatch_queue_t mainQueue = dispatch_get_main_queue();
                                       dispatch_async(mainQueue, ^{
                                           [self changeFavoriteState:(fav_status == 1 ? 0 : 1)];
@@ -264,7 +267,7 @@
         [PFHTTPConnector postWithCommand:[likecommandary objectAtIndex:like_status]
                                   params:params onSuccess:^(PFHTTPResponse *response) {
                                       NSString *status = [[response jsonDictionary] valueForKey:@"status"];
-                                      if([status isEqual:@"OK"]) {
+                                      if([status isEqualToString:@"OK"] || [status isEqualToString:@"ok"]) {
                                           dispatch_queue_t mainQueue = dispatch_get_main_queue();
                                           dispatch_async(mainQueue, ^{
                                               [self changeLikeState:(like_status == 1 ? 0 : 1)];
