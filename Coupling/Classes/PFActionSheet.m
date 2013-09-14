@@ -75,7 +75,7 @@
         [cancelButton addTarget:self action:@selector(cancelButtonAction) forControlEvents:UIControlEventValueChanged];
         [self addSubview:cancelButton];
         
-        self.pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 40.0, 320, 420)];
+        self.pickerView = [[UIPickerView alloc] initWithFrame:([PFUtil is4inch]) ? CGRectMake(0, 40.0, 320, 420) : CGRectMake(0, 40, 320, 420)];
         self.pickerView.dataSource = self;
         self.pickerView.delegate = self;
         self.pickerView.showsSelectionIndicator = YES;
@@ -92,11 +92,11 @@
     CGRect frame;
     switch (frameType) {
         case defaultFrameType:
-            frame = kPFActionSheetFrameDefault;
+            frame = ([PFUtil is4inch]) ? kPFActionSheetFrameDefault_4inch : kPFActionSheetFrameDefault;
             break;
             
         default:
-            frame = kPFActionSheetFrameDefault;
+            frame = ([PFUtil is4inch]) ? kPFActionSheetFrameDefault_4inch : kPFActionSheetFrameDefault;
             break;
     }
     return frame;

@@ -28,6 +28,7 @@
 + (NSArray *)introductions;
 + (NSArray *)lastLogines;
 + (NSArray *)myPageSortList;
++ (NSArray *)age;
 
 // top bar button
 + (UIButton *)slideMenuBarButton;

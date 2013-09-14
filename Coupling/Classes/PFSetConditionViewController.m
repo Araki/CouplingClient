@@ -17,13 +17,20 @@
 
 @implementation PFSetConditionViewController
 
-- (id)initWithCoder:(NSCoder *)aDecoder
+#pragma mark  - View Life Cycle
+- (void)viewDidLoad
 {
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        
+    [super viewDidLoad];
+    self.navigationController.title = @"お相手検索";
+    self.detailListArray = [NSMutableArray arrayWithCapacity:kPFProfileTitleListNum];
+    
+    for (int i = 0; i < kPFProfileTitleListNum; i++)
+    {
+        [self.detailListArray addObject:[NSNull null]];
     }
-    return self;
+    
+    self.conditionListArray = [PFUtil searchConditionTitles];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -32,29 +39,14 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    self.navigationController.title = @"お相手検索";    
-    self.detailListArray = [NSMutableArray arrayWithCapacity:kPFProfileTitleListNum];
-    for (int i = 0; i < kPFProfileTitleListNum; i++) {
-        [self.detailListArray addObject:[NSNull null]];
-    }
-    self.conditionListArray = [PFUtil searchConditionTitles];
-    
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Tableview data source
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
     return kPFSearchConditionNum;
 }
 
@@ -62,12 +54,14 @@
 {
     static NSString *CellIdentifier = @"ConditionCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (!cell) {
+    if (!cell)
+    {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
         UILabel *conditionDetailLabel = cell.detailTextLabel;
         [conditionDetailLabel setText:@""];
         cell.selectionStyle = UITableViewCellSelectionStyleGray;
     }
+    
     [self updateCell:cell atIndexPath:indexPath];
     
     return cell;
@@ -99,6 +93,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     self.actionSheet = [self actionSheetWithRow:indexPath.row];
     self.currentPath = indexPath;
 }
@@ -107,9 +103,16 @@
 
 - (void)dismissOkButtonWithTitles:(NSArray *)titles type:(kPFActionSheetType)type
 {
-    NSLog(@"titles = %@", titles);
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:self.currentPath];
-    NSString *detail = [titles objectAtIndex:0];
+    NSString *detail;
+    if (self.currentPath.row == Condition_Age)
+    {
+        detail = [NSString stringWithFormat:@"%@〜%@",[titles objectAtIndex:0],[titles objectAtIndex:1]];
+    }
+    else
+    {
+        detail = [titles objectAtIndex:0];
+    }
     cell.detailTextLabel.text = detail;
     [cell setNeedsLayout];
     [self.detailListArray replaceObjectAtIndex:self.currentPath.row withObject:detail];
@@ -126,14 +129,27 @@
     NSArray *title2 = nil;
     NSArray *title3 = nil;
     switch (row) {
-        case Condition_Address:
-            title1 = [PFUtil prefectures];
+        case Condition_Age:
+            title1 = [PFUtil age];
+            title2 = [PFUtil age];
             break;
         case Condition_Introduction:
             title1 = [PFUtil introductions];
             break;
-        case Condition_BloodType:
-            title1 = [PFUtil bloodTypes];
+        case Condition_People:
+            
+            break;
+        case Condition_Day:
+            
+            break;
+        case Condition_Time:
+            
+            break;
+        case Condition_GoconAge:
+            
+            break;
+        case Condition_Location:
+            
             break;
         case Condition_Body:
             title1 = [PFUtil bodyShapes];
@@ -153,7 +169,6 @@
         case Condition_LastLoginData:
             title1 = [PFUtil lastLogines];
             break;
-            
         default:
             title1 = [NSArray arrayWithObject:nil];
             break;
