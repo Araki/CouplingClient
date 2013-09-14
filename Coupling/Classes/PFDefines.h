@@ -24,17 +24,20 @@ typedef enum {
 }kPFProfileTitleList;
 
 //-----相手検索条件-----//
-#define kPFSearchConditionNum   17
+#define kPFSearchConditionNum   13
 
 typedef enum {
     Condition_Age = 0,        // 年齢
-    Condition_Address,        // 居住地
     Condition_Introduction,   // 自己紹介文
-    Condition_BloodType,      // 血液型
+    Condition_People,         // 合コン参加人数
+    Condition_Day,            // 合コン参加曜日
+    Condition_Time,           // 合コン参加時間
+    Condition_GoconAge,       // 合コン参加年齢
+    Condition_Location,       // 開催希望場所
     Condition_Body,           // 体型
     Condition_Education,      // 学歴
     Condition_Occupation,     // 職業
     Condition_Income,         // 年収
-    Condition_Holiday = 10,   // 休日
+    Condition_Holiday,        // 休日
     Condition_LastLoginData   // 最終ログイン日
 }kPFConditionTitleList;
