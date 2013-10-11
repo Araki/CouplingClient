@@ -196,6 +196,8 @@
 		C1E3C60816EC790300BF4C99 /* TitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E3C60716EC790300BF4C99 /* TitleViewController.m */; };
 		C1E3C62416EC8CE700BF4C99 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1E3C62116EC8CDD00BF4C99 /* AudioToolbox.framework */; };
 		C1E3C62716ECA40D00BF4C99 /* SignupStep4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E3C62616ECA40D00BF4C99 /* SignupStep4ViewController.m */; };
+		FA44315218086D38007EBCF9 /* PFShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44315018086D38007EBCF9 /* PFShopViewController.m */; };
+		FA44315318086D38007EBCF9 /* PFShopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA44315118086D38007EBCF9 /* PFShopViewController.xib */; };
 		FA91A66B17E2136D00EB8AA1 /* PFTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA91A66917E2136D00EB8AA1 /* PFTutorialViewController.m */; };
 		FA91A66C17E2136D00EB8AA1 /* PFTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA91A66A17E2136D00EB8AA1 /* PFTutorialViewController.xib */; };
 		FA91A66F17E213DA00EB8AA1 /* PFTutorialScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA91A66E17E213DA00EB8AA1 /* PFTutorialScrollView.m */; };
@@ -518,6 +520,9 @@
 		C1E3C62116EC8CDD00BF4C99 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		C1E3C62516ECA40D00BF4C99 /* SignupStep4ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupStep4ViewController.h; sourceTree = "<group>"; };
 		C1E3C62616ECA40D00BF4C99 /* SignupStep4ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupStep4ViewController.m; sourceTree = "<group>"; };
+		FA44314F18086D38007EBCF9 /* PFShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFShopViewController.h; sourceTree = "<group>"; };
+		FA44315018086D38007EBCF9 /* PFShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFShopViewController.m; sourceTree = "<group>"; };
+		FA44315118086D38007EBCF9 /* PFShopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFShopViewController.xib; sourceTree = "<group>"; };
 		FA91A66817E2136D00EB8AA1 /* PFTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFTutorialViewController.h; sourceTree = "<group>"; };
 		FA91A66917E2136D00EB8AA1 /* PFTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFTutorialViewController.m; sourceTree = "<group>"; };
 		FA91A66A17E2136D00EB8AA1 /* PFTutorialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFTutorialViewController.xib; sourceTree = "<group>"; };
@@ -924,6 +929,7 @@
 		C10A32791632A8C80083F51B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FA44314E18086D22007EBCF9 /* ShopView */,
 				FAE8ADC317E2EC67007D7128 /* LoginBonus */,
 				2A7D28891707FEEB00DC957F /* ViewDeckController */,
 				2A7D28881707FE8500DC957F /* SlideMenu */,
@@ -1182,6 +1188,16 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		FA44314E18086D22007EBCF9 /* ShopView */ = {
+			isa = PBXGroup;
+			children = (
+				FA44314F18086D38007EBCF9 /* PFShopViewController.h */,
+				FA44315018086D38007EBCF9 /* PFShopViewController.m */,
+				FA44315118086D38007EBCF9 /* PFShopViewController.xib */,
+			);
+			path = ShopView;
+			sourceTree = "<group>";
+		};
 		FAC09CA717B4D352008ECFF3 /* PairSearchTopSubClass */ = {
 			isa = PBXGroup;
 			children = (
@@ -1376,6 +1392,7 @@
 				2A835911172D13AD00FBC6E8 /* button_trade.png in Resources */,
 				FA91A66C17E2136D00EB8AA1 /* PFTutorialViewController.xib in Resources */,
 				FAE8ADC817E2EC81007D7128 /* PFLoginBonusViewController.xib in Resources */,
+				FA44315318086D38007EBCF9 /* PFShopViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1476,6 +1493,7 @@
 				FA91A66B17E2136D00EB8AA1 /* PFTutorialViewController.m in Sources */,
 				FA91A66F17E213DA00EB8AA1 /* PFTutorialScrollView.m in Sources */,
 				FAE8ADC717E2EC81007D7128 /* PFLoginBonusViewController.m in Sources */,
+				FA44315218086D38007EBCF9 /* PFShopViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

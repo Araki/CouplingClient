@@ -139,7 +139,6 @@
 
 - (IBAction)actionStatusSortBarButton:(id)sender
 {
-    NSLog(@"senderTag = %d", ((UIBarButtonItem *)sender).tag);
     [PFActionSheet sheetWithView:self.view
                        frameType:defaultFrameType
                         delegate:self
@@ -162,6 +161,9 @@
 {
     NSArray *displayArray = nil;
     switch (sortType) {
+        case SortTyp_All:
+            displayArray = self.allUserArray;
+            break;
         case SortTyp_CanTalk:
             displayArray = self.canTalkUserArray;
             break;
