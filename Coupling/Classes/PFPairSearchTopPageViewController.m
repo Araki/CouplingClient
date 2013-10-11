@@ -34,6 +34,8 @@
     int page;
     //ボーナスView
     PFLoginBonusViewController *bonusView;
+    //検索画面
+    PFSetConditionViewController *conditionView;
 }
 @synthesize pageControlUsed = _pageControlUsed;
 @synthesize page = _page;
@@ -121,6 +123,12 @@
 	[super viewDidDisappear:animated];
 }
 
+- (void)viewDidUnload
+{
+    [self setOutletNavigationBar:nil];
+    [super viewDidUnload];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -175,15 +183,22 @@
     NSLog(@"Notifivation");
 }
 
-- (IBAction)actionSetConditionsButton:(UIButton *)sender
+- (IBAction)moveConditionView:(id)sender
 {
-    NSLog(@"setConditions");
+    if (conditionView == nil)
+    {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+        conditionView = [storyboard instantiateViewControllerWithIdentifier:@"PFSetConditionViewController"];
+        [conditionView setSetConditionViewControllerDelegate:self];
+    }
+    [self.navigationController pushViewController:conditionView animated:YES];
 }
 
-- (void)viewDidUnload
+#pragma mark - SetConditionView Delegate
+- (void)setSearchCondition:(NSArray *)searchArray
 {
-    [self setOutletNavigationBar:nil];
-    [super viewDidUnload];
+    //TODO: 検索条件指定で検索
+    
 }
 
 #pragma mark - Bonus View

@@ -16,6 +16,9 @@
 @end
 
 @implementation PFSetConditionViewController
+{
+    UIImageView *footerView;
+}
 
 #pragma mark  - View Life Cycle
 - (void)viewDidLoad
@@ -31,6 +34,26 @@
     
     self.conditionListArray = [PFUtil searchConditionTitles];
     
+    
+    //Frame調整
+    [self.tableView setFrame:CGRectMake(0, 0, 320, self.tableView.frame.size.height - 55)];
+    //フッター作成
+    footerView = [[UIImageView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 109, 320, 65)];
+    [footerView setUserInteractionEnabled:YES];
+    [footerView setImage:[UIImage imageNamed:@"bg_footer"]];
+    [self.view addSubview:footerView];
+    //検索ボタン
+    UIButton *searchButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [searchButton setImage:[UIImage imageNamed:@"button_search"] forState:UIControlStateNormal];
+    [searchButton setFrame:CGRectMake(20, 23, 169, 35)];
+    [searchButton addTarget:self action:@selector(searchUser) forControlEvents:UIControlEventTouchUpInside];
+    [footerView addSubview:searchButton];
+    //条件クリアボタン
+    UIButton *clearButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [clearButton setImage:[UIImage imageNamed:@"button_clear"] forState:UIControlStateNormal];
+    [clearButton setFrame:CGRectMake(225, 30, 81, 27)];
+    [clearButton addTarget:self action:@selector(clearData) forControlEvents:UIControlEventTouchUpInside];
+    [footerView addSubview:clearButton];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -42,6 +65,23 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark - IBActions
+- (void)clearData
+{
+    self.detailListArray = [NSMutableArray arrayWithCapacity:kPFProfileTitleListNum];
+    for (int i = 0; i < kPFProfileTitleListNum; i++)
+    {
+        [self.detailListArray addObject:[NSNull null]];
+    }
+    [self.tableView reloadData];
+}
+
+- (void)searchUser
+{
+    [self.setConditionViewControllerDelegate setSearchCondition:self.detailListArray];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - Tableview data source
