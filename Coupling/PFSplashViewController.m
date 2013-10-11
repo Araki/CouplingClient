@@ -88,6 +88,10 @@
 {
    dispatch_queue_t mainQueue = dispatch_get_main_queue();
    dispatch_async(mainQueue, ^{
+
+       //TODO:ユーザー情報更新
+       
+       
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
         PFViewDeckController *view = [storyboard instantiateViewControllerWithIdentifier:@"PFViewDeckController"];
         [self.navigationController pushViewController:view animated:YES];
