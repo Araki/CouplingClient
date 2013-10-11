@@ -12,6 +12,9 @@
 
 #define kPFActionSheetFrameDefault CGRectMake(0, 150, 320, 485)
 
+#define kPFActionSheetFrameDefault_NonNavBar       CGRectMake(0, 160 + 44, 320, 485)
+#define kPFActionSheetFrameDefault_NonNavBar_4inch CGRectMake(0, 160 + 88 + 44, 320, 485)
+
 typedef enum {
     singleType = 0, // PickerViewのcomponentが１つのタイプ
     dowbleType,     //          〃            2つのタイプ
