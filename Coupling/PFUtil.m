@@ -135,7 +135,8 @@
 
 + (NSArray *)myPageSortList
 {
-    return @[@"お互い",
+    return @[@"全て",
+             @"お互い",
              @"相手から",
              @"自分から",
              @"お気に入り"];

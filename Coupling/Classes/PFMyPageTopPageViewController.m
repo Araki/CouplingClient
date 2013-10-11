@@ -19,30 +19,13 @@
 
 @implementation PFMyPageTopPageViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        
-    }
-    return self;
-}
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        
-    }
-    return self;
-}
-
-
-
+#pragma mark - View Life Cycle
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.outletTableViewController.backgroundColor = kPFBackGroundColor;
 }
+
 /*
 - (void)makeNavigationBarButton
 {
@@ -147,7 +130,6 @@
 }
 
 #pragma mark - PFActionSheet Delegate
-
 - (void)dismissOkButtonWithTitles:(NSArray *)titles type:(kPFActionSheetType)type
 {
     kPFMyPageSortType sortType =

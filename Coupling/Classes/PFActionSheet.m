@@ -82,7 +82,15 @@
         [self addSubview:self.pickerView];
         
         [self showInView:view];
-        self.frame = [self frameWithFrameType:frameType];
+        if (view.frame.size.height == 504.0f || view.frame.size.height == 416.0f)
+        {
+            self.frame = [self frameWithFrameType:frameType];
+        }
+        else
+        {
+            self.frame = [self frameWithFrameTypeNonNavBar:frameType];
+        }
+        
     }
     return self;
 }
@@ -102,6 +110,20 @@
     return frame;
 }
 
+- (CGRect)frameWithFrameTypeNonNavBar:(kPFActionSheetFrameType)frameType
+{
+    CGRect frame;
+    switch (frameType) {
+        case defaultFrameType:
+            frame = ([PFUtil is4inch]) ? kPFActionSheetFrameDefault_NonNavBar_4inch : kPFActionSheetFrameDefault_NonNavBar;
+            break;
+            
+        default:
+            frame = ([PFUtil is4inch]) ? kPFActionSheetFrameDefault_NonNavBar_4inch : kPFActionSheetFrameDefault_NonNavBar;
+            break;
+    }
+    return frame;
+}
 
 - (void)dismissActionSheet:(id)sender
 {
