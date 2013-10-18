@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "PFAbstractPageViewController.h"
 #import "PFProfileScrollView.h"
+#import "PFSetConditionViewController.h"
 
-@interface PFPairSearchTopPageViewController : PFAbstractPageViewController <UIScrollViewDelegate, PFProfileScrollViewDelegate>
+@interface PFPairSearchTopPageViewController : PFAbstractPageViewController <UIScrollViewDelegate, PFProfileScrollViewDelegate, PFSetConditionViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UINavigationBar *outletNavigationBar;
 
+- (IBAction)moveConditionView:(id)sender;
 
 @end

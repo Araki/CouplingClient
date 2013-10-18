@@ -75,14 +75,22 @@
         [cancelButton addTarget:self action:@selector(cancelButtonAction) forControlEvents:UIControlEventValueChanged];
         [self addSubview:cancelButton];
         
-        self.pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 40.0, 320, 420)];
+        self.pickerView = [[UIPickerView alloc] initWithFrame:([PFUtil is4inch]) ? CGRectMake(0, 40.0, 320, 420) : CGRectMake(0, 40, 320, 420)];
         self.pickerView.dataSource = self;
         self.pickerView.delegate = self;
         self.pickerView.showsSelectionIndicator = YES;
         [self addSubview:self.pickerView];
         
         [self showInView:view];
-        self.frame = [self frameWithFrameType:frameType];
+        if (view.frame.size.height == 504.0f || view.frame.size.height == 416.0f)
+        {
+            self.frame = [self frameWithFrameType:frameType];
+        }
+        else
+        {
+            self.frame = [self frameWithFrameTypeNonNavBar:frameType];
+        }
+        
     }
     return self;
 }
@@ -92,16 +100,30 @@
     CGRect frame;
     switch (frameType) {
         case defaultFrameType:
-            frame = kPFActionSheetFrameDefault;
+            frame = ([PFUtil is4inch]) ? kPFActionSheetFrameDefault_4inch : kPFActionSheetFrameDefault;
             break;
             
         default:
-            frame = kPFActionSheetFrameDefault;
+            frame = ([PFUtil is4inch]) ? kPFActionSheetFrameDefault_4inch : kPFActionSheetFrameDefault;
             break;
     }
     return frame;
 }
 
+- (CGRect)frameWithFrameTypeNonNavBar:(kPFActionSheetFrameType)frameType
+{
+    CGRect frame;
+    switch (frameType) {
+        case defaultFrameType:
+            frame = ([PFUtil is4inch]) ? kPFActionSheetFrameDefault_NonNavBar_4inch : kPFActionSheetFrameDefault_NonNavBar;
+            break;
+            
+        default:
+            frame = ([PFUtil is4inch]) ? kPFActionSheetFrameDefault_NonNavBar_4inch : kPFActionSheetFrameDefault_NonNavBar;
+            break;
+    }
+    return frame;
+}
 
 - (void)dismissActionSheet:(id)sender
 {

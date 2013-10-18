@@ -105,9 +105,12 @@
 + (NSArray *)searchConditionTitles
 {
     return @[@"年齢",
-             @"住所",
              @"自己紹介文",
-             @"血液型",
+             @"合コン希望人数",
+             @"合コン希望曜日",
+             @"合コン希望時間",
+             @"合コン希望年齢",
+             @"開催希望場所",
              @"体型",
              @"学歴",
              @"職業",
@@ -132,10 +135,21 @@
 
 + (NSArray *)myPageSortList
 {
-    return @[@"お互い",
+    return @[@"全て",
+             @"お互い",
              @"相手から",
              @"自分から",
              @"お気に入り"];
+}
+
++ (NSArray *)age
+{
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:0];
+    for (int i = 18; i < 100; i++)
+    {
+        [array addObject:[NSString stringWithFormat:@"%d歳",i]];
+    }
+    return array;
 }
 
 // top bar button
