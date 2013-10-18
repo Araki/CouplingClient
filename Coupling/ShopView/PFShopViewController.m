@@ -17,8 +17,8 @@
 #pragma mark - Init
 - (void)initView
 {
-    
-    
+    //BackGround
+    [self.view setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3f]];
 }
 
 #pragma mark - View Life Cycle
@@ -28,9 +28,37 @@
     [self initView];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    //TODO: ここでいいね数・ポイント数を更新
+    
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark - IBActions
+- (IBAction)closeView:(id)sender
+{
+
+}
+
+- (IBAction)buyPoints:(id)sender
+{
+
+}
+
+- (IBAction)showTapjoy:(id)sender
+{
+
+}
+
+- (IBAction)changeLike:(id)sender
+{
+
 }
 
 @end

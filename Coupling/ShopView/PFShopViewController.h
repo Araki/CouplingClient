@@ -8,6 +8,25 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol PFShopViewControllerDelegate;
+
 @interface PFShopViewController : UIViewController
+
+@property (nonatomic, assign) id <PFShopViewControllerDelegate> shopViewControllerDelegate;
+
+@property (weak, nonatomic) IBOutlet UILabel *pointLabel;
+@property (weak, nonatomic) IBOutlet UILabel *likeLabel;
+
+
+- (IBAction)closeView:(id)sender;
+- (IBAction)buyPoints:(id)sender;
+- (IBAction)showTapjoy:(id)sender;
+- (IBAction)changeLike:(id)sender;
+
+@end
+
+@protocol PFShopViewControllerDelegate <NSObject>
+
+@optional
 
 @end
