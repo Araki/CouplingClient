@@ -146,8 +146,8 @@
     NSString *picture = [NSString stringWithFormat:@"%d枚",[[userData objectForKey:@"images"] count]];
     [pictureLabel setText:picture];
 
-    //TODO: 残りいいね数を更新する
-    
+    //残りいいね数を更新する
+    [likeLabel setText:[NSString stringWithFormat:@"残り%d",[[PFUser currentUser] likePoints]]];
     
     //お気に入り判定等
     [self checkUser];
@@ -263,6 +263,13 @@
     else
     {
         PFUser *user = [PFUser currentUser];
+        if (user.likePoints <= 0)
+        {
+            //TODO:　いいね交換ショップの表示
+            
+            return;
+        }
+        
         NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjects:[NSArray arrayWithObjects:user.sessionId, targetID,nil] forKeys:[NSArray arrayWithObjects:@"session_id", @"target_id", nil]];
         
         [PFHTTPConnector postWithCommand:[likecommandary objectAtIndex:like_status]
@@ -271,6 +278,16 @@
                                       if([status isEqualToString:@"OK"] || [status isEqualToString:@"ok"]) {
                                           dispatch_queue_t mainQueue = dispatch_get_main_queue();
                                           dispatch_async(mainQueue, ^{
+                                              if (like_status == 0)
+                                              {
+                                                  //いいね消費
+                                                  NSInteger likePoint = [[PFUser currentUser] likePoints];
+                                                  likePoint --;
+                                                  [[PFUser currentUser] setLikePoints:likePoint];
+                                                  [[PFUser currentUser] saveToCacheAsCurrentUser];
+                                                  //残りいいね数を更新する
+                                                  [likeLabel setText:[NSString stringWithFormat:@"残り%d",[[PFUser currentUser] likePoints]]];
+                                              }
                                               [self changeLikeState:(like_status == 1 ? 0 : 1)];
                                           });
                                       }
