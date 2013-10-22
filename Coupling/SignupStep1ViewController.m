@@ -144,6 +144,10 @@
         [PFHTTPConnector postWithCommand:kPFCommandSessionsCreate params:params onSuccess:^(PFHTTPResponse *response) {
             NSLog(@"@@@@@ postWithCommand onSuccess");
             NSString *session = [[response jsonDictionary] valueForKey:@"session"];
+            NSString *likePoint = [[[response jsonDictionary] valueForKey:@"user"] valueForKey:@"like_point"];
+            NSString *point = [[[response jsonDictionary] valueForKey:@"user"] valueForKey:@"point"];
+            [PFUser currentUser].likePoints = [likePoint integerValue];
+            [PFUser currentUser].points     = [point integerValue];
             [PFUser currentUser].sessionId = session;
             [[PFUser currentUser] saveToCacheAsCurrentUser];
             

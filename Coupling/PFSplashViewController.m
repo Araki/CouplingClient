@@ -89,12 +89,16 @@
    dispatch_queue_t mainQueue = dispatch_get_main_queue();
    dispatch_async(mainQueue, ^{
 
-       //TODO:ユーザー情報更新
+       //ユーザー情報更新
+       NSString *likePoint = [[[notification userInfo] valueForKey:@"user"] valueForKey:@"like_point"];
+       NSString *point = [[[notification userInfo] valueForKey:@"user"] valueForKey:@"point"];
+       [PFUser currentUser].likePoints = [likePoint integerValue];
+       [PFUser currentUser].points     = [point integerValue];
+       [[PFUser currentUser] saveToCacheAsCurrentUser];
        
-       
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
-        PFViewDeckController *view = [storyboard instantiateViewControllerWithIdentifier:@"PFViewDeckController"];
-        [self.navigationController pushViewController:view animated:YES];
+       UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+       PFViewDeckController *view = [storyboard instantiateViewControllerWithIdentifier:@"PFViewDeckController"];
+       [self.navigationController pushViewController:view animated:YES];
    });
 }
 
