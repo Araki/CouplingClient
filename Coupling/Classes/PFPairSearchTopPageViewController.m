@@ -15,6 +15,7 @@
 #import "PFHTTPConnector.h"
 #import "PFProfileScrollView.h"
 #import "PFLoginBonusViewController.h"
+#import "PFShopViewController.h"
 
 @interface PFPairSearchTopPageViewController ()
 
@@ -36,6 +37,8 @@
     PFLoginBonusViewController *bonusView;
     //検索画面
     PFSetConditionViewController *conditionView;
+    //ショップView
+    PFShopViewController *shopView;
 }
 @synthesize pageControlUsed = _pageControlUsed;
 @synthesize page = _page;
@@ -143,6 +146,33 @@
 - (void)showPictures:(PFProfile *)user
 {
     
+}
+
+- (void)showLikeShop
+{
+    //いいね数交換ページへ遷移
+    shopView = [[PFShopViewController alloc] initWithNibName:@"PFShopViewController" bundle:nil];
+    [shopView.view setFrame:self.view.bounds];
+    [shopView.view setAlpha:0];
+    [shopView.closeButton addTarget:self action:@selector(hideShopView) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:shopView.view];
+    [UIView animateWithDuration:0.5f
+                     animations:^{
+                         [shopView.view setAlpha:1];
+                     }
+                     completion:^(BOOL finished){
+                     }];
+}
+
+- (void)hideShopView
+{
+    [UIView animateWithDuration:0.5f
+                     animations:^{
+                         [shopView.view setAlpha:0];
+                     }
+                     completion:^(BOOL finished){
+                         [shopView.view removeFromSuperview];
+                     }];
 }
 
 - (void)scrollView:(PFProfileScrollView *)scrollView didScrollPage:(int)currentPage

@@ -192,6 +192,11 @@
     [self.profileScrollViewDelegate showPictures:user];
 }
 
+- (void)showLikeShop
+{
+    [self.profileScrollViewDelegate showLikeShop];
+}
+
 #pragma mark - ScrollView Delegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {

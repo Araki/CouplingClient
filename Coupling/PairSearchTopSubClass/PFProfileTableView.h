@@ -25,5 +25,6 @@
 @optional
 - (void)showTalkView:(PFProfile *)user;
 - (void)showPictures:(PFProfile *)user;
+- (void)showLikeShop;
 
 @end

@@ -25,5 +25,6 @@
 @optional
 - (void)showPictures;
 - (void)showTalkPage;
+- (void)showLikeShop;
 
 @end

@@ -33,5 +33,6 @@
 - (void)scrollView:(PFProfileScrollView *)scrollView didScrollPage:(int)currentPage;
 - (void)showPictures:(PFProfile *)user;
 - (void)showTalkPage:(PFProfile *)user;
+- (void)showLikeShop;
 
 @end

@@ -41,11 +41,6 @@
 }
 
 #pragma mark - IBActions
-- (IBAction)closeView:(id)sender
-{
-
-}
-
 - (IBAction)buyPoints:(id)sender
 {
 

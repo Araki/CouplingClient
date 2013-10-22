@@ -69,6 +69,11 @@
     [self.profileTableViewDelegate showTalkView:user];
 }
 
+- (void)showLikeShop
+{
+    [self.profileTableViewDelegate showLikeShop];
+}
+
 #pragma mark - UITableView Delegate
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
 {

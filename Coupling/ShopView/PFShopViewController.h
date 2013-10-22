@@ -16,6 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *pointLabel;
 @property (weak, nonatomic) IBOutlet UILabel *likeLabel;
+@property (weak, nonatomic) IBOutlet UIButton *closeButton;
 
 
 - (IBAction)closeView:(id)sender;

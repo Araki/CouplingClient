@@ -266,7 +266,7 @@
         if (user.likePoints <= 0)
         {
             //TODO:　いいね交換ショップの表示
-            
+            [self.headerViewDelegate showLikeShop];
             return;
         }
         
