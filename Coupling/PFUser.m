@@ -34,6 +34,8 @@
 #define	kPFUsersIncomeCache                             @"PF_USER_INCOME_CACHE"
 #define	kPFUsersHolidayCache                            @"PF_USER_HOLIDAY_CACHE"
 #define	kPFUsersStatusCache                             @"PF_USER_STATUS_CACHE"
+#define kPFUsersLikePointsCache                         @"PF_USER_LIKEPOINTS_CACHE"
+#define kPFUsersPointsCache                             @"PF_USER_POINTS_CACHE"
 
 #define kPNJSONBoolTrue @"true"
 #define kPNJSONBoolFalse @"false"
@@ -183,7 +185,9 @@ static int		p_dedupCounter	= 1;
 	cacheUser.income            = [[NSUserDefaults standardUserDefaults] integerForKey:kPFUsersIncomeCache];
 	cacheUser.holiday           = [[NSUserDefaults standardUserDefaults] integerForKey:kPFUsersHolidayCache];
 	cacheUser.status            = [[NSUserDefaults standardUserDefaults] integerForKey:kPFUsersStatusCache];
-	
+	cacheUser.likePoints        = [[NSUserDefaults standardUserDefaults] integerForKey:kPFUsersLikePointsCache];
+    cacheUser.points            = [[NSUserDefaults standardUserDefaults] integerForKey:kPFUsersPointsCache];
+    
 	if(!cacheUser.udid){
 		cacheUser.udid = [UIDevice currentDevice].identifierForVendor;
 	}
@@ -213,6 +217,8 @@ static int		p_dedupCounter	= 1;
 	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", self.income] forKey:kPFUsersIncomeCache];
 	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", self.holiday] forKey:kPFUsersHolidayCache];
 	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", self.status] forKey:kPFUsersStatusCache];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", self.likePoints] forKey:kPFUsersLikePointsCache];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", self.points] forKey:kPFUsersPointsCache];
 	
 	[[NSUserDefaults standardUserDefaults] synchronize];
 }
@@ -251,7 +257,9 @@ static int		p_dedupCounter	= 1;
                             job, @"job",
                             income, @"income",
                             holiday, @"holiday",
-                            status, @"status", nil];
+                            status, @"status",
+                            likePoints, @"line_point",
+                            points, @"point", nil];
 #undef JSONBOOL
     return fields;
 }
@@ -278,6 +286,8 @@ static int		p_dedupCounter	= 1;
     [dic setObject:JSONInt(self.income) forKey:@"income"];
     [dic setObject:JSONInt(self.holiday) forKey:@"holiday"];
     [dic setObject:JSONInt(self.status) forKey:@"status"];
+    [dic setObject:JSONInt(self.likePoints) forKey:@"like_point"];
+    [dic setObject:JSONInt(self.points) forKey:@"point"];
 #undef JSONString
 #undef JSONInt
 #undef EXTService
