@@ -34,6 +34,12 @@
     int page;
     //ボーナスView
     PFLoginBonusViewController *bonusView;
+    //検索画面
+    PFSetConditionViewController *conditionView;
+    //ショップView
+    PFShopViewController *shopView;
+    //検索Option
+    NSMutableDictionary *conditionDict;
 }
 @synthesize pageControlUsed = _pageControlUsed;
 @synthesize page = _page;
@@ -75,6 +81,7 @@
     [self initView];
     
     //User情報
+    conditionDict = [NSMutableDictionary dictionaryWithCapacity:0];
     page = 0;
     PFUser *user = [PFUser currentUser];
     NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjects:[NSArray arrayWithObjects:user.sessionId,nil] forKeys: [NSArray arrayWithObjects:@"session_id", nil]];
@@ -121,6 +128,12 @@
 	[super viewDidDisappear:animated];
 }
 
+- (void)viewDidUnload
+{
+    [self setOutletNavigationBar:nil];
+    [super viewDidUnload];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -149,7 +162,19 @@
         //最終ページまでいったので追加読み込み処理
         [scrollView addUserLoading];
         PFUser *user = [PFUser currentUser];
-        NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjects:[NSArray arrayWithObjects:user.sessionId, [NSString stringWithFormat:@"%d",page], @"25",nil] forKeys: [NSArray arrayWithObjects:@"session_id", @"page", @"per",nil]];
+        NSMutableDictionary *params;
+        if ([conditionDict count] != 0)
+        {
+            //検索条件付き
+            params = [NSMutableDictionary dictionaryWithDictionary:conditionDict];
+            [params setObject:user.sessionId forKey:@"session_id"];
+            [params setObject:[NSString stringWithFormat:@"%d",page] forKey:@"page"];
+            [params setObject:@"25" forKey:@"per"];
+        }
+        else
+        {
+            NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjects:[NSArray arrayWithObjects:user.sessionId, [NSString stringWithFormat:@"%d",page], @"25",nil] forKeys: [NSArray arrayWithObjects:@"session_id", @"page", @"per",nil]];
+        }
         [PFHTTPConnector requestWithCommand:kPFCommendUsersList params:params onSuccess:^(PFHTTPResponse *response) {
             NSDictionary *jsonObject = [response jsonDictionary];
             if([jsonObject objectForKey:@"users"]) {
@@ -175,15 +200,40 @@
     NSLog(@"Notifivation");
 }
 
-- (IBAction)actionSetConditionsButton:(UIButton *)sender
+- (IBAction)moveConditionView:(id)sender
 {
-    NSLog(@"setConditions");
+    if (conditionView == nil)
+    {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+        conditionView = [storyboard instantiateViewControllerWithIdentifier:@"PFSetConditionViewController"];
+        [conditionView setSetConditionViewControllerDelegate:self];
+    }
+    [self.navigationController pushViewController:conditionView animated:YES];
 }
 
-- (void)viewDidUnload
+#pragma mark - SetConditionView Delegate
+- (void)setSearchCondition:(NSDictionary *)searchDict
 {
-    [self setOutletNavigationBar:nil];
-    [super viewDidUnload];
+    //User情報
+    page = 0;
+    PFUser *user = [PFUser currentUser];
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:searchDict];
+    [params setObject:user.sessionId forKey:@"session_id"];
+    
+    [PFHTTPConnector requestWithCommand:kPFCommendUsersList params:params onSuccess:^(PFHTTPResponse *response) {
+        NSDictionary *jsonObject = [response jsonDictionary];
+        if([jsonObject objectForKey:@"users"]) {
+            dispatch_queue_t mainQueue = dispatch_get_main_queue();
+            dispatch_async(mainQueue, ^{
+                page ++;
+                //ScrollView初期化
+                [profileScrollView initUserWithData:[jsonObject objectForKey:@"users"]];
+                dataArray = [NSArray arrayWithArray:[jsonObject objectForKey:@"users"]];
+            });
+        }
+    } onFailure:^(NSError *error) {
+        NSLog(@"@@@@@ connection Error: %@", error);
+    }];
 }
 
 #pragma mark - Bonus View
