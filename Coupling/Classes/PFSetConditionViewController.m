@@ -80,7 +80,60 @@
 
 - (void)searchUser
 {
-    [self.setConditionViewControllerDelegate setSearchCondition:self.detailListArray];
+    //検索条件作成
+    NSMutableDictionary *searchDict = [NSMutableDictionary dictionaryWithCapacity:0];
+    for (int i = 0; i < [self.detailListArray count]; i++) 
+    {
+        NSString *str = [self.detailListArray objectAtIndex:i];
+        if (![str isEqual:[NSNull null]])
+        {
+            switch (i) {
+                case 0://年齢
+                    
+                    break;
+                case 1://自己紹介
+                    [searchDict setObject:[NSString stringWithFormat:@"%d",[[PFUtil introductions] indexOfObject:str]] forKey:@"introduction"];
+                    break;
+                case 2://希望人数
+                    
+                    break;
+                case 3://希望曜日
+                    
+                    break;
+                case 4://希望時間
+                    
+                    break;
+                case 5://希望年齢
+                    
+                    break;
+                case 6://開催場所
+                    [searchDict setObject:[NSString stringWithFormat:@"%d",[[PFUtil prefectures] indexOfObject:str]] forKey:@"prefecture"];
+                    break;
+                case 7://体型
+                    [searchDict setObject:[NSString stringWithFormat:@"%d",[[PFUtil bodyShapes] indexOfObject:str]] forKey:@"proportion"];
+                    break;
+                case 8://学歴
+                    
+                    break;
+                case 9://職業
+                    [searchDict setObject:[NSString stringWithFormat:@"%d",[[PFUtil jobs] indexOfObject:str]] forKey:@"job"];
+                    break;
+                case 10://年収
+                    [searchDict setObject:[NSString stringWithFormat:@"%d",[[PFUtil incomes] indexOfObject:str]] forKey:@"income"];
+                    break;
+                case 11://休日
+                    [searchDict setObject:[NSString stringWithFormat:@"%d",[[PFUtil dayOff] indexOfObject:str]] forKey:@"holiday"];
+                    break;
+                case 12://最終ログイン日
+                    [searchDict setObject:[NSString stringWithFormat:@"%d",[[PFUtil lastLogines] indexOfObject:str]] forKey:@"last_login"];
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+    
+    [self.setConditionViewControllerDelegate setSearchCondition:searchDict];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -189,7 +242,7 @@
             
             break;
         case Condition_Location:
-            
+            title1 = [PFUtil prefectures];
             break;
         case Condition_Body:
             title1 = [PFUtil bodyShapes];
