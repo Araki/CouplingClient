@@ -36,6 +36,10 @@
     PFLoginBonusViewController *bonusView;
     //検索画面
     PFSetConditionViewController *conditionView;
+    //ショップView
+    PFShopViewController *shopView;
+    //検索Option
+    NSMutableDictionary *conditionDict;
 }
 @synthesize pageControlUsed = _pageControlUsed;
 @synthesize page = _page;
@@ -77,6 +81,7 @@
     [self initView];
     
     //User情報
+    conditionDict = [NSMutableDictionary dictionaryWithCapacity:0];
     page = 0;
     PFUser *user = [PFUser currentUser];
     NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjects:[NSArray arrayWithObjects:user.sessionId,nil] forKeys: [NSArray arrayWithObjects:@"session_id", nil]];
@@ -157,7 +162,19 @@
         //最終ページまでいったので追加読み込み処理
         [scrollView addUserLoading];
         PFUser *user = [PFUser currentUser];
-        NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjects:[NSArray arrayWithObjects:user.sessionId, [NSString stringWithFormat:@"%d",page], @"25",nil] forKeys: [NSArray arrayWithObjects:@"session_id", @"page", @"per",nil]];
+        NSMutableDictionary *params;
+        if ([conditionDict count] != 0)
+        {
+            //検索条件付き
+            params = [NSMutableDictionary dictionaryWithDictionary:conditionDict];
+            [params setObject:user.sessionId forKey:@"session_id"];
+            [params setObject:[NSString stringWithFormat:@"%d",page] forKey:@"page"];
+            [params setObject:@"25" forKey:@"per"];
+        }
+        else
+        {
+            NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjects:[NSArray arrayWithObjects:user.sessionId, [NSString stringWithFormat:@"%d",page], @"25",nil] forKeys: [NSArray arrayWithObjects:@"session_id", @"page", @"per",nil]];
+        }
         [PFHTTPConnector requestWithCommand:kPFCommendUsersList params:params onSuccess:^(PFHTTPResponse *response) {
             NSDictionary *jsonObject = [response jsonDictionary];
             if([jsonObject objectForKey:@"users"]) {
@@ -195,10 +212,28 @@
 }
 
 #pragma mark - SetConditionView Delegate
-- (void)setSearchCondition:(NSArray *)searchArray
+- (void)setSearchCondition:(NSDictionary *)searchDict
 {
-    //TODO: 検索条件指定で検索
+    //User情報
+    page = 0;
+    PFUser *user = [PFUser currentUser];
+    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithDictionary:searchDict];
+    [params setObject:user.sessionId forKey:@"session_id"];
     
+    [PFHTTPConnector requestWithCommand:kPFCommendUsersList params:params onSuccess:^(PFHTTPResponse *response) {
+        NSDictionary *jsonObject = [response jsonDictionary];
+        if([jsonObject objectForKey:@"users"]) {
+            dispatch_queue_t mainQueue = dispatch_get_main_queue();
+            dispatch_async(mainQueue, ^{
+                page ++;
+                //ScrollView初期化
+                [profileScrollView initUserWithData:[jsonObject objectForKey:@"users"]];
+                dataArray = [NSArray arrayWithArray:[jsonObject objectForKey:@"users"]];
+            });
+        }
+    } onFailure:^(NSError *error) {
+        NSLog(@"@@@@@ connection Error: %@", error);
+    }];
 }
 
 #pragma mark - Bonus View

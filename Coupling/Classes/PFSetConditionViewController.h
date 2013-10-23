@@ -23,6 +23,6 @@
 @protocol PFSetConditionViewControllerDelegate <NSObject>
 
 @optional
-- (void)setSearchCondition:(NSArray *)searchArray;
+- (void)setSearchCondition:(NSDictionary *)searchDict;
 
 @end
