@@ -10,7 +10,7 @@
 
 @protocol PFShopViewControllerDelegate;
 
-@interface PFShopViewController : UIViewController
+@interface PFShopViewController : UIViewController <UIAlertViewDelegate>
 
 @property (nonatomic, assign) id <PFShopViewControllerDelegate> shopViewControllerDelegate;
 
