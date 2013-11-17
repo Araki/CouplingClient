@@ -22,8 +22,17 @@
 #define kPFCommendFavoritesShow             @"/favorites/show"
 #define kPFCommendFavoritesCreate           @"/favorites/create"
 #define kPFCommendFavoritesDelete           @"/favorites/delete"
+#define kPFCommendFavoritesList             @"/favorites/list"
 
 // {Likes}
 #define kPFCommendLikesShow                 @"/likes/show"
 #define kPFCommendLikesCreate               @"/likes/create"
 #define kPFCommendLikesDelete               @"/likes/delete"
+#define kPFCommendLikesList                 @"/likes/list"
+
+// {Points}
+#define kPFCommendPointsAdd                 @"/points/add"
+#define kPFCommendPointsConsume             @"/points/consume"
+
+// {Matches}
+#define kPFCommendMatchesList               @"/matches/list"
