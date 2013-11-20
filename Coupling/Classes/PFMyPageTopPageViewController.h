@@ -9,13 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "PFAbstractPageViewController.h"
 #import "PFActionSheet.h"
+#import "MyPageDataManager.h"
 
-typedef enum {
-    SortTyp_CanTalk = 0,
-    SortTyp_GoodFromPartner,
-    SortTyp_GoodFromMe,
-    SortTyp_Favorite,
-}kPFMyPageSortType;
 
 @interface PFMyPageTopPageViewController : PFAbstractPageViewController <UITableViewDelegate, PFActionSheetDelegate>
 

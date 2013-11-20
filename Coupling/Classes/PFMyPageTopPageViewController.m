@@ -10,6 +10,7 @@
 #import "PFMyPageTopTableCell.h"
 #import "IIViewDeckController.h"
 #import "PFHTTPConnector.h"
+#import "MyPageDataManager.h"
 
 #define KEY_ALL         @"key_all_list"
 #define KEY_MATCH       @"key_match_list"
@@ -51,6 +52,8 @@
 {
     [super viewDidLoad];
     self.outletTableViewController.backgroundColor = kPFBackGroundColor;
+    //全てを選択
+    [self getAllList];
 }
 
 - (void)viewDidUnload
@@ -103,6 +106,20 @@
     return cell;
 }
 
+#pragma mark - UIScrollViewDelegate Methods
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (self.outletTableViewController.contentSize.height < self.view.frame.size.height) return;
+    
+    //一番下までスクロールしたら更新する
+    CGPoint offset = [self.outletTableViewController contentOffset];
+    CGFloat currentOffsetY = offset.y + self.view.frame.size.height;
+    if (currentOffsetY > (self.outletTableViewController.contentSize.height - 10))
+    {
+        [self addLoad];
+    }
+}
+
 #pragma mark - Table view delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -132,29 +149,48 @@
 
 - (void)displayUserArrayWithSortType:(kPFMyPageSortType)sortType
 {
-    NSArray *displayArray = nil;
     switch (sortType) {
+        case SortTyp_All:
+            [self getAllList];
+            break;
         case SortTyp_CanTalk:
-            displayArray = self.canTalkUserArray;
             [self getMatchList];
             break;
         case SortTyp_GoodFromPartner:
-            displayArray = self.goodFromPartnerUserArray;
             [self getMYLikedList];
             break;
         case SortTyp_GoodFromMe:
-            displayArray = self.goodFromMeUserArray;
             [self getMyLikeUser];
             break;
         case SortTyp_Favorite:
-            displayArray = self.favoriteUserDArray;
             [self getFavoriteUser];
             break;
         default:
             break;
     }
-    self.displayUserArray = [NSMutableArray arrayWithArray:displayArray];
-    [self.outletTableViewController reloadData];
+}
+
+- (void)addLoad
+{
+    switch (showType) {
+        case SortTyp_All:
+            [self addLoadAllList];
+            break;
+        case SortTyp_CanTalk:
+            [self addLoadMatchList];
+            break;
+        case SortTyp_GoodFromPartner:
+            [self addLoadMyLikedList];
+            break;
+        case SortTyp_GoodFromMe:
+            [self addLoadMyLikeList];
+            break;
+        case SortTyp_Favorite:
+            [self addLoadFavoriteList];
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)selectedWithComponent:(NSInteger)component title:(NSString *)title type:(kPFActionSheetType)type
@@ -162,162 +198,115 @@
     
 }
 
+- (void)getAllList
+{
+    [[MyPageDataManager sharedManager] changeDataWithType:SortTyp_All
+                                               onComplete:^(NSArray *dataArray, kPFMyPageSortType sortType) {
+                                                   if (sortType == SortTyp_All){
+                                                       self.displayUserArray = [NSMutableArray arrayWithArray:dataArray];
+                                                       [self.outletTableViewController reloadData];
+                                                   }
+                                            }];
+}
+
+- (void)addLoadAllList
+{
+    [[MyPageDataManager sharedManager] addLoadDataWithType:SortTyp_All
+                                                onComplete:^(NSArray *dataArray, kPFMyPageSortType sortType) {
+                                                    if (sortType == SortTyp_All){
+                                                        self.displayUserArray = [NSMutableArray arrayWithArray:dataArray];
+                                                        [self.outletTableViewController reloadData];
+                                                    }
+                                                }];
+}
+
 - (void)getMatchList
 {
-    //ユーザリスト取得
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:KEY_MATCH] != nil)
-    {
-        self.canTalkUserArray = [self loadResponseCacheWithData:KEY_MATCH];
-        if (showType == SortTyp_CanTalk)
-        {
-            self.displayUserArray = [NSMutableArray arrayWithArray:self.canTalkUserArray];
-            [self.outletTableViewController reloadData];
-        }
-    }
-    
-    //取得
-    PFUser *user = [PFUser currentUser];
-    NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjects:[NSArray arrayWithObjects:user.sessionId, @"1", @"25", nil] forKeys: [NSArray arrayWithObjects:@"session_id", @"page", @"per", nil]];
-    
-    [PFHTTPConnector requestWithCommand:kPFCommendMatchesList params:params onSuccess:^(PFHTTPResponse *response) {
-        NSDictionary *jsonObject = [response jsonDictionary];
-        if([jsonObject objectForKey:@"users"])
-        {
-            dispatch_queue_t mainQueue = dispatch_get_main_queue();
-            dispatch_async(mainQueue, ^{
-                //データ保存
-                self.canTalkUserArray = [jsonObject objectForKey:@"users"];
-                [self addResponseCacheWithData:self.canTalkUserArray forKey:KEY_MATCH];
-                
-                if (showType == SortTyp_CanTalk)
-                {
-                    self.displayUserArray = [NSMutableArray arrayWithArray:self.canTalkUserArray];
-                    [self.outletTableViewController reloadData];
-                }
-            });
-        }
-    } onFailure:^(NSError *error) {
-        NSLog(@"@@@@@ connection Error: %@", error);
-    }];
+    [[MyPageDataManager sharedManager] changeDataWithType:SortTyp_CanTalk
+                                               onComplete:^(NSArray *dataArray, kPFMyPageSortType sortType) {
+                                                   if (sortType == SortTyp_CanTalk){
+                                                       self.displayUserArray = [NSMutableArray arrayWithArray:dataArray];
+                                                       [self.outletTableViewController reloadData];
+                                                   }
+                                               }];
+}
+
+- (void)addLoadMatchList
+{
+    [[MyPageDataManager sharedManager] addLoadDataWithType:SortTyp_CanTalk
+                                                onComplete:^(NSArray *dataArray, kPFMyPageSortType sortType) {
+                                                    if (sortType == SortTyp_CanTalk){
+                                                        self.displayUserArray = [NSMutableArray arrayWithArray:dataArray];
+                                                        [self.outletTableViewController reloadData];
+                                                    }
+                                                }];
 }
 
 - (void)getMYLikedList
 {
-    //ユーザリスト取得
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:KEY_LIKED] != nil)
-    {
-        self.goodFromPartnerUserArray = [self loadResponseCacheWithData:KEY_LIKED];
-        if (showType == SortTyp_GoodFromPartner)
-        {
-            self.displayUserArray = [NSMutableArray arrayWithArray:self.goodFromPartnerUserArray];
-            [self.outletTableViewController reloadData];
-        }
-    }
-    
-    //取得
-    PFUser *user = [PFUser currentUser];
-    NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjects:[NSArray arrayWithObjects:user.sessionId, @"1", @"25", @"liked", nil] forKeys: [NSArray arrayWithObjects:@"session_id", @"page", @"per", @"type",nil]];
-    
-    [PFHTTPConnector requestWithCommand:kPFCommendLikesList params:params onSuccess:^(PFHTTPResponse *response) {
-        NSDictionary *jsonObject = [response jsonDictionary];
-        if([jsonObject objectForKey:@"users"])
-        {
-            dispatch_queue_t mainQueue = dispatch_get_main_queue();
-            dispatch_async(mainQueue, ^{
-                //データ保存
-                self.goodFromPartnerUserArray = [jsonObject objectForKey:@"users"];
-                [self addResponseCacheWithData:self.goodFromPartnerUserArray forKey:KEY_LIKED];
-                
-                if (showType == SortTyp_GoodFromPartner)
-                {
-                    self.displayUserArray = [NSMutableArray arrayWithArray:self.goodFromPartnerUserArray];
-                    [self.outletTableViewController reloadData];
-                }
-            });
-        }
-    } onFailure:^(NSError *error) {
-        NSLog(@"@@@@@ connection Error: %@", error);
-    }];
+    [[MyPageDataManager sharedManager] changeDataWithType:SortTyp_GoodFromPartner
+                                               onComplete:^(NSArray *dataArray, kPFMyPageSortType sortType) {
+                                                   if (sortType == SortTyp_GoodFromPartner){
+                                                       self.displayUserArray = [NSMutableArray arrayWithArray:dataArray];
+                                                       [self.outletTableViewController reloadData];
+                                                   }
+                                               }];
+}
+
+- (void)addLoadMyLikedList
+{
+    [[MyPageDataManager sharedManager] addLoadDataWithType:SortTyp_GoodFromPartner
+                                                onComplete:^(NSArray *dataArray, kPFMyPageSortType sortType) {
+                                                    if (sortType == SortTyp_GoodFromPartner){
+                                                        self.displayUserArray = [NSMutableArray arrayWithArray:dataArray];
+                                                        [self.outletTableViewController reloadData];
+                                                    }
+                                                }];
 }
 
 - (void)getMyLikeUser
 {
-    //ユーザリスト取得
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:KEY_MY_LIKE] != nil)
-    {
-        self.goodFromMeUserArray = [self loadResponseCacheWithData:KEY_MY_LIKE];
-        if (showType == SortTyp_GoodFromMe)
-        {
-            self.displayUserArray = [NSMutableArray arrayWithArray:self.goodFromMeUserArray];
-            [self.outletTableViewController reloadData];
-        }
-    }
-    
-    //取得
-    PFUser *user = [PFUser currentUser];
-    NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjects:[NSArray arrayWithObjects:user.sessionId, @"1", @"25", nil] forKeys: [NSArray arrayWithObjects:@"session_id", @"page", @"per", nil]];
-    
-    [PFHTTPConnector requestWithCommand:kPFCommendLikesList params:params onSuccess:^(PFHTTPResponse *response) {
-        NSDictionary *jsonObject = [response jsonDictionary];
-        if([jsonObject objectForKey:@"users"])
-        {
-            dispatch_queue_t mainQueue = dispatch_get_main_queue();
-            dispatch_async(mainQueue, ^{
-                //データ保存
-                self.goodFromMeUserArray = [jsonObject objectForKey:@"users"];
-                [self addResponseCacheWithData:self.goodFromMeUserArray forKey:KEY_MY_LIKE];
-                
-                if (showType == SortTyp_GoodFromMe)
-                {
-                    self.displayUserArray = [NSMutableArray arrayWithArray:self.goodFromMeUserArray];
-                    [self.outletTableViewController reloadData];
-                }
-            });
-        }
-    } onFailure:^(NSError *error) {
-        NSLog(@"@@@@@ connection Error: %@", error);
-    }];
+   [[MyPageDataManager sharedManager] changeDataWithType:SortTyp_GoodFromMe
+                                              onComplete:^(NSArray *dataArray, kPFMyPageSortType sortType) {
+                                                  if (sortType == SortTyp_GoodFromMe){
+                                                      self.displayUserArray = [NSMutableArray arrayWithArray:dataArray];
+                                                      [self.outletTableViewController reloadData];
+                                                  }
+                                              }];
      
+}
+
+- (void)addLoadMyLikeList
+{
+    [[MyPageDataManager sharedManager] addLoadDataWithType:SortTyp_GoodFromMe
+                                                onComplete:^(NSArray *dataArray, kPFMyPageSortType sortType) {
+                                                    if (sortType == SortTyp_GoodFromMe){
+                                                        self.displayUserArray = [NSMutableArray arrayWithArray:dataArray];
+                                                        [self.outletTableViewController reloadData];
+                                                    }
+                                                }];
 }
 
 - (void)getFavoriteUser
 {
-    //ユーザリスト取得
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:KEY_MY_FAVORITE] != nil)
-    {
-        self.favoriteUserDArray = [self loadResponseCacheWithData:KEY_MY_FAVORITE];
-        if (showType == SortTyp_Favorite)
-        {
-            self.displayUserArray = [NSMutableArray arrayWithArray:self.favoriteUserDArray];
-            [self.outletTableViewController reloadData];
-        }
-    }
-    
-    //取得
-    //取得
-    PFUser *user = [PFUser currentUser];
-    NSMutableDictionary *params =  [[NSMutableDictionary alloc] initWithObjects:[NSArray arrayWithObjects:user.sessionId, @"1", @"25", nil] forKeys: [NSArray arrayWithObjects:@"session_id", @"page", @"per", nil]];
-    
-    [PFHTTPConnector requestWithCommand:kPFCommendFavoritesList params:params onSuccess:^(PFHTTPResponse *response) {
-        NSDictionary *jsonObject = [response jsonDictionary];
-        if([jsonObject objectForKey:@"users"])
-        {
-            dispatch_queue_t mainQueue = dispatch_get_main_queue();
-            dispatch_async(mainQueue, ^{
-                //データ保存
-                self.favoriteUserDArray = [jsonObject objectForKey:@"users"];
-                [self addResponseCacheWithData:self.favoriteUserDArray forKey:KEY_MY_FAVORITE];
-                
-                if (showType == SortTyp_Favorite)
-                {
-                    self.displayUserArray = [NSMutableArray arrayWithArray:self.favoriteUserDArray];
-                    [self.outletTableViewController reloadData];
-                }
-            });
-        }
-    } onFailure:^(NSError *error) {
-        NSLog(@"@@@@@ connection Error: %@", error);
-    }];
+    [[MyPageDataManager sharedManager] changeDataWithType:SortTyp_Favorite
+                                               onComplete:^(NSArray *dataArray, kPFMyPageSortType sortType) {
+                                                   if (sortType == SortTyp_Favorite){
+                                                       self.displayUserArray = [NSMutableArray arrayWithArray:dataArray];
+                                                       [self.outletTableViewController reloadData];
+                                                   }
+                                               }];
+}
+
+- (void)addLoadFavoriteList
+{
+    [[MyPageDataManager sharedManager] addLoadDataWithType:SortTyp_Favorite
+                                                onComplete:^(NSArray *dataArray, kPFMyPageSortType sortType) {
+                                                    if (sortType == SortTyp_Favorite){
+                                                        self.displayUserArray = [NSMutableArray arrayWithArray:dataArray];
+                                                        [self.outletTableViewController reloadData];
+                                                    }
+                                                }];
 }
 
 

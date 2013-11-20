@@ -196,6 +196,13 @@
 		C1E3C60816EC790300BF4C99 /* TitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E3C60716EC790300BF4C99 /* TitleViewController.m */; };
 		C1E3C62416EC8CE700BF4C99 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1E3C62116EC8CDD00BF4C99 /* AudioToolbox.framework */; };
 		C1E3C62716ECA40D00BF4C99 /* SignupStep4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E3C62616ECA40D00BF4C99 /* SignupStep4ViewController.m */; };
+		FA3373E4183CFA1A00B1EFA6 /* MyPageDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3373E3183CFA1A00B1EFA6 /* MyPageDataManager.m */; };
+		FA3373F0183CFA2000B1EFA6 /* ISGumView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3373E7183CFA2000B1EFA6 /* ISGumView.m */; };
+		FA3373F1183CFA2000B1EFA6 /* ISRefresgControlIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3373E8183CFA2000B1EFA6 /* ISRefresgControlIcon.png */; };
+		FA3373F2183CFA2000B1EFA6 /* ISRefresgControlIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA3373E9183CFA2000B1EFA6 /* ISRefresgControlIcon@2x.png */; };
+		FA3373F3183CFA2000B1EFA6 /* ISRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3373EB183CFA2000B1EFA6 /* ISRefreshControl.m */; };
+		FA3373F4183CFA2000B1EFA6 /* ISUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3373ED183CFA2000B1EFA6 /* ISUtility.m */; };
+		FA3373F5183CFA2000B1EFA6 /* UITableViewController+RefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3373EF183CFA2000B1EFA6 /* UITableViewController+RefreshControl.m */; };
 		FA91A66B17E2136D00EB8AA1 /* PFTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA91A66917E2136D00EB8AA1 /* PFTutorialViewController.m */; };
 		FA91A66C17E2136D00EB8AA1 /* PFTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA91A66A17E2136D00EB8AA1 /* PFTutorialViewController.xib */; };
 		FA91A66F17E213DA00EB8AA1 /* PFTutorialScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA91A66E17E213DA00EB8AA1 /* PFTutorialScrollView.m */; };
@@ -518,6 +525,18 @@
 		C1E3C62116EC8CDD00BF4C99 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		C1E3C62516ECA40D00BF4C99 /* SignupStep4ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupStep4ViewController.h; sourceTree = "<group>"; };
 		C1E3C62616ECA40D00BF4C99 /* SignupStep4ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupStep4ViewController.m; sourceTree = "<group>"; };
+		FA3373E2183CFA1A00B1EFA6 /* MyPageDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPageDataManager.h; sourceTree = "<group>"; };
+		FA3373E3183CFA1A00B1EFA6 /* MyPageDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPageDataManager.m; sourceTree = "<group>"; };
+		FA3373E6183CFA2000B1EFA6 /* ISGumView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISGumView.h; sourceTree = "<group>"; };
+		FA3373E7183CFA2000B1EFA6 /* ISGumView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISGumView.m; sourceTree = "<group>"; };
+		FA3373E8183CFA2000B1EFA6 /* ISRefresgControlIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ISRefresgControlIcon.png; sourceTree = "<group>"; };
+		FA3373E9183CFA2000B1EFA6 /* ISRefresgControlIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ISRefresgControlIcon@2x.png"; sourceTree = "<group>"; };
+		FA3373EA183CFA2000B1EFA6 /* ISRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISRefreshControl.h; sourceTree = "<group>"; };
+		FA3373EB183CFA2000B1EFA6 /* ISRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISRefreshControl.m; sourceTree = "<group>"; };
+		FA3373EC183CFA2000B1EFA6 /* ISUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISUtility.h; sourceTree = "<group>"; };
+		FA3373ED183CFA2000B1EFA6 /* ISUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISUtility.m; sourceTree = "<group>"; };
+		FA3373EE183CFA2000B1EFA6 /* UITableViewController+RefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewController+RefreshControl.h"; sourceTree = "<group>"; };
+		FA3373EF183CFA2000B1EFA6 /* UITableViewController+RefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewController+RefreshControl.m"; sourceTree = "<group>"; };
 		FA91A66817E2136D00EB8AA1 /* PFTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFTutorialViewController.h; sourceTree = "<group>"; };
 		FA91A66917E2136D00EB8AA1 /* PFTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFTutorialViewController.m; sourceTree = "<group>"; };
 		FA91A66A17E2136D00EB8AA1 /* PFTutorialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFTutorialViewController.xib; sourceTree = "<group>"; };
@@ -893,6 +912,8 @@
 		2A7F085116DA012000FFC881 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				FA3373E2183CFA1A00B1EFA6 /* MyPageDataManager.h */,
+				FA3373E3183CFA1A00B1EFA6 /* MyPageDataManager.m */,
 				2A055F4116E32EF10008297B /* PFMyPageTopPageViewController.h */,
 				2A055F4216E32EF10008297B /* PFMyPageTopPageViewController.m */,
 				2A055F4816E337440008297B /* PFMyPageTopTableCell.h */,
@@ -957,6 +978,7 @@
 		C10A327A1632A9A90083F51B /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				FA3373E5183CFA2000B1EFA6 /* ISRefreshControl */,
 				FAC09CB917B4E4C1008ECFF3 /* TMCache */,
 				FAC09CB817B4E4BA008ECFF3 /* ImageDownloader */,
 				C1CEE9E6172E500000C67DA5 /* NSDictionary+MultiPartFormData.h */,
@@ -1182,6 +1204,23 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		FA3373E5183CFA2000B1EFA6 /* ISRefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				FA3373E6183CFA2000B1EFA6 /* ISGumView.h */,
+				FA3373E7183CFA2000B1EFA6 /* ISGumView.m */,
+				FA3373E8183CFA2000B1EFA6 /* ISRefresgControlIcon.png */,
+				FA3373E9183CFA2000B1EFA6 /* ISRefresgControlIcon@2x.png */,
+				FA3373EA183CFA2000B1EFA6 /* ISRefreshControl.h */,
+				FA3373EB183CFA2000B1EFA6 /* ISRefreshControl.m */,
+				FA3373EC183CFA2000B1EFA6 /* ISUtility.h */,
+				FA3373ED183CFA2000B1EFA6 /* ISUtility.m */,
+				FA3373EE183CFA2000B1EFA6 /* UITableViewController+RefreshControl.h */,
+				FA3373EF183CFA2000B1EFA6 /* UITableViewController+RefreshControl.m */,
+			);
+			path = ISRefreshControl;
+			sourceTree = "<group>";
+		};
 		FAC09CA717B4D352008ECFF3 /* PairSearchTopSubClass */ = {
 			isa = PBXGroup;
 			children = (
@@ -1376,6 +1415,8 @@
 				2A835911172D13AD00FBC6E8 /* button_trade.png in Resources */,
 				FA91A66C17E2136D00EB8AA1 /* PFTutorialViewController.xib in Resources */,
 				FAE8ADC817E2EC81007D7128 /* PFLoginBonusViewController.xib in Resources */,
+				FA3373F1183CFA2000B1EFA6 /* ISRefresgControlIcon.png in Resources */,
+				FA3373F2183CFA2000B1EFA6 /* ISRefresgControlIcon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1476,6 +1517,11 @@
 				FA91A66B17E2136D00EB8AA1 /* PFTutorialViewController.m in Sources */,
 				FA91A66F17E213DA00EB8AA1 /* PFTutorialScrollView.m in Sources */,
 				FAE8ADC717E2EC81007D7128 /* PFLoginBonusViewController.m in Sources */,
+				FA3373E4183CFA1A00B1EFA6 /* MyPageDataManager.m in Sources */,
+				FA3373F0183CFA2000B1EFA6 /* ISGumView.m in Sources */,
+				FA3373F3183CFA2000B1EFA6 /* ISRefreshControl.m in Sources */,
+				FA3373F4183CFA2000B1EFA6 /* ISUtility.m in Sources */,
+				FA3373F5183CFA2000B1EFA6 /* UITableViewController+RefreshControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
