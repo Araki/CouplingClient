@@ -107,6 +107,7 @@
 
 - (void)addLoadDataWithType:(kPFMyPageSortType)sortType onComplete:(changeDataHandler)cHandler
 {
+    showType = sortType;
     changeHandler = [cHandler copy];
     //データ取得
     switch (sortType) {
@@ -124,6 +125,31 @@
             break;
         case SortTyp_GoodFromPartner:
             [self addLoadLikedData];
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)reloadDataWithType:(kPFMyPageSortType)sortType onComplete:(changeDataHandler)cHandler
+{
+    showType = sortType;
+    changeHandler = [cHandler copy];
+    switch (sortType) {
+        case SortTyp_All:
+            [self loadAllData];
+            break;
+        case SortTyp_CanTalk:
+            [self loadMatchData];
+            break;
+        case SortTyp_Favorite:
+            [self loadFavoriteData];
+            break;
+        case SortTyp_GoodFromMe:
+            [self loadMyLikeData];
+            break;
+        case SortTyp_GoodFromPartner:
+            [self loadLikedData];
             break;
         default:
             break;

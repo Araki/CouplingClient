@@ -27,5 +27,7 @@ typedef void (^changeDataHandler)(NSArray *dataArray, kPFMyPageSortType sortType
 - (void)changeDataWithType:(kPFMyPageSortType)sortType onComplete:(changeDataHandler)cHandler;
 //追加読み込み
 - (void)addLoadDataWithType:(kPFMyPageSortType)sortType onComplete:(changeDataHandler)cHandler;
+//データリロード
+- (void)reloadDataWithType:(kPFMyPageSortType)sortType onComplete:(changeDataHandler)cHandler;
 
 @end
