@@ -196,6 +196,12 @@
 		C1E3C60816EC790300BF4C99 /* TitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E3C60716EC790300BF4C99 /* TitleViewController.m */; };
 		C1E3C62416EC8CE700BF4C99 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1E3C62116EC8CDD00BF4C99 /* AudioToolbox.framework */; };
 		C1E3C62716ECA40D00BF4C99 /* SignupStep4ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E3C62616ECA40D00BF4C99 /* SignupStep4ViewController.m */; };
+		FA013A80183CC81A00D74333 /* ISGumView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA013A79183CC81A00D74333 /* ISGumView.m */; };
+		FA013A81183CC81A00D74333 /* ISRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FA013A7B183CC81A00D74333 /* ISRefreshControl.m */; };
+		FA013A82183CC81A00D74333 /* ISUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FA013A7D183CC81A00D74333 /* ISUtility.m */; };
+		FA013A83183CC81A00D74333 /* UITableViewController+RefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = FA013A7F183CC81A00D74333 /* UITableViewController+RefreshControl.m */; };
+		FA013A86183CC82A00D74333 /* ISRefresgControlIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = FA013A84183CC82A00D74333 /* ISRefresgControlIcon.png */; };
+		FA013A87183CC82A00D74333 /* ISRefresgControlIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA013A85183CC82A00D74333 /* ISRefresgControlIcon@2x.png */; };
 		FA44315218086D38007EBCF9 /* PFShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA44315018086D38007EBCF9 /* PFShopViewController.m */; };
 		FA44315318086D38007EBCF9 /* PFShopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA44315118086D38007EBCF9 /* PFShopViewController.xib */; };
 		FA91A66B17E2136D00EB8AA1 /* PFTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA91A66917E2136D00EB8AA1 /* PFTutorialViewController.m */; };
@@ -209,6 +215,7 @@
 		FAC09CC217B4E4DD008ECFF3 /* TMMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC09CBF17B4E4DD008ECFF3 /* TMMemoryCache.m */; };
 		FAC09CC517B4E4EA008ECFF3 /* PSImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC09CC417B4E4EA008ECFF3 /* PSImageDownloader.m */; };
 		FAC09CC817B4E5E5008ECFF3 /* PFProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC09CC717B4E5E5008ECFF3 /* PFProfileTableViewCell.m */; };
+		FAC9F281183BB7A300295904 /* MyPageDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC9F280183BB7A300295904 /* MyPageDataManager.m */; };
 		FAE8ADC717E2EC81007D7128 /* PFLoginBonusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE8ADC517E2EC81007D7128 /* PFLoginBonusViewController.m */; };
 		FAE8ADC817E2EC81007D7128 /* PFLoginBonusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAE8ADC617E2EC81007D7128 /* PFLoginBonusViewController.xib */; };
 /* End PBXBuildFile section */
@@ -520,6 +527,16 @@
 		C1E3C62116EC8CDD00BF4C99 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		C1E3C62516ECA40D00BF4C99 /* SignupStep4ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupStep4ViewController.h; sourceTree = "<group>"; };
 		C1E3C62616ECA40D00BF4C99 /* SignupStep4ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupStep4ViewController.m; sourceTree = "<group>"; };
+		FA013A78183CC81A00D74333 /* ISGumView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISGumView.h; sourceTree = "<group>"; };
+		FA013A79183CC81A00D74333 /* ISGumView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISGumView.m; sourceTree = "<group>"; };
+		FA013A7A183CC81A00D74333 /* ISRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISRefreshControl.h; sourceTree = "<group>"; };
+		FA013A7B183CC81A00D74333 /* ISRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISRefreshControl.m; sourceTree = "<group>"; };
+		FA013A7C183CC81A00D74333 /* ISUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISUtility.h; sourceTree = "<group>"; };
+		FA013A7D183CC81A00D74333 /* ISUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISUtility.m; sourceTree = "<group>"; };
+		FA013A7E183CC81A00D74333 /* UITableViewController+RefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewController+RefreshControl.h"; sourceTree = "<group>"; };
+		FA013A7F183CC81A00D74333 /* UITableViewController+RefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewController+RefreshControl.m"; sourceTree = "<group>"; };
+		FA013A84183CC82A00D74333 /* ISRefresgControlIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ISRefresgControlIcon.png; sourceTree = "<group>"; };
+		FA013A85183CC82A00D74333 /* ISRefresgControlIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ISRefresgControlIcon@2x.png"; sourceTree = "<group>"; };
 		FA44314F18086D38007EBCF9 /* PFShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFShopViewController.h; sourceTree = "<group>"; };
 		FA44315018086D38007EBCF9 /* PFShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFShopViewController.m; sourceTree = "<group>"; };
 		FA44315118086D38007EBCF9 /* PFShopViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFShopViewController.xib; sourceTree = "<group>"; };
@@ -544,6 +561,8 @@
 		FAC09CC417B4E4EA008ECFF3 /* PSImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSImageDownloader.m; sourceTree = "<group>"; };
 		FAC09CC617B4E5E5008ECFF3 /* PFProfileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFProfileTableViewCell.h; sourceTree = "<group>"; };
 		FAC09CC717B4E5E5008ECFF3 /* PFProfileTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFProfileTableViewCell.m; sourceTree = "<group>"; };
+		FAC9F27F183BB7A300295904 /* MyPageDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPageDataManager.h; sourceTree = "<group>"; };
+		FAC9F280183BB7A300295904 /* MyPageDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPageDataManager.m; sourceTree = "<group>"; };
 		FAE8ADC417E2EC81007D7128 /* PFLoginBonusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFLoginBonusViewController.h; sourceTree = "<group>"; };
 		FAE8ADC517E2EC81007D7128 /* PFLoginBonusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFLoginBonusViewController.m; sourceTree = "<group>"; };
 		FAE8ADC617E2EC81007D7128 /* PFLoginBonusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFLoginBonusViewController.xib; sourceTree = "<group>"; };
@@ -903,6 +922,8 @@
 				2A055F4816E337440008297B /* PFMyPageTopTableCell.h */,
 				2A055F4916E337450008297B /* PFMyPageTopTableCell.m */,
 				2A055F4616E334BD0008297B /* PFMyPageTopTableCell.xib */,
+				FAC9F27F183BB7A300295904 /* MyPageDataManager.h */,
+				FAC9F280183BB7A300295904 /* MyPageDataManager.m */,
 			);
 			name = MyPage;
 			sourceTree = "<group>";
@@ -963,6 +984,7 @@
 		C10A327A1632A9A90083F51B /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				FA013A77183CC7FD00D74333 /* ISRefreshControl */,
 				FAC09CB917B4E4C1008ECFF3 /* TMCache */,
 				FAC09CB817B4E4BA008ECFF3 /* ImageDownloader */,
 				C1CEE9E6172E500000C67DA5 /* NSDictionary+MultiPartFormData.h */,
@@ -1188,6 +1210,23 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		FA013A77183CC7FD00D74333 /* ISRefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				FA013A84183CC82A00D74333 /* ISRefresgControlIcon.png */,
+				FA013A85183CC82A00D74333 /* ISRefresgControlIcon@2x.png */,
+				FA013A78183CC81A00D74333 /* ISGumView.h */,
+				FA013A79183CC81A00D74333 /* ISGumView.m */,
+				FA013A7A183CC81A00D74333 /* ISRefreshControl.h */,
+				FA013A7B183CC81A00D74333 /* ISRefreshControl.m */,
+				FA013A7C183CC81A00D74333 /* ISUtility.h */,
+				FA013A7D183CC81A00D74333 /* ISUtility.m */,
+				FA013A7E183CC81A00D74333 /* UITableViewController+RefreshControl.h */,
+				FA013A7F183CC81A00D74333 /* UITableViewController+RefreshControl.m */,
+			);
+			path = ISRefreshControl;
+			sourceTree = "<group>";
+		};
 		FA44314E18086D22007EBCF9 /* ShopView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1393,6 +1432,8 @@
 				FA91A66C17E2136D00EB8AA1 /* PFTutorialViewController.xib in Resources */,
 				FAE8ADC817E2EC81007D7128 /* PFLoginBonusViewController.xib in Resources */,
 				FA44315318086D38007EBCF9 /* PFShopViewController.xib in Resources */,
+				FA013A86183CC82A00D74333 /* ISRefresgControlIcon.png in Resources */,
+				FA013A87183CC82A00D74333 /* ISRefresgControlIcon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1494,6 +1535,11 @@
 				FA91A66F17E213DA00EB8AA1 /* PFTutorialScrollView.m in Sources */,
 				FAE8ADC717E2EC81007D7128 /* PFLoginBonusViewController.m in Sources */,
 				FA44315218086D38007EBCF9 /* PFShopViewController.m in Sources */,
+				FAC9F281183BB7A300295904 /* MyPageDataManager.m in Sources */,
+				FA013A80183CC81A00D74333 /* ISGumView.m in Sources */,
+				FA013A81183CC81A00D74333 /* ISRefreshControl.m in Sources */,
+				FA013A82183CC81A00D74333 /* ISUtility.m in Sources */,
+				FA013A83183CC81A00D74333 /* UITableViewController+RefreshControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
