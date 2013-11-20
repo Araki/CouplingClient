@@ -11,6 +11,7 @@
 #import "IIViewDeckController.h"
 #import "PFHTTPConnector.h"
 #import "MyPageDataManager.h"
+#import "ISRefreshControl.h"
 
 #define KEY_ALL         @"key_all_list"
 #define KEY_MATCH       @"key_match_list"
@@ -27,6 +28,7 @@
 @implementation PFMyPageTopPageViewController
 {
     kPFMyPageSortType showType;
+    ISRefreshControl *refreshControl;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -52,6 +54,10 @@
 {
     [super viewDidLoad];
     self.outletTableViewController.backgroundColor = kPFBackGroundColor;
+    //引っ張って更新
+    refreshControl = [[ISRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
+    [self.outletTableViewController addSubview:refreshControl];
     //全てを選択
     [self getAllList];
 }
@@ -135,6 +141,30 @@
                           titles:[PFUtil myPageSortList], nil];
 }
 
+#pragma mark - Refresh Control
+- (void)refresh
+{
+    switch (showType) {
+        case SortTyp_All:
+            [self reloadLoadAllList];
+            break;
+        case SortTyp_CanTalk:
+            [self reloadLoadMatchList];
+            break;
+        case SortTyp_GoodFromPartner:
+            [self reloadLoadMyLikedList];
+            break;
+        case SortTyp_GoodFromMe:
+            [self reloadLoadMyLikeList];
+            break;
+        case SortTyp_Favorite:
+            [self reloadLoadFavoriteList];
+            break;
+        default:
+            break;
+    }
+}
+
 #pragma mark - PFActionSheet Delegate
 
 - (void)dismissOkButtonWithTitles:(NSArray *)titles type:(kPFActionSheetType)type
@@ -200,12 +230,14 @@
 
 - (void)getAllList
 {
+    [refreshControl beginRefreshing];
     [[MyPageDataManager sharedManager] changeDataWithType:SortTyp_All
                                                onComplete:^(NSArray *dataArray, kPFMyPageSortType sortType) {
                                                    if (sortType == SortTyp_All){
                                                        self.displayUserArray = [NSMutableArray arrayWithArray:dataArray];
                                                        [self.outletTableViewController reloadData];
                                                    }
+                                                    [refreshControl endRefreshing];
                                             }];
 }
 
@@ -220,14 +252,29 @@
                                                 }];
 }
 
+- (void)reloadLoadAllList
+{
+    [refreshControl beginRefreshing];
+    [[MyPageDataManager sharedManager] reloadDataWithType:SortTyp_All
+                                               onComplete:^(NSArray *dataArray, kPFMyPageSortType sortType) {
+                                                   if (sortType == SortTyp_All){
+                                                       self.displayUserArray = [NSMutableArray arrayWithArray:dataArray];
+                                                       [self.outletTableViewController reloadData];
+                                                   }
+                                                   [refreshControl endRefreshing];
+                                               }];
+}
+
 - (void)getMatchList
 {
+    [refreshControl beginRefreshing];
     [[MyPageDataManager sharedManager] changeDataWithType:SortTyp_CanTalk
                                                onComplete:^(NSArray *dataArray, kPFMyPageSortType sortType) {
                                                    if (sortType == SortTyp_CanTalk){
                                                        self.displayUserArray = [NSMutableArray arrayWithArray:dataArray];
                                                        [self.outletTableViewController reloadData];
                                                    }
+                                                   [refreshControl endRefreshing];
                                                }];
 }
 
@@ -242,14 +289,29 @@
                                                 }];
 }
 
+- (void)reloadLoadMatchList
+{
+    [refreshControl beginRefreshing];
+    [[MyPageDataManager sharedManager] reloadDataWithType:SortTyp_CanTalk
+                                               onComplete:^(NSArray *dataArray, kPFMyPageSortType sortType) {
+                                                   if (sortType == SortTyp_CanTalk){
+                                                       self.displayUserArray = [NSMutableArray arrayWithArray:dataArray];
+                                                       [self.outletTableViewController reloadData];
+                                                   }
+                                                   [refreshControl endRefreshing];
+                                               }];
+}
+
 - (void)getMYLikedList
 {
+    [refreshControl beginRefreshing];
     [[MyPageDataManager sharedManager] changeDataWithType:SortTyp_GoodFromPartner
                                                onComplete:^(NSArray *dataArray, kPFMyPageSortType sortType) {
                                                    if (sortType == SortTyp_GoodFromPartner){
                                                        self.displayUserArray = [NSMutableArray arrayWithArray:dataArray];
                                                        [self.outletTableViewController reloadData];
                                                    }
+                                                   [refreshControl endRefreshing];
                                                }];
 }
 
@@ -264,15 +326,30 @@
                                                 }];
 }
 
+- (void)reloadLoadMyLikedList
+{
+    [refreshControl beginRefreshing];
+    [[MyPageDataManager sharedManager] reloadDataWithType:SortTyp_GoodFromPartner
+                                               onComplete:^(NSArray *dataArray, kPFMyPageSortType sortType) {
+                                                   if (sortType == SortTyp_GoodFromPartner){
+                                                       self.displayUserArray = [NSMutableArray arrayWithArray:dataArray];
+                                                       [self.outletTableViewController reloadData];
+                                                   }
+                                                   [refreshControl endRefreshing];
+                                               }];
+}
+
 - (void)getMyLikeUser
 {
-   [[MyPageDataManager sharedManager] changeDataWithType:SortTyp_GoodFromMe
-                                              onComplete:^(NSArray *dataArray, kPFMyPageSortType sortType) {
-                                                  if (sortType == SortTyp_GoodFromMe){
-                                                      self.displayUserArray = [NSMutableArray arrayWithArray:dataArray];
-                                                      [self.outletTableViewController reloadData];
-                                                  }
-                                              }];
+    [refreshControl beginRefreshing];
+    [[MyPageDataManager sharedManager] changeDataWithType:SortTyp_GoodFromMe
+                                               onComplete:^(NSArray *dataArray, kPFMyPageSortType sortType) {
+                                                   if (sortType == SortTyp_GoodFromMe){
+                                                       self.displayUserArray = [NSMutableArray arrayWithArray:dataArray];
+                                                       [self.outletTableViewController reloadData];
+                                                   }
+                                                   [refreshControl endRefreshing];
+                                               }];
      
 }
 
@@ -287,14 +364,29 @@
                                                 }];
 }
 
+- (void)reloadLoadMyLikeList
+{
+    [refreshControl beginRefreshing];
+    [[MyPageDataManager sharedManager] reloadDataWithType:SortTyp_GoodFromMe
+                                               onComplete:^(NSArray *dataArray, kPFMyPageSortType sortType) {
+                                                   if (sortType == SortTyp_GoodFromMe){
+                                                       self.displayUserArray = [NSMutableArray arrayWithArray:dataArray];
+                                                       [self.outletTableViewController reloadData];
+                                                   }
+                                                   [refreshControl endRefreshing];
+                                               }];
+}
+
 - (void)getFavoriteUser
 {
+    [refreshControl beginRefreshing];
     [[MyPageDataManager sharedManager] changeDataWithType:SortTyp_Favorite
                                                onComplete:^(NSArray *dataArray, kPFMyPageSortType sortType) {
                                                    if (sortType == SortTyp_Favorite){
                                                        self.displayUserArray = [NSMutableArray arrayWithArray:dataArray];
                                                        [self.outletTableViewController reloadData];
                                                    }
+                                                   [refreshControl endRefreshing];
                                                }];
 }
 
@@ -309,6 +401,18 @@
                                                 }];
 }
 
+- (void)reloadLoadFavoriteList
+{
+    [refreshControl beginRefreshing];
+    [[MyPageDataManager sharedManager] reloadDataWithType:SortTyp_Favorite
+                                               onComplete:^(NSArray *dataArray, kPFMyPageSortType sortType) {
+                                                   if (sortType == SortTyp_Favorite){
+                                                       self.displayUserArray = [NSMutableArray arrayWithArray:dataArray];
+                                                       [self.outletTableViewController reloadData];
+                                                   }
+                                                   [refreshControl endRefreshing];
+                                               }];
+}
 
 #pragma mark - Data Manager
 - (void)addResponseCacheWithData:(NSArray *)response forKey:(NSString *)key
