@@ -10,8 +10,9 @@
 #import "PFAbstractPageViewController.h"
 #import "PFActionSheet.h"
 #import "MyPageDataManager.h"
+#import "PFMyPageTopTableCell.h"
 
-@interface PFMyPageTopPageViewController : PFAbstractPageViewController <UITableViewDelegate, PFActionSheetDelegate>
+@interface PFMyPageTopPageViewController : PFAbstractPageViewController <UITableViewDelegate, PFActionSheetDelegate, PFMyPageTopTableCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *outletTableViewController;
 @property (weak, nonatomic) IBOutlet UINavigationBar *outletNavigationBar;
