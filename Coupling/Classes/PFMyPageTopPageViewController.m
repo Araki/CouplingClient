@@ -105,11 +105,26 @@
         NSArray* array = [nib instantiateWithOwner:nil options:nil];
         cell = [array objectAtIndex:0];
         cell.backgroundColor = kPFBackGroundColor;
-        cell.outletUserPictureImage.image = [UIImage imageNamed:@"test_why_always_me.jpeg"];
+        [cell setUserInteractionEnabled:YES];
+        [cell setMyPageTopTableCellDelegate:self];
+        //cell.outletUserPictureImage.image = [UIImage imageNamed:@"test_why_always_me.jpeg"];
     }
-    cell.outletUserAgeLabel.text = [NSString stringWithFormat:@"%d", indexPath.row];
+    //cell.outletUserAgeLabel.text = [NSString stringWithFormat:@"%d", indexPath.row];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(PFMyPageTopTableCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [cell initCellWithData:[self.displayUserArray objectAtIndex:indexPath.row] withShowType:showType];
+}
+
+#pragma mark - Cell Delegate
+- (void)showTalkView:(NSDictionary *)user
+{
+    //トーク画面へ
+    
+    
 }
 
 #pragma mark - UIScrollViewDelegate Methods
@@ -129,6 +144,9 @@
 #pragma mark - Table view delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    //相手詳細画面へ
     
 }
 
