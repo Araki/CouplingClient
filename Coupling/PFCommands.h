@@ -36,3 +36,6 @@
 
 // {Matches}
 #define kPFCommendMatchesList               @"/matches/list"
+
+// {LikePoints}
+#define kPFCommendLikePointsAdd             @"/like_points/add"
