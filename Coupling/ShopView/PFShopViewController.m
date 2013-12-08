@@ -1,4 +1,4 @@
-//
+ //
 //  PFShopViewController.m
 //  Coupling
 //
@@ -120,7 +120,23 @@
         [PFHTTPConnector requestWithCommand:kPFCommendPointsConsume
                                      params:dict
                                   onSuccess:^(PFHTTPResponse *response) {
-                                      isLoading = NO;
+                                      [PFHTTPConnector requestWithCommand:kPFCommendLikePointsAdd
+                                                                onSuccess:^(PFHTTPResponse *response) {
+                                                                    isLoading = NO;
+                                                                } onFailure:^(NSError *error) {
+                                                                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"お知らせ" message:@"購入に失敗しました。" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                                                                    [alert show];
+                                                                    isLoading = NO;
+                                                                    
+                                                                    //ポイント・いいね数変更
+                                                                    [[PFUser currentUser] setPoints:[[PFUser currentUser] points] + cost];
+                                                                    [[PFUser currentUser] setLikePoints:[[PFUser currentUser] likePoints] - buyPoints];
+                                                                    [[PFUser currentUser] saveToCacheAsCurrentUser];
+                                                                    //更新
+                                                                    PFUser *user = [PFUser currentUser];
+                                                                    [self.pointLabel setText:[NSString stringWithFormat:@"%d",user.points]];
+                                                                    [self.likeLabel setText:[NSString stringWithFormat:@"%d",user.likePoints]];
+                                                                }];
                                   } onFailure:^(NSError *error) {
                                       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"お知らせ" message:@"購入に失敗しました。" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                                       [alert show];
