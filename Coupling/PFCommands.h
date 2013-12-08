@@ -27,3 +27,13 @@
 #define kPFCommendLikesShow                 @"/likes/show"
 #define kPFCommendLikesCreate               @"/likes/create"
 #define kPFCommendLikesDelete               @"/likes/delete"
+
+// {Points}
+#define kPFCommendPointsAdd                 @"/points/add"
+#define kPFCommendPointsConsume             @"/points/consume"
+
+// {Matches}
+#define kPFCommendMatchesList               @"/matches/list"
+
+// {LikePoints}
+#define kPFCommendLikePointsAdd             @"/like_points/add"

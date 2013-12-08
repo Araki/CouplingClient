@@ -11,7 +11,8 @@
 #import "PFActionSheet.h"
 
 typedef enum {
-    SortTyp_CanTalk = 0,
+    SortTyp_All = 0,
+    SortTyp_CanTalk,
     SortTyp_GoodFromPartner,
     SortTyp_GoodFromMe,
     SortTyp_Favorite,
@@ -21,6 +22,7 @@ typedef enum {
 
 @property (weak, nonatomic) IBOutlet UITableView *outletTableViewController;
 @property (weak, nonatomic) IBOutlet UINavigationBar *outletNavigationBar;
+@property (strong, nonatomic) NSArray *allUserArray;                // 全ての　userModelを入れる配列
 @property (strong, nonatomic) NSArray *canTalkUserArray;            // トーク出来る（相互いいね）userModelを入れる配列
 @property (strong, nonatomic) NSArray *goodFromPartnerUserArray;    // イイネされたユーザーのuserModelを入れる配列
 @property (strong, nonatomic) NSArray *goodFromMeUserArray;         // イイネしたユーザーのuserModelを入れる配列
