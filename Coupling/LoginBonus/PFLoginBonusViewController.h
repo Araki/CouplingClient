@@ -11,5 +11,6 @@
 @interface PFLoginBonusViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
+@property (weak, nonatomic) IBOutlet UILabel *loginBonusLabel;
 
 @end

@@ -19,6 +19,8 @@
 {
     //BackGround
     [self.view setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.3f]];
+    //いいね数追加
+    [self addLikePoints];
 }
 
 #pragma mark - View Life Cycle
@@ -31,6 +33,19 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark - Self Action
+- (void)addLikePoints
+{
+    //いいね数を１増やす
+    NSInteger likePoint = [[PFUser currentUser] likePoints];
+    likePoint ++;
+    [[PFUser currentUser] setLikePoints:likePoint];
+    [[PFUser currentUser] saveToCacheAsCurrentUser];
+    
+    //ラベル反映
+    [self.loginBonusLabel setText:[NSString stringWithFormat:@"いいね！所持数 %d",likePoint]];
 }
 
 @end
