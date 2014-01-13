@@ -38,6 +38,8 @@
     NSInteger   income;
     NSInteger   holiday;
     NSInteger   status;
+    NSInteger   likePoints;
+    NSInteger   points;
 }
 
 @property(retain) NSString* userId;
@@ -59,6 +61,8 @@
 @property(nonatomic, assign) NSInteger income;
 @property(nonatomic, assign) NSInteger holiday;
 @property(nonatomic, assign) NSInteger status;
+@property(nonatomic, assign) NSInteger likePoints;
+@property(nonatomic, assign) NSInteger points;
 
 
 /**
